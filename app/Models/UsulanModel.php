@@ -8,6 +8,7 @@ use CodeIgniter\Model;
 class UsulanModel extends Model
 {
 	protected $table = "tbl_usulan";
+	//--
 	protected $allowedFields = ['usulan_id', 'instansi_id', 'instansi_unor', 'jabatan_kode','jumlah'];
 	protected $column_order = [null, 'usulan_id', 'instansi_id', 'instansi_unor', 'jabatan_kode','jumlah', null];
 	protected $column_search = ['usulan_id', 'instansi_id', 'instansi_unor', 'jabatan_kode','jumlah'];
