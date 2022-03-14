@@ -8,7 +8,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-12">
-          <h1>Data Formasi</h1>
+          <h1>Data Instansi</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -24,7 +24,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Tabel Formasi OPD</h3>
+              <h3 class="card-title">Tabel Unit Kerja</h3>
             </div>
             <div class="card-body table-responsive">
               <table id="example1" class="table table-bordered table-striped">
@@ -32,7 +32,7 @@
                   <tr>
                     <th>No.</th>
                     <th>OPD</th>
-                    <th>Aksi</th>
+                    <th>Detail Formasi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -54,6 +54,9 @@
 
 <?= $this->section('script') ?>
 <script>
+    <?php 
+      $link = base_url('datainstansi/ajaxDataInstansi/IV');
+  ?>
   $(document).ready(function() {
 
     //Menampilkan data pendaftaran (dataTable server-side)
@@ -65,7 +68,7 @@
       "order": [],
 
       "ajax": {
-        "url": "dataformasi/ajaxDataFormasi",
+        "url": "<?php echo $link; ?>",
         "type": "POST"
       },
 

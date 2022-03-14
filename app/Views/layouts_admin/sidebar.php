@@ -49,7 +49,7 @@
         </li>
         <!-- Data Formasi -->
         <li class="nav-item">
-          <a href="<?php echo base_url('dataformasi'); ?>" class="nav-link <?php if ($page == 'dataformasi') echo " active";  ?>">
+          <a href="<?php echo base_url('datainstansi'); ?>" class="nav-link <?php if ($page == 'datainstansi') echo " active";  ?>">
             <i class="nav-icon fas fa-briefcase"></i>
             <p>
               Data Formasi
