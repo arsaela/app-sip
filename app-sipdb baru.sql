@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Mar 2022 pada 07.36
+-- Waktu pembuatan: 14 Mar 2022 pada 07.54
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.1.2
 
@@ -71,7 +71,7 @@ CREATE TABLE `tbl_detail_usulan` (
 INSERT INTO `tbl_detail_usulan` (`detail_usulan_id`, `usulan_id`, `jabatan_kode`, `jumlah_usulan`, `jumlah_approve`, `status_usulan`, `keterangan`) VALUES
 (1, 1, '5004', 1, 0, 0, ''),
 (2, 2, '3600129', 1, 1, 1, '-'),
-(3, 2, '9911067', 2, 2, 1, '-');
+(3, 2, '9911067', 2, 0, 2, 'jumlah pegawai lebih dari itu');
 
 -- --------------------------------------------------------
 
