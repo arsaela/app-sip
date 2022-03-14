@@ -1,0 +1,800 @@
+ERROR - 2022-03-09 07:27:43 --> Unknown column 'id' in 'order clause'
+CRITICAL - 2022-03-09 07:27:43 --> Unknown column 'id' in 'order clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\InformasiModel.php(58): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\Informasi.php(119): App\Models\InformasiModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Informasi->ajaxInformasi()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Informasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 07:30:28 --> Unknown column 'id' in 'order clause'
+CRITICAL - 2022-03-09 07:30:28 --> Unknown column 'id' in 'order clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\InformasiModel.php(58): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\Informasi.php(119): App\Models\InformasiModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Informasi->ajaxInformasi()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Informasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 07:41:03 --> Unknown column 'id' in 'order clause'
+CRITICAL - 2022-03-09 07:41:03 --> Unknown column 'id' in 'order clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\InformasiModel.php(58): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\Informasi.php(119): App\Models\InformasiModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Informasi->ajaxInformasi()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Informasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-09 08:24:48 --> Call to a member function first() on null
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 08:27:18 --> Class 'App\Models\InformasiModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\Home->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 08:27:18 --> Class 'App\Models\InformasiModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\Home->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 08:27:19 --> Class 'App\Models\InformasiModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\Home->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 08:27:19 --> Class 'App\Models\InformasiModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\Home->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 08:27:19 --> Class 'App\Models\InformasiModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\Home->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 08:27:19 --> Class 'App\Models\InformasiModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\Home->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 08:27:20 --> Class 'App\Models\InformasiModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\Home->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 08:27:20 --> Class 'App\Models\InformasiModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\Home->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 08:27:20 --> Class 'App\Models\InformasiModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\Home->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2022-03-09 08:28:05 --> Table 'app-sipdb.tbl_informasi' doesn't exist
+CRITICAL - 2022-03-09 08:28:05 --> Table 'app-sipdb.tbl_informasi' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\app-sip\app\Controllers\Home.php(24): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-03-09 00:02:29 --> Duplicate entry 'admin' for key 'username'
+CRITICAL - 2022-03-09 00:02:29 --> Duplicate entry 'admin' for key 'username'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\app-sip\app\Controllers\DataAdmin.php(78): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataAdmin->add()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataAdmin))
+#11 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+ERROR - 2022-03-09 00:02:31 --> Duplicate entry 'admin' for key 'username'
+CRITICAL - 2022-03-09 00:02:31 --> Duplicate entry 'admin' for key 'username'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\xampp\htdocs\app-sip\app\Controllers\DataAdmin.php(78): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataAdmin->add()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataAdmin))
+#11 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+ERROR - 2022-03-09 00:05:28 --> Unknown column 'petugas_id' in 'order clause'
+CRITICAL - 2022-03-09 00:05:28 --> Unknown column 'petugas_id' in 'order clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FakultasModel.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFakultas.php(132): App\Models\FakultasModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFakultas->ajaxDataFakultas()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFakultas))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-09 00:23:55 --> Class 'App\Models\FakultasModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataPendaftaran->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 00:33:58 --> Class 'App\Models\FakultasModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataPendaftaran->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 00:36:46 --> Class 'App\Models\FakultasModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataPendaftaran->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 00:36:53 --> Class 'App\Models\FakultasModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataPendaftaran->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 00:38:51 --> Class 'App\Models\FakultasModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataPendaftaran->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 00:39:20 --> Class 'App\Controllers\FakultasModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataPendaftaran->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 00:39:41 --> Class 'App\Controllers\FakultasModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataPendaftaran->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 00:39:45 --> Class 'App\Controllers\FakultasModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataPendaftaran->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 00:40:40 --> Class 'App\Controllers\FakultasModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataPendaftaran->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 00:43:55 --> Class 'App\Controllers\FakultasModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataPendaftaran->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 00:45:16 --> Class 'App\Controllers\FakultasModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataPendaftaran->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 00:45:20 --> Class 'App\Controllers\FakultasModel' not found
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataPendaftaran->__construct()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-03-09 00:48:03 --> Invalid file: v_dataPendaftaran/index.php
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v_dataPendaftar...')
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataPendaftar...', Array, true)
+#2 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(62): view('v_dataPendaftar...', Array)
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->index()
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+ERROR - 2022-03-09 00:58:54 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+CRITICAL - 2022-03-09 00:58:54 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_pen...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_pen...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_pen...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_pen...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\PendaftaranModel.php(56): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(135): App\Models\PendaftaranModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 00:59:32 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+CRITICAL - 2022-03-09 00:59:32 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_pen...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_pen...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_pen...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_pen...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\PendaftaranModel.php(56): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(135): App\Models\PendaftaranModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 00:59:46 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+CRITICAL - 2022-03-09 00:59:46 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_pen...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_pen...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_pen...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_pen...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\PendaftaranModel.php(56): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(135): App\Models\PendaftaranModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 00:59:50 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+CRITICAL - 2022-03-09 00:59:50 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_pen...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_pen...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_pen...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_pen...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\PendaftaranModel.php(56): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(135): App\Models\PendaftaranModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 01:04:30 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+CRITICAL - 2022-03-09 01:04:30 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_pen...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_pen...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_pen...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_pen...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\PendaftaranModel.php(56): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(135): App\Models\PendaftaranModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 01:06:28 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+CRITICAL - 2022-03-09 01:06:28 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_pen...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_pen...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_pen...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_pen...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\PendaftaranModel.php(56): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(135): App\Models\PendaftaranModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 01:06:37 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+CRITICAL - 2022-03-09 01:06:37 --> Table 'app-sipdb.tbl_pendaftaran' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_pen...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_pen...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_pen...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_pen...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\PendaftaranModel.php(56): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(135): App\Models\PendaftaranModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 01:11:32 --> Table 'app-sipdb.tbl_prodi' doesn't exist
+CRITICAL - 2022-03-09 01:11:32 --> Table 'app-sipdb.tbl_prodi' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `instans...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `instans...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `instans...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `instans...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\PendaftaranModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(135): App\Models\PendaftaranModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 01:37:06 --> Table 'app-sipdb.tbl_prodi' doesn't exist
+CRITICAL - 2022-03-09 01:37:06 --> Table 'app-sipdb.tbl_prodi' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `instans...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `instans...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `instans...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `instans...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\PendaftaranModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(135): App\Models\PendaftaranModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 18:49:33 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-03-09 18:49:33 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\app-sip\app\Controllers\Login.php(56): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-03-09 18:49:38 --> Error connecting to the database: No connection could be made because the target machine actively refused it.
+
+CRITICAL - 2022-03-09 18:49:38 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\app-sip\app\Controllers\Login.php(56): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-03-09 18:49:54 --> Table 'app-sipdb.tbl_prodi' doesn't exist
+CRITICAL - 2022-03-09 18:49:54 --> Table 'app-sipdb.tbl_prodi' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `instans...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `instans...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `instans...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `instans...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\PendaftaranModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(135): App\Models\PendaftaranModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 18:49:57 --> Table 'app-sipdb.tbl_prodi' doesn't exist
+CRITICAL - 2022-03-09 18:49:57 --> Table 'app-sipdb.tbl_prodi' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `instans...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `instans...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `instans...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `instans...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\PendaftaranModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(135): App\Models\PendaftaranModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-09 18:51:29 --> Table 'app-sipdb.tbl_prodi' doesn't exist
+CRITICAL - 2022-03-09 18:51:29 --> Table 'app-sipdb.tbl_prodi' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `instans...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `instans...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `instans...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `instans...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\PendaftaranModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(135): App\Models\PendaftaranModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-09 19:06:53 --> Undefined property: stdClass::$nomor_pendaftaran
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(142): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 142, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 19:07:06 --> Undefined property: stdClass::$nomor_pendaftaran
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(142): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 142, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 19:08:35 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(142): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 142, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 19:14:11 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataPendaftaran.php(142): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 142, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataPendaftaran->ajaxDataPendaftaran()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataPendaftaran))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 19:32:39 --> Cannot declare class App\Controllers\DataFormasi, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-03-09 19:33:36 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 57, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 19:33:38 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 57, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 19:33:39 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 57, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 19:33:39 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 57, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 19:40:24 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 68, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 19:45:20 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 68, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 19:49:16 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 55, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 19:58:50 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(69): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 69, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 20:04:08 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(96): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 96, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 20:05:34 --> syntax error, unexpected 'else' (T_ELSE)
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('dataformasi')
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('dataformasi')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 20:14:01 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(70): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 70, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 20:14:44 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(69): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 69, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 20:17:35 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(71): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 71, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 20:20:11 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(72): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 72, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 20:20:43 --> Undefined property: stdClass::$id
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(73): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 73, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 20:21:02 --> Undefined property: stdClass::$id
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(72): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 72, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 20:21:16 --> Undefined property: stdClass::$id
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(73): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 73, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 20:25:00 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(72): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 72, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 21:02:51 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 21:03:17 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 21:09:58 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 21:11:46 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 21:13:04 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 21:14:03 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 21:14:07 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 21:14:46 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 21:17:47 --> syntax error, unexpected 'search' (T_STRING), expecting ')'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Form...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Form...')
+#3 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(17): spl_autoload_call('App\\Models\\Form...')
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataFormasi->__construct()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+ERROR - 2022-03-09 21:18:01 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.`instansi_id`
+FROM `tbl_opd`
+ORDER BY `tbl_opd`.`id` DESC
+ LIMIT 10' at line 1
+CRITICAL - 2022-03-09 21:18:01 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.`instansi_id`
+FROM `tbl_opd`
+ORDER BY `tbl_opd`.`id` DESC
+ LIMIT 10' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `select ...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `select ...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `select ...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `select ...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(47): App\Models\FormasiModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-09 21:19:14 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::orderBy()
+#0 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(56): App\Models\FormasiModel->_get_datatables_query()
+#1 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(47): App\Models\FormasiModel->get_datatables()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-03-09 21:20:10 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::orderBy()
+#0 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(56): App\Models\FormasiModel->_get_datatables_query()
+#1 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(47): App\Models\FormasiModel->get_datatables()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-03-09 21:21:16 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::orderBy()
+#0 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(56): App\Models\FormasiModel->_get_datatables_query()
+#1 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(47): App\Models\FormasiModel->get_datatables()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+ERROR - 2022-03-09 21:24:21 --> Unknown column 'tbl_opd' in 'field list'
+CRITICAL - 2022-03-09 21:24:21 --> Unknown column 'tbl_opd' in 'field list'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_opd...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_opd...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_opd...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_opd...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(47): App\Models\FormasiModel->get_datatables()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-09 21:30:54 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-09 21:31:23 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
