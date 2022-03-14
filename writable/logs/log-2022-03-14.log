@@ -1,0 +1,72 @@
+ERROR - 2022-03-14 00:27:13 --> Table 'app-sipdb.tbl_instansi' doesn't exist
+CRITICAL - 2022-03-14 00:27:13 --> Table 'app-sipdb.tbl_instansi' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\UsulanModel.php(33): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(32): App\Models\UsulanModel->getUsulan('2022')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->index()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-14 00:27:20 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-14 00:29:12 --> Undefined property: stdClass::$instansi_nama
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 54)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->ajaxDataFormasi()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-03-14 00:29:14 --> Table 'app-sipdb.tbl_instansi' doesn't exist
+CRITICAL - 2022-03-14 00:29:14 --> Table 'app-sipdb.tbl_instansi' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\UsulanModel.php(33): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(32): App\Models\UsulanModel->getUsulan('2022')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->index()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-14 00:29:45 --> Table 'app-sipdb.tbl_unor' doesn't exist
+CRITICAL - 2022-03-14 00:29:45 --> Table 'app-sipdb.tbl_unor' doesn't exist
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\UsulanModel.php(33): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(32): App\Models\UsulanModel->getUsulan('2022')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->index()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-14 00:30:15 --> Unknown column 'tbl_usulan.tahun_usulan' in 'where clause'
+CRITICAL - 2022-03-14 00:30:15 --> Unknown column 'tbl_usulan.tahun_usulan' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\UsulanModel.php(33): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(32): App\Models\UsulanModel->getUsulan('2022')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->index()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
