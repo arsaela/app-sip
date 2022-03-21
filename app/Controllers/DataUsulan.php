@@ -41,7 +41,16 @@ class DataUsulan extends BaseController
 		$data['email']   = $this->session->get('email');
 
         $getDetailUsulan = $this->M_usulan->getDetailUsulanByID($id)->getResult();
-		
+		//$getJabatanKodeByDetailUsulan = $this->M_usulan->getJabatanKodeByDetailUsulan($id)->getResult();
+		// $getInstansiKodeByUsulan = $this->M_usulan->getInstansiKodeByUsulan($id)->getResult();
+
+
+		// $getJumlahKebutuhanFormasi = $this->M_usulan->getJumlahKebutuhanFormasi($getJabatanKodeByDetailUsulan, $getInstansiKodeByUsulan)->getResult();
+		//echo "<pre>";
+		//print_r($getJabatanKodeByDetailUsulan);
+		//echo "<br>";
+		//die("STTTOPPPP");
+
         if(isset($getDetailUsulan))
         {
             $data['detail_usulan_by_id'] = $getDetailUsulan;

@@ -37,10 +37,9 @@
                    <th>No</th>
                     <th>Nama Jabatan</th>
                     <th>ABK</th>
-                    <th>Existing</th>
-                    <th>Status Pegawai</th>
                     <th>Usulan</th>
                     <th>Approve</th>
+                    <th>Cek Existing</th>
                     <th>Status Usulan</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
@@ -51,11 +50,10 @@
                             <tr>
                                 <td><?php echo $no;?></td>
                                 <td><?php echo $value->jabatan_nama;?></td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
+                                <td><?php echo $value->formasi_jumlah;?></td>
                                 <td><?php echo $value->jumlah_usulan;?></td>
                                 <td><?php echo $value->jumlah_approve;?></td>
+                                <td><button type="button" class="btn_detail_usulan btn btn-success" data-toggle="modal" value="<?php echo $value->detail_usulan_id;?>" data-target="#ApproveUsulan-<?php echo $value->detail_usulan_id;?>"><i class="fa fa-search "> </i></button></td>
 
                                 <td><?php 
                                 if($value->status_usulan==0){
@@ -101,7 +99,10 @@
                                                   <label>Instansi Nama</label>
                                                   <input type="text" class="form-control instansi_nama" name="instansi_nama" placeholder="Instansi Nama" value="<?php echo $get_usulan_by_id->instansi_nama;?>" readonly="readonly">
                                               </div>
-                                              
+                                              <div class="form-group">
+                                                  <label>ABK (Jumlah Formasi)</label>
+                                                  <input type="text" class="form-control formasi_jumlah" name="formasi_jumlah" placeholder="Jumlah Formasi" value="<?php echo $get_usulan_by_id->formasi_jumlah;?>" readonly="readonly">
+                                              </div>
                                               <div class="form-group">
                                                   <label>Jumlah Usulan</label>
                                                   <input type="text" class="form-control jumlah_usulan" name="jumlah_usulan" placeholder="Jumlah Usulan" value="<?php echo $value->jumlah_usulan;?>" readonly="readonly">
@@ -177,6 +178,7 @@
                                     Hapus</i></a> -->
 
                                 </td>
+                              
                             </tr>
                       <?php $no++;}?>
                     </tbody>  

@@ -9,7 +9,7 @@ class FormasiModel extends Model
 	protected $allowedFields = ['instansi_id','instansi_uker','jabatan_kode','formasi_jumlah'];
 	protected $column_order = [null, 'instansi_id','instansi_uker','jabatan_kode','formasi_jumlah', null];
 	protected $column_search = ['instansi_id','instansi_uker','jabatan_kode','formasi_jumlah'];
-	protected $order = ['id' => 'desc'];
+	protected $order = ['formasi_id' => 'desc'];
 	protected $request;
 	protected $db;
 	protected $dt;
