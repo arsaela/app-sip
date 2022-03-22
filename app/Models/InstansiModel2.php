@@ -7,6 +7,7 @@ use CodeIgniter\Model;
 
 class InstansiModel extends Model
 {
+
 	protected $table = "tbl_instansi";
 	protected $allowedFields = ['instansi_id', 'instansi_nama'];
 	protected $useTimestamps = true;
@@ -23,19 +24,8 @@ class InstansiModel extends Model
 		$this->db = db_connect();
 		$this->request = $request;
 		$this->dt = $this->db->table($this->table);
+		#$this->dt = $this->db->table($this->table)->select('tbl_instansi.id, instansi_id, instansi_nama')->join('tbl_formasi', 'tbl_formasi.instansi_uker = tbl_instansi.instansi_id', 'left');
 	}
-
-	public function getInstansi()
-    {
-        $query =  $this->db->table('tbl_instansi')
-        //  ->join('tbl_instansi', 'tbl_usulan.instansi_id = tbl_instansi.instansi_id')
-		//  ->join('tbl_unor', 'tbl_usulan.instansi_unor = tbl_unor.instansi_unor')
-		//  ->where('tbl_usulan.tahun_usulan',$yearnow)
-         ->get();  
-        return $query;
-    }
-
-	
 
 	private function _get_datatables_query()
 	{
@@ -82,7 +72,13 @@ class InstansiModel extends Model
 		$tbl_storage = $this->db->table($this->table);
 		return $tbl_storage->countAllResults();
 	}
+
+	public function detail_formasi()
+	{
+		$this->db = db_connect();
+		$this->db->table($this->table)->select('tbl_instansi.id, instansi_id, instansi_nama')->join('tbl_formasi', 'tbl_formasi.instansi_uker = tbl_instansi.instansi_id', 'left')->where('tbl_instansi.id', '76');
+	}
 }
 
-/* End of file PetugasModel.php */
-/* Location: .//C/xampp/htdocs/app-sip/app/Models/PetugasModel.php */
+/* End of file PendaftaranModel.php */
+/* Location: .//C/xampp/htdocs/app-pmb/app/Models/PendaftaranModel.php */

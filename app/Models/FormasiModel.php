@@ -19,8 +19,21 @@ class FormasiModel extends Model
 	   $this->db = db_connect();
 	   $this->request = $request;
 	   #$this->dt = $this->db->table($this->table)->select('*');
-       $this->dt = $this->db->table($this->table)->select('tbl_formasi.id, tbl_formasi.instansi_id,tbl_formasi.instansi_uker,tbl_formasi.jabatan_kode,formasi_jumlah,tbl_jabatan.jabatan_nama,tbl_unor.instansi_unor_nama,tbl_pegawai.pegawai_nama, count(tbl_pegawai.pegawai_nama) as jumlahasn')->join('tbl_jabatan', 'tbl_jabatan.jabatan_kode = tbl_formasi.jabatan_kode', 'left')->join('tbl_unor', 'tbl_unor.instansi_unor = tbl_formasi.instansi_uker')->join('tbl_pegawai', 'tbl_pegawai.jabatan_kode = tbl_formasi.jabatan_kode')->groupBy('tbl_pegawai.jabatan_kode,tbl_pegawai.instansi_uker')->where('tbl_pegawai.instansi_uker = tbl_formasi.instansi_uker');
+       //$this->dt = $this->db->table($this->table)->select('tbl_formasi.id, tbl_formasi.instansi_id,tbl_formasi.instansi_uker,tbl_formasi.jabatan_kode,formasi_jumlah,tbl_jabatan.jabatan_nama,tbl_unor.instansi_unor_nama,tbl_pegawai.pegawai_nama, count(tbl_pegawai.pegawai_nama) as jumlahasn')->join('tbl_jabatan', 'tbl_jabatan.jabatan_kode = tbl_formasi.jabatan_kode', 'left')->join('tbl_unor', 'tbl_unor.instansi_unor = tbl_formasi.instansi_uker')->join('tbl_pegawai', 'tbl_pegawai.jabatan_kode = tbl_formasi.jabatan_kode')->groupBy('tbl_pegawai.jabatan_kode,tbl_pegawai.instansi_uker')->where('tbl_pegawai.instansi_uker = tbl_formasi.instansi_uker');
 	}
+
+	public function getDetailFormasi()
+    {
+        $query =  $this->db->table('tbl_formasi')
+		 ->join('tbl_instansi', 'tbl_formasi.instansi_id = tbl_instansi.instansi_id')
+         ->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode')
+		 ->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor')
+		 ->join('tbl_pegawai', 'tbl_formasi.jabatan_kode = tbl_pegawai.jabatan_kode')
+		 ->where('tbl_pegawai.instansi_unor= tbl_formasi.instansi_unor')
+         ->get();  
+        return $query;
+    }
+
 
 	private function _tbl_formasi($idInstansi){
 		$this->dt->where('tbl_formasi.instansi_id', $idInstansi);

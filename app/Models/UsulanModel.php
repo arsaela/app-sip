@@ -132,6 +132,14 @@ class UsulanModel extends Model
         return $query;
     }
 
+	
+	public function getPegawaiByUnorAndInstansi($idJabatan)
+    {
+        $query =  $this->db->table('tbl_pegawai')
+		 ->where('jabatan_kode',$idJabatan)
+         ->get();  
+		 return $query->result();
+    }
 
 	
 

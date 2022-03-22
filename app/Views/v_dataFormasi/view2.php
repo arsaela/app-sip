@@ -40,23 +40,6 @@
                   </tr>
                 </thead>
                 <tbody>
-                      <?php $no=1; foreach($getDetailFormasi as $isi){?>
-                            <tr>
-                                <td><?php echo $no;?></td>
-                                <td><?php echo $isi->jabatan_nama;?></td>
-                                <td><?php echo $isi->instansi_unor;?></td>
-                                <td><?php echo $isi->formasi_jumlah;?></td>
-                                <td><?php echo "jumlah asn";?></td>
-                                <td>
-                                  <a href="<?php echo base_url(''.$isi->id);?>" 
-                                    class="btn btn-warning"><i class="fa fa-eye">detail</i></a></td>
-                                <td>
-                                    <a href="<?php echo base_url('dataformasi/view/'.$isi->id);?>" 
-                                    class="btn btn-warning"><i class="fa fa-eye"></i></a>
-                                </td>
-                            </tr>
-                        <?php $no++;}?>
-
                 </tbody>
               </table>
             </div>
@@ -65,7 +48,11 @@
           <!-- /.card -->
         </div>
       </div>
-      <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja"/>
+      <input
+    action="action"
+    onclick="window.history.go(-1); return false;"
+    type="submit"
+    value="Kembali Halaman Unit Kerja"/>
     </div>
     
   </section>
@@ -73,4 +60,35 @@
 
 </div>
 <!-- /.content-wrapper -->
+<?= $this->endSection() ?>
+
+<?= $this->section('script') ?>
+<script>
+  <?php 
+      $link = base_url('dataformasi/ajaxDataFormasi/'.$id_instansi);
+  ?>
+  $(document).ready(function() {
+
+    //Menampilkan data pendaftaran (dataTable server-side)
+    $('#example1').DataTable({
+      "responsive": true,
+      "autoWidth": false,
+      "processing": true,
+      "serverSide": true,
+      "order": [],
+
+      "ajax": {
+        "url": "<?php echo $link; ?>",
+        "type": "POST"
+      },
+
+      "columnDefs": [{
+        "targets": [0],
+        "orderable": false,
+      }, ],
+    });
+    //-------------------------------------------------------------------
+
+  });
+</script>
 <?= $this->endSection() ?>

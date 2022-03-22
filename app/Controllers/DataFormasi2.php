@@ -21,18 +21,42 @@ class DataFormasi extends BaseController
 		$this->session = \Config\Services::session();
 	}
 
+		// Tombol Aksi Pada Tabel Data Prodi
+		private function _action2($idFormasi)
+		{ 
+			$link = "
+				<a data-toggle='tooltip' data-placement='top' class='btn-detilPNS' title='Detail' value='".$idFormasi."'>
+					  <button type='button' class='btn btn-outline-success btn-xs' data-toggle='modal' data-target='#modalEdit'><i class='btn btn-primary'></i></button>
+				  </a>
+		  
+			";
+			return $link;
+		}
+
+	// Tombol Aksi Pada Tabel Data Prodi
+	private function _action($idFormasi)
+	{ 
+		$link = "
+			<a data-toggle='tooltip' data-placement='top' class='btn-editProdi' title='Update' value='".$idFormasi."'>
+	      		<button type='button' class='btn btn-outline-success btn-xs' data-toggle='modal' data-target='#modalEdit'><i class='fa fa-edit'></i></button>
+	      	</a>
+	      
+	      	<a href='".base_url('dataformasi/delete/'.$idFormasi)."' class='btn-deleteProdi' data-toggle='tooltip' data-placement='top' title='Delete'>
+	      		<button type='button' class='btn btn-outline-danger btn-xs'><i class='fa fa-trash'></i></button>
+	      	</a>
+            
+	    ";
+	    return $link;
+	}
+
 	// Halaman Data Prodi
-	public function detail_formasi($idInstansi)
+	public function view($idInstansi)
 	{
 		$data ['title']  = "App-PMB | Data Formasi";
 		$data ['page']   = "dataformasi";
 		$data ['nama']   = $this->session->get('nama');
 		$data ['email']   = $this->session->get('email');
 
-		$data['getDetailFormasi'] = $this->M_formasi->getDetailFormasi()->getResult();
-
-		print_r($data['getDetailFormasi']);
-		die('stttoppp');
 
 		return view('v_dataFormasi/view', $data);
 		

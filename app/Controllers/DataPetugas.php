@@ -42,6 +42,7 @@ class DataPetugas extends BaseController
 		$data['page']   = "datapetugas";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
+
 		return view('v_datapetugas/index', $data);
 	}
 

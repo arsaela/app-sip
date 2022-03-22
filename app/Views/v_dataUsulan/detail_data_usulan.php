@@ -49,11 +49,66 @@
                     <?php $no=1; foreach($detail_usulan_by_id as $value){?>
                             <tr>
                                 <td><?php echo $no;?></td>
-                                <td><?php echo $value->jabatan_nama;?></td>
+                                <td>
+                                  <?php echo $value->jabatan_nama;?>
+                                  <input type="hidden" name="jabatan_kode" class="get_jabatan_kode" value="<?php echo $value->jabatan_kode;?>"/>
+                                </td>
                                 <td><?php echo $value->formasi_jumlah;?></td>
                                 <td><?php echo $value->jumlah_usulan;?></td>
                                 <td><?php echo $value->jumlah_approve;?></td>
-                                <td><button type="button" class="btn_detail_usulan btn btn-success" data-toggle="modal" value="<?php echo $value->detail_usulan_id;?>" data-target="#ApproveUsulan-<?php echo $value->detail_usulan_id;?>"><i class="fa fa-search "> </i></button></td>
+                                <td>
+                                <!-- <a href="#" class="btn btn-primary btn-sm btn-edit" data-id="<?php //echo $value->jabatan_kode?>">Search</a> -->
+                                <a data-toggle='tooltip' data-placement='top' class='btn-editPetugas' title='Update' value='" . <?php echo $value->jabatan_kode;?> . "'>
+                                  <button type='button' class='btn btn-outline-success btn-xs' data-toggle='modal' data-target='#modalCekPegawaibyUnorAndOpd'><i class='fa fa-edit'></i></button>
+                                </a>
+                                
+                                <div class="modal fade" id="modalCekPegawaibyUnorAndOpd">
+                                  <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h4 class="modal-title">Data Pegawai di unor <?php echo $get_usulan_by_id->instansi_unor_nama;?> </h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <form id="formUpdateDataPetugas">
+                                        <div class="modal-body">
+                                          <input type="hidden" name="idPetugas">
+                                          <div class="form-group">
+                                            <label for="username">Nama Jabatan</label>
+                                            <input type="text" class="form-control" name="jabatan_nama" placeholder="Username">
+                                            <small id="username2_error" class="text-danger"> </small>
+
+                                            <label for="petugas_nama">Nama Petugas</label>
+                                            <input type="text" class="form-control" name="petugas_nama2" placeholder="Nama Petugas">
+                                            <small id="petugas_nama2_error" class="text-danger"> </small>
+
+                                            <label for="petugas_no_hp">No. HP</label>
+                                            <input type="text" class="form-control" name="petugas_no_hp2" placeholder="No. HP">
+                                            <small id="petugas_no_hp2_error" class="text-danger"> </small>
+
+                                            <label for="petugas_email">Email</label>
+                                            <input type="text" class="form-control" name="petugas_email2" placeholder="Email">
+                                            <small id="petugas_email2_error" class="text-danger"> </small>
+                                          </div>
+                                        </div>
+                                      </form>
+                                      <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" id="btn-updateDataPetugas" class="btn btn-primary">Save</button>
+                                      </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                  </div>
+                                  <!-- /.modal-dialog -->
+                                </div>
+
+                                 
+                                <button data-id="<?php echo $value->jabatan_kode;?>" class="btn btn-primary btn_edit">Pegawai</button>
+
+
+
+                              </td>
 
                                 <td><?php 
                                 if($value->status_usulan==0){
@@ -195,4 +250,39 @@
 
 </div>
 <!-- /.content-wrapper -->
+<?= $this->endSection() ?>
+
+
+
+<?= $this->section('script') ?>
+<script>
+
+$('body').on('click', '.btn-editPetugas', function() {
+  const idJabatan = $(this).attr('value');
+  alert("ajaja" + idJabatan);
+
+$.ajax({
+        url: "/dataUsulan/get_pegawai_by_unor_and_instansi/" + idJabatan,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data) {
+          alert("testes" + idJabatan);
+
+          $('[name="idPetugas"]').val(data.id);
+          $('[name="username2"]').val(data.username);
+          $('[name="petugas_nama2"]').val(data.petugas_nama);
+          $('[name="petugas_no_hp2"]').val(data.petugas_no_hp);
+          $('[name="petugas_email2"]').val(data.petugas_email);
+          $('#modalEdit').modal('show');
+        }
+})
+
+
+});
+
+
+
+
+
+</script>
 <?= $this->endSection() ?>

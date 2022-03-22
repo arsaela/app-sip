@@ -41,6 +41,7 @@ class DataUsulan extends BaseController
 		$data['email']   = $this->session->get('email');
 
         $getDetailUsulan = $this->M_usulan->getDetailUsulanByID($id)->getResult();
+
 		//$getJabatanKodeByDetailUsulan = $this->M_usulan->getJabatanKodeByDetailUsulan($id)->getResult();
 		// $getInstansiKodeByUsulan = $this->M_usulan->getInstansiKodeByUsulan($id)->getResult();
 
@@ -126,6 +127,18 @@ class DataUsulan extends BaseController
 		// print_r($id);
 		// die('STPPPPP');
 		return redirect()->back();
+    }
+
+	public function get_pegawai_by_unor_and_instansi($idJabatan)
+    {
+		$data['page']   = "Get Data Pegawai by unor opd";
+		$data['nama']   = $this->session->get('nama');
+		$data['email']   = $this->session->get('email');
+
+        $getPegawaiByUnorAndInstansi = $this->M_usulan->getPegawaiByUnorAndInstansi($idJabatan)->getResult();
+		// echo json_encode($getPegawaiByUnorAndInstansi);
+		// echo json_encode($getPegawaiByUnorAndInstansi);
+		// return view('v_dataUsulan/index', $data);
     }
 
 }

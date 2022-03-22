@@ -27,7 +27,7 @@
               <h3 class="card-title">Tabel Unit Kerja</h3>
             </div>
             <div class="card-body table-responsive">
-              <table id="datatable-list" class="table table-bordered table-striped">
+              <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>No.</th>
@@ -36,13 +36,28 @@
                   </tr>
                 </thead>
                 <tbody>
-                      <?php $no=1; foreach($getInstansi as $isi){?>
+                      <?php $no=1; foreach($getUsulan as $isi){?>
                             <tr>
                                 <td><?php echo $no;?></td>
+                                <td><?php echo $isi->usulan_id;?></td>
+                                <td><?php echo $isi->instansi_unor_nama;?></td>
                                 <td><?php echo $isi->instansi_nama;?></td>
+                                <td><?php echo "ket.status";?></td>
                                 <td>
-                                    <a href="<?php echo base_url('dataformasi/detail_formasi/'.$isi->id);?>" 
-                                    class="btn btn-warning"><i class="fa fa-eye"></i></a>
+                                    <a href="<?php echo base_url('DataUsulan/detail_usulan/'.$isi->usulan_id);?>" 
+                                    class="btn btn-warning"><i class="fa fa-folder-open-o ">
+                                    Detail</i></a>
+                                    <!-- <a href="<?php //echo base_url('DataUsulan/approval_usulan/'.$isi->jabatan_kode);?>" 
+                                    class="btn btn-success"><i class="fa fa-check ">
+                                    Approve</i></a>
+                                    <a href="<?php //echo base_url('DataUsulan/rejected/'.$isi->usulan_id);?>" 
+                                    class="btn btn-danger"><i class="fa fa-times ">
+                                    Rejected</i></a> -->
+                                    <!-- <a href="<?php //echo base_url('DataUsulan/hapus/'.$isi->usulan_id);?>" 
+                                    onclick="javascript:return confirm('Apakah anda yakin ini  ?')"
+                                    class="btn btn-danger"><i class="fa fa-trash">
+                                    Hapus</i></a> -->
+
                                 </td>
                             </tr>
                         <?php $no++;}?>
