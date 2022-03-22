@@ -36,16 +36,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                      <?php $no=1; foreach($getInstansi as $isi){?>
-                            <tr>
-                                <td><?php echo $no;?></td>
-                                <td><?php echo $isi->instansi_nama;?></td>
-                                <td>
-                                    <a href="<?php echo base_url('dataformasi/detail_formasi/'.$isi->id);?>" 
-                                    class="btn btn-warning"><i class="fa fa-eye"></i></a>
-                                </td>
-                            </tr>
-                        <?php $no++;}?>
+                  <?php $no = 1;
+                  foreach ($getInstansi as $isi) { ?>
+                    <tr>
+                      <td><?php echo $no; ?></td>
+                      <td><?php echo $isi->instansi_nama; ?></td>
+                      <td>
+                        <a href="<?php echo base_url('dataformasi/detail_formasi/' . $isi->instansi_id); ?>" class="btn btn-warning"><i class="fa fa-eye"></i></a>
+                      </td>
+                    </tr>
+                  <?php $no++;
+                  } ?>
 
                 </tbody>
               </table>
@@ -61,4 +62,3 @@
 </div>
 <!-- /.content-wrapper -->
 <?= $this->endSection() ?>
-
