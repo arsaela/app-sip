@@ -26,13 +26,16 @@
             <div class="card-header">
               <h3 class="card-title">Tabel Detail Formasi</h3>
             </div>
+            
             <div class="card-body table-responsive">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="datatable-list" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>No.</th>
                     <th>Formasi</th>
+                    <th>Formasi Kode</th>
                     <th>Lokasi Unit Kerja</th>
+                    <th>Lokasi Unit Kode</th>
                     <th>Jumlah Kebutuhan</th>
                     <th>Jumlah ASN</th>
                     <th>Detil ASN</th>
@@ -45,10 +48,16 @@
                     <tr>
                       <td><?php echo $no; ?></td>
                       <td><?php echo $value->jabatan_nama;?></td>
+<<<<<<< HEAD
+=======
+                      <td><?php echo $value->jabatan_kode;?></td>
+                      <td><?php echo $value->instansi_unor_nama; ?></td>
+>>>>>>> e934d5183acfe62c401bbdc106026147ba941bca
                       <td><?php echo $value->instansi_unor; ?></td>
                       <td><?php echo $value->formasi_jumlah; ?></td>
                       <td><?php echo $value->jumlahasn; ?></td>
                       <td>
+<<<<<<< HEAD
                         <button type="button" class="btn_detail_usulan btn btn-success" data-toggle="modal" value="<?php echo $value->jabatan_kode; ?>" data-target="#ApproveUsulan-<?php echo $value->jabatan_kode; ?>"><i class="fa fa-check "> Detail Pegawai</i></button>
 
                         <!-- Modal APPROVE USULAN-->
@@ -61,10 +70,68 @@
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
+=======
+
+                      <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
+
+                      <!-- The Pegawai -->
+                      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="judul">List Pegawai Jabatan</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                    <table class="table table-bordered">
+                                      <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Jabatan Nama</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody id="show_data">
+                                      </tbody>
+                                    </table>
+                                    </div>
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                                    </div>
+
+                                    </div>
+>>>>>>> e934d5183acfe62c401bbdc106026147ba941bca
                                 </div>
+                      </div>
 
-                                <div class="modal-body">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<<<<<<< HEAD
                                   <div class="form-group">
                                     <label>Jabatan Nama</label>
                                     <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" value="<?php echo $value->jabatan_nama; ?>" readonly="readonly">
@@ -103,6 +170,12 @@
                       <td><?php echo $isi->pegawai_nama; ?></td>
                       <td><?php echo $isi->pegawai_nip; ?></td>
                       <td><?php echo $isi->instansi_unor; ?></td>
+=======
+
+                      </td>
+
+                     
+>>>>>>> e934d5183acfe62c401bbdc106026147ba941bca
                       <td>
                         <a href="<?php echo base_url('dataformasi/detail_formasi/' . $isi->jabatan_kode); ?>" class="btn btn-warning"><i class="fa fa-eye"></i></a>
                       </td>
@@ -159,4 +232,46 @@
 
 </div>
 <!-- /.content-wrapper -->
+<?= $this->endSection() ?>
+
+<?= $this->section('script') ?>
+<script>
+
+//Menampilakan modal edit data petugas
+$('body').on('click', '.edit', function() {
+  var instansiunor = $(this).attr("instansi_unor");
+  var jabatankode = $(this).attr("jabatan_kode");
+      $.ajax({
+        url: "/dataFormasi/cek_detail_pegawai/",
+        type: "GET",
+        dataType: "JSON",
+        data: {instansiunor:instansiunor, jabatankode:jabatankode},
+        success: function(data) {
+          // alert("sukses"+data);
+          var output = '';
+          var no=0;
+          var i=0; 
+          while(i<data.length){
+            no++;
+                  output += '<tr>'+
+                              '<td>' + no  + '</td>'+
+                              '<td>'+data[i].pegawai_nama+'</td>'+
+                              '<td>'+data[i].jabatan_nama+'</td>'+
+                              // '<td>'+data[i].jabatan_kode+'</td>'+
+                              // '<td>'+data[i].formasi_jumlah+'</td>'+
+                             
+                            '</tr>';
+                  i++;
+          }
+        
+          $('#myModal').modal("show");
+          $('#show_data').html(output);
+        }
+      })
+
+    });
+
+
+
+</script>
 <?= $this->endSection() ?>
