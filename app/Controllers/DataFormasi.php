@@ -39,22 +39,16 @@ class DataFormasi extends BaseController
 		return view('v_dataFormasi/view', $data);
 	}
 
-<<<<<<< HEAD
+	
 	public function detail_pegawai($idJabatan,$idUnor)
-=======
-	public function detail_pegawai2($idInstansi)
->>>>>>> e934d5183acfe62c401bbdc106026147ba941bca
 	{
 		$data['title']  = "App-PMB | Data Formasi";
 		$data['page']   = "dataformasi";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
 
-<<<<<<< HEAD
 		$data['getDetailPegawai'] = $this->M_formasi->getDetailPegawai($idJabatan,$idUnor)->getResult();
-=======
 		$data['getDetailPegawai'] = $this->M_formasi->getDetailPegawai($idInstansi)->getResult();
->>>>>>> e934d5183acfe62c401bbdc106026147ba941bca
 
 		return view('v_dataFormasi/view', $data);
 	}

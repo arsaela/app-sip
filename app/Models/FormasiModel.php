@@ -49,15 +49,8 @@ class FormasiModel extends Model
 	public function getDetailPegawai($idJabatan,$idUnor)
 	{
 		$query =  $this->db->table('tbl_formasi')
-<<<<<<< HEAD
-			->select('tbl_formasi.instansi_id,tbl_formasi.instansi_unor,tbl_formasi.jabatan_kode,formasi_jumlah,tbl_jabatan.jabatan_nama,tbl_unor.instansi_unor_nama,tbl_pegawai.pegawai_nama,tbl_pegawai.pegawai_nip, CONCAT(tbl_jabatan.jabatan_nama, tbl_unor.instansi_unor_nama) as jabatan, count(tbl_pegawai.pegawai_nama) as jumlahasn')
-			->where('tbl_formasi.jabatan_kode', $idJabatan)
-			->where('tbl_formasi.instansi_unor', $idUnor)
-			->join('tbl_instansi', 'tbl_formasi.instansi_id = tbl_instansi.instansi_id', 'left')
-=======
-			->select('tbl_formasi.instansi_id,tbl_formasi.instansi_unor,tbl_formasi.jabatan_kode,formasi_jumlah,tbl_jabatan.jabatan_nama,tbl_unor.instansi_unor_nama,tbl_pegawai.pegawai_nama')
+		->select('tbl_formasi.instansi_id,tbl_formasi.instansi_unor,tbl_formasi.jabatan_kode,formasi_jumlah,tbl_jabatan.jabatan_nama,tbl_unor.instansi_unor_nama,tbl_pegawai.pegawai_nama')
 			->where('tbl_formasi.instansi_id', $idInstansi)
->>>>>>> e934d5183acfe62c401bbdc106026147ba941bca
 			->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
 			->join('tbl_unor', 'tbl_unor.instansi_unor = tbl_formasi.instansi_unor', 'left')
 			->join('tbl_pegawai', 'tbl_formasi.jabatan_kode = tbl_pegawai.jabatan_kode', 'left')
