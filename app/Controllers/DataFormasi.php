@@ -26,52 +26,26 @@ class DataFormasi extends BaseController
 	// Halaman Data Prodi
 	public function detail_formasi($idInstansi)
 	{
-		$data['title']  = "App-PMB | Data Formasi";
+		$data['title']  = "App-SIP | Data Formasi";
 		$data['page']   = "dataformasi";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
 
 		$data['getDetailFormasi'] = $this->M_formasi->getDetailFormasi($idInstansi)->getResult();
-		// $data['getDetailPegawai'] = $this->M_formasi->getDetailPegawai($idInstansi)->getResult();
-		// print_r($data['getDetailFormasi']);
-		// die('stttoppppppp');
-		
+
 		return view('v_dataFormasi/view', $data);
 	}
 
-	
-	public function detail_pegawai($idJabatan,$idUnor)
+	public function detail_pegawai()
 	{
-		$data['title']  = "App-PMB | Data Formasi";
-		$data['page']   = "dataformasi";
-		$data['nama']   = $this->session->get('nama');
-		$data['email']   = $this->session->get('email');
-
-		$data['getDetailPegawai'] = $this->M_formasi->getDetailPegawai($idJabatan,$idUnor)->getResult();
-		$data['getDetailPegawai'] = $this->M_formasi->getDetailPegawai($idInstansi)->getResult();
-
-		return view('v_dataFormasi/view', $data);
-	}
-
-	public function cek_detail_pegawai()
-    {
 		if ($this->request->isAJAX()) {
-		$instansiunor =   $this->request->getVar('instansiunor');
-		$jabatankode =  $this->request->getVar('jabatankode');
-		//return view('v_dataFormasi/cek_detail_pegawai',$data);
-		$data=$this->M_formasi->getpegawaibyunorandjabatan($instansiunor,$jabatankode)->getResult();
-		// print_r($data);
-		// echo "<br>";
-		// print_r($instansiunor);
-		// echo "<br>";
-		// print_r($jabatankode);
-		// die('stttoppppppp');
-		echo json_encode($data);
+			$idUnor =   $this->request->getVar('instansiunor');
+			$idJabatan =  $this->request->getVar('jabatankode');
+			$data = $this->M_formasi->getDetailPegawai($idUnor, $idJabatan)->getResult();
+			echo json_encode($data);
 		}
-
-		
-    }
+	}
 }
 
-/* End of file DataProdi.php */
-/* Location: .//C/xampp/htdocs/app-pmb/app/Controllers/DataProdi.php */
+/* End of file DataFormasi.php */
+/* Location: .//C/xampp/htdocs/app-sip/app/Controllers/DataFormasi.php */

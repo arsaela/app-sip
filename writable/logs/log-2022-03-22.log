@@ -1728,3 +1728,359 @@ CRITICAL - 2022-03-22 11:15:26 --> Unknown column 'tbl_pegawai.instansi_id' in '
 #10 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
 #11 {main}
 >>>>>>> e934d5183acfe62c401bbdc106026147ba941bca
+ERROR - 2022-03-22 21:52:26 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+CRITICAL - 2022-03-22 21:52:26 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(102): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(62): App\Models\FormasiModel->getpegawaibyunorandjabatan('CB00000000', '5010')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->cek_detail_pegawai()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-22 21:52:26 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+CRITICAL - 2022-03-22 21:52:26 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(102): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(62): App\Models\FormasiModel->getpegawaibyunorandjabatan('CB00000000', '5010')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->cek_detail_pegawai()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-22 21:53:18 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+CRITICAL - 2022-03-22 21:53:18 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(62): App\Models\FormasiModel->getpegawaibyunorandjabatan('CB00000000', '5010')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->cek_detail_pegawai()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-22 21:53:19 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+CRITICAL - 2022-03-22 21:53:19 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(62): App\Models\FormasiModel->getpegawaibyunorandjabatan('CB00000000', '5010')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->cek_detail_pegawai()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-22 21:53:21 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+CRITICAL - 2022-03-22 21:53:21 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(62): App\Models\FormasiModel->getpegawaibyunorandjabatan('CB01030000', '4042')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->cek_detail_pegawai()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-22 21:53:21 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+CRITICAL - 2022-03-22 21:53:21 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(62): App\Models\FormasiModel->getpegawaibyunorandjabatan('CB01030000', '4042')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->cek_detail_pegawai()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-22 21:53:39 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+CRITICAL - 2022-03-22 21:53:39 --> Unknown column 'tbl_pegawai.jabatankode' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(62): App\Models\FormasiModel->getpegawaibyunorandjabatan('CB00000000', '5010')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->cek_detail_pegawai()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-22 21:57:07 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::result()
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(138): App\Models\UsulanModel->getPegawaiByUnorAndInstansi('" . 3600146 . "')
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->get_pegawai_by_unor_and_instansi('" . 3600146 . "')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-22 22:08:27 --> Undefined property: stdClass::$jumlahasn
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataUsulan\detail_data_usulan.php(61): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 61, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataUsulan/de...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(60): view('v_dataUsulan/de...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->detail_usulan('2')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-22 22:27:16 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::get() must be of the type int or null, string given, called in C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Model.php on line 728
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get('CB01030000', '3407')
+#1 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(62): CodeIgniter\Model->__call('get', Array)
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->cek_detail_pegawai()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-03-22 22:27:17 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::get() must be of the type int or null, string given, called in C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Model.php on line 728
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get('CB01030000', '3407')
+#1 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(62): CodeIgniter\Model->__call('get', Array)
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->cek_detail_pegawai()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+ERROR - 2022-03-22 22:40:16 --> Unknown column 'tbl_formasi.jabatan' in 'order clause'
+CRITICAL - 2022-03-22 22:40:16 --> Unknown column 'tbl_formasi.jabatan' in 'order clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-22 23:06:39 --> Unknown column 'tbl_pegawai.jumlahasn' in 'field list'
+CRITICAL - 2022-03-22 23:06:39 --> Unknown column 'tbl_pegawai.jumlahasn' in 'field list'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-22 23:07:09 --> Undefined variable: value
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataFormasi\view.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-22 23:07:11 --> Undefined variable: value
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataFormasi\view.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-22 23:07:26 --> Undefined variable: value
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataFormasi\view.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-22 23:07:27 --> Undefined variable: value
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataFormasi\view.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-22 23:07:27 --> Undefined variable: value
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataFormasi\view.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-03-22 23:31:13 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`null`
+GROUP BY `jabatan`
+ORDER BY `tbl_formasi`.`instansi_unor` asc' at line 8
+CRITICAL - 2022-03-22 23:31:13 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`null`
+GROUP BY `jabatan`
+ORDER BY `tbl_formasi`.`instansi_unor` asc' at line 8
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('EU')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('EU')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-22 23:42:35 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::result()
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(138): App\Models\UsulanModel->getPegawaiByUnorAndInstansi('" . 5010 . "')
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->get_pegawai_by_unor_and_instansi('" . 5010 . "')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-22 23:43:48 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::result()
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(138): App\Models\UsulanModel->getPegawaiByUnorAndInstansi('" . 5010 . "')
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->get_pegawai_by_unor_and_instansi('" . 5010 . "')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-22 23:46:42 --> Undefined variable: getDetailFormasi
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataUsulan\detail_data_usulan.php(83): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 83, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataUsulan/de...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(60): view('v_dataUsulan/de...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->detail_usulan('2')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-22 23:48:12 --> Undefined variable: getDetailFormasi
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataUsulan\detail_data_usulan.php(83): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 83, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataUsulan/de...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(60): view('v_dataUsulan/de...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->detail_usulan('2')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-22 23:48:13 --> Undefined variable: getDetailFormasi
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataUsulan\detail_data_usulan.php(83): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 83, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataUsulan/de...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(60): view('v_dataUsulan/de...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->detail_usulan('2')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-22 23:48:16 --> Undefined variable: getDetailFormasi
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataUsulan\detail_data_usulan.php(83): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 83, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataUsulan/de...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(60): view('v_dataUsulan/de...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->detail_usulan('2')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-22 23:50:39 --> syntax error, unexpected '}', expecting end of file
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataUsulan/de...', Array, true)
+#2 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(60): view('v_dataUsulan/de...', Array)
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->detail_usulan('2')
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-03-22 23:58:48 --> Undefined property: App\Controllers\DataUsulan::$M_formasi
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->detail_pegawai_usulan()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-22 23:58:49 --> Undefined property: App\Controllers\DataUsulan::$M_formasi
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->detail_pegawai_usulan()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-22 23:58:49 --> Undefined property: App\Controllers\DataUsulan::$M_formasi
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->detail_pegawai_usulan()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-22 23:59:16 --> Undefined property: App\Controllers\DataUsulan::$M_formasi
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->detail_pegawai_usulan()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-22 23:59:37 --> Call to undefined method App\Models\UsulanModel::getDetailPegawai
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataUsulan.php(147): CodeIgniter\Model->__call('getDetailPegawa...', Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataUsulan->detail_pegawai_usulan()
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataUsulan))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}

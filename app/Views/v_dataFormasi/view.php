@@ -26,20 +26,17 @@
             <div class="card-header">
               <h3 class="card-title">Tabel Detail Formasi</h3>
             </div>
-            
+
             <div class="card-body table-responsive">
               <table id="datatable-list" class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>No.</th>
                     <th>Formasi</th>
-                    <th>Formasi Kode</th>
                     <th>Lokasi Unit Kerja</th>
-                    <th>Lokasi Unit Kode</th>
                     <th>Jumlah Kebutuhan</th>
                     <th>Jumlah ASN</th>
                     <th>Detil ASN</th>
-                    <th>Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -47,51 +44,46 @@
                   foreach ($getDetailFormasi as $value) { ?>
                     <tr>
                       <td><?php echo $no; ?></td>
-                      <td><?php echo $value->jabatan_nama;?></td>
-                      <td><?php echo $value->jabatan_kode;?></td>
+                      <td><?php echo $value->jabatan_nama; ?></td>
                       <td><?php echo $value->instansi_unor_nama; ?></td>
-                      <td><?php echo $value->instansi_unor; ?></td>
                       <td><?php echo $value->formasi_jumlah; ?></td>
                       <td><?php echo $value->jumlahasn; ?></td>
                       <td>
 
-                      <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
+                        <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
 
-                      <!-- The Pegawai -->
-                      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="judul">List Pegawai Jabatan</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                    <table class="table table-bordered">
-                                      <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama</th>
-                                            <th>Jabatan Nama</th>
-                                          </tr>
-                                      </thead>
-                                      <tbody id="show_data">
-                                      </tbody>
-                                    </table>
-                                    </div>
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
-                                    </div>
+                        <!-- The Pegawai -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h3 class="card-title">Detail ASN</h3>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                              <!-- Modal body -->
+                              <div class="modal-body">
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th>No</th>
+                                      <th>Nama</th>
+                                      <th>NIP</th>
+                                      <th>Jabatan</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="show_data">
+                                  </tbody>
+                                </table>
+                              </div>
+                              <!-- Modal footer -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                              </div>
 
-                                    </div>
-                                </div>
-                      </div>
-                      </td>
-
-                      <td>
-                        <a href="<?php echo base_url('dataformasi/view/' . $value->instansi_id); ?>" class="btn btn-warning"><i class="fa fa-eye"></i></a>
+                            </div>
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   <?php $no++;
@@ -110,49 +102,47 @@
 
   </section>
   <!-- /.content -->
-
 </div>
 <!-- /.content-wrapper -->
 <?= $this->endSection() ?>
 
 <?= $this->section('script') ?>
 <script>
+  //Menampilakan modal edit data petugas
+  $('body').on('click', '.edit', function() {
+    var instansiunor = $(this).attr("instansi_unor");
+    var jabatankode = $(this).attr("jabatan_kode");
+    $.ajax({
+      url: "/dataFormasi/detail_pegawai/",
+      type: "GET",
+      dataType: "JSON",
+      data: {
+        instansiunor: instansiunor,
+        jabatankode: jabatankode
+      },
+      success: function(data) {
+        // alert("sukses"+data);
+        var output = '';
+        var no = 0;
+        var i = 0;
+        while (i < data.length) {
+          no++;
+          output += '<tr>' +
+            '<td>' + no + '</td>' +
+            '<td>' + data[i].pegawai_nama + '</td>' +
+            '<td>' + data[i].pegawai_nip + '</td>' +
+            '<td>' + data[i].jabatan_nama + '</td>' +
+            // '<td>'+data[i].formasi_jumlah+'</td>'+
 
-//Menampilakan modal edit data petugas
-$('body').on('click', '.edit', function() {
-  var instansiunor = $(this).attr("instansi_unor");
-  var jabatankode = $(this).attr("jabatan_kode");
-      $.ajax({
-        url: "/dataFormasi/cek_detail_pegawai/",
-        type: "GET",
-        dataType: "JSON",
-        data: {instansiunor:instansiunor, jabatankode:jabatankode},
-        success: function(data) {
-          // alert("sukses"+data);
-          var output = '';
-          var no=0;
-          var i=0; 
-          while(i<data.length){
-            no++;
-                  output += '<tr>'+
-                              '<td>' + no  + '</td>'+
-                              '<td>'+data[i].pegawai_nama+'</td>'+
-                              '<td>'+data[i].jabatan_nama+'</td>'+
-                              // '<td>'+data[i].jabatan_kode+'</td>'+
-                              // '<td>'+data[i].formasi_jumlah+'</td>'+
-                             
-                            '</tr>';
-                  i++;
-          }
-        
-          $('#myModal').modal("show");
-          $('#show_data').html(output);
+            '</tr>';
+          i++;
         }
-      })
 
-    });
+        $('#myModal').modal("show");
+        $('#show_data').html(output);
+      }
+    })
 
-
-
+  });
 </script>
 <?= $this->endSection() ?>

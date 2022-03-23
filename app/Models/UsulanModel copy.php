@@ -123,8 +123,10 @@ class UsulanModel extends Model
 	{
 		$query =  $this->db->table('tbl_detail_usulan')
 			->where('detail_usulan_id', $id);
+		// ->get();  
 		return $query->update($data);
 	}
+
 
 
 	public function updateApprovalUsulan($data, $id)

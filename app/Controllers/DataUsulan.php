@@ -23,11 +23,11 @@ class DataUsulan extends BaseController
 	// Halaman Data usulan
 	public function index()
 	{
-        $data['title']     = 'Data Usulan';
+		$data['title']     = 'Data Usulan';
 		$data['page']   = "datausulan";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
-		
+
 		$yearnow = date('Y');
 		$data['getUsulan'] = $this->M_usulan->getUsulan($yearnow)->getResult();
 
@@ -35,12 +35,12 @@ class DataUsulan extends BaseController
 	}
 
 	public function detail_usulan($id)
-    {
+	{
 		$data['page']   = "Detail_data_usulan";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
 
-        $getDetailUsulan = $this->M_usulan->getDetailUsulanByID($id)->getResult();
+		$getDetailUsulan = $this->M_usulan->getDetailUsulanByID($id)->getResult();
 
 		//$getJabatanKodeByDetailUsulan = $this->M_usulan->getJabatanKodeByDetailUsulan($id)->getResult();
 		// $getInstansiKodeByUsulan = $this->M_usulan->getInstansiKodeByUsulan($id)->getResult();
@@ -52,52 +52,50 @@ class DataUsulan extends BaseController
 		//echo "<br>";
 		//die("STTTOPPPP");
 
-        if(isset($getDetailUsulan))
-        {
-            $data['detail_usulan_by_id'] = $getDetailUsulan;
+		if (isset($getDetailUsulan)) {
+			$data['detail_usulan_by_id'] = $getDetailUsulan;
 			$data['get_usulan_by_id'] = $this->M_usulan->getUsulanByID($id)->getRow();
 			// dd($data[''usulan_by_id'']);
 			return view('v_dataUsulan/detail_data_usulan', $data);
+		} else {
 
-        }else{
-
-            echo '<script>
-                    alert("Kode Usulan = '.$id.' Tidak ditemukan");
-                    window.location="'.base_url('detail_usulan_by_id').'"
+			echo '<script>
+                    alert("Kode Usulan = ' . $id . ' Tidak ditemukan");
+                    window.location="' . base_url('detail_usulan_by_id') . '"
                 </script>';
-        }
-    }
+		}
+	}
 
 	// public function approval_usulan($id)
-    // {
+	// {
 	// 	$data = array(
 	// 		'status_usulan' => '1'
 	// 	);
 
 	// 	$getApproveUsulan = $this->M_usulan->getApproveUsulan($data, $id);
-    //     if(isset($getApproveUsulan))
-    //     {
+	//     if(isset($getApproveUsulan))
+	//     {
 	// 		return view('v_dataUsulan/detail_data_usulan', $data);
-    //     }else{
+	//     }else{
 
-    //         echo '<script>
-    //                 alert("ID barang '.$id.' Tidak ditemukan");
-    //                 window.location="'.base_url('barang').'"
-    //             </script>';
-    //     }
+	//         echo '<script>
+	//                 alert("ID barang '.$id.' Tidak ditemukan");
+	//                 window.location="'.base_url('barang').'"
+	//             </script>';
+	//     }
 	// }
 
 
 	public function approval_usulan_by_id($id)
-    {
-        $id = $this->request->getPost('detail_usulan_id');
-        $data = array(
-            'jumlah_approve'        => $this->request->getPost('jumlah_approve'),
-            'status_usulan'      	=> '1',
+	{
+		$id = $this->request->getPost('detail_usulan_id');
+		$data = array(
+			'jumlah_approve'        => $this->request->getPost('jumlah_approve'),
+			'status_usulan'      	=> '1',
 			'keterangan'      		=> '-',
-        );
+		);
 
-        $this->M_usulan->updateApprovalUsulan($data, $id);
+		$this->M_usulan->updateApprovalUsulan($data, $id);
 
 		$dataredirect['page']   = "Detail_data_usulan";
 		$dataredirect['nama']   = $this->session->get('nama');
@@ -106,19 +104,19 @@ class DataUsulan extends BaseController
 		// print_r($id);
 		// die('STPPPPP');
 		return redirect()->back();
-    }
+	}
 
 
 	public function reject_usulan_by_id($id)
-    {
-        $id = $this->request->getPost('detail_usulan_id');
-        $data = array(
+	{
+		$id = $this->request->getPost('detail_usulan_id');
+		$data = array(
 			'jumlah_approve'    => '0',
-            'keterangan'        => $this->request->getPost('keterangan'),
-            'status_usulan'     => '2',
-        );
+			'keterangan'        => $this->request->getPost('keterangan'),
+			'status_usulan'     => '2',
+		);
 
-        $this->M_usulan->updateRejectUsulan($data, $id);
+		$this->M_usulan->updateRejectUsulan($data, $id);
 
 		$dataredirect['page']   = "Detail_data_usulan";
 		$dataredirect['nama']   = $this->session->get('nama');
@@ -127,18 +125,33 @@ class DataUsulan extends BaseController
 		// print_r($id);
 		// die('STPPPPP');
 		return redirect()->back();
-    }
+	}
 
 	public function get_pegawai_by_unor_and_instansi($idJabatan)
-    {
+	{
 		$data['page']   = "Get Data Pegawai by unor opd";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
 
-        $getPegawaiByUnorAndInstansi = $this->M_usulan->getPegawaiByUnorAndInstansi($idJabatan)->getResult();
-		// echo json_encode($getPegawaiByUnorAndInstansi);
-		// echo json_encode($getPegawaiByUnorAndInstansi);
-		// return view('v_dataUsulan/index', $data);
-    }
+		#$getPegawaiByUnorAndInstansi = $this->M_usulan->getPegawaiByUnorAndInstansi($idJabatan)->getResult();
 
+
+		return view('v_dataUsulan/index', $data);
+	}
+
+	public function detail_pegawai_usulan()
+	{
+		if ($this->request->isAJAX()) {
+			$idUnor =   $this->request->getVar('instansiunor');
+			$idJabatan =  $this->request->getVar('jabatankode');
+			$data = $this->M_usulan->getDetailPegawaiUsulan($idUnor, $idJabatan)->getResult();
+			// print_r($idUnor);
+			// echo 'nama';
+			// print_r($idJabatan);
+			// echo 'nip';
+			// print_r($data);
+			// die('stop');
+			echo json_encode($data);
+		}
+	}
 }
