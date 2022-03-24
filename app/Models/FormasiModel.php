@@ -25,22 +25,34 @@ class FormasiModel extends Model
 	}
 
 
-	public function getDetailFormasi($idInstansi)
+	public function getDetailFormasi($idInstansi, $idUnor, $idJabatan)
 	{
 		$query =  $this->db->table('tbl_formasi')
+		// ->select('*')
+		// ->join('tbl_pegawai', 'tbl_formasi.jabatan_kode = tbl_pegawai.jabatan_kode and tbl_formasi.instansi_unor = tbl_pegawai.instansi_unor', 'left')
+		// ->select('*')
 
-			->select('*, count(tbl_pegawai.pegawai_nama) as jumlahasn, concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan')
-			->where('tbl_formasi.instansi_id', $idInstansi)
-			->join('tbl_instansi', 'tbl_formasi.instansi_id = tbl_instansi.instansi_id', 'left')
-			->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
-			->join('tbl_unor', 'tbl_unor.instansi_unor = tbl_formasi.instansi_unor', 'left')
-			->join('tbl_pegawai', 'tbl_formasi.jabatan_kode = tbl_pegawai.jabatan_kode', 'left')
-			->groupBy('jabatan')
-			->where('tbl_pegawai.instansi_id = tbl_formasi.instansi_id')
-			->where('tbl_pegawai.instansi_unor = tbl_formasi.instansi_unor')
+		->select('*, concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan, count(tbl_pegawai.pegawai_nip) as jumlahasn ')
+		->groupBy('tbl_pegawai.instansi_unor', 'jabatan')
+		// ->join('tbl_pegawai', 'tbl_formasi.jabatan_kode = tbl_pegawai.jabatan_kode', 'left')
+		// ->groupBy('tbl_pegawai.instansi_unor', 'jabatan')
+		// ->where('tbl_formasi.instansi_id', $idInstansi)
+		// ->where('tbl_pegawai.instansi_unor = tbl_formasi.instansi_unor and tbl_pegawai.jabatan_kode = tbl_formasi.jabatan_kode')
+		// ->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+		// ->join('tbl_unor', 'tbl_unor.instansi_unor = tbl_formasi.instansi_unor', 'left')
+		// //>groupBy('jabatan')
+		// ->where('tbl_formasi.instansi_id', $idInstansi)
+		// ->join('tbl_instansi', 'tbl_formasi.instansi_id = tbl_instansi.instansi_id', 'left')
 
-			->orderBy('tbl_formasi.formasi_id asc')
-			->get();
+		// ->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+		// ->join('tbl_unor', 'tbl_unor.instansi_unor = tbl_formasi.instansi_unor', 'left')
+		// ->join('tbl_pegawai', 'tbl_formasi.jabatan_kode = tbl_pegawai.jabatan_kode', 'left')
+
+		//->where('tbl_pegawai.instansi_id = tbl_formasi.instansi_id')
+		//->where('tbl_pegawai.instansi_unor = tbl_formasi.instansi_unor')
+
+		//->orderBy('tbl_formasi.formasi_id asc')
+		//->get();
 		return $query;
 	}
 

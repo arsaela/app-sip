@@ -212,3 +212,653 @@ CRITICAL - 2022-03-23 02:45:47 --> Unknown column 'tbl_instansi.instansi_id' in 
 #9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #11 {main}
+ERROR - 2022-03-23 19:20:08 --> Unknown column 'jabatan' in 'field list'
+CRITICAL - 2022-03-23 19:20:08 --> Unknown column 'jabatan' in 'field list'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:20:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`in...' at line 1
+CRITICAL - 2022-03-23 19:20:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`in...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:20:46 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`...' at line 1
+CRITICAL - 2022-03-23 19:20:46 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:22:03 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn, *
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi...' at line 1
+CRITICAL - 2022-03-23 19:22:03 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn, *
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:22:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn, *
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi...' at line 1
+CRITICAL - 2022-03-23 19:22:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn, *
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:22:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn, *
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi...' at line 1
+CRITICAL - 2022-03-23 19:22:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn, *
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:22:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn, *
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi...' at line 1
+CRITICAL - 2022-03-23 19:22:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn, *
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:22:05 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn, *
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi...' at line 1
+CRITICAL - 2022-03-23 19:22:05 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn, *
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:22:05 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn, *
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi...' at line 1
+CRITICAL - 2022-03-23 19:22:05 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') as jumlahasn, *
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:22:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` ...' at line 1
+CRITICAL - 2022-03-23 19:22:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` ...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:22:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` ...' at line 1
+CRITICAL - 2022-03-23 19:22:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` ...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:23:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` ...' at line 1
+CRITICAL - 2022-03-23 19:23:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` ...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:24:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` = ...' at line 2
+CRITICAL - 2022-03-23 19:24:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` = ...' at line 2
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:24:18 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` = ...' at line 2
+CRITICAL - 2022-03-23 19:24:18 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` = ...' at line 2
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:24:19 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` = ...' at line 2
+CRITICAL - 2022-03-23 19:24:19 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` = ...' at line 2
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:24:28 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` = ...' at line 2
+CRITICAL - 2022-03-23 19:24:28 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` = ...' at line 2
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:24:29 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` = ...' at line 2
+CRITICAL - 2022-03-23 19:24:29 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` = ...' at line 2
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:24:29 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` = ...' at line 2
+CRITICAL - 2022-03-23 19:24:29 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`instansi_id` = ...' at line 2
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:25:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`in...' at line 1
+CRITICAL - 2022-03-23 19:25:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`in...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:25:43 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`in...' at line 1
+CRITICAL - 2022-03-23 19:25:43 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`in...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:25:43 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`in...' at line 1
+CRITICAL - 2022-03-23 19:25:43 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`in...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:25:43 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`in...' at line 1
+CRITICAL - 2022-03-23 19:25:43 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`in...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:25:53 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'jabatan as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_form...' at line 1
+CRITICAL - 2022-03-23 19:25:53 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'jabatan as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_form...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:25:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'jabatan as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_form...' at line 1
+CRITICAL - 2022-03-23 19:25:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'jabatan as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_form...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:25:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'jabatan as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_form...' at line 1
+CRITICAL - 2022-03-23 19:25:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'jabatan as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_form...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:25:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'jabatan as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_form...' at line 1
+CRITICAL - 2022-03-23 19:25:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'jabatan as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_form...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:25:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'jabatan as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_form...' at line 1
+CRITICAL - 2022-03-23 19:25:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'jabatan as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_form...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:26:25 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`in...' at line 1
+CRITICAL - 2022-03-23 19:26:25 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as jumlahasn
+FROM `tbl_formasi`
+LEFT JOIN `tbl_instansi` ON `tbl_formasi`.`in...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:49:46 --> Unknown column 'tbl_pegawai' in 'field list'
+CRITICAL - 2022-03-23 19:49:46 --> Unknown column 'tbl_pegawai' in 'field list'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, `tbl_...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `tbl_...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `tbl_...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, `tbl_...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(50): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:50:27 --> Unknown column 'tbl_pegawai.pegawai.nip' in 'field list'
+CRITICAL - 2022-03-23 19:50:27 --> Unknown column 'tbl_pegawai.pegawai.nip' in 'field list'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, `tbl_...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `tbl_...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `tbl_...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, `tbl_...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(50): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-23 19:50:46 --> Undefined property: stdClass::$jabatan_nama
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataFormasi\view.php(47): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 47, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-23 19:50:53 --> Undefined property: stdClass::$jabatan_nama
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataFormasi\view.php(47): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 47, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-23 19:51:00 --> Undefined property: stdClass::$jabatan_nama
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataFormasi\view.php(47): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 47, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-03-23 19:51:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*
+FROM `tbl_formasi`
+LEFT JOIN `tbl_pegawai` ON `tbl_formasi`.`jabatan_kode` ...' at line 1
+CRITICAL - 2022-03-23 19:51:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*
+FROM `tbl_formasi`
+LEFT JOIN `tbl_pegawai` ON `tbl_formasi`.`jabatan_kode` ...' at line 1
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, *\nFRO...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, *\nFRO...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, *\nFRO...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, *\nFRO...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(50): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:52:12 --> Unknown column 'tbl_pegawai.pegawai_nip' in 'field list'
+CRITICAL - 2022-03-23 19:52:12 --> Unknown column 'tbl_pegawai.pegawai_nip' in 'field list'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(50): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 19:52:13 --> Unknown column 'tbl_pegawai.pegawai_nip' in 'field list'
+CRITICAL - 2022-03-23 19:52:13 --> Unknown column 'tbl_pegawai.pegawai_nip' in 'field list'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, conca...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, conca...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, conca...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, conca...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(50): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-23 19:56:35 --> syntax error, unexpected '$query' (T_VARIABLE)
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Form...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Form...')
+#3 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(21): spl_autoload_call('App\\Models\\Form...')
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataFormasi->__construct()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-03-23 19:56:48 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Form...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Form...')
+#3 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(21): spl_autoload_call('App\\Models\\Form...')
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataFormasi->__construct()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-03-23 19:57:08 --> Too few arguments to function App\Models\FormasiModel::getDetailFormasi(), 1 passed in C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php on line 34 and exactly 3 expected
+#0 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:58:39 --> syntax error, unexpected 'return' (T_RETURN)
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Form...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Form...')
+#3 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(21): spl_autoload_call('App\\Models\\Form...')
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataFormasi->__construct()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-03-23 19:58:48 --> syntax error, unexpected 'return' (T_RETURN)
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Form...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Form...')
+#3 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(21): spl_autoload_call('App\\Models\\Form...')
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\DataFormasi->__construct()
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
