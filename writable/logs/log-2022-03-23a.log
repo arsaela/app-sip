@@ -1,0 +1,779 @@
+ERROR - 2022-03-23 02:24:54 --> Unknown column 'tbl_instansi.instansi_unor' in 'where clause'
+CRITICAL - 2022-03-23 02:24:54 --> Unknown column 'tbl_instansi.instansi_unor' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, `tbl_...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, `tbl_...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, `tbl_...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, `tbl_...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 02:30:10 --> Unknown column 'jabatan' in 'group statement'
+CRITICAL - 2022-03-23 02:30:10 --> Unknown column 'jabatan' in 'group statement'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-23 02:30:21 --> Undefined property: stdClass::$jumlahasn
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataFormasi\view.php(50): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 50, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-23 02:30:23 --> Undefined property: stdClass::$jumlahasn
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataFormasi\view.php(50): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 50, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-03-23 02:30:53 --> Unknown column 'tbl_formasi.pegawai_nip' in 'field list'
+CRITICAL - 2022-03-23 02:30:53 --> Unknown column 'tbl_formasi.pegawai_nip' in 'field list'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, count...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, count...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, count...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, count...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 02:30:55 --> Unknown column 'tbl_formasi.pegawai_nip' in 'field list'
+CRITICAL - 2022-03-23 02:30:55 --> Unknown column 'tbl_formasi.pegawai_nip' in 'field list'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, count...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, count...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, count...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, count...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-23 02:31:20 --> Undefined property: stdClass::$jumlahasn
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataFormasi\view.php(50): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 50, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-03-23 02:31:22 --> Undefined property: stdClass::$jumlahasn
+#0 C:\xampp\htdocs\app-sip\app\Views\v_dataFormasi\view.php(50): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 50, Array)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#4 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-03-23 02:32:58 --> Unknown column 'tbl_pegawai.pegawai_nip' in 'field list'
+CRITICAL - 2022-03-23 02:32:58 --> Unknown column 'tbl_pegawai.pegawai_nip' in 'field list'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, count...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, count...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, count...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, count...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-23 02:33:30 --> syntax error, unexpected '"jumlahasn"' (T_CONSTANT_ENCAPSED_STRING), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dataFormasi/v...', Array, true)
+#2 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(36): view('v_dataFormasi/v...', Array)
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#4 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#5 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+ERROR - 2022-03-23 02:38:47 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`:tbl_pegawai`.`instansi_unor` = tbl_formasi.instansi_unor:
+GROUP BY `tbl_peg...' at line 8
+CRITICAL - 2022-03-23 02:38:47 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`:tbl_pegawai`.`instansi_unor` = tbl_formasi.instansi_unor:
+GROUP BY `tbl_peg...' at line 8
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, count...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, count...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, count...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, count...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 02:45:45 --> Unknown column 'tbl_instansi.instansi_id' in 'where clause'
+CRITICAL - 2022-03-23 02:45:45 --> Unknown column 'tbl_instansi.instansi_id' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(44): App\Models\FormasiModel->getDetailPegawai('CC01030000', '3528000')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_pegawai()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 02:45:45 --> Unknown column 'tbl_instansi.instansi_id' in 'where clause'
+CRITICAL - 2022-03-23 02:45:45 --> Unknown column 'tbl_instansi.instansi_id' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(44): App\Models\FormasiModel->getDetailPegawai('CC01030000', '3528000')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_pegawai()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 02:45:46 --> Unknown column 'tbl_instansi.instansi_id' in 'where clause'
+CRITICAL - 2022-03-23 02:45:46 --> Unknown column 'tbl_instansi.instansi_id' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(44): App\Models\FormasiModel->getDetailPegawai('CB03010000', '5010')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_pegawai()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 02:45:47 --> Unknown column 'tbl_instansi.instansi_id' in 'where clause'
+CRITICAL - 2022-03-23 02:45:47 --> Unknown column 'tbl_instansi.instansi_id' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(44): App\Models\FormasiModel->getDetailPegawai('DJ00000000', '5168010')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_pegawai()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-03-23 02:45:47 --> Unknown column 'tbl_instansi.instansi_id' in 'where clause'
+CRITICAL - 2022-03-23 02:45:47 --> Unknown column 'tbl_instansi.instansi_id' in 'where clause'
+#0 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `tbl_for...', 0)
+#1 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tbl_for...')
+#2 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tbl_for...')
+#3 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT `tbl_for...', Array, false)
+#4 C:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(44): App\Models\FormasiModel->getDetailPegawai('DJ00000000', '5168010')
+#6 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_pegawai()
+#7 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-03-23 19:55:15 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:55:23 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:55:49 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:55:50 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:55:50 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:55:50 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:55:50 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:55:50 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:55:51 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:55:51 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:55:51 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:28 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:36 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:36 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:37 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:37 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:37 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:37 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:37 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:38 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:38 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:38 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:38 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:39 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:39 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 19:57:39 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 20:12:41 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:02:58 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:02:59 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:02:59 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:00 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:00 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:00 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:00 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:01 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:01 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:01 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:02 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:02 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:02 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:02 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:03 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:03 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:03 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:03:04 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:27 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:53 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:54 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:54 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:55 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:55 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:55 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:56 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:56 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:56 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:57 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:57 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:57 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:58 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:05:58 --> Trying to access array offset on value of type null
+#0 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'D:\\xampp\\htdocs...', 57, Array)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-03-23 21:13:21 --> Decrypting: authentication failed.
+#0 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Encryption\Handlers\OpenSSLHandler.php(98): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+#1 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(62): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#4 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-03-23 21:14:28 --> Decrypting: authentication failed.
+#0 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Encryption\Handlers\OpenSSLHandler.php(98): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+#1 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(62): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#4 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-03-23 21:16:39 --> Decrypting: authentication failed.
+#0 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Encryption\Handlers\OpenSSLHandler.php(98): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+#1 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(62): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#4 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-03-23 21:19:14 --> Decrypting: authentication failed.
+#0 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Encryption\Handlers\OpenSSLHandler.php(98): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+#1 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(62): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#4 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-03-23 22:34:11 --> Decrypting: authentication failed.
+#0 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Encryption\Handlers\OpenSSLHandler.php(98): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+#1 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(64): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#4 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-03-23 22:36:09 --> Decrypting: authentication failed.
+#0 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Encryption\Handlers\OpenSSLHandler.php(98): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+#1 D:\xampp\htdocs\app-sip\app\Controllers\Login.php(64): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Login->cekUser()
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#4 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-03-23 22:38:12 --> Invalid file: v_dashboard_petugas/index.php
+#0 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v_dashboard_pet...')
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('v_dashboard_pet...', Array, true)
+#2 D:\xampp\htdocs\app-sip\app\Controllers\DashboardPetugas.php(21): view('v_dashboard_pet...', Array)
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DashboardPetugas->index()
+#4 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardPetugas))
+#5 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-03-23 23:40:18 --> Class 'App\Models\RegisterModel' not found
+#0 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(809): App\Controllers\RegisterPetugas->__construct()
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2022-03-23 23:51:25 --> Unknown column 'tbl_pegawai.instansi_id' in 'where clause'
+CRITICAL - 2022-03-23 23:51:25 --> Unknown column 'tbl_pegawai.instansi_id' in 'where clause'
+#0 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *, count...', 0)
+#1 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, count...')
+#2 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, count...')
+#3 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *, count...', Array, false)
+#4 D:\xampp\htdocs\app-sip\app\Models\FormasiModel.php(43): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\xampp\htdocs\app-sip\app\Controllers\DataFormasi.php(34): App\Models\FormasiModel->getDetailFormasi('CB')
+#6 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\DataFormasi->detail_formasi('CB')
+#7 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DataFormasi))
+#8 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\xampp\htdocs\app-sip\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 D:\xampp\htdocs\app-sip\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#11 {main}

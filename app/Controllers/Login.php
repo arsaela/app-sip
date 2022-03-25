@@ -56,6 +56,8 @@ class Login extends BaseController
             $cekUser = $this->M_user->where('username', $username)->first();
             $ciphertext = $cekUser['password'];
 
+
+
             //Jika user ada
             if ($cekUser) {
                 //Cek password
@@ -70,6 +72,8 @@ class Login extends BaseController
 
                     ];
                     $this->session->set($newdata);
+
+
                     //Cek role_id apakah Admin atau Petugas
                     if ($cekUser['hak_akses'] == 'admin') {
                         //Admin
@@ -78,6 +82,15 @@ class Login extends BaseController
                             'link'   => base_url('dashboard')
                         ];
                         echo json_encode($validasi);
+                    } else if ($cekUser['hak_akses']=='petugas') {
+                        //Petugas OPD
+                        $validasi = [
+                            'success'   => true,
+                            'link'   => base_url('DashboardPetugas')
+                        ];
+                        echo json_encode($validasi);
+
+                    
                     } else {
                         //Petugas
                         $validasi = [
@@ -92,7 +105,7 @@ class Login extends BaseController
                     $validasi = [
                         'error'   => true,
                         'login_error' => [
-                            'password' => 'Password Salah!'
+                            'password' => 'Password yang anda masukkan salah !'
                         ]
                     ];
                     echo json_encode($validasi);
@@ -104,7 +117,7 @@ class Login extends BaseController
                 $validasi = [
                     'error'   => true,
                     'login_error' => [
-                        'user' => 'user Tidak Terdaftar!'
+                        'user' => 'User Tidak Terdaftar!'
                     ]
                 ];
                 echo json_encode($validasi);

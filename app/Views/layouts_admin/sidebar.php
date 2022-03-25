@@ -59,9 +59,34 @@
         <!-- Data Usulan -->
         <li class="nav-item">
           <a href="<?php echo base_url('datausulan'); ?>" class="nav-link <?php if ($page == 'datausulan') echo " active";  ?>">
-            <i class="nav-icon fas fa-car"></i>
+            <i class="nav-icon fas fa-inbox"></i>
             <p>
               Data Usulan
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo base_url('datausulan'); ?>" class="nav-link <?php if ($page == 'datausulan');  ?>">
+            <i class="nav-icon fas fa-id-card"></i>
+            <p>
+              Data Informasi
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="<?php echo base_url('datausulan'); ?>" class="nav-link <?php if ($page == 'datausulan');  ?>">
+            <i class="nav-icon fas fa-question-circle"></i>
+            <p>
+              Data Alur Pengusulan
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo base_url('datausulan'); ?>" class="nav-link <?php if ($page == 'datausulan');  ?>">
+            <i class="nav-icon fas fa-gear"></i>
+            <p>
+              Data Alur Pengusulan
             </p>
           </a>
         </li>

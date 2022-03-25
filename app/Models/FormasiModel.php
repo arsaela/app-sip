@@ -25,7 +25,7 @@ class FormasiModel extends Model
 	}
 
 
-	public function getDetailFormasi($idInstansi, $idUnor, $idJabatan)
+	public function getDetailFormasi($idInstansi)
 	{
 		$query =  $this->db->table('tbl_formasi')
 		// ->select('*')
@@ -52,7 +52,7 @@ class FormasiModel extends Model
 		//->where('tbl_pegawai.instansi_unor = tbl_formasi.instansi_unor')
 
 		//->orderBy('tbl_formasi.formasi_id asc')
-		//->get();
+		->get();
 		return $query;
 	}
 
