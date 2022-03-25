@@ -326,6 +326,8 @@ a.btn.btn-primary.register_petugas {
   text-align: center !important;
   padding-top: 15px;
   font-family: 'nunito bold';
+  padding-bottom: 20px;
+  color: #012970;
 }
 
 .title-section-informasi:before {
@@ -371,6 +373,44 @@ img.img_informasi {
   text-align: justify;
 }
 
+img.img_alur_pengusulan {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  max-width: 300px;
+}
+
+img.img_alur_pengusulan.right {
+  margin-left: 47px;
+  float: right;
+}
+
+img.img_alur_pengusulan.left {
+margin-right: 47px;
+float:left;
+}
+
+.content_alur_pengusulan {
+  text-align: justify;
+}
+
+.content_alur_pengusulan h3 {
+  font-weight: 700;
+  font-size: 26px;
+  color: #012970;
+}
+
+.wrap-alur-pengusulan.left {
+  margin-bottom: 25px;
+}
+
+.wrap-alur-pengusulan.right {
+  margin-bottom: 25px;
+}
+
+section#informasi {
+  background-color: #f7f7f7;
+}
 
 @media (max-width: 1024px) {
   #header {

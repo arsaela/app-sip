@@ -72,7 +72,7 @@
 <?= $this->section('content') ?>
 <main id="main">
 
-<section class="informasi" id="informasi">
+<section class="alur_pengusulan" id="alur_pengusulan">
     <div class="container">
         <div class="row">
             <div class="title-section-informasi col-md-12">
@@ -80,23 +80,48 @@
             </div>
         </div>
 
-        <div class="row">
+        
             <?php //foreach($data_portofolio as $value) { ?>
-            <div class="wrap-informasi col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                <div class="content_informasi">
-                    <!-- <a href="<?php //echo $value->link_projek?>" target="_blank"> -->
+            <div class="wrap-alur-pengusulan left row">
+                <div class="content_alur_pengusulan col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                <?php
+                    //if (empty($data_foto_profile)){ ?>
+                    <img class="img_alur_pengusulan left" src="/assets/img/login3.png">
+                    <?php //} else { ?>
+                    <!-- <img class="img_alur_pengusulan" src="/assets/img/login3.png"> -->
+                    <?php //} ?>
+                </div>
+                <div class="content_alur_pengusulan col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                    <h3>1. Login Sistem</h3>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut dui ornare, rutrum lectus sit amet, malesuada augue. Integer id rutrum leo. Cras dictum orci eu porttitor sollicitudin. Suspendisse sollicitudin suscipit commodo. Nulla neque eros, condimentum vel tincidunt eu, molestie nec ex. Vestibulum vel diam vitae elit gravida gravida. Morbi et porta felis. Vivamus in diam augue. In in convallis diam.
 
-                    Integer semper vestibulum turpis eget lobortis. Integer sodales, enim in convallis tristique, felis sem mollis lorem, et viverra erat neque eu urna. Sed id ante imperdiet, tempus nulla nec, lacinia felis. Vestibulum ac auctor mi. Integer arcu risus, mollis at semper vitae, tempus sit amet ex. Phasellus ac malesuada purus. Fusce sed augue vitae ex varius congue a id lacus. Phasellus faucibus auctor porttitor. Sed convallis vulputate posuere. Etiam dictum dolor id orci cursus aliquam. Fusce id lorem nec libero fermentum imperdiet. Nunc tristique tempor luctus. Nam semper mi sed augue efficitur, quis efficitur mauris ultrices. Praesent ut urna tempor, fermentum justo pharetra, dictum ante. Suspendisse finibus ante quam, ut finibus nulla lobortis nec.
+                    Integer semper vestibulum turpis eget lobortis. 
+                </div>
+            </div>
 
-                    Morbi dictum nisl vitae dapibus iaculis. Sed magna felis, accumsan a interdum eu, ullamcorper nec arcu.
-                    <!-- </a> -->
+            <div class="wrap-alur-pengusulan right row">
+                <div class="content_alur_pengusulan col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                    <h3>2. Update Data Pegawai</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut dui ornare, rutrum lectus sit amet, malesuada augue. Integer id rutrum leo. Cras dictum orci eu porttitor sollicitudin. Suspendisse sollicitudin suscipit commodo. Nulla neque eros, condimentum vel tincidunt eu, molestie nec ex. Vestibulum vel diam vitae elit gravida gravida. Morbi et porta felis. Vivamus in diam augue. In in convallis diam.
+
+                    Integer semper vestibulum turpis eget lobortis. 
+                </div>
+                <div class="content_alur_pengusulan col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                <?php
+                    //if (empty($data_foto_profile)){ ?>
+                    <img class="img_alur_pengusulan right" src="/assets/img/update.png">
+                    <?php //} else { ?>
+                    <!-- <img class="img_alur_pengusulan" src="/assets/img/login3.png"> -->
+                    <?php //} ?>
                 </div>
             </div>
             <?php //} ?>
-        </div>
+
+
+
     </div>
 </section>
+
 
 
 
