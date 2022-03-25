@@ -16,22 +16,22 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Login</h2>
+                <h2>Register</h2>
                 <ol>
                     <li><a href="<?php echo base_url('/'); ?>">Home</a></li>
-                    <li>Login</li>
+                    <li>Register</li>
                 </ol>
             </div>
 
         </div>
     </section>
 
-    <!-- ======= Login ======= -->
+    <!-- ======= Register ======= -->
     <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h3><span>Halaman Login</span></h3>
+                <h3><span>Halaman Register</span></h3>
                 <p>Aplikasi Formasi Pegawai - Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kabupaten Klaten</p>
             </div>
 
@@ -42,30 +42,29 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <form id="formLogin" role="form" class="php-email-form">
-
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="icofont-email"></i></span>
-                            </div>
-                            <input type="text" class="form-control" name="username" placeholder="Username" />
-                        </div>
-                        <small id="username_error" class="form-text text-danger mb-3"></small>
-
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i id="show-password" class="icofont-eye-blocked"></i></span>
-                            </div>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
-                        </div>
-                        <small id="password_error" class="form-text text-danger mb-3"></small>
-
-                        <div class="text-center mb-2">
-                            <button class="col-lg" type="submit" id="btn-login">Login</button>
-                        </div>
-                        <a style="float:left" href="DaftarPetugas/index"> Lupa Password ?</a>
-                        <a style="float:right" href="RegisterPetugas/index"> Register</a> 
-                    </form>
+                <form method="post" action="<?= base_url('RegisterPetugas/register');?>"  id="formLogin" role="form" class="php-email-form">
+                <div class="form-group">
+                    <label for="">Username</label>
+                    <input type="text" name="username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Nama</label>
+                    <input type="text" name="petugas_nama" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="">No Handphone</label>
+                    <input type="text" name="petugas_no_hp" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="petugas_email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Instansi</label>
+                    <input type="text" name="instansi_id" class="form-control" required>
+                </div>
+                <button class="btn btn-success">Simpan</button>
+            </form>
                   
                 </div>
 

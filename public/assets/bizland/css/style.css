@@ -164,8 +164,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 25px 0;
-  top: 40px;
+  padding-bottom: 15px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  /* top: 30px; */
+  padding-top: 52px;
 }
 
 #header.header-scrolled {
@@ -190,18 +192,208 @@ h1, h2, h3, h4, h5, h6 {
 #header .logo a span {
   color: #106eea;
 }
-
-#header .logo img {
-  max-height: 40px;
+/* edit style arsa */
+@font-face {
+  font-family: "Lato Light";
+  src: url('../../font/lato/Lato-Light.ttf');
 }
 
-@media (max-width: 992px) {
+@font-face {
+  font-family: "Lato Regular";
+  src: url('../../font/lato/Lato-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Lato Black";
+  src: url('../../font/lato/Lato-Black.ttf');
+}
+
+@font-face {
+  font-family: "Lato Thin";
+  src: url('../../font/lato/Lato-Thin.ttf');
+}
+
+@font-face {
+  font-family: "Lato Bold";
+  src: url('../../font/lato/Lato-Bold.ttf');
+}
+
+@font-face {
+  font-family: "Nunito Black";
+  src: url('../../font/Nunito/static/Nunito-Black.ttf');
+}
+
+@font-face {
+  font-family: "Nunito Bold";
+  src: url('../../font/Nunito/static/Nunito-Bold.ttf');
+}
+
+@font-face {
+  font-family: "Nunito Extra Bold";
+  src: url('../../font/Nunito/static/Nunito-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: "Nunito Italic";
+  src: url('../../font/Nunito/static/Nunito-Italic.ttf');
+}
+
+@font-face {
+  font-family: "Nunito Light";
+  src: url('../../font/Nunito/static/Nunito-Light.ttf');
+}
+
+@font-face {
+	font-family: "The Blacklist";
+	src: url('../../font/the-blacklist/The_blacklist.ttf');
+}
+
+#header .logo img {
+  max-height: 60px;
+  padding-right: 16px;
+  float: left;
+}
+
+.pemkab_text {
+  font-size: 16px;
+  font-family: 'Lato Regular';
+  line-height: 19px;
+}
+
+
+.wrap-menu-right nav ul {
+  float: right;
+}
+
+.sip_text_home {
+  padding-bottom: 6px;
+  font-size: 16px;
+  font-family: 'Lato Black';
+  /* color: #000; */
+  color: #106eea;
+  padding-top: 9px;
+}
+
+.parallax {
+  /* background-image: url(img_parallax.jpg); */
+  min-height: 350px;
+  position: relative;
+  opacity: 0.9;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrap-slider {
+  /* background-color: #6e6d6ea6; */
+  min-height: 350px;
+}
+
+.isi-slider h3 {
+  color: #000;
+  padding-top: 50px;
+  line-height: 1.6em;
+  font-family: 'Lato Regular';
+}
+
+section#slider {
+  padding-top: 127px;
+}
+
+img.img_slider_human {
+  width: 263px;
+  height: auto;
+}
+
+h4.sip_text {
+  font-size: 48px;
+  font-family: 'nunito extra bold';
+  color: #106eea;
+}
+
+h4.sip_text_italic {
+  font-family: 'Lato Regular';
+  color: #000;
+}
+
+a.btn.btn-primary.register_petugas {
+  width: 150px;
+}
+
+.title-section-informasi h3 {
+  text-align: center !important;
+  padding-top: 15px;
+  font-family: 'nunito bold';
+}
+
+.title-section-informasi:before {
+  border-bottom: 1px solid #000;
+  content: ' ';
+  display: block;
+  position: absolute;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  width: 80px;
+  border-style: solid;
+  border-width: 2px 0 0 0;
+  color: #719bed;
+  top: 31px;
+  left: 35%;
+  z-index: 0;
+}
+
+.title-section-informasi:after {
+  border-bottom: 1px solid #000;
+  content: ' ';
+  display: block;
+  position: absolute;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  width: 80px;
+  border-style: solid;
+  border-width: 2px 0 0 0;
+  color: #719bed;
+  top: 31px;
+  left: 65%;
+  z-index: 0;
+}
+
+img.img_informasi {
+  border: 2px solid #323232;
+  min-width: 300px;
+}
+
+.content_informasi {
+  text-align: justify;
+}
+
+
+@media (max-width: 1024px) {
   #header {
     padding: 15px;
     top: 0;
+    padding-top: 51px;
   }
   #header .logo {
     font-size: 28px;
+  }
+
+  .sip_text_home {
+    padding-bottom: 6px;
+    font-size: 14px;
+    font-family: 'Lato Black';
+    /* color: #000; */
+    color: #106eea;
+    padding-top: 0px;
+  }
+
+  .pemkab_text {
+    font-size: 14px;
+    font-family: 'Lato Regular';
+    line-height: 19px;
   }
 }
 
@@ -455,7 +647,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.6);
+  background: rgb(213 202 202 / 60%);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -573,10 +765,10 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
-section {
+/* section {
   padding: 60px 0;
   overflow: hidden;
-}
+} */
 
 .section-bg {
   background-color: #f6f9fe;
@@ -1059,6 +1251,13 @@ section {
   .testimonials .testimonial-item p {
     width: 80%;
   }
+}
+
+@media (max-width: 768px) {
+  #header {
+      padding: 15px;
+  
+}
 }
 
 /*--------------------------------------------------------------

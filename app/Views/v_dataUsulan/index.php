@@ -27,7 +27,6 @@
                   <tr>
                     <th>No.</th>
                     <th>Nomor Usul</th>
-                    <th>Instansi Unor</th>
                     <th>Nama Instansi / OPD</th>
                     <th>Status Usulan</th>
                     <th>Aksi</th>
@@ -39,7 +38,6 @@
                     <tr>
                       <td><?php echo $no; ?></td>
                       <td><?php echo $isi->usulan_id; ?></td>
-                      <td><?php echo $isi->instansi_unor_nama; ?></td>
                       <td><?php echo $isi->instansi_nama; ?></td>
                       <td><?php echo "ket.status"; ?></td>
                       <td>
