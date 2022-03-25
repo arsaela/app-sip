@@ -57,7 +57,7 @@ class UsulanModel extends Model
 			->join('tbl_usulan', 'tbl_usulan.usulan_id = tbl_detail_usulan.usulan_id')
 			->join('tbl_formasi', 'tbl_detail_usulan.formasi_id = tbl_formasi.formasi_id')
 			->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode')
-			->join('tbl_pegawai', 'tbl_pegawai.instansi_unor = tbl_usulan.instansi_unor')
+			->join('tbl_pegawai', 'tbl_pegawai.instansi_unor = tbl_usulan.instansi_unor and tbl_pegawai.jabatan_kode = tbl_formasi.jabatan_kode')
 			->where('tbl_detail_usulan.usulan_id', $id)
 			->orderBy('tbl_detail_usulan.status_usulan', 'ASC')
 			->get();
@@ -157,7 +157,7 @@ class UsulanModel extends Model
 			->join('tbl_unor', 'tbl_unor.instansi_unor = tbl_formasi.instansi_unor')
 			->join('tbl_pegawai', 'tbl_formasi.jabatan_kode = tbl_pegawai.jabatan_kode')
 			->join('tbl_usulan', 'tbl_usulan.instansi_unor = tbl_pegawai.instansi_unor')
-			->join('tbl_detail_usulan', 'tbl_detail_usulan.formasi_id = tbl_pegawai.jabatan_kode')
+			->join('tbl_detail_usulan', 'tbl_detail_usulan.formasi_id = tbl_pegawai.jabatan_kode and tbl_detail_usulan.usulan_id=tb')
 			->where('tbl_detail_usulan.formasi_id', $idJabatan)
 			->where('tbl_pegawai.instansi_unor', $idUnor)
 			->get();
