@@ -31,34 +31,22 @@
   </div>
 </header><!-- End Header -->
 
-<!-- ======= Hero Section ======= -->
-<!-- <section id="hero" class="d-flex align-items-center">
-  <div class="container" data-aos="zoom-out" data-aos-delay="100">
-    <h1>SI<span>P</spa>
-    </h1>
-    <h2>Aplikasi Formasi Pegawai - BKPSDM Kabupaten Klaten</h2>
-    <div class="d-flex">
-      <a href="<?php //echo base_url('pendaftaran'); ?>" class="btn-get-started scrollto">Daftar Pengguna</a>
-    </div>
-  </div>
-</section> -->
-<!-- End Hero -->
 
 
 
 <section class="slider" id="slider">
-    <div class="background_contact parallax" style="background-image: url('/assets/img/bg_slider.png')">
+    <div class="background_contact parallax" style="background-image: url('/assets/img/klaten_abu_bg.jpg')">
         <div class="wrap-slider">
             <div class="container">
                 <div class="row">
                     <div class="isi-slider col-md-6">
-                        <h3> Selamat datang di</h3>
-                        <h4 class="sip_text"> S . I . P </h4>
+                        <!-- <h3> Selamat datang ! </h3> -->
+                        <h4 class="sip_text"> S I P </h4>
                         <h4 class="sip_text_italic"> ( Sistem Informasi Formasi Pegawai ) </h4>
                         <a href="" class="btn btn-primary register_petugas">Register >></a>
                     </div>
                     <div class="isi-slider col-md-6">
-                    <img class="img_slider_human" src="/assets/img/pns.png" style="float:right;">
+                    <img class="img_slider_human" src="/assets/img/ICON_PNS2.png" style="float:right;">
                     </div>
                 </div>
             </div>
