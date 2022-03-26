@@ -8,7 +8,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-12">
-          <h4>Detail Usulan</h4>
+          <h4>Detail Usulan dari OPD "<?php echo $get_usulan_by_id->instansi_nama; ?>"</h4>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -21,11 +21,14 @@
       <div class="row">
         <div class="col-12">
 
+          <!-- Modal Add -->
+          <?php include 'add.php';  ?>
+
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <p style="float:left; font-size:18px;">OPD : <b style="color:red"><?php //echo $getDetailUsulan->instansi_nama; ?></b></br>
-                No. Usul : <?php //echo $getDetailUsulan->usulan_id; ?> </p>
+              <p style="float:left; font-size:18px;">Instansi Unor : <b style="color:red"><?php echo $get_usulan_by_id->instansi_unor_nama; ?></b></br>
+                Nomor Usulan : <?php echo $get_usulan_by_id->usulan_id; ?> </p>
             </div>
             <div class="card-body table-responsive">
               <table class="table table-bordered" id="datatable-list">
@@ -45,7 +48,7 @@
                 </thead>
                 <tbody>
                   <?php $no = 1;
-                  foreach ($getDetailUsulan as $value) { ?>
+                  foreach ($detail_usulan_by_id as $value) { ?>
                     <tr>
                       <td><?php echo $no; ?></td>
                       <td>
@@ -57,32 +60,32 @@
                       <td><?php echo $value->jumlah_approve; ?></td>
                       <td><?php echo $value->jumlahasn; ?></td>
                       <td>
-                        <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
+                      <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
 
-                        <!-- The Pegawai -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <!-- Modal Header -->
-                              <div class="modal-header">
-                                <h3 class="card-title">Detail ASN</h3>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              </div>
-                              <!-- Modal body -->
-                              <div class="modal-body">
-                                <table class="table table-bordered">
-                                  <thead>
-                                    <tr>
-                                      <th>No</th>
-                                      <th>Nama</th>
-                                      <th>NIP</th>
-                                      <th>Jabatan</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody id="show_data">
-                                  </tbody>
-                                </table>
-                              </div>
+<!-- The Pegawai -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h3 class="card-title">Detail ASN</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>NIP</th>
+              <th>Jabatan</th>
+            </tr>
+          </thead>
+          <tbody id="show_data">
+          </tbody>
+        </table>
+      </div>
                               <!-- Modal footer -->
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
@@ -127,17 +130,18 @@
                                 </div>
 
                                 <div class="modal-body">
+
                                   <div class="form-group">
                                     <label>Jabatan Nama</label>
                                     <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" value="<?php echo $value->jabatan_nama; ?>" readonly="readonly">
                                   </div>
                                   <div class="form-group">
                                     <label>Instansi Nama</label>
-                                    <input type="text" class="form-control instansi_nama" name="instansi_nama" placeholder="Instansi Nama" value="<?php echo $value->instansi_unor_nama; ?>" readonly="readonly">
+                                    <input type="text" class="form-control instansi_nama" name="instansi_nama" placeholder="Instansi Nama" value="<?php echo $get_usulan_by_id->instansi_nama; ?>" readonly="readonly">
                                   </div>
                                   <div class="form-group">
                                     <label>ABK (Jumlah Formasi)</label>
-                                    <input type="text" class="form-control formasi_jumlah" name="formasi_jumlah" placeholder="Jumlah Formasi" value="<?php echo $value->formasi_jumlah; ?>" readonly="readonly">
+                                    <input type="text" class="form-control formasi_jumlah" name="formasi_jumlah" placeholder="Jumlah Formasi" value="<?php echo $get_usulan_by_id->formasi_jumlah; ?>" readonly="readonly">
                                   </div>
                                   <div class="form-group">
                                     <label>Jumlah Usulan</label>
@@ -145,8 +149,9 @@
                                   </div>
                                   <div class="form-group">
                                     <label>Jumlah Usulan yang di setujui</label>
-                                    <input type="number" min="1" max="<?php echo $value->jumlah_usulan; ?>" class="form-control jumlah_approve" name="jumlah_approve" placeholder="Jumlah Approve" value="<?php //echo $value->jumlah_approve; ?>">
+                                    <input type="number" min="1" max="<?php echo $value->jumlah_usulan; ?>" class="form-control jumlah_approve" name="jumlah_approve" placeholder="Jumlah Approve" value="<?php echo $value->jumlah_approve; ?>">
                                   </div>
+
                                 </div>
                                 <div class="modal-footer">
                                   <input type="hidden" name="detail_usulan_id" class="detail_usulan_id" value="<?php echo $value->detail_usulan_id; ?>">
@@ -184,7 +189,7 @@
                                   </div>
                                   <div class="form-group">
                                     <label>Instansi Nama</label>
-                                    <input type="text" class="form-control instansi_nama" name="instansi_nama" placeholder="Instansi Nama" value="<?php echo $value->instansi_unor_nama; ?>" readonly="readonly">
+                                    <input type="text" class="form-control instansi_nama" name="instansi_nama" placeholder="Instansi Nama" value="<?php echo $get_usulan_by_id->instansi_nama; ?>" readonly="readonly">
                                   </div>
 
                                   <div class="form-group">
@@ -257,13 +262,9 @@
         var i = 0;
         while (i < data.length) {
           no++;
-          output += '<tr>' + 
-          '<td>' + no + '</td>' + 
-          '<td>' + data[i].pegawai_nama + 
-          '</td>' + '<td>' + data[i].pegawai_nip + 
-          '</td>' + '<td>' + data[i].jabatan_nama + 
-          '</td>' + // '<td>' +data[i].formasi_jumlah+'</td>'+
-          '</tr>';
+          output += '<tr>' + '<td>' + no + '</td>' + '<td>' + data[i].pegawai_nama + '</td>' + '<td>' + data[i].pegawai_nip + '</td>' + '<td>' + data[i].jabatan_nama + '</td>' + // '<td>' +data[i].formasi_jumlah+'</td>'+
+
+            '</tr>';
           i++;
         }
 

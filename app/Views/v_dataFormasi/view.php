@@ -46,7 +46,7 @@
                   foreach ($getDetailFormasi as $value) { ?>
                     <tr>
                       <td><?php echo $no; ?></td>
-                      <td><?php echo $value->formasi_id; ?></td>
+                      <td><?php echo $value->jabatan_kode; ?></td>
                       <td><?php echo $value->jabatan_nama; ?></td>
                       <td><?php echo $value->instansi_unor; ?></td>
                       <td><?php echo $value->instansi_unor_nama; ?></td>
