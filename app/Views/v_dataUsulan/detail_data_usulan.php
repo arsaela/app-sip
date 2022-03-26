@@ -24,8 +24,8 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <p style="float:left; font-size:18px;">OPD : <b style="color:red"><?php //echo $getDetailUsulan->instansi_nama; ?></b></br>
-                No. Usul : <?php //echo $getDetailUsulan->usulan_id; ?> </p>
+              <p style="float:left; font-size:18px;">OPD : <b style="color:red"><?php echo $getDetailUsulan[0]->instansi_nama; ?></b></br>
+                No. Usul : <?php echo $getDetailUsulan[0]->usulan_id; ?> </p>
             </div>
             <div class="card-body table-responsive">
               <table class="table table-bordered" id="datatable-list">
@@ -34,10 +34,10 @@
                     <th>No</th>
                     <th>Nama Jabatan</th>
                     <th>ABK</th>
+                    <th>ASN yang ada</th>
+                    <th>Detail ASN</th>              
                     <th>Usulan</th>
                     <th>Disetujui</th>
-                    <th>ASN yang ada</th>
-                    <th>Detail ASN</th>
                     <th>Status Usulan</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
@@ -53,14 +53,10 @@
                         <input type="hidden" name="jabatan_kode" class="get_jabatan_kode" value="<?php echo $value->jabatan_kode; ?>" />
                       </td>
                       <td><?php echo $value->formasi_jumlah; ?></td>
-                      <td><?php echo $value->jumlah_usulan; ?></td>
-                      <td><?php echo $value->jumlah_approve; ?></td>
                       <td><?php echo $value->jumlahasn; ?></td>
-                      <td>
-                        <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
-
-                        <!-- The Pegawai -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <td><button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
+                       <!-- The Pegawai -->
+                       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <!-- Modal Header -->
@@ -91,6 +87,10 @@
                           </div>
                         </div>
                       </td>
+                      <td><?php echo $value->jumlah_usulan; ?></td>
+                      <td><?php echo $value->jumlah_approve; ?></td>
+                     
+                       
                       <td><?php
                           if ($value->status_usulan == 0) {
                             echo "<p class='bg_status_belumverifikasi'>Belum Di Verifikasi</p>";

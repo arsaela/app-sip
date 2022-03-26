@@ -43,7 +43,8 @@ class DataUsulan extends BaseController
 		$data['email']   = $this->session->get('email');
 
 		$data['getDetailUsulan'] = $this->M_usulan->getDetailUsulan($idUsulan)->getResult();
-		$data['getUsulanID'] = $this->M_usulan->getDetailUsulan($idUsulan)->getResult();
+		//$data['getUsulanID'] = $this->M_usulan->getDetailUsulan($idUsulan)->getResult();
+		//$data['getUsulan'] = $this->M_usulan->getUsulan($idUsulan)->getResult();
 
 		return view('v_dataUsulan/detail_data_usulan', $data);
 	}
