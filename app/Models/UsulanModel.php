@@ -154,25 +154,25 @@ class UsulanModel extends Model
 	// 	return $query;
 	// }
 
-	// public function getApproveUsulan($data, $id)
-	// {
-	// 	$query =  $this->db->table('tbl_detail_usulan')
-	// 		->where('detail_usulan_id', $id);
-	// 	return $query->update($data);
-	// }
+	public function getApproveUsulan($data, $id)
+	{
+		$query =  $this->db->table('tbl_detail_usulan')
+			->where('detail_usulan_id', $id);
+		return $query->update($data);
+	}
 
 
-	// public function updateApprovalUsulan($data, $id)
-	// {
-	// 	$query = $this->db->table('tbl_detail_usulan')->update($data, array('detail_usulan_id' => $id));
-	// 	return $query;
-	// }
+	public function updateApprovalUsulan($data, $id)
+	{
+		$query = $this->db->table('tbl_detail_usulan')->update($data, array('detail_usulan_id' => $id));
+		return $query;
+	}
 
-	// public function updateRejectUsulan($data, $id)
-	// {
-	// 	$query = $this->db->table('tbl_detail_usulan')->update($data, array('detail_usulan_id' => $id));
-	// 	return $query;
-	// }
+	public function updateRejectUsulan($data, $id)
+	{
+		$query = $this->db->table('tbl_detail_usulan')->update($data, array('detail_usulan_id' => $id));
+		return $query;
+	}
 
 
 	// public function getPegawaiByUnorAndInstansi($idJabatan)

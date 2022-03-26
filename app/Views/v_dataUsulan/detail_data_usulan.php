@@ -49,7 +49,7 @@
                     <tr>
                       <td><?php echo $no; ?></td>
                       <td>
-                        <?php echo $value->jabatan_nama; ?>
+                        <?php echo $value->jabatan_nama.' '.$value->instansi_unor_nama; ?>
                         <input type="hidden" name="jabatan_kode" class="get_jabatan_kode" value="<?php echo $value->jabatan_kode; ?>" />
                       </td>
                       <td><?php echo $value->formasi_jumlah; ?></td>
@@ -132,12 +132,16 @@
                                     <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" value="<?php echo $value->jabatan_nama; ?>" readonly="readonly">
                                   </div>
                                   <div class="form-group">
-                                    <label>Instansi Nama</label>
-                                    <input type="text" class="form-control instansi_nama" name="instansi_nama" placeholder="Instansi Nama" value="<?php echo $value->instansi_unor_nama; ?>" readonly="readonly">
+                                    <label>Lokasi Unit Kerja</label>
+                                    <input type="text" class="form-control instansi_nama" name="instansi_unor_nama" placeholder="Instansi Unor Nama" value="<?php echo $value->instansi_unor_nama; ?>" readonly="readonly">
                                   </div>
                                   <div class="form-group">
                                     <label>ABK (Jumlah Formasi)</label>
                                     <input type="text" class="form-control formasi_jumlah" name="formasi_jumlah" placeholder="Jumlah Formasi" value="<?php echo $value->formasi_jumlah; ?>" readonly="readonly">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>ASN yang ada</label>
+                                    <input type="text" class="form-control formasi_jumlah" name="jumlahasn" placeholder="Jumlah ASN" value="<?php echo $value->jumlahasn; ?>" readonly="readonly">
                                   </div>
                                   <div class="form-group">
                                     <label>Jumlah Usulan</label>
