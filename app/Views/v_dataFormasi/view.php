@@ -38,7 +38,7 @@
                     <th>Lokasi Unit Kerja</th>
                     <th>Jumlah Kebutuhan</th>
                     <th>Jumlah ASN</th>
-                    <th>Detil ASN</th>
+                    <th>Detail ASN</th>
                   </tr>
                 </thead>
                 <tbody>
