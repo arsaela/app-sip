@@ -143,6 +143,11 @@
                                     <label>ASN yang ada</label>
                                     <input type="text" class="form-control formasi_jumlah" name="jumlahasn" placeholder="Jumlah ASN" value="<?php echo $value->jumlahasn; ?>" readonly="readonly">
                                   </div>
+
+                                  <div class="form-group">
+                                    <label>Jumlah Kekurangan Pegawai</label>
+                                    <input type="text" class="form-control formasi_jumlah" name="jumlahkekuranganasn" placeholder="Jumlah Kekurangan ASN" value="" readonly="readonly">
+                                  </div>
                                   <div class="form-group">
                                     <label>Jumlah Usulan</label>
                                     <input type="text" class="form-control jumlah_usulan" name="jumlah_usulan" placeholder="Jumlah Usulan" value="<?php echo $value->jumlah_usulan; ?>" readonly="readonly">
