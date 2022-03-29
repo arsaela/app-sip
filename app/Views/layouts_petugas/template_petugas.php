@@ -65,11 +65,11 @@
             <div class="copyright">
                 <strong>Copyright &copy; <script>
                         document.write(new Date().getFullYear());
-                    </script> <a href="#">Badan Kepegawaian dan Pengembangan Sumber Daya Manusia</a>.</strong> All rights reserved.
+                    </script> <a class="bkpsdm_footer" href="#">Badan Kepegawaian dan Pengembangan Sumber Daya Manusia</a>.</strong> All rights reserved.
             </div>
-            <div class="credits">
+            <!-- <div class="credits">
                 <b>Version</b> 1.0.0
-            </div>
+            </div> -->
         </div>
     </footer><!-- End Footer -->
 

@@ -66,7 +66,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?php echo base_url('datausulan'); ?>" class="nav-link <?php if ($page == 'datausulan');  ?>">
+          <a href="<?php echo base_url('datainformasi'); ?>" class="nav-link <?php if ($page == 'datainformasi');  ?>">
             <i class="nav-icon fas fa-id-card"></i>
             <p>
               Data Informasi
@@ -75,7 +75,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="<?php echo base_url('datausulan'); ?>" class="nav-link <?php if ($page == 'datausulan');  ?>">
+          <a href="<?php echo base_url('dataalurpengusulan'); ?>" class="nav-link <?php if ($page == 'dataalurpengusulan');  ?>">
             <i class="nav-icon fas fa-question-circle"></i>
             <p>
               Data Alur Pengusulan
@@ -83,10 +83,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?php echo base_url('datausulan'); ?>" class="nav-link <?php if ($page == 'datausulan');  ?>">
+          <a href="<?php echo base_url('setbatasusulan'); ?>" class="nav-link <?php if ($page == 'SetBatasUsulan');  ?>">
             <i class="nav-icon fas fa-gear"></i>
             <p>
-              Data Alur Pengusulan
+              Setting Batas Pengusulan
             </p>
           </a>
         </li>

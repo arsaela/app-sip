@@ -300,7 +300,7 @@ h1, h2, h3, h4, h5, h6 {
   /* background-color: #6e6d6ea6; */
     /* background-color: #6e6d6ea6; */
   min-height: 350px;
-  background-color: #fff4f4a6;
+  background-color: #daf6ffa6;
 }
 
 .isi-slider h3 {
@@ -423,6 +423,121 @@ float:left;
 
 section#informasi {
   background-color: #f7f7f7;
+  padding-bottom: 40px;
+}
+
+.title-section-batas-pengusulan h3 {
+  text-align: center !important;
+  padding-top: 15px;
+  font-family: comic;
+  padding-bottom: 20px;
+  color: #012970;
+}
+
+.title-section-batas-pengusulan:before {
+    border-bottom: 1px solid #000;
+    content: ' ';
+    display: block;
+    position: absolute;
+    -webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    width: 80px;
+    border-style: solid;
+    border-width: 2px 0 0 0;
+    color: #719bed;
+    top: 31px;
+    left: 30%;
+    z-index: 0;
+}
+
+.title-section-batas-pengusulan:after {
+  border-bottom: 1px solid #000;
+  content: ' ';
+  display: block;
+  position: absolute;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  width: 80px;
+  border-style: solid;
+  border-width: 2px 0 0 0;
+  color: #719bed;
+  top: 31px;
+  left: 70%;
+  z-index: 0;
+}
+
+.title-section-contact-us h3 {
+  text-align: center !important;
+  padding-top: 15px;
+  font-family: comic;
+  padding-bottom: 20px;
+  color: #012970;
+}
+
+.title-section-contact-us:before {
+  border-bottom: 1px solid #000;
+  content: ' ';
+  display: block;
+  position: absolute;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  width: 80px;
+  border-style: solid;
+  border-width: 2px 0 0 0;
+  color: #719bed;
+  top: 31px;
+  left: 35%;
+  z-index: 0;
+}
+
+.title-section-contact-us:after {
+  border-bottom: 1px solid #000;
+  content: ' ';
+  display: block;
+  position: absolute;
+  -webkit-transform: translate(-50%,0);
+  -moz-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  width: 80px;
+  border-style: solid;
+  border-width: 2px 0 0 0;
+  color: #719bed;
+  top: 31px;
+  left: 65%;
+  z-index: 0;
+}
+
+a.bkpsdm_footer {
+  color: #fff;
+  font-family: rgb(255, 255, 255);
+  font-weight: unset ;
+}
+
+.card.countdowntimer {
+  align-items: center;
+  border: 1px solid #a5a5a5;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.card-content.timer h5 {
+  font-size: 40px;
+  font-family: Nunito Bold;
+}
+
+span.day_title {
+  font-size: 21px;
+}
+
+section#section_batas_pengusulan {
+  padding-bottom: 40px;
+  padding-top: 20px;
+  background-color: #87b7f5;
 }
 
 @media (max-width: 1024px) {
@@ -1892,9 +2007,9 @@ section#informasi {
 #footer {
   background: #fff;
   padding: 0 0 30px 0;
-  color: #444444;
+  color: #fff;
   font-size: 14px;
-  background: #f1f6fe;
+  background: #106eea;
 }
 
 #footer .footer-newsletter {

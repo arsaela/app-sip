@@ -17,8 +17,8 @@
             <nav class="nav-menu d-none d-lg-block">
             <ul>
               <li class="active"><a href="<?php echo base_url('/'); ?>">Home</a></li>
-              <li><a href="#team">Alur Pengusulan</a></li>
-              <li><a href="#team">Informasi</a></li>
+              <li><a href="#alur_pengusulan">Alur Pengusulan</a></li>
+              <li><a href="#informasi">Informasi</a></li>
               <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
 
             </ul>
@@ -35,7 +35,7 @@
 
 
 <section class="slider" id="slider">
-    <div class="background_contact parallax" style="background-image: url('/assets/img/klaten_abu_bg.jpg')">
+    <div class="background_contact parallax" style="background-image: url('/assets/img/iconklaten.png')">
         <div class="wrap-slider">
             <div class="container">
                 <div class="row">
@@ -111,12 +111,6 @@
 </section>
 
 
-
-
-
-
-
-
 <section class="informasi" id="informasi">
     <div class="container">
         <div class="row">
@@ -144,13 +138,62 @@
 </section>
 
 
+<section class="section_batas_pengusulan" id="section_batas_pengusulan">
+    <div class="container">
+        <div class="row">
+            <div class="title-section-batas-pengusulan col-md-12">
+                <h3>Batas Waktu Pengusulan</h3>
+            </div>
+        </div>
+
+        <!-- count down timer pengusulan -->
+        <div class="wrap_countdowntimer row offset-md-3">
+
+        <div class="wrap_timer_shape col-md-2">
+          <div class="card countdowntimer">
+            <div class="card-content timer">
+              <h5 id="hari" class="center"></h5>
+              <span class="day_title">Hari</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap_timer_shape col-md-2">
+          <div class="card countdowntimer">
+            <div class="card-content timer">
+              <h5 id="jam" class="center"></h5>
+              <span class="day_title">Jam</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap_timer_shape col-md-2">
+          <div class="card countdowntimer">
+            <div class="card-content timer">
+              <h5 id="menit" class="center"></h5>
+              <span class="day_title">Menit</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap_timer_shape col-md-2">
+          <div class="card countdowntimer">
+            <div class="card-content timer">
+              <h5 id="detik" class="center"></h5>
+              <span class="day_title">Detik</span>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+
 
 
 
 
 
   <!-- ======= Info PMB ======= -->
-  <section id="team" class="faq section-bg">
+  <!-- <section id="team" class="faq section-bg">
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
@@ -182,7 +225,48 @@
       </ul>
 
     </div>
-  </section>
+  </section> -->
 
 </main>
+<?= $this->endSection() ?>
+
+
+<?= $this->section('script') ?>
+<script>
+
+CountDownTimer("<?php echo $timer->waktu;?>", 'hari', 'jam', 'menit', 'detik');
+function CountDownTimer(dt, id1, id2, id3,id4)
+{
+var end = new Date(dt);
+
+var _second = 1000;
+var _minute = _second * 60;
+var _hour = _minute * 60;
+var _day = _hour * 24;
+var timer;
+
+function showRemaining() {
+var now = new Date();
+var distance = end - now;
+var distance1 = now - end;
+if(distance1 > 0){
+clearInterval(timer);
+return;
+}
+var days = Math.floor(distance / _day);
+var hours = Math.floor((distance % _day) / _hour);
+var minutes = Math.floor((distance % _hour) / _minute);
+var seconds = Math.floor((distance % _minute) / _second);
+
+// document.getElementById(id1).innerHTML = days + ' Hari';
+document.getElementById(id1).innerHTML = days;
+document.getElementById(id2).innerHTML = hours;
+document.getElementById(id3).innerHTML = minutes;
+document.getElementById(id4).innerHTML = seconds;
+}
+
+timer = setInterval(showRemaining, 1000);
+}
+
+</script>
 <?= $this->endSection() ?>
