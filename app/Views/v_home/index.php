@@ -8,7 +8,7 @@
           <h1 class="logo mr-auto">
             <a href="<?php echo base_url('/'); ?>">
               <img src="/assets/img/klaten_logo.png">
-                <div class="sip_text_home"> SISTEM INFORMASI FORMASI PEGAWAI </div>
+                <div class="sip_text_home"> APLIKASI FORMASI PEGAWAI </div>
                 <div class="pemkab_text"> BKPSDM KABUPATEN KLATEN </div>
             </a>
           </h1>
@@ -42,7 +42,7 @@
                     <div class="isi-slider col-md-6">
                         <!-- <h3> Selamat datang ! </h3> -->
                         <h4 class="sip_text"> S I P </h4>
-                        <h4 class="sip_text_italic"> ( Sistem Informasi Formasi Pegawai ) </h4>
+                        <h4 class="sip_text_italic"> ( Aplikasi Formasi Pegawai ) </h4>
                         <a href="" class="btn btn-primary register_petugas">Register >></a>
                     </div>
                     <div class="isi-slider col-md-6">
@@ -59,6 +59,80 @@
 
 <?= $this->section('content') ?>
 <main id="main">
+
+
+<section class="section_batas_pengusulan" id="section_batas_pengusulan">
+    <div class="container">
+        <div class="row">
+            <div class="title-section-batas-pengusulan col-md-12">
+                <h3>Batas Waktu Pengusulan</h3>
+            </div>
+        </div>
+
+        <!-- count down timer pengusulan -->
+        <div class="wrap_countdowntimer row offset-md-3">
+
+        <div class="wrap_timer_shape col-md-2">
+          <div class="card countdowntimer">
+            <div class="card-content timer">
+              <h5 id="hari" class="center"></h5>
+              <span class="day_title">Hari</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap_timer_shape col-md-2">
+          <div class="card countdowntimer">
+            <div class="card-content timer">
+              <h5 id="jam" class="center"></h5>
+              <span class="day_title">Jam</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap_timer_shape col-md-2">
+          <div class="card countdowntimer">
+            <div class="card-content timer">
+              <h5 id="menit" class="center"></h5>
+              <span class="day_title">Menit</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap_timer_shape col-md-2">
+          <div class="card countdowntimer">
+            <div class="card-content timer">
+              <h5 id="detik" class="center"></h5>
+              <span class="day_title">Detik</span>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="informasi" id="informasi">
+    <div class="container">
+        <div class="row">
+            <div class="title-section-informasi col-md-12">
+                <h3>Informasi</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <?php foreach($getInformasi as $value) { ?>
+            <div class="wrap-informasi col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                <div class="content_informasi">
+                    <!-- <a href="<?php //echo $value->link_projek?>" target="_blank"> -->
+                   <?php echo $value->informasi_content;?>
+                    <!-- </a> -->
+                </div>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
+</section>
+
 
 <section class="alur_pengusulan" id="alur_pengusulan">
     <div class="container">
@@ -111,81 +185,8 @@
 </section>
 
 
-<section class="informasi" id="informasi">
-    <div class="container">
-        <div class="row">
-            <div class="title-section-informasi col-md-12">
-                <h3>Informasi</h3>
-            </div>
-        </div>
-
-        <div class="row">
-            <?php //foreach($data_portofolio as $value) { ?>
-            <div class="wrap-informasi col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                <div class="content_informasi">
-                    <!-- <a href="<?php //echo $value->link_projek?>" target="_blank"> -->
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut dui ornare, rutrum lectus sit amet, malesuada augue. Integer id rutrum leo. Cras dictum orci eu porttitor sollicitudin. Suspendisse sollicitudin suscipit commodo. Nulla neque eros, condimentum vel tincidunt eu, molestie nec ex. Vestibulum vel diam vitae elit gravida gravida. Morbi et porta felis. Vivamus in diam augue. In in convallis diam.
-
-                    Integer semper vestibulum turpis eget lobortis. Integer sodales, enim in convallis tristique, felis sem mollis lorem, et viverra erat neque eu urna. Sed id ante imperdiet, tempus nulla nec, lacinia felis. Vestibulum ac auctor mi. Integer arcu risus, mollis at semper vitae, tempus sit amet ex. Phasellus ac malesuada purus. Fusce sed augue vitae ex varius congue a id lacus. Phasellus faucibus auctor porttitor. Sed convallis vulputate posuere. Etiam dictum dolor id orci cursus aliquam. Fusce id lorem nec libero fermentum imperdiet. Nunc tristique tempor luctus. Nam semper mi sed augue efficitur, quis efficitur mauris ultrices. Praesent ut urna tempor, fermentum justo pharetra, dictum ante. Suspendisse finibus ante quam, ut finibus nulla lobortis nec.
-
-                    Morbi dictum nisl vitae dapibus iaculis. Sed magna felis, accumsan a interdum eu, ullamcorper nec arcu.
-                    <!-- </a> -->
-                </div>
-            </div>
-            <?php //} ?>
-        </div>
-    </div>
-</section>
 
 
-<section class="section_batas_pengusulan" id="section_batas_pengusulan">
-    <div class="container">
-        <div class="row">
-            <div class="title-section-batas-pengusulan col-md-12">
-                <h3>Batas Waktu Pengusulan</h3>
-            </div>
-        </div>
-
-        <!-- count down timer pengusulan -->
-        <div class="wrap_countdowntimer row offset-md-3">
-
-        <div class="wrap_timer_shape col-md-2">
-          <div class="card countdowntimer">
-            <div class="card-content timer">
-              <h5 id="hari" class="center"></h5>
-              <span class="day_title">Hari</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="wrap_timer_shape col-md-2">
-          <div class="card countdowntimer">
-            <div class="card-content timer">
-              <h5 id="jam" class="center"></h5>
-              <span class="day_title">Jam</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="wrap_timer_shape col-md-2">
-          <div class="card countdowntimer">
-            <div class="card-content timer">
-              <h5 id="menit" class="center"></h5>
-              <span class="day_title">Menit</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="wrap_timer_shape col-md-2">
-          <div class="card countdowntimer">
-            <div class="card-content timer">
-              <h5 id="detik" class="center"></h5>
-              <span class="day_title">Detik</span>
-            </div>
-          </div>
-        </div>
-    </div>
-</section>
 
 
 

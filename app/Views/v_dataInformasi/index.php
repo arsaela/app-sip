@@ -8,7 +8,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-12">
-          <h1>Data Usulan</h1>
+          <h1>Data Informasi</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -19,6 +19,21 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
+
+        <?php if (isset($message_success)) : ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php echo $message_success; ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+        <?php endif; ?>
+
+        <?php if (isset($message_failed)) : ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <?php echo $message_failed; ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+        <?php endif; ?>
+
           <!-- Default box -->
           <div class="card">
             <div class="card-body table-responsive">
@@ -26,22 +41,21 @@
                 <thead>
                   <tr>
                     <th>No.</th>
-                    <th>Nomor Usul</th>
-                    <th>Nama Instansi / OPD</th>
-                    <th>Status Usulan</th>
+                    <th>Judul Informas</th>
+                    <th>Detail Informasi</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php $no = 1;
-                  foreach ($getUsulan as $isi) { ?>
+                  foreach ($getInformasi as $isi) { ?>
                     <tr>
                       <td><?php echo $no; ?></td>
-                      <td><?php echo $isi->usulan_id; ?></td>
-                      <td><?php echo $isi->instansi_nama; ?></td>
-                      <td><?php echo "ket.status"; ?></td>
+                      <td><?php echo $isi->informasi_judul; ?></td>
+                      <td><?php echo $isi->informasi_content; ?></td>
                       <td>
-                      <a data-toggle='tooltip' data-placement='top' title='Detail'  href="<?php echo base_url('DataUsulan/detail_usulan/' . $isi->usulan_id); ?>" class="btn btn-warning"><i class="fa fa-folder-open-o "></i></a>
+                  
+                        <a data-toggle='tooltip' data-placement='top' title='Update Data'  href="<?php echo base_url('DataInformasi/update_informasi/' . $isi->informasi_id); ?>" class="btn btn-success"><i class="fa fa-pencil "></i></a>
                       </td>
                     </tr>
                   <?php $no++;

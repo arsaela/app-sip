@@ -24,14 +24,12 @@ class HomeModel extends Model
 		$this->dt = $this->db->table($this->table);
 	}
 
-	// public function select_time(){
-    //     // $this->db->select('*');
-    //     // $this->db->from('tbl_batas_pengusulan');
-    //     $query = $this->db->get();
-    //     if($query->num_rows()>0){
-    //     return $query->row();
-    //     }
-    // }
+	public function get_data_informasi()
+	{
+		$query =  $this->db->table('tbl_informasi')
+			->get();
+		return $query;
+	}
 
     public function select_time(){
 		$query =  $this->db->table('tbl_batas_pengusulan')

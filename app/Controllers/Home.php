@@ -26,6 +26,7 @@ class Home extends BaseController
 
         $data['timer'] = $this->M_home->select_time()->getRow();
 
+        $data['getInformasi'] = $this->M_home->get_data_informasi()->getResult();
 
         // print_r($data['timer']);
         //die('stttoppp');

@@ -3,7 +3,7 @@
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\Model;
 
-class InformasiModel extends Model  
+class AlurPengusulanModel extends Model  
 {
 
 	protected $table = "tbl_informasi";
@@ -22,9 +22,9 @@ class InformasiModel extends Model
 	   $this->dt = $this->db->table($this->table);
 	}
 
-	public function getInformasi()
+	public function getAlurPengusulan()
 	{
-		$query =  $this->db->table('tbl_informasi')
+		$query =  $this->db->table('tbl_alur_pengusulan')
 			->select('*')
 			->get();
 		return $query;
