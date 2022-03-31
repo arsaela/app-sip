@@ -34,6 +34,57 @@ class DataAlurPengusulan extends BaseController
 		return view('v_dataAlurPengusulan/index', $data);
 	}
 
+	public function add_alur_pengusulan()
+    {
+        $data['title']     = 'Tambah Data Alur Pengusulan';
+
+		
+		$data = array(
+            'nama_barang' => $this->request->getPost('nama'),
+            'qty'         => $this->request->getPost('qty'),
+            'harga_beli'  => $this->request->getPost('beli'),
+            'harga_jual'  => $this->request->getPost('jual')
+        );
+       
+		$Save_Alur_Pengusulan = $this->M_alur_pengusulan->save_alur_pengusulan($data);
+
+		if(isset($Save_Alur_Pengusulan)) {
+			$data['message_success'] = "Data Alur Pengusulan berhasil di update";
+
+			$data['title']     = 'Data Alur Pengusulan';
+			$data['page']      = "dataalurpengusulan";
+			$data['nama']      = $this->session->get('nama');
+			$data['email']     = $this->session->get('email');
+
+			$data['getAlurPengusulan'] = $this->M_alur_pengusulan->getAlurPengusulan()->getResult();
+
+			return view('v_dataAlurPengusulan/index', $data);
+		} else{
+			$data['message_failed'] = "Data Alur Pengusulan gagal di update. Silahkan cek dan coba kembali !";
+
+			return view('v_dataAlurPengusulan/update', $data);
+		}
+		
+        return view('v_dataAlurPengusulan/add', $data);
+    }
+
+    public function add()
+    {
+        $model = new Barang_model;
+        $data = array(
+            'nama_barang' => $this->request->getPost('nama'),
+            'qty'         => $this->request->getPost('qty'),
+            'harga_beli'  => $this->request->getPost('beli'),
+            'harga_jual'  => $this->request->getPost('jual')
+        );
+        $model->saveBarang($data);
+        echo '<script>
+                alert("Sukses Tambah Data Barang");
+                window.location="'.base_url('barang').'"
+            </script>';
+
+    }
+
 	public function update_informasi($id)
     {
         $getInformasiByID = $this->M_informasi->get_informasi_by_id($id)->getRow();

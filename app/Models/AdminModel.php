@@ -24,6 +24,17 @@ class AdminModel extends Model
 		$this->dt = $this->db->table($this->table);
 	}
 
+	public function get_admin()
+	{
+		$query =  $this->db->table('tbl_admin')
+			->select('*')
+			->join('tbl_login', 'tbl_login.username = tbl_admin.username')
+			//->join('tbl_unor', 'tbl_usulan.instansi_unor = tbl_unor.instansi_unor')
+			// ->where('tbl_admin.username', $yearnow)
+			->get();
+		return $query;
+	}
+
 	private function _get_datatables_query()
 	{
 		$i = 0;

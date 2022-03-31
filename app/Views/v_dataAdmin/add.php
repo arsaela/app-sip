@@ -23,8 +23,14 @@
             <small id="admin_no_hp2_error" class="text-danger"> </small>
 
             <label for="admin_email">Email</label>
-            <input type="text" class="form-control" name="admin_email2" placeholder="Email">
+            <input type="email" class="form-control" name="admin_email2" placeholder="Email">
             <small id="admin_email2_error" class="text-danger"> </small>
+
+            <label for="admin_password">Password</label>
+            <input type="text" class="form-control" name="admin_password" placeholder="Password">
+            <small id="admin_password_error" class="text-danger"> </small>
+
+            
           </div>
         </div>
       </form>

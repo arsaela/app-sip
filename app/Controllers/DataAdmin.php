@@ -53,13 +53,16 @@ class DataAdmin extends BaseController
         $admin_nama = $this->request->getPost('admin_nama2');
         $admin_no_hp = $this->request->getPost('admin_no_hp2');
         $admin_email = $this->request->getPost('admin_email2');
+        $admin_password = $this->request->getPost('admin_password');
 
         //Data Admin
         $data = [
             'username' => $username,
             'admin_nama' => $admin_nama,
             'admin_no_hp' => $admin_no_hp,
-            'admin_email' => $admin_email
+            'admin_email' => $admin_email,
+            'password'    => $admin_password,
+            'hak_akses'   => 'admin'
         ];
 
         //Cek Validasi Data Admin, Jika Data Tidak Valid 
@@ -99,13 +102,16 @@ class DataAdmin extends BaseController
         $admin_nama = $this->request->getPost('admin_nama2');
         $admin_no_hp = $this->request->getPost('admin_no_hp2');
         $admin_email = $this->request->getPost('admin_email2');
+        $admin_password = $this->request->getPost('admin_password');
 
         //Data Admin
         $data = [
             'username' => $username,
             'admin_nama' => $admin_nama,
             'admin_no_hp' => $admin_no_hp,
-            'admin_email' => $admin_email
+            'admin_email' => $admin_email,
+            'password'    => $admin_password,
+            'hak_akses'   => 'admin'
         ];
 
         //Cek Validasi Data Admin, Jika Data Tidak Valid 
@@ -141,7 +147,8 @@ class DataAdmin extends BaseController
     {
 
         if ($this->request->getMethod(true) == 'POST') {
-            $lists = $this->M_admin->get_datatables();
+            //$lists = $this->M_admin->get_datatables();
+            $lists = $this->M_admin->get_admin()->getResult();
             $data = [];
             $no = $this->request->getPost("start");
             foreach ($lists as $list) {
@@ -152,6 +159,7 @@ class DataAdmin extends BaseController
                 $row[] = $list->admin_nama;
                 $row[] = $list->admin_no_hp;
                 $row[] = $list->admin_email;
+                $row[] = base_encode64($this->encrypter->encrypt($list->password));
                 $row[] = $this->_action($list->id);
                 $data[] = $row;
             }

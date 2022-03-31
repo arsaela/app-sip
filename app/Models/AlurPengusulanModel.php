@@ -6,11 +6,11 @@ use CodeIgniter\Model;
 class AlurPengusulanModel extends Model  
 {
 
-	protected $table = "tbl_informasi";
+	protected $table = "tbl_alur_pengusulan";
 	// protected $allowedFields = ['tgl_buka', 'tgl_tutup', 'tgl_pengumuman'];
 	// protected $column_order = [null, 'tgl_buka', 'tgl_tutup', 'tgl_pengumuman', null];
 	// protected $column_search = ['tgl_buka', 'tgl_tutup', 'tgl_pengumuman'];
-	protected $order = ['informasi_id' => 'desc'];
+	protected $order = ['alur_pengusulan_id' => 'desc'];
 	protected $request;
 	protected $db;
 	protected $dt;
@@ -29,6 +29,12 @@ class AlurPengusulanModel extends Model
 			->get();
 		return $query;
 	}
+
+	public function save_alur_pengusulan($data)
+    {
+        $builder = $this->db->table('tbl_alur_pengusulan');
+        return $builder->insert($data);
+    }
 
 	public function get_informasi_by_id($id)
     {

@@ -37,6 +37,12 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-body table-responsive">
+            
+            <div class="card-tools">
+              <a href="<?php echo base_url('dataAlurPengusulan/add_alur_pengusulan/'); ?>" class="btn btn-primary"><i class="fa fa-plus "> Tambah Data</i></a>
+            </div>
+            <br>
+
               <table class="table table-bordered" id="datatable-list">
                 <thead>
                   <tr>

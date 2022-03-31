@@ -43,6 +43,7 @@
                   <tr>
                     <th>No.</th>
                     <th>Username</th>
+                    <th>Password</th>
                     <th>Nama Admin</th>
                     <th>No. HP</th>
                     <th>Email</th>
