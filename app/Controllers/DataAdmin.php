@@ -7,6 +7,7 @@ use Config\Services;
 
 class DataAdmin extends BaseController
 {
+    protected $encrypter;
     protected $M_admin;
     protected $request;
     protected $form_validation;
@@ -14,6 +15,7 @@ class DataAdmin extends BaseController
 
     public function __construct()
     {
+        $this->encrypter = \Config\Services::encrypter();
         $this->request = Services::request();
         $this->M_admin = new AdminModel($this->request);
         $this->form_validation =  \Config\Services::validation();
@@ -48,6 +50,54 @@ class DataAdmin extends BaseController
     // Add Data Admin
     public function add()
     {
+        // if (!$this->validate([
+        //     'username2' => [
+        //         'rules' => 'required|min_length[4]|max_length[20]|is_unique[tbl_login.username]',
+        //         'errors' => [
+        //             'required' => '{field} Harus diisi',
+        //             'min_length' => '{field} Minimal 4 Karakter',
+        //             'max_length' => '{field} Maksimal 20 Karakter',
+        //             'is_unique' => 'Username sudah digunakan sebelumnya'
+        //         ]
+        //     ],
+        //     'admin_password' => [
+        //         'rules' => 'required|min_length[4]|max_length[10]',
+        //         'errors' => [
+        //             'required' => '{field} Harus diisi',
+        //             'min_length' => '{field} Minimal 4 Karakter',
+        //             'max_length' => '{field} Maksimal 10 Karakter',
+        //         ]
+        //     ],
+        //     'admin_password_conf' => [
+        //         'rules' => 'matches[password]',
+        //         'errors' => [
+        //             'matches' => 'Konfirmasi Password tidak sesuai dengan password',
+        //         ]
+        //     ],
+        //     'admin_nama2' => [
+        //         'rules' => 'required|min_length[4]|max_length[100]',
+        //         'errors' => [
+        //             'required' => '{field} Harus diisi',
+        //             'min_length' => '{field} Minimal 4 Karakter',
+        //             'max_length' => '{field} Maksimal 100 Karakter',
+        //         ]
+        //     ],
+        // ])) {
+        //     session()->setFlashdata('error', $this->validator->listErrors());
+        //     return redirect()->back()->withInput();
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
 
         $username = $this->request->getPost('username2');
         $admin_nama = $this->request->getPost('admin_nama2');
@@ -61,9 +111,15 @@ class DataAdmin extends BaseController
             'admin_nama' => $admin_nama,
             'admin_no_hp' => $admin_no_hp,
             'admin_email' => $admin_email,
-            'password'    => $admin_password,
+        ];
+
+        $data2 = [
+            'username' => $username,
+            'password'    => $this->encrypter->encrypt(base64_decode($admin_password)),
             'hak_akses'   => 'admin'
         ];
+        // 'password'    => $ciphertext = $encrypter->encrypt('My secret message');
+
 
         //Cek Validasi Data Admin, Jika Data Tidak Valid 
         if ($this->form_validation->run($data, 'user') == FALSE) {
@@ -78,7 +134,8 @@ class DataAdmin extends BaseController
         //Data Valid
         else {
             //Simpan Data Admin
-            $this->M_admin->save($data);
+            $this->M_admin->save_admin_in_admin($data);
+            $this->M_admin->save_admin_in_login($data2);
 
             $validasi = [
                 'success'   => true
@@ -151,15 +208,16 @@ class DataAdmin extends BaseController
             $lists = $this->M_admin->get_admin()->getResult();
             $data = [];
             $no = $this->request->getPost("start");
+            //$decrypted_string = $this->encrypt->decode($encrypted_password, $key);
             foreach ($lists as $list) {
                 $no++;
                 $row = [];
                 $row[] = $no;
                 $row[] = $list->username;
+                $row[] = $this->encrypter->decrypt(base64_decode($list->password));
                 $row[] = $list->admin_nama;
                 $row[] = $list->admin_no_hp;
                 $row[] = $list->admin_email;
-                $row[] = base_encode64($this->encrypter->encrypt($list->password));
                 $row[] = $this->_action($list->id);
                 $data[] = $row;
             }

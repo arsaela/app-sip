@@ -27,7 +27,11 @@
             <small id="admin_email2_error" class="text-danger"> </small>
 
             <label for="admin_password">Password</label>
-            <input type="text" class="form-control" name="admin_password" placeholder="Password">
+            <input type="password" class="form-control" name="admin_password" placeholder="Password">
+            <small id="admin_password_error" class="text-danger"> </small>
+
+            <label for="admin_password_conf">Password Confirmation</label>
+            <input type="password" class="form-control" name="admin_password_conf" placeholder="Password Confirmation">
             <small id="admin_password_error" class="text-danger"> </small>
 
             

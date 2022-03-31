@@ -26,6 +26,31 @@
 
           <!-- Default box -->
           <div class="card">
+
+          <!-- validasi alert register gagal -->
+          <?php if (!empty(session()->getFlashdata('error'))) : ?>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <h4>Terdapat kesalahan dalam penginputan</h4>
+                    </hr />
+                    <?php echo session()->getFlashdata('error'); ?>
+                </div>
+            <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="card-header">
               <h3 class="card-title">Tabel Data Admin</h3>
 
