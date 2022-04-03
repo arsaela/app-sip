@@ -1,4 +1,4 @@
-<?= $this->extend('layouts_petugas/template_petugas') ?>
+<?= $this->extend('layouts_user/template_user') ?>
 
 <?= $this->section('header') ?>
 <header id="header" class="fixed-top">

@@ -1,4 +1,4 @@
-<?= $this->extend('layouts_admin/template_admin') ?>
+<?= $this->extend('layouts_petugas/template_petugas') ?>
 
 <?= $this->section('content') ?>
 <!-- Content Wrapper. Contains page content -->

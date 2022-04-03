@@ -50,55 +50,6 @@ class DataAdmin extends BaseController
     // Add Data Admin
     public function add()
     {
-        // if (!$this->validate([
-        //     'username2' => [
-        //         'rules' => 'required|min_length[4]|max_length[20]|is_unique[tbl_login.username]',
-        //         'errors' => [
-        //             'required' => '{field} Harus diisi',
-        //             'min_length' => '{field} Minimal 4 Karakter',
-        //             'max_length' => '{field} Maksimal 20 Karakter',
-        //             'is_unique' => 'Username sudah digunakan sebelumnya'
-        //         ]
-        //     ],
-        //     'admin_password' => [
-        //         'rules' => 'required|min_length[4]|max_length[10]',
-        //         'errors' => [
-        //             'required' => '{field} Harus diisi',
-        //             'min_length' => '{field} Minimal 4 Karakter',
-        //             'max_length' => '{field} Maksimal 10 Karakter',
-        //         ]
-        //     ],
-        //     'admin_password_conf' => [
-        //         'rules' => 'matches[password]',
-        //         'errors' => [
-        //             'matches' => 'Konfirmasi Password tidak sesuai dengan password',
-        //         ]
-        //     ],
-        //     'admin_nama2' => [
-        //         'rules' => 'required|min_length[4]|max_length[100]',
-        //         'errors' => [
-        //             'required' => '{field} Harus diisi',
-        //             'min_length' => '{field} Minimal 4 Karakter',
-        //             'max_length' => '{field} Maksimal 100 Karakter',
-        //         ]
-        //     ],
-        // ])) {
-        //     session()->setFlashdata('error', $this->validator->listErrors());
-        //     return redirect()->back()->withInput();
-        // }
-
-
-
-
-
-
-
-
-
-
-
-
-
         $username = $this->request->getPost('username2');
         $admin_nama = $this->request->getPost('admin_nama2');
         $admin_no_hp = $this->request->getPost('admin_no_hp2');
@@ -115,7 +66,7 @@ class DataAdmin extends BaseController
 
         $data2 = [
             'username' => $username,
-            'password'    => $this->encrypter->encrypt(base64_decode($admin_password)),
+            'password'    =>  base64_encode($this->encrypter->encrypt($admin_password)),
             'hak_akses'   => 'admin'
         ];
         // 'password'    => $ciphertext = $encrypter->encrypt('My secret message');

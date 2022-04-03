@@ -1,79 +1,74 @@
-<?= $this->extend('layouts_petugas/template_petugas') ?>
+<?= $this->extend('layouts_user/template_user') ?>
 
-<?= $this->section('header') ?>
-<header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-        <h1 class="logo mr-auto"><a href="<?php echo base_url('/'); ?>">SI<span>P</span> (Aplikasi Formasi Pegawai) </a></h1>
-    </div>
-</header>
-<?= $this->endSection() ?>
+<?php //$this->section('header'); ?>
+<!-- <header id="header" class="fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="wrap-logo-left col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <h1 class="logo mr-auto">
+                <a href="<?php //echo base_url('/'); ?>">
+                  <img src="/assets/img/klaten_logo.png">
+                  <div class="sip_text_home"> APLIKASI FORMASI PEGAWAI </div>
+                  <div class="pemkab_text"> BKPSDM KABUPATEN KLATEN </div>
+              </a>
+          </h1>
+      </div>
+      <div class="wrap-menu-right col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <li><a href="<?php //echo base_url('/'); ?>">Home</a></li>
+              <li><a href="#alur_pengusulan">Alur Pengusulan</a></li>
+              <li><a href="#informasi">Informasi</a></li>
+              <li class="active"><a href="<?php //echo base_url('login'); ?>">Login</a></li>
+
+          </ul>
+      </nav>
+  </div>
+</div>
+</div>
+
+
+</div>
+</header> --><!-- End Header -->
+<?php //$this->endSection(); ?>
 
 <?= $this->section('content') ?>
 <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-        <div class="container">
-
-            <div class="d-flex justify-content-between align-items-center">
-                <h2>Login</h2>
-                <ol>
-                    <li><a href="<?php echo base_url('/'); ?>">Home</a></li>
-                    <li>Login</li>
-                </ol>
-            </div>
-
-        </div>
-    </section>
-
     <!-- ======= Login ======= -->
-    <section id="contact" class="contact">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h3><span>Halaman Login</span></h3>
-                <p>Aplikasi Formasi Pegawai - Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kabupaten Klaten</p>
-            </div>
-
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="100">
-                    <img src="/assets/bizland/img/about.jpg" class="img-fluid" alt="">
+    <section class="bg_login" style="background-image: url('/assets/img/wallpaper_login.jpg')">
+        <div id="formWrapper">
+            <div id="form">
+                <div class="logo">
+                    <h2 class="login_sip"> - LOGIN SIP - </h2>
                 </div>
 
-                <div class="col-lg-6">
-                    <form id="formLogin" role="form" class="php-email-form">
+                <form id="formLogin" role="form" class="php-email-form">
 
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="icofont-email"></i></span>
-                            </div>
-                            <input type="text" class="form-control" name="username" placeholder="Username" />
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="icofont-email"></i></span>
                         </div>
-                        <small id="username_error" class="form-text text-danger mb-3"></small>
+                        <input type="text" class="form-control" name="username" placeholder="Username" />
+                    </div>
+                    <small id="username_error" class="form-text text-danger mb-3"></small>
 
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i id="show-password" class="icofont-eye-blocked"></i></span>
-                            </div>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i id="show-password" class="icofont-eye-blocked"></i></span>
                         </div>
-                        <small id="password_error" class="form-text text-danger mb-3"></small>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                    </div>
+                    <small id="password_error" class="form-text text-danger mb-3"></small>
 
-                        <div class="text-center mb-2">
-                            <button class="col-lg" type="submit" id="btn-login">Login</button>
-                        </div>
-                        <a style="float:left" href="DaftarPetugas/index"> Lupa Password ?</a>
-                        <a style="float:right" href="RegisterPetugas/index"> Register</a> 
-                    </form>
-                  
-                </div>
-
+                    <div class="text-center mb-2">
+                        <button class="btn btn-primary col-lg" type="submit" id="btn-login">Login</button>
+                    </div>
+                    <a style="float:left" href="/"><i class="fa fa-long-arrow-left"></i> Back</a>
+                    <a style="float:right" href="DaftarPetugas/index"> Lupa Password ?</a>
+                </form>
             </div>
-
         </div>
     </section>
-
 </main>
 <?= $this->endSection() ?>
 

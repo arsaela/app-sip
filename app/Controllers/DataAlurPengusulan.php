@@ -38,16 +38,6 @@ class DataAlurPengusulan extends BaseController
     {
         $data['title']     = 'Tambah Data Alur Pengusulan';
 
-		
-		$data = array(
-            'nama_barang' => $this->request->getPost('nama'),
-            'qty'         => $this->request->getPost('qty'),
-            'harga_beli'  => $this->request->getPost('beli'),
-            'harga_jual'  => $this->request->getPost('jual')
-        );
-       
-		$Save_Alur_Pengusulan = $this->M_alur_pengusulan->save_alur_pengusulan($data);
-
 		if(isset($Save_Alur_Pengusulan)) {
 			$data['message_success'] = "Data Alur Pengusulan berhasil di update";
 

@@ -1,108 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?= "title"; ?></title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="/assets/favicon.ico" rel="icon">
-    <link href="/assets/bizland/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <!-- Vendor CSS Files -->
-    <link href="/assets/bizland/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/bizland/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="/assets/bizland/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="/assets/bizland/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="/assets/bizland/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="/assets/bizland/vendor/aos/aos.css" rel="stylesheet">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/favicon.ico">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/adminlte3/plugins/fontawesome-free/css/all.min.css">
     <!-- daterange picker -->
     <link rel="stylesheet" href="/assets/adminlte3/plugins/daterangepicker/daterangepicker.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="/assets/adminlte3/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="/assets/adminlte3/plugins/toastr/toastr.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/assets/adminlte3/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/adminlte3/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
     <link rel="stylesheet" href="/assets/adminlte3/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!-- Template Main CSS File -->
-    <link href="/assets/bizland/css/style.css" rel="stylesheet">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="/assets/adminlte3/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/assets/adminlte3/dist/css/adminlte.min.css">
+    <!--MENAMBAHKAN ICON -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/assets/style-admin.css">
 
-    <!-- =======================================================
-  * Template Name: BizLand - v1.1.0
-  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <!--sweet alert arsa-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
-<body>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!-- Navbar -->
+        <?= $this->include('layouts_petugas/navbar') ?>
+        <!-- /.navbar -->
 
-    <!-- ======= Top Bar ======= -->
-    <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
-        <div class="container d-flex">
-            <div class="contact-info mr-auto">
-                <i class="icofont-envelope"></i> <a href="mailto:bkpsdmklaten">formasiklaten@gmail.com</a>
-                <i class="icofont-phone"></i> (0272) 321046
-            </div>
-            <div class="social-links">
-                <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-                <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-                <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-                <a href="#" class="skype"><i class="icofont-skype"></i></a>
-                <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
-            </div>
-        </div>
-    </div>
+        <!-- Main Sidebar Container -->
+        <?= $this->include('layouts_petugas/sidebar') ?>
 
-    <!-- ======= Header ======= -->
-    <?= $this->renderSection('header') ?>
+        <!-- Content Wrapper. Contains page content -->
+        <?= $this->renderSection('content') ?>
+        <!-- /.content-wrapper -->
 
-    <!-- ======= Content ======= -->
-    <?= $this->renderSection('content') ?>
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-        <div class="container py-4">
-            <div class="copyright">
-                <strong>Copyright &copy; <script>
-                        document.write(new Date().getFullYear());
-                    </script> <a class="bkpsdm_footer" href="#">Badan Kepegawaian dan Pengembangan Sumber Daya Manusia</a>.</strong> All rights reserved.
-            </div>
-            <!-- <div class="credits">
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
                 <b>Version</b> 1.0.0
-            </div> -->
-        </div>
-    </footer><!-- End Footer -->
+            </div>
+            <strong>Copyright &copy; <script>
+                    document.write(new Date().getFullYear());
+                </script> <a href="#">Badan Kepegawaian dan Pengembangan Sumber Daya Manusia</a>.</strong> All rights reserved.
+        </footer>
 
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    </div>
+    <!-- ./wrapper -->
 
-    <!-- Vendor JS Files -->
-    <script src="/assets/bizland/vendor/jquery/jquery.min.js"></script>
-    <script src="/assets/bizland/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/bizland/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="/assets/bizland/vendor/php-email-form/validate.js"></script>
-    <script src="/assets/bizland/vendor/waypoints/jquery.waypoints.min.js"></script>
-    <script src="/assets/bizland/vendor/counterup/counterup.min.js"></script>
-    <script src="/assets/bizland/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="/assets/bizland/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="/assets/bizland/vendor/venobox/venobox.min.js"></script>
-    <script src="/assets/bizland/vendor/aos/aos.js"></script>
-    <!-- Sweetalert 2 -->
-    <script src="/assets/sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <!-- bs-custom-file-input -->
-    <script src="/assets/adminlte3/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+
+    <!-- UNTUK MENAMBAHKAN DATATABLE DI SETIAP HALAMAN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        $(document).ready( function () {
+        $('#datatable-list').DataTable();
+    } );
+    </script>
+
+
+    <!-- jQuery -->
+    <script src="/assets/adminlte3/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="/assets/adminlte3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- InputMask -->
     <script src="/assets/adminlte3/plugins/moment/moment.min.js"></script>
     <script src="/assets/adminlte3/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
     <!-- date-range-picker -->
     <script src="/assets/adminlte3/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="/assets/adminlte3/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="/assets/adminlte3/plugins/toastr/toastr.min.js"></script>
+    <!-- DataTables -->
+    <script src="/assets/adminlte3/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/assets/adminlte3/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/assets/adminlte3/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/assets/adminlte3/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="/assets/adminlte3/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="/assets/adminlte3/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Template Main JS File -->
-    <script src="/assets/bizland/js/main.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/assets/adminlte3/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/assets/adminlte3/dist/js/demo.js"></script>
     <!-- page script -->
     <?= $this->renderSection('script') ?>
-
 </body>
 
 </html>

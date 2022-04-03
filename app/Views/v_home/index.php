@@ -1,10 +1,11 @@
-<?= $this->extend('layouts_petugas/template_petugas') ?>
+<?= $this->extend('layouts_user/template_user') ?>
+<?php //echo $this->extend('layouts_petugas/header_top'); ?>
 
 <?= $this->section('header') ?>
 <header id="header" class="fixed-top">
 <div class="container">
         <div class="row">
-        <div class="wrap-logo-left col-lg-5 col-md-5 col-sm-6 col-xs-12">
+        <div class="wrap-logo-left col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <h1 class="logo mr-auto">
             <a href="<?php echo base_url('/'); ?>">
               <img src="/assets/img/klaten_logo.png">
@@ -13,7 +14,7 @@
             </a>
           </h1>
         </div>
-        <div class="wrap-menu-right col-lg-7 col-md-7 col-sm-6 col-xs-12">
+        <div class="wrap-menu-right col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <nav class="nav-menu d-none d-lg-block">
             <ul>
               <li class="active"><a href="<?php echo base_url('/'); ?>">Home</a></li>
