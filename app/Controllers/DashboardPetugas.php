@@ -16,8 +16,13 @@ class DashboardPetugas extends BaseController
     {
         $data['title']  = "App-SIP | Dashboard";
         $data['page']   = "dashboard";
+        $data['username']   = $this->session->get('username');
         $data['nama']   = $this->session->get('nama');
         $data['email']   = $this->session->get('email');
+
+        // print_r($data);
+        // die('stttopp');
+
         return view('v_dashboard_petugas/index', $data);
     }
 

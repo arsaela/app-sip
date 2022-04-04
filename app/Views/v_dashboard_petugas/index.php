@@ -22,7 +22,7 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>Selamat Datang Petugas OPD di aplikasi SIP </h3>
+                            <h3>Selamat Datang, <?php echo $nama;?> di aplikasi SIP </h3>
                             <p>Aplikasi Formasi Pegawai - Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kabupaten Klaten</p>
                         </div>
                         <div class="icon">

@@ -33,3 +33,8 @@ p.bg_status_belumverifikasi{
 .btn_detail_usulan {
         margin-bottom: 5px;
 }
+
+.nav-sidebar .menu-open>.nav-link i.right {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(90deg);
+}

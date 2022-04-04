@@ -38,6 +38,11 @@ class Login extends BaseController
             'password' => $password
         ];
 
+          // print_r($cek_validasi);
+          //           die('sttoppp');
+
+
+
 
         //Cek Validasi, Jika Data Tidak Valid 
         if ($this->form_validation->run($cek_validasi, 'login') == FALSE) {
@@ -52,9 +57,23 @@ class Login extends BaseController
         //Data Valid
         else {
 
+
+
             //Cek Data username berdasarkan username
-            $cekUser = $this->M_user->where('username', $username)->first();
-            $ciphertext = $cekUser['password'];
+             $cekUser = $this->M_user->where('tbl_login.username', $username)->first();
+             $ciphertext = $cekUser['password'];
+
+
+            // print_r($cekUser);
+            // die('sttop');
+
+            // $cekUser2 = $this->M_user->getUserByUsername($username)->getResult();
+
+
+            // print_r($cekUser);
+            // print_r($cekUser2);
+            // die('sttop');
+            
 
 
 
@@ -67,12 +86,19 @@ class Login extends BaseController
                 //Jika password benar
                 if ($password == $p) {
                     $newdata = [
-                        'login_id'    => $cekUser['login_id'],
-                        'hak_akses'   => $cekUser['hak_akses'],
+                        'login_id'      => $cekUser['login_id'],
+                        'hak_akses'     => $cekUser['hak_akses'],
+                        'username'      => $cekUser['username'],
+                        // 'email'         => $cekUser['petugas_email'],
+                        // 'instansi_id'   => $cekUser['instansi_id'],
+                        // 'nama'   => $cekUser['petugas_nama'],
 
                     ];
                     $this->session->set($newdata);
 
+
+            // print_r($newdata);
+            // die('sttop');
 
                     //Cek role_id apakah Admin atau Petugas
                     if ($cekUser['hak_akses'] == 'admin') {

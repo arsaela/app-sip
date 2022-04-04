@@ -29,25 +29,111 @@
             </p>
           </a>
         </li>
-       
+
         <!-- Data Formasi -->
         <li class="nav-item">
-          <a href="<?php echo base_url('datainstansi'); ?>" class="nav-link <?php if ($page == 'datainstansi') echo " active";  ?>">
+          <a href="<?php echo base_url('dataformasipetugas'); ?>" class="nav-link <?php if ($page == 'datainstansi') echo " active";  ?>">
             <i class="nav-icon fas fa-briefcase"></i>
             <p>
-              Data Formasi
+              Data Formasi 
             </p>
           </a>
         </li>
+       <!--  <li class="nav-item">
+          <a href="<?php //echo base_url('datainstansi'); ?>" class="nav-link <?php //if ($page == 'datainstansi') echo " active";  ?>">
+            <i class="nav-icon fas fa-briefcase"></i>
+            <p>
+              Data Pegawai
+            </p>
+          </a>
+        </li>
+ -->
+
+
+         <!-- Data Pegawai -->
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Data Pegawai
+                <i class="fas fa-angle-right right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/UI/general.html" class="nav-link">
+                  <i class="far fa fa-plus nav-icon"></i>
+                  <p>Input Pegawai</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/icons.html" class="nav-link">
+                  <i class="far fa-eye nav-icon"></i>
+                  <p>Lihat Pegawai</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/icons.html" class="nav-link">
+                  <i class="far fa fa-pencil nav-icon"></i>
+                  <p>Update Data Pegawai</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
         <!-- Data Usulan -->
-        <li class="nav-item">
-          <a href="<?php echo base_url('datausulan'); ?>" class="nav-link <?php if ($page == 'datausulan') echo " active";  ?>">
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-inbox"></i>
+              <p>
+                Data Usulan
+                <i class="fas fa-angle-right right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/UI/general.html" class="nav-link">
+                  <i class="far fa fa-plus nav-icon"></i>
+                  <p>Input Usulan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/icons.html" class="nav-link">
+                  <i class="far fa-eye nav-icon"></i>
+                  <p>Lihat Usulan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/icons.html" class="nav-link">
+                  <i class="far fa fa-paper-plane-o nav-icon"></i>
+                  <p>Kirim Usulan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/buttons.html" class="nav-link">
+                  <i class="far fa fa-print nav-icon"></i>
+                  <p>Cetak Usulan</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
+
+
+
+
+
+
+
+     <!--    <li class="nav-item">
+          <a href="<?php //echo base_url('datausulanpetugas'); ?>" class="nav-link <?php //if ($page == 'datausulanpetugas') echo " active";  ?>">
             <i class="nav-icon fas fa-inbox"></i>
             <p>
               Data Usulan
             </p>
           </a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a href="<?php echo base_url('datainformasi'); ?>" class="nav-link <?php if ($page == 'datainformasi');  ?>">
             <i class="nav-icon fas fa-id-card"></i>
