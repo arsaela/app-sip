@@ -72,7 +72,7 @@
                                       <th>No</th>
                                       <th>Nama</th>
                                       <th>NIP</th>
-                                      <th>Jabatan</th>
+                                      <th>Status</th>
                                     </tr>
                                   </thead>
                                   <tbody id="show_data">
@@ -270,7 +270,7 @@
           '<td>' + no + '</td>' + 
           '<td>' + data[i].pegawai_nama + 
           '</td>' + '<td>' + data[i].pegawai_nip + 
-          '</td>' + '<td>' + data[i].jabatan_nama + 
+          '</td>' + '<td>' + data[i].pegawai_status + 
           '</td>' + // '<td>' +data[i].formasi_jumlah+'</td>'+
           '</tr>';
           i++;

@@ -38,8 +38,8 @@ class Login extends BaseController
             'password' => $password
         ];
 
-          // print_r($cek_validasi);
-          //           die('sttoppp');
+        // print_r($cek_validasi);
+        //           die('sttoppp');
 
 
 
@@ -60,8 +60,8 @@ class Login extends BaseController
 
 
             //Cek Data username berdasarkan username
-             $cekUser = $this->M_user->where('tbl_login.username', $username)->first();
-             $ciphertext = $cekUser['password'];
+            $cekUser = $this->M_user->where('tbl_login.username', $username)->first();
+            $ciphertext = $cekUser['password'];
 
 
             // print_r($cekUser);
@@ -73,7 +73,7 @@ class Login extends BaseController
             // print_r($cekUser);
             // print_r($cekUser2);
             // die('sttop');
-            
+
 
 
 
@@ -86,7 +86,7 @@ class Login extends BaseController
                 //Jika password benar
                 if ($password == $p) {
                     $newdata = [
-                        'login_id'      => $cekUser['login_id'],
+                        //'login_id'      => $cekUser['login_id'],
                         'hak_akses'     => $cekUser['hak_akses'],
                         'username'      => $cekUser['username'],
                         // 'email'         => $cekUser['petugas_email'],
@@ -97,8 +97,8 @@ class Login extends BaseController
                     $this->session->set($newdata);
 
 
-            // print_r($newdata);
-            // die('sttop');
+                    // print_r($newdata);
+                    // die('sttop');
 
                     //Cek role_id apakah Admin atau Petugas
                     if ($cekUser['hak_akses'] == 'admin') {
@@ -108,15 +108,13 @@ class Login extends BaseController
                             'link'   => base_url('dashboard')
                         ];
                         echo json_encode($validasi);
-                    } else if ($cekUser['hak_akses']=='petugas') {
+                    } else if ($cekUser['hak_akses'] == 'petugas') {
                         //Petugas OPD
                         $validasi = [
                             'success'   => true,
                             'link'   => base_url('opd/Dashboard')
                         ];
                         echo json_encode($validasi);
-
-                    
                     } else {
                         //Petugas
                         $validasi = [
