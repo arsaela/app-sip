@@ -24,7 +24,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Tabel Detail Formasi</h3>
+              <h3 class="card-title">Rekap Formasi OPD</h3>
             </div>
 
             <div class="card-body table-responsive">

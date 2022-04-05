@@ -24,7 +24,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Data Kekurangan Formasi</h3>
+              <h3 class="card-title">Input Usulan Formasi</h3>
             </div>
 
             <div class="card-body table-responsive">
@@ -40,6 +40,7 @@
                     <th>Jumlah ASN</th>
                     <th>Kekurangan Formasi</th>
                     <th>Detail ASN</th>
+                    <th>Ajukan Usulan</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -97,6 +98,7 @@
                             </div>
                           </div>
                         </td>
+                          <td><a href="" class="btn btn-warning"><i class="fa fa-check"><i></a></td>
                       </tr>
                       <?php $no++;
                     }

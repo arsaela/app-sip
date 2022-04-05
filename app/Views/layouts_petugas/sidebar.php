@@ -35,7 +35,7 @@
           <a href="<?php echo base_url('opd/dataformasi'); ?>" class="nav-link <?php if ($page == 'opd/dataformasi') echo " active";  ?>">
             <i class="nav-icon fas fa-briefcase"></i>
             <p>
-              Rekap Data Formasi 
+              Rekap Formasi OPD 
             </p>
           </a>
         </li>
@@ -44,7 +44,7 @@
           <a href="<?php echo base_url('opd/datakebutuhanformasi'); ?>" class="nav-link <?php if ($page == 'opd/datakebutuhanformasi') echo " active";  ?>">
             <i class="nav-icon fas fa-briefcase"></i>
             <p>
-              Data Kebutuhan Formasi 
+              Data Kekurangan Formasi 
             </p>
           </a>
         </li>
@@ -60,7 +60,7 @@
 
 
          <!-- Data Pegawai -->
-        <li class="nav-item has-treeview">
+    <!--     <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
@@ -88,7 +88,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
 
         <!-- Data Usulan -->
         <li class="nav-item has-treeview">
@@ -101,7 +101,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="<?php echo base_url('opd/datausulan'); ?>" class="nav-link <?php if ($page == 'opd/datausulan') echo " active";  ?>">
                   <i class="far fa fa-plus nav-icon"></i>
                   <p>Input Usulan</p>
                 </a>

@@ -7,7 +7,7 @@ use App\Models\Opd\KebutuhanFormasiPetugasModel;
 use App\Models\Opd\DashboardPetugasModel;
 use Config\Services;
 
-class DataKebutuhanFormasi extends BaseController
+class DataUsulan extends BaseController
 {
 	protected $M_formasi_Petugas;
 	protected $M_dashboard_opd;
@@ -43,10 +43,12 @@ class DataKebutuhanFormasi extends BaseController
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_formasi_Petugas->getInstansiByLogin($username)->getResult();
 
-		// $idInstansi = $this->session->get('instansi_id');
 		$data['getDetailFormasi'] = $this->M_formasi_Petugas->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
-		return view('v_dataKebutuhanFormasi_petugas/index', $data);
+		// print_r($data['getDetailFormasi']);
+		// die('stttop');
+
+		return view('v_datausulan_petugas/index', $data);
 	}
 
 	public function detail_pegawai()
