@@ -113,17 +113,17 @@
 
                                 <div class="form-group">
                                   <label>Jabatan Nama</label>
-                                  <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" required>
+                                  <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" readonly required>
                                 </div>
 
                                 <div class="form-group">
                                   <label>Lokasi Unit Kerja</label>
-                                  <input type="text" class="form-control instansi_unor_nama" name="instansi_unor_nama" placeholder="Lokasi Unit Kerja" required>
+                                  <input type="text" class="form-control instansi_unor_nama" name="instansi_unor_nama" readonly placeholder="Lokasi Unit Kerja" required>
                                 </div>
 
                                 <div class="form-group">
                                   <label>Kekurangan Formasi</label>
-                                  <input type="text" class="form-control kekuranganformasi" name="jumlah_kekurangan_formasi" placeholder="Jumlah Usulan" required>
+                                  <input type="text" class="form-control kekuranganformasi" name="jumlah_kekurangan_formasi" readonly placeholder="Jumlah Usulan" required>
                                 </div>
 
                                 <div class="form-group">

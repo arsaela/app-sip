@@ -43,3 +43,8 @@ p.bg_status_belumverifikasi{
     color: red !important;
     background-color: #FFF;
   }
+
+  label .error {
+    color: red !important;
+    background-color: #FFF;
+  }
