@@ -46,8 +46,8 @@ class DataKebutuhanFormasi extends BaseController
 		// $idInstansi = $this->session->get('instansi_id');
 		$data['getDetailFormasi'] = $this->M_formasi_Petugas->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
-		print_r($data['getDetailFormasi']);
-		die('stttop');
+		// print_r($data['getDetailFormasi']);
+		// die('stttop');
 
 		foreach ($data['getDetailFormasi'] as $value) {
 			$getJabatanNama = $value->jabatan_nama;
