@@ -22,7 +22,7 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Dashboard -->
         <li class="nav-item">
-          <a href="<?php echo base_url('dashboard'); ?>" class="nav-link <?php if ($page == 'dashboard') echo " active";  ?>">
+          <a href="<?php echo base_url('opd/dashboard'); ?>" class="nav-link <?php if ($page == 'opd/dashboard') echo " active";  ?>">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -32,10 +32,19 @@
 
         <!-- Data Formasi -->
         <li class="nav-item">
-          <a href="<?php echo base_url('dataformasipetugas'); ?>" class="nav-link <?php if ($page == 'datainstansi') echo " active";  ?>">
+          <a href="<?php echo base_url('opd/dataformasi'); ?>" class="nav-link <?php if ($page == 'opd/dataformasi') echo " active";  ?>">
             <i class="nav-icon fas fa-briefcase"></i>
             <p>
-              Data Formasi 
+              Rekap Data Formasi 
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="<?php echo base_url('opd/datakebutuhanformasi'); ?>" class="nav-link <?php if ($page == 'opd/datakebutuhanformasi') echo " active";  ?>">
+            <i class="nav-icon fas fa-briefcase"></i>
+            <p>
+              Data Kebutuhan Formasi 
             </p>
           </a>
         </li>

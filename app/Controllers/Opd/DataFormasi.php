@@ -1,13 +1,15 @@
 <?php
+namespace App\Controllers\Opd;
+use App\Controllers\BaseController;
 
-namespace App\Controllers;
-
-use App\Models\FormasiPetugasModel;
+use App\Models\Opd\FormasiPetugasModel;
+use App\Models\Opd\DashboardPetugasModel;
 use Config\Services;
 
-class DataFormasiPetugas extends BaseController
+class DataFormasi extends BaseController
 {
 	protected $M_formasi_Petugas;
+	protected $M_dashboard_opd;
 	protected $request;
 	protected $form_validation;
 	protected $session;
@@ -16,8 +18,12 @@ class DataFormasiPetugas extends BaseController
 	{
 		$this->request = Services::request();
 		$this->M_formasi_Petugas = new FormasiPetugasModel($this->request);
+
 		$this->form_validation =  \Config\Services::validation();
 		$this->session = \Config\Services::session();
+
+	
+		$this->M_dashboard_opd = new DashboardPetugasModel($this->request);
 		
 	}
 
@@ -29,12 +35,21 @@ class DataFormasiPetugas extends BaseController
 		$data['page']   = "dataformasi";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
+		
+		$username   = $this->session->get('username');
+		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
 
-		$idInstansi = $this->session->get('instansi_id');
-		$data['getDetailFormasi'] = $this->M_formasi_Petugas->getDetailFormasi($idInstansi)->getResult();
+		$username   = $this->session->get('username');
+		$idInstansi  = $this->M_formasi_Petugas->getInstansiByLogin($username)->getResult();
 
-		print_r($data['getDetailFormasi']);
-		die('stttopp');
+		// $idInstansi = $this->session->get('instansi_id');
+		$data['getDetailFormasi'] = $this->M_formasi_Petugas->getDetailFormasi($idInstansi['0']->instansi_id)->getResult();
+
+		//echo $idInstansi;
+		// print_r($idInstansi);
+		// echo $idInstansi['0']->instansi_id;
+
+		// die('stttopp');
 
 		return view('v_dataFormasi_petugas/index', $data);
 	}

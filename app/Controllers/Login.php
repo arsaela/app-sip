@@ -112,7 +112,7 @@ class Login extends BaseController
                         //Petugas OPD
                         $validasi = [
                             'success'   => true,
-                            'link'   => base_url('DashboardPetugas')
+                            'link'   => base_url('opd/Dashboard')
                         ];
                         echo json_encode($validasi);
 

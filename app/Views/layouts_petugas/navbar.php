@@ -19,11 +19,11 @@
           <div class="media">
             <img src="/assets/adminlte3/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
             <div class="media-body">
-              <h3 class="dropdown-item-title">
-                <?php echo $nama; ?>
+              <h3 class="dropdown-item-title" style="text-transform: capitalize;">
+               <?php echo $get_petugas_by_login->petugas_nama;?>
                 <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
               </h3>
-              <p class="text-xs"><?= $email; ?></p>
+              <p class="text-xs"><?php echo $get_petugas_by_login->petugas_email;?></p>
             </div>
           </div>
           <!-- Message End -->

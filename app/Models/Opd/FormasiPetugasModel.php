@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Opd;
 
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\Model;
@@ -24,6 +24,15 @@ class FormasiPetugasModel extends Model
 		$this->dt = $this->db->table($this->table);
 	}
 
+
+	public function getInstansiByLogin($username) {
+		$query =  $this->db->table('tbl_login')
+			->select('tbl_petugas.instansi_id')
+			->join('tbl_petugas', 'tbl_petugas.username = tbl_login.username')
+			->where('tbl_login.username', $username)
+			->get();
+		return $query;
+	}
 
 	public function getDetailFormasi($idInstansi)
 	{
