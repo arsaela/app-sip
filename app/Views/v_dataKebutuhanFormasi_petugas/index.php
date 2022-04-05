@@ -44,7 +44,10 @@
                 </thead>
                 <tbody>
                   <?php $no = 1;
-                  foreach ($getDetailFormasi as $value) { ?>
+                  foreach ($getDetailFormasi as $value) { 
+                    $kebutuhan_formasi = ($value->jumlahasn)-($value->formasi_jumlah);
+                    if($kebutuhan_formasi >=0)){
+                    ?>
                     <tr>
                       <td><?php echo $no; ?></td>
                       <!-- <td><?php //echo $value->formasi_id; ?></td> -->
@@ -93,6 +96,7 @@
                       </td>
                     </tr>
                   <?php $no++;
+                }
                   } ?>
 
                 </tbody>
