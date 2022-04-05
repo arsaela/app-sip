@@ -22,7 +22,7 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>Selamat Datang, <span style="text-transform: capitalize;"><?php echo $get_petugas_by_login->petugas_nama;?></span> di aplikasi SIP </h3>
+                            <h4>Selamat Datang, <span style="text-transform: capitalize;"><?php echo $get_petugas_by_login->petugas_nama;?></span> di aplikasi S.I.P </h4>
                             <p>Aplikasi Formasi Pegawai - Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kabupaten Klaten</p>
                         </div>
                         <div class="icon">
@@ -31,9 +31,50 @@
                     </div>
                 </div>
             </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card" style="padding-bottom: 40px;padding-left: 5px;padding-right: 5px;">
+                      <div class="card-header">
+                        <h3 class="card-title"><b><i class="fa fa-bullhorn" style="padding-right: 10px;">   Informasi Terkini </i></b></h3>
+
+                        <div class="card-tools">
+                          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                    <div class="d-md-flex">
+                      <div class="p-1 flex-fill" style="overflow: hidden">
+                        <?php foreach($getInformasi as $value) { ?>
+                            <div class="wrap-informasi col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                                <div class="content_informasi">                
+                                    <?php echo $value->informasi_content;?>
+                            </div>
+                        </div>
+                    <?php } ?>
+
+                </div>
+            </div><!-- /.d-md-flex -->
         </div>
-    </section>
-    <!-- /.content -->
+    </div>
+</div>
+</div>
+    
+</div>
+</section>
+<!-- /.content -->
+
+
+
+
+    
 </div>
 <!-- /.content-wrapper -->
 <?= $this->endSection() ?>

@@ -38,3 +38,8 @@ p.bg_status_belumverifikasi{
     -webkit-transform: rotate(-90deg);
     transform: rotate(90deg);
 }
+
+ label#jumlah_usulan_formasi-error {
+    color: red !important;
+    background-color: #FFF;
+  }

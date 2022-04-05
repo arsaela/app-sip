@@ -52,25 +52,31 @@
                 <b>Version</b> 1.0.0
             </div>
             <strong>Copyright &copy; <script>
-                    document.write(new Date().getFullYear());
-                </script> <a href="#">Badan Kepegawaian dan Pengembangan Sumber Daya Manusia</a>.</strong> All rights reserved.
+                document.write(new Date().getFullYear());
+            </script> <a href="#">Badan Kepegawaian dan Pengembangan Sumber Daya Manusia</a>.</strong> All rights reserved.
         </footer>
 
     </div>
     <!-- ./wrapper -->
 
-
+ 
     <!-- UNTUK MENAMBAHKAN DATATABLE DI SETIAP HALAMAN -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script>
         $(document).ready( function () {
-        $('#datatable-list').DataTable();
-    } );
+            $('#datatable-list').DataTable();
+        } );
     </script>
 
 
     <!-- jQuery -->
     <script src="/assets/adminlte3/plugins/jquery/jquery.min.js"></script>
+
+
+       <!-- memvalidasi inputan -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+
     <!-- Bootstrap 4 -->
     <script src="/assets/adminlte3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- InputMask -->

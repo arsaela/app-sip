@@ -3,13 +3,13 @@
 namespace App\Controllers\Opd;
 use App\Controllers\BaseController;
 
-use App\Models\Opd\KebutuhanFormasiPetugasModel;
+use App\Models\Opd\KelebihanFormasiPetugasModel;
 use App\Models\Opd\DashboardPetugasModel;
 use Config\Services;
 
-class DataKebutuhanFormasi extends BaseController
+class DataKelebihanFormasi extends BaseController
 {
-	protected $M_formasi_Petugas;
+	protected $M_kelebihan_formasi;
 	protected $M_dashboard_opd;
 	protected $request;
 	protected $form_validation;
@@ -18,7 +18,7 @@ class DataKebutuhanFormasi extends BaseController
 	public function __construct()
 	{
 		$this->request = Services::request();
-		$this->M_formasi_Petugas = new KebutuhanFormasiPetugasModel($this->request);
+		$this->M_kelebihan_formasi = new KelebihanFormasiPetugasModel($this->request);
 
 		$this->form_validation =  \Config\Services::validation();
 		$this->session = \Config\Services::session();
@@ -41,12 +41,12 @@ class DataKebutuhanFormasi extends BaseController
 		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
 
 		$username   = $this->session->get('username');
-		$idInstansi  = $this->M_formasi_Petugas->getInstansiByLogin($username)->getResult();
+		$idInstansi  = $this->M_kelebihan_formasi->getInstansiByLogin($username)->getResult();
 
 		// $idInstansi = $this->session->get('instansi_id');
-		$data['getDetailFormasi'] = $this->M_formasi_Petugas->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
+		$data['getDetailFormasi'] = $this->M_kelebihan_formasi->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
-		return view('v_dataKebutuhanFormasi_petugas/index', $data);
+		return view('v_dataKelebihanFormasi_petugas/index', $data);
 	}
 
 	public function detail_pegawai()

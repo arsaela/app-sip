@@ -22,7 +22,7 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>Aplikasi SIP</h3>
+                            <h4>Aplikasi SIP</h4>
                             <p>Aplikasi Formasi Pegawai - Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kabupaten Klaten</p>
                         </div>
                         <div class="icon">

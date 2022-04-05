@@ -5,7 +5,7 @@ namespace App\Models\Opd;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\Model;
 
-class KebutuhanFormasiPetugasModel extends Model
+class KelebihanFormasiPetugasModel extends Model
 {
 	protected $table = "tbl_formasi";
 	protected $allowedFields = ['instansi_id', 'instansi_uker', 'jabatan_kode', 'formasi_jumlah'];
@@ -57,7 +57,7 @@ class KebutuhanFormasiPetugasModel extends Model
 		->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
 		->join('tbl_pegawai', 'tbl_formasi.instansi_unor = tbl_pegawai.instansi_unor and tbl_formasi.jabatan_kode = tbl_pegawai.jabatan_kode', 'left')
 		->groupBy('jabatan')
-		->orderBy('tbl_formasi.instansi_unor asc')
+		->orderBy('tbl_jabatan.jabatan_nama asc')
 		->get();
 		return $query;
 	}

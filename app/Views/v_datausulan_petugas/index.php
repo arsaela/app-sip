@@ -32,110 +32,234 @@
                 <thead>
                   <tr>
                     <th>No.</th>
-                    <!--  <th>Formasi</th> -->
                     <th>Formasi</th>
-                    <!--  <th>Lokasi Unit Kerja</th> -->
                     <th>Lokasi Unit Kerja</th>
                     <th>Jumlah Kebutuhan</th>
                     <th>Jumlah ASN</th>
                     <th>Kekurangan Formasi</th>
                     <th>Detail ASN</th>
                     <th>Ajukan Usulan</th>
+                    <th>Status Usulan</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php $no = 1;
                   foreach ($getDetailFormasi as $value) { 
-                    //$kebutuhan_formasi = ($value->jumlahasn)-($value->formasi_jumlah);
 
-                     $kebutuhan_formasi = ($value->formasi_jumlah)-($value->jumlahasn);
-                    //if($kebutuhan_formasi >=0 AND !empty($kebutuhan_formasi)){
-                    if($kebutuhan_formasi >=0 AND !empty($kebutuhan_formasi)){
-                      ?>
-                      <tr>
-                        <td><?php echo $no; ?></td>
-                        <!-- <td><?php //echo $value->formasi_id; ?></td> -->
-                        <td><?php echo $value->jabatan_nama; ?></td>
-                        <!--  <td><?php //echo $value->instansi_unor; ?></td> -->
-                        <td><?php echo $value->instansi_unor_nama; ?></td>
-                        <td><?php echo $value->formasi_jumlah; ?></td>
-                        <td><?php echo $value->jumlahasn; ?></td>
-                        <td><?php echo $kebutuhan_formasi; ?></td>
-                        <td>
+                   $kekurangan_formasi = ($value->formasi_jumlah)-($value->jumlahasn);
+                   if($kekurangan_formasi >=0 AND !empty($kekurangan_formasi)){
+                    ?>
+                    <tr>
+                      <td><?php echo $no; ?></td>
+                      <!-- <td><?php //echo $value->formasi_id; ?></td> -->
+                      <td><?php echo $value->jabatan_nama; ?></td>
+                      <!--  <td><?php //echo $value->instansi_unor; ?></td> -->
+                      <td><?php echo $value->instansi_unor_nama; ?></td>
+                      <td><?php echo $value->formasi_jumlah; ?></td>
+                      <td><?php echo $value->jumlahasn; ?></td>
+                      <td><?php echo $kekurangan_formasi; ?></td>
+                      <td>
 
-                          <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
+                        <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
 
-                          <!-- The Pegawai -->
-                          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                  <h3 class="card-title">Detail ASN</h3>
-                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <!-- The Pegawai -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h3 class="card-title">Detail ASN</h3>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                              <!-- Modal body -->
+                              <div class="modal-body">
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th>No</th>
+                                      <th>Nama</th>
+                                      <th>NIP</th>
+                                      <th>Jabatan</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="show_data">
+                                  </tbody>
+                                </table>
+                              </div>
+                              <!-- Modal footer -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                       <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-id="<?= $no;?>" data-name="<?= $value->jabatan_nama;?>" data-kekuranganformasi="<?= $kekurangan_formasi;?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>"><i class="fa fa-check"></i></a>
+
+                       <!-- Modal Ajuan Usulan Formasi-->
+                       <form action="/opd/inputusulanopd" method="post" id="frm-inputusulan">
+                        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Input Ajuan Usulan Formasi</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+
+                                <div class="form-group">
+                                  <label>Jabatan Nama</label>
+                                  <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" required>
                                 </div>
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                  <table class="table table-bordered">
-                                    <thead>
-                                      <tr>
-                                        <th>No</th>
-                                        <th>Nama</th>
-                                        <th>NIP</th>
-                                        <th>Jabatan</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody id="show_data">
-                                    </tbody>
-                                  </table>
-                                </div>
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+
+                                <div class="form-group">
+                                  <label>Lokasi Unit Kerja</label>
+                                  <input type="text" class="form-control instansi_unor_nama" name="instansi_unor_nama" placeholder="Lokasi Unit Kerja" required>
                                 </div>
 
+                                <div class="form-group">
+                                  <label>Kekurangan Formasi</label>
+                                  <input type="text" class="form-control kekuranganformasi" name="jumlah_kekurangan_formasi" placeholder="Jumlah Usulan" required>
+                                </div>
+
+                                <div class="form-group">
+                                  <label>Jumlah Usulan</label>
+
+                                  <input type="number" id="jumlah_usulan_formasi" class="form-control jumlah_usulan_formasi" name="jumlah_usulan_formasi" placeholder="Jumlah Usulan" value="<?php //echo $value->jumlah_approve; ?>" required>
+                                </div> 
+
+                              </div>
+                              <div class="modal-footer">
+                                <input type="hidden" name="usulan_id" class="usulan_id">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                               </div>
                             </div>
                           </div>
-                        </td>
-                          <td><a href="" class="btn btn-warning"><i class="fa fa-check"><i></a></td>
-                      </tr>
-                      <?php $no++;
-                    }
-                  } ?>
+                        </div>
+                      </form>
+                      <!-- End Modal Edit Product-->
 
-                </tbody>
-              </table>
-            </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
+
+                    </td>
+
+                    <td><?php //echo $status_usulan; ;?></td>
+                  </tr>
+                  <?php $no++;
+                }
+              } ?>
+
+            </tbody>
+          </table>
         </div>
+        <!-- /.card-body -->
       </div>
-      <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
+      <!-- /.card -->
     </div>
-
-  </section>
-  <!-- /.content -->
+  </div>
+  <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
 </div>
+
+</section>
+<!-- /.content -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- /.content-wrapper -->
 <?= $this->endSection() ?>
 
 <?= $this->section('script') ?>
 <script>
-  //Menampilakan modal edit data petugas
-  $('body').on('click', '.edit', function() {
-    var instansiunor = $(this).attr("instansi_unor");
-    var jabatankode = $(this).attr("jabatan_kode");
-    $.ajax({
-      url: "/dataFormasi/detail_pegawai/",
-      type: "GET",
-      dataType: "JSON",
-      data: {
-        instansiunor: instansiunor,
-        jabatankode: jabatankode
-      },
-      success: function(data) {
+  $(document).ready(function(){
+    // $('#frm-inputusulan').validate();
+
+        // get Edit Product
+        $('body').on('click', '.btn_input_usulan', function() {
+            // get data from button edit
+            const id = $(this).data('id');
+            const name = $(this).data('name');
+            const kekuranganformasi = $(this).data('kekuranganformasi');
+            const instansiunornama = $(this).data('instansiunornama');
+
+            const price = $(this).data('price');
+            const category = $(this).data('category_id');
+
+             // alert(id);
+            // Set data to Form Edit
+            $('.usulan_id').val(id);
+            $('.jabatan_nama').val(name); 
+            $('.kekuranganformasi').val(kekuranganformasi);
+            $('.instansi_unor_nama').val(instansiunornama);
+            // Call Modal Edit
+            $('#editModal').modal('show');
+
+
+            //alert('jumlahkebutuhanformasi = '+kekuranganformasi);
+
+            $('#frm-inputusulan').validate({
+              rules: {
+                jumlah_usulan_formasi : {
+                  digits: true,
+                  min:1,
+                  max:kekuranganformasi
+                }
+
+                // pass2: {
+                //   equalTo: "#pass1"
+                // }
+              },
+              messages: {
+                jumlah_usulan_formasi: {
+                  required: "Jumlah usulan harus di isi",
+                  min: "Jumlah usulan minimal 1",
+                  max: "Jumlah usulan tidak boleh melebihi jumlah kekurangan formasi"
+
+                }
+              }
+            });
+
+
+          });
+
+
+        
+
+
+
+      //Menampilakan modal detail pegawai
+      $('body').on('click', '.edit', function() {
+        var instansiunor = $(this).attr("instansi_unor");
+        var jabatankode = $(this).attr("jabatan_kode");
+        $.ajax({
+          url: "/dataFormasi/detail_pegawai/",
+          type: "GET",
+          dataType: "JSON",
+          data: {
+            instansiunor: instansiunor,
+            jabatankode: jabatankode
+          },
+          success: function(data) {
         // alert("sukses"+data);
         var output = '';
         var no = 0;
@@ -158,6 +282,16 @@
         }
       })
 
-  });
-</script>
-<?= $this->endSection() ?>
+      });
+
+
+    });
+  </script>
+  <?= $this->endSection() ?>
+
+  <style type="text/css">
+   .error {
+    color: #F00;
+    background-color: #FFF;
+  }
+</style>
