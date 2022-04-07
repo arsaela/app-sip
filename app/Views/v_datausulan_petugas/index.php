@@ -96,10 +96,10 @@
                         </div>
                       </td>
                       <td>
-                       <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-id="<?= $no;?>" data-name="<?= $value->jabatan_nama;?>" data-kekuranganformasi="<?= $kekurangan_formasi;?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>"><i class="fa fa-check"></i></a>
+                       <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-formasi_id="<?= $value->formasi_id; ?>" data-id="<?= $no;?>" data-name="<?= $value->jabatan_nama;?>" data-kekuranganformasi="<?= $kekurangan_formasi;?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>"><i class="fa fa-check"></i></a>
 
                        <!-- Modal Ajuan Usulan Formasi-->
-                       <form action="/opd/inputusulanopd" method="post" id="frm-inputusulan">
+                       <form action="/opd/DataUsulan/inputusulanopd" method="post" id="frm-inputusulan">
                         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -114,6 +114,7 @@
                                 <div class="form-group">
                                   <label>Jabatan Nama</label>
                                   <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" readonly required>
+                                  <input type="hidden" class="form-control formasi_id" name="formasi_id" placeholder="Formasi ID" readonly required>
                                 </div>
 
                                 <div class="form-group">
@@ -201,13 +202,14 @@
             const name = $(this).data('name');
             const kekuranganformasi = $(this).data('kekuranganformasi');
             const instansiunornama = $(this).data('instansiunornama');
-
+            const formasi_id = $(this).data('formasi_id');
             const price = $(this).data('price');
             const category = $(this).data('category_id');
 
              // alert(id);
             // Set data to Form Edit
             $('.usulan_id').val(id);
+            $('.formasi_id').val(formasi_id);
             $('.jabatan_nama').val(name); 
             $('.kekuranganformasi').val(kekuranganformasi);
             $('.instansi_unor_nama').val(instansiunornama);

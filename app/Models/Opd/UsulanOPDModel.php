@@ -34,6 +34,12 @@ class UsulanOPDModel extends Model
 		return $query;
 	}
 
+	
+	public function inputusulanopd($data){
+        $query = $this->db->table('tmp_usulan')->insert($data);
+        return $query;
+    }
+
 	// public function getFormasiExisting($kebutuhanformasi) {
 	// 	$query =  $this->db->table('tbl_formasi')
 	// 		->select('*,tbl_pegawai.pegawai_nip,count(tbl_pegawai.pegawai_nip) as jumlahasn,concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan')
