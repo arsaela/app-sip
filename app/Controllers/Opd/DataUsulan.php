@@ -93,6 +93,15 @@ class DataUsulan extends BaseController
 
 			$data['getDetailFormasi'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
+		  //Data usulan berhasil disimpan
+          if ($data['getDetailFormasi']) {
+            // formInput.trigger('reset');
+            // $('#modalAdd').modal('hide');
+            // $('#username_error').html('');
+            // $('#example1').DataTable().ajax.reload();
+            toastr.success('Data admin berhasil disimpan.');
+        }
+
 			return redirect()->to('/opd/datausulan/');
 			// return view('v_datausulan_petugas/index', $data);
 		} else{
