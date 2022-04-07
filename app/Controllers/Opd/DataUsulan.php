@@ -67,7 +67,7 @@ class DataUsulan extends BaseController
             'tahun_usulan' 		=> date("Y"),
             'formasi_id' 		=> $this->request->getPost('formasi_id'),
             'jumlah_usulan' 	=> $this->request->getPost('jumlah_usulan_formasi'),
-            'status_usulan' 	=> '1',
+            'status_usulan_id' 	=> '1',
         );
         $inputusulanopd = $this->M_usulan_OPD->inputusulanopd($data);
 
@@ -98,7 +98,7 @@ class DataUsulan extends BaseController
 			$data['getDetailFormasi'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
 		 	//set session sukses
-			$_SESSION["sukses"] = 'Data Berhasil Disimpan';
+			//$_SESSION["sukses"] = 'Data Berhasil Disimpan';
 
 			 //redirect ke halaman index.php
 			// header('Location: /opd/datausulan/index'); 
@@ -140,7 +140,36 @@ class DataUsulan extends BaseController
 			echo json_encode($data);
 		}
 	}
-}
+
+
+	// Halaman Data Lihat Usulan
+	public function lihatusulanopd(){
+		$data['title']  = "App-SIP | Data Formasi";
+		$data['page']   = "dataformasi";
+		$data['nama']   = $this->session->get('nama');
+		$data['email']   = $this->session->get('email');
+		
+		$username   = $this->session->get('username');
+		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
+
+		$username   = $this->session->get('username');
+		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
+
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+
+		// echo "<pre>";
+		// print_r($data['getDetailFormasi']);
+		// die('stttop');
+
+		return view('v_lihat_datausulan_petugas/index', $data);
+	}
+
+
+
+
+
+	}
+
 
 /* End of file DataFormasi.php */
 /* Location: .//C/xampp/htdocs/app-sip/app/Controllers/DataFormasi.php */

@@ -97,6 +97,23 @@ class UsulanOPDModel extends Model
 		->get();
 		return $query;
 	}
+
+	public function getLihatUsulan($idInstansi)
+	{
+		$query =  $this->db->table('tmp_usulan')
+		->select('*,concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan')
+		->where('tmp_usulan.instansi_id', $idInstansi)
+		->join('tbl_formasi', 'tbl_formasi.formasi_id = tmp_usulan.formasi_id', 'left')
+		->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+		->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
+		->join('status_usulan', 'status_usulan.status_usulan_id = tmp_usulan.status_usulan_id', 'left')
+		->join('tbl_instansi', 'tbl_instansi.instansi_id = tmp_usulan.instansi_id', 'left')
+		->groupBy('jabatan')
+		->orderBy('tbl_formasi.instansi_unor asc')
+		->get();
+		return $query;
+	}
+
 }
 
 /* End of file FormasiModel.php */

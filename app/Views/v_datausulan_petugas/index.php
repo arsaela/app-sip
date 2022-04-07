@@ -75,7 +75,8 @@
                     <tr>
                       <td><?php echo $no; ?></td>
                       <!-- <td><?php //echo $value->formasi_id; ?></td> -->
-                      <td><?php echo $value->jabatan_nama; ?></td>
+
+                      <td><?php echo $value->formasi_id; ?> / <?php echo $value->jabatan_nama; ?></td>
                       <!--  <td><?php //echo $value->instansi_unor; ?></td> -->
                       <td><?php echo $value->instansi_unor_nama; ?></td>
                       <td><?php echo $value->formasi_jumlah; ?></td>
@@ -171,7 +172,7 @@
 
                     </td>
 
-                    <td><?php //echo $status_usulan; ;?></td>
+                    <td><?php //echo $nama_status; ;?></td>
                   </tr>
                   <?php $no++;
                 }
@@ -320,13 +321,3 @@
     background-color: #FFF;
   }
 </style>
-
-
- <!-- jika ada session sukses maka tampilkan sweet alert dengan pesan yang telah di set
-    di dalam session sukses  -->
-    <?php if($_SESSION['sukses']){ ?>
-        <script>
-            swal("Good job!", "<?php echo $_SESSION['sukses']; ?>", "success");
-        </script>
-    <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
-    <?php unset($_SESSION['sukses']); } ?>

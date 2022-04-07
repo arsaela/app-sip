@@ -123,7 +123,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/UI/icons.html" class="nav-link">
+            <a href="<?php echo base_url('opd/datausulan/lihatusulanopd'); ?>" class="nav-link <?php if ($page == 'opd/lihatusulan') echo " active";  ?>">
               <i class="far fa-eye nav-icon"></i>
               <p>Lihat Usulan</p>
             </a>
