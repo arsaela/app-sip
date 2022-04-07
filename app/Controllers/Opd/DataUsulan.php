@@ -22,6 +22,7 @@ class DataUsulan extends BaseController
 
 		$this->form_validation =  \Config\Services::validation();
 		$this->session = \Config\Services::session();
+		$this->session->start();
 
 	
 		$this->M_dashboard_opd = new DashboardPetugasModel($this->request);
@@ -53,6 +54,8 @@ class DataUsulan extends BaseController
 	}
 
      public function inputusulanopd(){
+     	//session_start();
+
      	$username   = $this->session->get('username');
      	$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
@@ -68,6 +71,7 @@ class DataUsulan extends BaseController
         );
         $inputusulanopd = $this->M_usulan_OPD->inputusulanopd($data);
 
+		
         // echo "<pre>";
         // print_r($data);
         // print_r($inputusulanopd);
@@ -93,14 +97,11 @@ class DataUsulan extends BaseController
 
 			$data['getDetailFormasi'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
-		  //Data usulan berhasil disimpan
-          if ($data['getDetailFormasi']) {
-            // formInput.trigger('reset');
-            // $('#modalAdd').modal('hide');
-            // $('#username_error').html('');
-            // $('#example1').DataTable().ajax.reload();
-            toastr.success('Data admin berhasil disimpan.');
-        }
+		 	//set session sukses
+			$_SESSION["sukses"] = 'Data Berhasil Disimpan';
+
+			 //redirect ke halaman index.php
+			// header('Location: /opd/datausulan/index'); 
 
 			return redirect()->to('/opd/datausulan/');
 			// return view('v_datausulan_petugas/index', $data);

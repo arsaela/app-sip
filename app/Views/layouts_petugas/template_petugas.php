@@ -30,8 +30,14 @@
     <link rel="stylesheet" href="/assets/style-admin.css">
 
     <!--sweet alert arsa-->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" rel="stylesheet"></link>
+   <!--  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
+
 </head>
+
+ <!-- penting untuk menggunakan fungsi session di bawah ini  -->
+<?php //session_start(); ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <!-- Site wrapper -->

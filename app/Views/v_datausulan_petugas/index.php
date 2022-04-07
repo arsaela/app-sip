@@ -1,6 +1,29 @@
 <?= $this->extend('layouts_petugas/template_petugas') ?>
 
+
+<!-- penting untuk menggunakan fungsi session di bawah ini  -->
+<!-- <?php //if(session()->get('message')): ?>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <button type="button" class="close" data-dismiss="alert" arial-label="close"> 
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php //endif; ?>
+
+<div class="row">
+  <div class="col-md-8">
+    <?php 
+   /* if(session()->get('err')) {
+      echo "<div class='alert alert-danger p-0 pt-2' role='alert'>".session()->get('err')."</div>";
+      session()->remove('err');
+    }
+    */
+    ?>
+    </div>
+  </div> -->
+
 <?= $this->section('content') ?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -297,3 +320,13 @@
     background-color: #FFF;
   }
 </style>
+
+
+ <!-- jika ada session sukses maka tampilkan sweet alert dengan pesan yang telah di set
+    di dalam session sukses  -->
+    <?php if($_SESSION['sukses']){ ?>
+        <script>
+            swal("Good job!", "<?php echo $_SESSION['sukses']; ?>", "success");
+        </script>
+    <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
+    <?php unset($_SESSION['sukses']); } ?>
