@@ -51,7 +51,9 @@
                       <td><?php echo $value->instansi_unor_nama; ?></td>
                       <td><?php echo $value->instansi_nama; ?></td>
                       <td><?php echo $value->jumlah_usulan; ?></td>
-                      <td><?php echo $value->nama_status; ?></td>
+                      <td>
+                        <div style="background-color: yellow; padding:5px;"><?php echo $value->nama_status; ?></div>
+                      </td>
 
                     </tr>
                     <?php $no++;
