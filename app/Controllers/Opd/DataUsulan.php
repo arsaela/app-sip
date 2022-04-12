@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers\Opd;
+
 use App\Controllers\BaseController;
 
 use App\Models\Opd\UsulanOPDModel;
@@ -25,12 +26,11 @@ class DataUsulan extends BaseController
 		$this->session->start();
 		//$session = \Config\Services::session(); 
 
-	
+
 		$this->M_dashboard_opd = new DashboardPetugasModel($this->request);
-		
 	}
 
-	
+
 	// Halaman Data Usulan Petugas
 	public function index()
 	{
@@ -38,14 +38,14 @@ class DataUsulan extends BaseController
 		$data['page']   = "dataformasi";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
-		
+
 		$username   = $this->session->get('username');
 		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
 
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
-		$data['getDetailFormasi'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
+		$data['getDetailFormasiUsulan'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
 		// $data['get_data_usulan_found'] = $this->M_usulan_OPD->getDataUsulanFound($idInstansi['0']->instansi_id)->getResult();
 
@@ -56,41 +56,42 @@ class DataUsulan extends BaseController
 		return view('v_datausulan_petugas/index', $data);
 	}
 
-     public function inputusulanopd(){
-     	//session_start();
+	public function inputusulanopd()
+	{
+		//session_start();
 
-     	$username   = $this->session->get('username');
-     	$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
+		$username   = $this->session->get('username');
+		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
-     	$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
+		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
 
-        $data = array(
-            'instansi_id'       => $idInstansi['0']->instansi_id,
-            'instansi_unor'     => $this->request->getPost('instansi_unor_nama'),
-            'tahun_usulan' 		=> date("Y"),
-            'formasi_id' 		=> $this->request->getPost('formasi_id'),
-            'jumlah_usulan' 	=> $this->request->getPost('jumlah_usulan_formasi'),
-            'status_usulan_id' 	=> '1',
-        );
-        $inputusulanopd = $this->M_usulan_OPD->inputusulanopd($data);
-
-		
-        // echo "<pre>";
-        // print_r($data);
-        // print_r($inputusulanopd);
-        // die('stop');
-
-        /* 1 belum verifikasi */
-        /* 2 proses verifikasi */
-        /* 3 sudah verifikasi */
-
-        // echo "<pre>";
-        // print_r($data);
-        // die('sttop');
+		$data = array(
+			'instansi_id'       => $idInstansi['0']->instansi_id,
+			'instansi_unor'     => $this->request->getPost('instansi_unor'),
+			'tahun_usulan' 		=> date("Y"),
+			'jabatan_kode' 		=> $this->request->getPost('jabatan_kode'),
+			'jumlah_usulan' 	=> $this->request->getPost('jumlah_usulan_formasi'),
+			'status_usulan_id' 	=> '1',
+		);
+		$inputusulanopd = $this->M_usulan_OPD->inputusulanopd($data);
 
 
+		// echo "<pre>";
+		// print_r($data);
+		// print_r($inputusulanopd);
+		// die('stop');
 
-        if(isset($inputusulanopd)){
+		/* 1 belum verifikasi */
+		/* 2 proses verifikasi */
+		/* 3 sudah verifikasi */
+
+		// echo "<pre>";
+		// print_r($data);
+		// die('sttop');
+
+
+
+		if (isset($inputusulanopd)) {
 			$data['message_success'] = "Usulan anda telah berhasil di tambahkan";
 
 			$data['title']     = 'Data Input Usulan';
@@ -99,15 +100,14 @@ class DataUsulan extends BaseController
 			$data['email']     = $this->session->get('email');
 
 
-			$data['getDetailFormasi'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
+			$data['getDetailFormasiUsulan'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
 			$session = session();
 
 			$session->setFlashdata('success', 'User Updated successfully');
 
 			return redirect()->to('/opd/datausulan/');
-
-		} else{
+		} else {
 			$data['message_failed'] = "Data Usulan anda gagal di update. Silahkan cek dan coba kembali !";
 
 			// return view('v_datausulan_petugas/update', $data);
@@ -120,24 +120,24 @@ class DataUsulan extends BaseController
 
 
 
-   //      if($inputusulanopd){
-			// 	$this->session->set_flashdata('notif_tambah','<div class="alert alert-success" role="alert"> Data Berhasil di simpan. <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-			// 	redirect(site_url('admin/admin'));
-			// 	/*redirect($_SERVER['HTTP_REFERER']);*/
-			// } else {
-			// 	$this->session->set_flashdata('status_duplicate_data', '<strong> Maaf, Data gagal di tambahkan. Username/email sudah digunakan. Silahkan gunakan username/email yang lain.</strong>');
-			// 	redirect($_SERVER['HTTP_REFERER']);
-			// }
+		//      if($inputusulanopd){
+		// 	$this->session->set_flashdata('notif_tambah','<div class="alert alert-success" role="alert"> Data Berhasil di simpan. <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+		// 	redirect(site_url('admin/admin'));
+		// 	/*redirect($_SERVER['HTTP_REFERER']);*/
+		// } else {
+		// 	$this->session->set_flashdata('status_duplicate_data', '<strong> Maaf, Data gagal di tambahkan. Username/email sudah digunakan. Silahkan gunakan username/email yang lain.</strong>');
+		// 	redirect($_SERVER['HTTP_REFERER']);
+		// }
 
-			//return redirect()->to('Opd/DataUsulan/index');
-		}
+		//return redirect()->to('Opd/DataUsulan/index');
+	}
 
 
-		public function detail_pegawai()
-		{
-			if ($this->request->isAJAX()) {
-				$idUnor =   $this->request->getVar('instansiunor');
-				$idJabatan =  $this->request->getVar('jabatankode');
+	public function detail_pegawai()
+	{
+		if ($this->request->isAJAX()) {
+			$idUnor =   $this->request->getVar('instansiunor');
+			$idJabatan =  $this->request->getVar('jabatankode');
 			$data = $this->M_formasi->getDetailPegawai($idUnor, $idJabatan)->getResult();
 			echo json_encode($data);
 		}
@@ -145,12 +145,13 @@ class DataUsulan extends BaseController
 
 
 	// Halaman Data Lihat Usulan
-	public function lihatusulanopd(){
+	public function lihatusulanopd()
+	{
 		$data['title']  = "App-SIP | Data Formasi";
 		$data['page']   = "dataformasi";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
-		
+
 		$username   = $this->session->get('username');
 		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
 
@@ -165,12 +166,7 @@ class DataUsulan extends BaseController
 
 		return view('v_lihat_datausulan_petugas/index', $data);
 	}
-
-
-
-
-
-	}
+}
 
 
 /* End of file DataFormasi.php */
