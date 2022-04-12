@@ -66,15 +66,17 @@ class DataPegawai extends BaseController
 
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_pegawai->getInstansiByLogin($username)->getResult();
-		print_r($idInstansi);
-		die('sttop');
 		
 		$getIDInstansi = $idInstansi['0']->instansi_id;
+		$data['getnamaInstansi'] = $this->M_pegawai->getnamaInstansi($getIDInstansi)->getResult();
+
+
+
 
 		$data['getPegawaiByInstansi'] = $this->M_pegawai->getPegawaiByInstansiID($getIDInstansi)->getResult();
 
 		// echo "<pre>";
-		// print_r($data['getPegawaiByInstansi']);
+		// print_r($data['getnamaInstansi'][0]->instansi_nama);
 		// die('sttop');
 
 		return view('v_dataPegawaiOPD/cetak', $data);

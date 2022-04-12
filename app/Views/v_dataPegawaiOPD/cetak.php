@@ -49,7 +49,7 @@
             <!-- Default box -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Data Pegawai</h3>
+                <h3 class="card-title">Data Pegawai OPD <?php echo $getnamaInstansi[0]->instansi_nama;?></h3>
               </div>
 
               <div class="card-body table-responsive">
@@ -84,15 +84,26 @@
               </div>
               <!-- /.card-body -->
             </div>
+
+            <div class="back_to_page">
+              <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Sebelumnya" />
+            </div>
+
             <!-- /.card -->
           </div>
         </div>
 
+
+
       </div>
+
+
 
     </section>
     <!-- /.content -->
   </div>
+
+
   <!-- /.content-wrapper -->
 
 
@@ -108,7 +119,8 @@
   {
     @page {
       size: A4; /* DIN A4 standard, Europe */
-       margin: 7mm 6mm 7mm 6mm; 
+      margin: 7mm 6mm 7mm 15mm; 
+      font-size: 14px;
     }
     html, body {
       width: 210mm;
@@ -121,5 +133,20 @@
     body {
       padding-top:15mm;
     }
+
+    .back_to_page{
+      display: none;
+    }
+  }
+</style>
+
+<style type="text/css" media="print">
+  /* masukan sintak CSS disini */
+  h3.card-title {
+    font-size: 25px;
+  }
+
+  table#datatable-list {
+    font-size: 18px;
   }
 </style>

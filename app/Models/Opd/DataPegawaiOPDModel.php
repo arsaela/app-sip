@@ -33,6 +33,15 @@ class DataPegawaiOPDModel extends Model
 		return $query;
 	}
 
+
+
+	public function getnamaInstansi($getIDInstansi) {
+		$query =  $this->db->table('tbl_instansi')
+		->where('tbl_instansi.instansi_id', $getIDInstansi)
+		->get();
+		return $query;
+	}
+
 	public function getPegawaiByInstansiID($getIDInstansi)
 	{
 		$query =  $this->db->table('tbl_pegawai')
