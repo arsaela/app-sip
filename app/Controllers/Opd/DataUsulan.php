@@ -3,13 +3,14 @@
 namespace App\Controllers\Opd;
 
 use App\Controllers\BaseController;
-
+use App\Models\Opd\DataPegawaiOPDModel;
 use App\Models\Opd\UsulanOPDModel;
 use App\Models\Opd\DashboardPetugasModel;
 use Config\Services;
 
 class DataUsulan extends BaseController
 {
+	protected $M_pegawai;
 	protected $M_usulan_OPD;
 	protected $M_dashboard_opd;
 	protected $request;
@@ -25,7 +26,7 @@ class DataUsulan extends BaseController
 		$this->session = \Config\Services::session();
 		$this->session->start();
 		//$session = \Config\Services::session(); 
-
+		$this->M_pegawai = new DataPegawaiOPDModel($this->request);
 
 		$this->M_dashboard_opd = new DashboardPetugasModel($this->request);
 	}
@@ -166,8 +167,36 @@ class DataUsulan extends BaseController
 
 		return view('v_lihat_datausulan_petugas/index', $data);
 	}
-}
 
+
+	// Halaman Data Cetak Data Pegawai
+	public function cetakdatausulan()
+	{
+		$data['title']  = "App-SIP | Data Formasi";
+		$data['page']   = "dataformasi";
+		$data['nama']   = $this->session->get('nama');
+		$data['email']   = $this->session->get('email');
+
+		$username   = $this->session->get('username');
+		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
+
+		$getIDInstansi = $idInstansi['0']->instansi_id;
+		$data['getnamaInstansi'] = $this->M_pegawai->getnamaInstansi($getIDInstansi)->getResult();
+
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+
+
+
+
+		//$data['getPegawaiByInstansi'] = $this->M_pegawai->getPegawaiByInstansiID($getIDInstansi)->getResult();
+
+		// echo "<pre>";
+		// print_r($data['getnamaInstansi'][0]->instansi_nama);
+		// die('sttop');
+
+		return view('v_dataUsulan_petugas/cetak', $data);
+	}
+}
 
 /* End of file DataFormasi.php */
 /* Location: .//C/xampp/htdocs/app-sip/app/Controllers/DataFormasi.php */
