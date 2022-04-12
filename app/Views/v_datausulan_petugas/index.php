@@ -22,36 +22,35 @@
     </div>
   </div> -->
 
-<?= $this->section('content') ?>
+  <?= $this->section('content') ?>
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-12">
-          <h1></h1>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-12">
+            <h1></h1>
+          </div>
         </div>
-      </div>
-    </div><!-- /.container-fluid -->
-  </section>
-
-
-<?php if($this->session->flashdata('success')){ ?>
-    toastr.success("<?php echo $this->session->flashdata('success'); ?>");
-<?php }else if($this->session->flashdata('error')){  ?>
-    toastr.error("<?php echo $this->session->flashdata('error'); ?>");
-<?php }else if($this->session->flashdata('warning')){  ?>
-    toastr.warning("<?php echo $this->session->flashdata('warning'); ?>");
-<?php }else if($this->session->flashdata('info')){  ?>
-    toastr.info("<?php echo $this->session->flashdata('info'); ?>");
-<?php } ?>
+      </div><!-- /.container-fluid -->
+    </section>
 
 
 
-  <!-- Main content -->
-  <section class="content">
+
+    <?= $this->section('script') ?>
+    <script type="text/javascript">
+     <?php if(session("success")){?>
+      toastr.success('Data Usulan berhasil disimpan.');
+     <?php } ?>
+   </script>
+   <?= $this->endSection() ?>
+
+
+   <!-- Main content -->
+   <section class="content">
 
     <div class="container-fluid">
       <div class="row">

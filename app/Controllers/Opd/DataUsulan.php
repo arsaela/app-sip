@@ -13,7 +13,7 @@ class DataUsulan extends BaseController
 	protected $M_dashboard_opd;
 	protected $request;
 	protected $form_validation;
-	protected $session;
+	//protected $session;
 
 	public function __construct()
 	{
@@ -23,6 +23,7 @@ class DataUsulan extends BaseController
 		$this->form_validation =  \Config\Services::validation();
 		$this->session = \Config\Services::session();
 		$this->session->start();
+		//$session = \Config\Services::session(); 
 
 	
 		$this->M_dashboard_opd = new DashboardPetugasModel($this->request);
@@ -100,18 +101,12 @@ class DataUsulan extends BaseController
 
 			$data['getDetailFormasi'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
+			$session = session();
 
-			$this->session->set_flashdata('success', 'User Updated successfully');
-
-		 	//set session sukses
-			//$_SESSION["sukses"] = 'Data Berhasil Disimpan';
-
-			 //redirect ke halaman index.php
-			// header('Location: /opd/datausulan/index'); 
-  //return $this->load->view('v_datausulan_petugas/index');
+			$session->setFlashdata('success', 'User Updated successfully');
 
 			return redirect()->to('/opd/datausulan/');
-			// return view('v_datausulan_petugas/index', $data);
+
 		} else{
 			$data['message_failed'] = "Data Usulan anda gagal di update. Silahkan cek dan coba kembali !";
 
