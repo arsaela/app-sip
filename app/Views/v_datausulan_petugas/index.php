@@ -43,7 +43,7 @@
     <?= $this->section('script') ?>
     <script type="text/javascript">
      <?php if(session("success")){?>
-      toastr.success('Data Usulan berhasil disimpan.');
+      toastr.success('Data ajuan usulan anda berhasil disimpan.');
      <?php } ?>
    </script>
    <?= $this->endSection() ?>
