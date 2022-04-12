@@ -98,7 +98,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo base_url('opd/cetakpegawaiopd'); ?>" class="nav-link <?php if ($page == 'opd/cetakpegawaiopd') echo " active";  ?>">
+            <a href="<?php echo base_url('opd/datapegawai/cetakdatapegawaiopd/'); ?>" class="nav-link <?php if ($page == 'opd/datapegawai/cetakdatapegawaiopd/') echo " active";  ?>">
               <i class="far fa fa-pencil nav-icon"></i>
               <p>Cetak Data Pegawai</p>
             </a>

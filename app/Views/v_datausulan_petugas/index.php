@@ -37,6 +37,19 @@
     </div><!-- /.container-fluid -->
   </section>
 
+
+<?php if($this->session->flashdata('success')){ ?>
+    toastr.success("<?php echo $this->session->flashdata('success'); ?>");
+<?php }else if($this->session->flashdata('error')){  ?>
+    toastr.error("<?php echo $this->session->flashdata('error'); ?>");
+<?php }else if($this->session->flashdata('warning')){  ?>
+    toastr.warning("<?php echo $this->session->flashdata('warning'); ?>");
+<?php }else if($this->session->flashdata('info')){  ?>
+    toastr.info("<?php echo $this->session->flashdata('info'); ?>");
+<?php } ?>
+
+
+
   <!-- Main content -->
   <section class="content">
 
@@ -230,6 +243,8 @@
             const price = $(this).data('price');
             const category = $(this).data('category_id');
 
+            var get_found_usulan = $("#txtname").val();
+
              // alert(id);
             // Set data to Form Edit
             $('.usulan_id').val(id);
@@ -237,8 +252,17 @@
             $('.jabatan_nama').val(name); 
             $('.kekuranganformasi').val(kekuranganformasi);
             $('.instansi_unor_nama').val(instansiunornama);
+
+            // if(!empty($get_found_usulan)){
+
+
+            // }
             // Call Modal Edit
             $('#editModal').modal('show');
+
+
+
+            
 
 
             //alert('jumlahkebutuhanformasi = '+kekuranganformasi);

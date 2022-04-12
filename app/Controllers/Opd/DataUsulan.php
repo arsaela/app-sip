@@ -46,6 +46,8 @@ class DataUsulan extends BaseController
 
 		$data['getDetailFormasi'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
+		// $data['get_data_usulan_found'] = $this->M_usulan_OPD->getDataUsulanFound($idInstansi['0']->instansi_id)->getResult();
+
 		// echo "<pre>";
 		// print_r($data['getDetailFormasi']);
 		// die('stttop');
@@ -95,13 +97,18 @@ class DataUsulan extends BaseController
 			$data['nama']      = $this->session->get('nama');
 			$data['email']     = $this->session->get('email');
 
+
 			$data['getDetailFormasi'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
+
+
+			$this->session->set_flashdata('success', 'User Updated successfully');
 
 		 	//set session sukses
 			//$_SESSION["sukses"] = 'Data Berhasil Disimpan';
 
 			 //redirect ke halaman index.php
 			// header('Location: /opd/datausulan/index'); 
+  //return $this->load->view('v_datausulan_petugas/index');
 
 			return redirect()->to('/opd/datausulan/');
 			// return view('v_datausulan_petugas/index', $data);

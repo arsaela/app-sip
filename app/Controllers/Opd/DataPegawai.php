@@ -53,6 +53,33 @@ class DataPegawai extends BaseController
 		return view('v_dataPegawaiOPD/index', $data);
 	}
 
+		// Halaman Data Cetak Data Pegawai
+	public function cetakdatapegawaiopd()
+	{
+		$data['title']  = "App-SIP | Data Formasi";
+		$data['page']   = "dataformasi";
+		$data['nama']   = $this->session->get('nama');
+		$data['email']   = $this->session->get('email');
+		
+		$username   = $this->session->get('username');
+		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
+
+		$username   = $this->session->get('username');
+		$idInstansi  = $this->M_pegawai->getInstansiByLogin($username)->getResult();
+		print_r($idInstansi);
+		die('sttop');
+		
+		$getIDInstansi = $idInstansi['0']->instansi_id;
+
+		$data['getPegawaiByInstansi'] = $this->M_pegawai->getPegawaiByInstansiID($getIDInstansi)->getResult();
+
+		// echo "<pre>";
+		// print_r($data['getPegawaiByInstansi']);
+		// die('sttop');
+
+		return view('v_dataPegawaiOPD/cetak', $data);
+	}
+
 }
 
 /* End of file Data Pegawai.php */
