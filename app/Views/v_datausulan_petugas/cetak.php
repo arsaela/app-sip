@@ -52,6 +52,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Data Pegawai OPD <?php echo $getnamaInstansi[0]->instansi_nama; ?></h3>
+
                             </div>
 
                             <div class="card-body table-responsive">
@@ -97,8 +98,10 @@
 
             </div>
 
+            <div style="float:right">
 
-
+                <?php echo '<img src="data:' . $QR->getContentType() . ';base64,' . $QR->generate() . '" />'; ?>
+            </div>
         </section>
         <!-- /.content -->
     </div>

@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'f9e1bcc78a8e3407b12b1e3bc9482e76cdb6a466',
         'name' => 'codeigniter4/appstarter',
         'dev' => true,
     ),
     'versions' => array(
         'codeigniter4/appstarter' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'f9e1bcc78a8e3407b12b1e3bc9482e76cdb6a466',
             'dev_requirement' => false,
         ),
         'codeigniter4/framework' => array(
@@ -26,6 +26,15 @@
             'install_path' => __DIR__ . '/../codeigniter4/framework',
             'aliases' => array(),
             'reference' => '4ec623a6b8269dd09f570ab514e5864276bb7f56',
+            'dev_requirement' => false,
+        ),
+        'codeitnowin/barcode' => array(
+            'pretty_version' => '3.0.6',
+            'version' => '3.0.6.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../codeitnowin/barcode',
+            'aliases' => array(),
+            'reference' => '68e6f0f9eac16a20e20ed0e8258d4d9765800878',
             'dev_requirement' => false,
         ),
         'doctrine/instantiator' => array(

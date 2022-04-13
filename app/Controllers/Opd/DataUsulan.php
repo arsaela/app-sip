@@ -6,6 +6,8 @@ use App\Controllers\BaseController;
 use App\Models\Opd\DataPegawaiOPDModel;
 use App\Models\Opd\UsulanOPDModel;
 use App\Models\Opd\DashboardPetugasModel;
+use CodeItNow\BarcodeBundle\Utils\BarcodeGenerator;
+use CodeItNow\BarcodeBundle\Utils\QrCode;
 use Config\Services;
 
 class DataUsulan extends BaseController
@@ -15,10 +17,14 @@ class DataUsulan extends BaseController
 	protected $M_dashboard_opd;
 	protected $request;
 	protected $form_validation;
+	protected $qrCode;
+	protected $barcode;
 	//protected $session;
 
 	public function __construct()
 	{
+		$this->qrCode = new QrCode();
+		$this->barcode = new BarcodeGenerator();
 		$this->request = Services::request();
 		$this->M_usulan_OPD = new UsulanOPDModel($this->request);
 
@@ -185,14 +191,18 @@ class DataUsulan extends BaseController
 
 		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
 
+		$data['QR'] = $this->qrCode
+			->setText('QR code by codeitnow.in')
+			->setSize(100)
+			->setPadding(10)
+			->setErrorCorrection('high')
+			->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0))
+			->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0))
+			->setLabel('Digitally Signed')
+			->setLabelFontSize(11)
+			->setImageType(QrCode::IMAGE_TYPE_PNG);
 
-
-
-		//$data['getPegawaiByInstansi'] = $this->M_pegawai->getPegawaiByInstansiID($getIDInstansi)->getResult();
-
-		// echo "<pre>";
-		// print_r($data['getnamaInstansi'][0]->instansi_nama);
-		// die('sttop');
+		//echo '<img src="data:' . $this->qrCode->getContentType() . ';base64,' . $this->qrCode->generate() . '" />';
 
 		return view('v_dataUsulan_petugas/cetak', $data);
 	}
