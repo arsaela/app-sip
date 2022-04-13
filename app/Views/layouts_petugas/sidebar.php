@@ -65,18 +65,6 @@
             </li>
           </ul>
         </li>
-        <!--  <li class="nav-item">
-          <a href="<?php //echo base_url('datainstansi'); 
-                    ?>" class="nav-link <?php //if ($page == 'datainstansi') echo " active";  
-                                        ?>">
-            <i class="nav-icon fas fa-briefcase"></i>
-            <p>
-              Data Pegawai
-            </p>
-          </a>
-        </li>
-      -->
-
 
         <!-- Data Pegawai -->
         <li class="nav-item has-treeview">
@@ -111,45 +99,49 @@
           </ul>
         </li>
 
-        <!-- Data Usulan -->
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-inbox"></i>
-            <p>
-              Data Usulan
-              <i class="fas fa-angle-right right"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="<?php echo base_url('opd/datausulan'); ?>" class="nav-link <?php if ($page == 'opd/datausulan') echo " active";  ?>">
-                <i class="far fa fa-plus nav-icon"></i>
-                <p>Input Usulan</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?php echo base_url('opd/datausulan/lihatusulanopd'); ?>" class="nav-link <?php if ($page == 'opd/lihatusulan') echo " active";  ?>">
-                <i class="far fa-eye nav-icon"></i>
-                <p>Lihat Usulan</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/UI/icons.html" class="nav-link">
-                <i class="far fa fa-paper-plane-o nav-icon"></i>
-                <p>Kirim Usulan</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?php echo base_url('opd/datausulan/cetakdatausulan'); ?>" class="nav-link <?php if ($page == 'opd/cetakdatausulan') echo " active";  ?>">
-                <i class="far fa fa-print nav-icon"></i>
-                <p>Cetak Usulan</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-
-
-
+      <!-- Data Usulan -->
+      <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-inbox"></i>
+          <p>
+            Data Usulan
+            <i class="fas fa-angle-right right"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="<?php echo base_url('opd/datausulan'); ?>" class="nav-link <?php if ($page == 'opd/datausulan') echo " active";  ?>">
+              <i class="far fa fa-plus nav-icon"></i>
+              <p>Input Usulan</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url('opd/datausulan/lihatusulanopd'); ?>" class="nav-link <?php if ($page == 'opd/lihatusulan') echo " active";  ?>">
+              <i class="far fa-eye nav-icon"></i>
+              <p>Lihat Usulan</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?php echo base_url('opd/datausulan/kirimdatausulanopd'); ?>" class="nav-link" <?php if ($page == 'opd/datausulan/kirimdatausulanopd') echo " active";  ?>">
+              <i class="far fa fa-paper-plane-o nav-icon"></i>
+              <p>Kirim Usulan</p>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="<?php echo base_url('opd/datausulan/cetakdatausulan'); ?>" class="nav-link <?php if ($page == 'opd/datausulan/cetakdatausulan') echo " active";  ?>">
+              <i class="far fa fa-print nav-icon"></i>
+              <p>Cetak Usulan</p>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a href="pages/UI/icons.html" class="nav-link">
+              <i class="far fa fa-paper-plane-o nav-icon"></i>
+              <p>Rekap Usulan</p>
+            </a>
+          </li>
+        </ul>
+      </li>
 
 
 

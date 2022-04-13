@@ -65,8 +65,6 @@ class DataUsulan extends BaseController
 
 	public function inputusulanopd()
 	{
-		//session_start();
-
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
@@ -81,22 +79,6 @@ class DataUsulan extends BaseController
 			'status_usulan_id' 	=> '1',
 		);
 		$inputusulanopd = $this->M_usulan_OPD->inputusulanopd($data);
-
-
-		// echo "<pre>";
-		// print_r($data);
-		// print_r($inputusulanopd);
-		// die('stop');
-
-		/* 1 belum verifikasi */
-		/* 2 proses verifikasi */
-		/* 3 sudah verifikasi */
-
-		// echo "<pre>";
-		// print_r($data);
-		// die('sttop');
-
-
 
 		if (isset($inputusulanopd)) {
 			$data['message_success'] = "Usulan anda telah berhasil di tambahkan";
@@ -116,27 +98,90 @@ class DataUsulan extends BaseController
 			return redirect()->to('/opd/datausulan/');
 		} else {
 			$data['message_failed'] = "Data Usulan anda gagal di update. Silahkan cek dan coba kembali !";
-
-			// return view('v_datausulan_petugas/update', $data);
 		}
+	}
+
+	public function kirimdatausulanopd()
+	{
 
 
+		$data['title']  = "App-SIP | Data Formasi";
+		$data['page']   = "dataformasi";
+		$data['nama']   = $this->session->get('nama');
+		$data['email']   = $this->session->get('email');
+
+		$username   = $this->session->get('username');
+		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
+
+		$username   = $this->session->get('username');
+		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
+
+		$data['getLihatUsulanDescYear'] = $this->M_usulan_OPD->getLihatUsulanDescYear($idInstansi['0']->instansi_id)->getResult();
+
+		return view('v_datausulan_petugas/kirim_usulan_opd', $data);
+	}
+
+	public function aksi_kirimdatausulanopd($tahun_usulan){
+		$username   = $this->session->get('username');
+		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
+
+		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
+
+		$data = array(
+			'instansi_id'       => $idInstansi['0']->instansi_id,
+			'instansi_unor'     => $this->request->getPost('instansi_unor'),
+			'tahun_usulan' 		=> date("Y"),
+			'jabatan_kode' 		=> $this->request->getPost('jabatan_kode'),
+			'jumlah_usulan' 	=> $this->request->getPost('jumlah_usulan_formasi'),
+			'status_usulan_id' 	=> '1',
+		);
+		$inputusulanopd = $this->M_usulan_OPD->inputusulanopd($data);
+
+		if (isset($inputusulanopd)) {
+			$data['message_success'] = "Usulan anda telah berhasil di tambahkan";
+
+			$data['title']     = 'Data Input Usulan';
+			$data['page']      = "opd/datausulan/inputusulanopd";
+			$data['nama']      = $this->session->get('nama');
+			$data['email']     = $this->session->get('email');
 
 
+			$data['getDetailFormasiUsulan'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
+			$session = session();
 
+			$session->setFlashdata('success', 'User Updated successfully');
 
+			return redirect()->to('/opd/datausulan/');
+		} else {
+			$data['message_failed'] = "Data Usulan anda gagal di update. Silahkan cek dan coba kembali !";
+		}
+	}
 
-		//      if($inputusulanopd){
-		// 	$this->session->set_flashdata('notif_tambah','<div class="alert alert-success" role="alert"> Data Berhasil di simpan. <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-		// 	redirect(site_url('admin/admin'));
-		// 	/*redirect($_SERVER['HTTP_REFERER']);*/
-		// } else {
-		// 	$this->session->set_flashdata('status_duplicate_data', '<strong> Maaf, Data gagal di tambahkan. Username/email sudah digunakan. Silahkan gunakan username/email yang lain.</strong>');
-		// 	redirect($_SERVER['HTTP_REFERER']);
-		// }
+	public function detail_usulan_by_year_and_opd($tahun_usulan){
 
-		//return redirect()->to('Opd/DataUsulan/index');
+		$data['title']  = "App-SIP | Data Formasi";
+		$data['page']   = "dataformasi";
+		$data['nama']   = $this->session->get('nama');
+		$data['email']   = $this->session->get('email');
+
+		$username   = $this->session->get('username');
+		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
+
+		$username   = $this->session->get('username');
+		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
+
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+		$data['get_tahun_usulan'] = $tahun_usulan;
+		// print_r($data['get_tahun_usulan']);
+		// die('stt');
+
+		// echo "<pre>";
+		// print_r($data['getDetailFormasi']);
+		// die('stttop');
+
+		return view('v_datausulan_petugas/detail_usulan_by_year', $data);
+		
 	}
 
 
@@ -192,15 +237,15 @@ class DataUsulan extends BaseController
 		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
 
 		$data['QR'] = $this->qrCode
-			->setText('QR code by codeitnow.in')
-			->setSize(100)
-			->setPadding(10)
-			->setErrorCorrection('high')
-			->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0))
-			->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0))
-			->setLabel('Digitally Signed')
-			->setLabelFontSize(11)
-			->setImageType(QrCode::IMAGE_TYPE_PNG);
+		->setText('QR code by codeitnow.in')
+		->setSize(100)
+		->setPadding(10)
+		->setErrorCorrection('high')
+		->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0))
+		->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0))
+		->setLabel('Digitally Signed')
+		->setLabelFontSize(11)
+		->setImageType(QrCode::IMAGE_TYPE_PNG);
 
 		//echo '<img src="data:' . $this->qrCode->getContentType() . ';base64,' . $this->qrCode->generate() . '" />';
 
