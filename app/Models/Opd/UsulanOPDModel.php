@@ -116,6 +116,41 @@ class UsulanOPDModel extends Model
 			->get();
 		return $query;
 	}
+
+	public function getLihatUsulanDescYear($idInstansi)
+	{
+		$query =  $this->db->table('tmp_usulan')
+			->select('*,concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan')
+			->where('tmp_usulan.instansi_id', $idInstansi)
+			->join('tbl_formasi',  'tbl_formasi.instansi_unor = tmp_usulan.instansi_unor and tbl_formasi.jabatan_kode = tmp_usulan.jabatan_kode', 'left')
+			->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+			->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
+			->join('status_usulan', 'status_usulan.status_usulan_id = tmp_usulan.status_usulan_id', 'left')
+			->join('tbl_instansi', 'tbl_instansi.instansi_id = tmp_usulan.instansi_id', 'left')
+			->groupBy('jabatan')
+			->orderBy('tmp_usulan.tahun_usulan DESC')
+			->get();
+		return $query;
+	}
+
+	public function getLihatUsulanByYear($tahun_usulan)
+	{
+		$query =  $this->db->table('tmp_usulan')
+			->select('*,concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan')
+			->where('tmp_usulan.instansi_id', $idInstansi)
+			->join('tbl_formasi',  'tbl_formasi.instansi_unor = tmp_usulan.instansi_unor and tbl_formasi.jabatan_kode = tmp_usulan.jabatan_kode', 'left')
+			->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+			->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
+			->join('status_usulan', 'status_usulan.status_usulan_id = tmp_usulan.status_usulan_id', 'left')
+			->join('tbl_instansi', 'tbl_instansi.instansi_id = tmp_usulan.instansi_id', 'left')
+			->where('tmp_usulan.tahun_usulan', $tahun_usulan)
+			->groupBy('jabatan')
+			->orderBy('tbl_formasi.instansi_unor asc')
+			->get();
+		return $query;
+	}
+
+	
 }
 
 /* End of file FormasiModel.php */

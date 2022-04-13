@@ -122,14 +122,14 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/UI/icons.html" class="nav-link">
+            <a href="<?php echo base_url('opd/datausulan/kirimdatausulanopd'); ?>" class="nav-link" <?php if ($page == 'opd/datausulan/kirimdatausulanopd') echo " active";  ?>">
               <i class="far fa fa-paper-plane-o nav-icon"></i>
               <p>Kirim Usulan</p>
             </a>
           </li>
           
           <li class="nav-item">
-            <a href="<?php echo base_url('opd/datausulan/cetakdatausulan'); ?>" class="nav-link <?php if ($page == 'opd/cetakdatausulan') echo " active";  ?>">
+            <a href="<?php echo base_url('opd/datausulan/cetakdatausulan'); ?>" class="nav-link <?php if ($page == 'opd/datausulan/cetakdatausulan') echo " active";  ?>">
               <i class="far fa fa-print nav-icon"></i>
               <p>Cetak Usulan</p>
             </a>
