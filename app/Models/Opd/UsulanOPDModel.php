@@ -127,13 +127,13 @@ class UsulanOPDModel extends Model
 			->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
 			->join('status_usulan', 'status_usulan.status_usulan_id = tmp_usulan.status_usulan_id', 'left')
 			->join('tbl_instansi', 'tbl_instansi.instansi_id = tmp_usulan.instansi_id', 'left')
-			->groupBy('jabatan')
+			->groupBy('tmp_usulan.tahun_usulan')
 			->orderBy('tmp_usulan.tahun_usulan DESC')
 			->get();
 		return $query;
 	}
 
-	public function getLihatUsulanByYear($tahun_usulan)
+	public function getUsulanByYear($idInstansi,$tahun_usulan_now)
 	{
 		$query =  $this->db->table('tmp_usulan')
 			->select('*,concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan')
@@ -143,10 +143,13 @@ class UsulanOPDModel extends Model
 			->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
 			->join('status_usulan', 'status_usulan.status_usulan_id = tmp_usulan.status_usulan_id', 'left')
 			->join('tbl_instansi', 'tbl_instansi.instansi_id = tmp_usulan.instansi_id', 'left')
-			->where('tmp_usulan.tahun_usulan', $tahun_usulan)
-			->groupBy('jabatan')
-			->orderBy('tbl_formasi.instansi_unor asc')
+			->where('tmp_usulan.tahun_usulan', $tahun_usulan_now)
 			->get();
+		return $query;
+	}
+
+	public function aksi_kirim_usulan_move_tmp_to_usulan($data){
+		$query = $this->db->table('tbl_usulan')->insert($data);
 		return $query;
 	}
 
