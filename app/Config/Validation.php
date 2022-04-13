@@ -36,6 +36,54 @@ class Validation
     // Rules
     //--------------------------------------------------------------------
 
+    //Validasi Pendaftaran - Buat kun
+    public $tambah_admin = [
+        'username' => [
+            'label'  => 'Username',
+            'rules'  => 'required|is_unique[tbl_admin.admin_email]',
+            'errors' => [
+                'required' => 'Username Tidak Boleh Kosong!',
+                'is_unique' => 'Username Sudah Terdaftar!'
+            ]
+        ],
+        'admin_nama' => [
+            'label'  => 'Nama Admin',
+            'rules'  => 'required',
+            'errors' => [
+                'required' => 'Nama Admin Tidak Boleh Kosong!'
+            ]
+        ],
+        'admin_no_hp' => [
+            'label'  => 'No HP',
+            'rules'  => 'required',
+            'errors' => [
+                'required' => 'No HP Tidak Boleh Kosong!'
+            ]
+        ],
+        'admin_email' => [
+            'label'  => 'Email',
+            'rules'  => 'required',
+            'errors' => [
+                'required' => 'Email Tidak Boleh Kosong!'
+            ]
+        ],
+        'admin_password' => [
+            'label'  => 'Password',
+            'rules'  => 'required',
+            'errors' => [
+                'required' => 'Password Tidak Boleh Kosong!'
+            ]
+        ],
+        'admin_password_conf' => [
+            'label'  => 'Confirm Password',
+            'rules'  => 'required|matches[password]',
+            'errors' => [
+                'required' => 'Comfirm Password Tidak Boleh Kosong!',
+                'matches' => 'Comfirm Password Tidak Sama Dengan Password!',
+            ]
+        ]
+    ];
+
     //Validasi Data Fakultas
     public $user = [
         'username' => [

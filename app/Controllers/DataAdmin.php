@@ -40,7 +40,7 @@ class DataAdmin extends BaseController
     // Halaman Data Admin
     public function index()
     {
-        $data['title']  = "App-PSIP | Data Admin";
+        $data['title']  = "App-SIP | Data Admin";
         $data['page']   = "dataadmin";
         $data['nama']   = $this->session->get('nama');
         $data['email']   = $this->session->get('email');
@@ -54,7 +54,7 @@ class DataAdmin extends BaseController
         $admin_nama = $this->request->getPost('admin_nama2');
         $admin_no_hp = $this->request->getPost('admin_no_hp2');
         $admin_email = $this->request->getPost('admin_email2');
-        $admin_password = $this->request->getPost('admin_password');
+        $admin_password = $this->request->getPost('admin_password2');
 
         //Data Admin
         $data = [
@@ -69,15 +69,17 @@ class DataAdmin extends BaseController
             'password'    =>  base64_encode($this->encrypter->encrypt($admin_password)),
             'hak_akses'   => 'admin'
         ];
-        // 'password'    => $ciphertext = $encrypter->encrypt('My secret message');
-
 
         //Cek Validasi Data Admin, Jika Data Tidak Valid 
-        if ($this->form_validation->run($data, 'user') == FALSE) {
+        if ($this->form_validation->run($data, 'tambah_admin') == FALSE) {
 
             $validasi = [
                 'error'   => true,
-                'username_error' => $this->form_validation->getErrors('username')
+                'username_error' => $this->form_validation->getErrors('username'),
+                'admin_nama' => $this->form_validation->getErrors('admin_nama'),
+                'admin_no_hp' => $this->form_validation->getErrors('admin_no_hp'),
+                'admin_email' => $this->form_validation->getErrors('admin_email'),
+                'password' => $this->form_validation->getErrors('password')
             ];
             echo json_encode($validasi);
         }
@@ -110,7 +112,7 @@ class DataAdmin extends BaseController
         $admin_nama = $this->request->getPost('admin_nama2');
         $admin_no_hp = $this->request->getPost('admin_no_hp2');
         $admin_email = $this->request->getPost('admin_email2');
-        $admin_password = $this->request->getPost('admin_password');
+        $admin_password = $this->request->getPost('admin_password2');
 
         //Data Admin
         $data = [
@@ -123,11 +125,15 @@ class DataAdmin extends BaseController
         ];
 
         //Cek Validasi Data Admin, Jika Data Tidak Valid 
-        if ($this->form_validation->run($data, 'user') == FALSE) {
+        if ($this->form_validation->run($data, 'tambah_admin') == FALSE) {
 
             $validasi = [
                 'error'   => true,
-                'username_error' => $this->form_validation->getErrors('username')
+                'username_error' => $this->form_validation->getErrors('username'),
+                'admin_nama' => $this->form_validation->getErrors('admin_nama'),
+                'admin_no_hp' => $this->form_validation->getErrors('admin_no_hp'),
+                'admin_email' => $this->form_validation->getErrors('admin_email'),
+                'password' => $this->form_validation->getErrors('password')
             ];
             echo json_encode($validasi);
         }
