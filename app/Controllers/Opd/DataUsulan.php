@@ -101,10 +101,7 @@ class DataUsulan extends BaseController
 		}
 	}
 
-	public function kirimdatausulanopd()
-	{
-
-
+	public function kirimdatausulanopd(){
 		$data['title']  = "App-SIP | Data Formasi";
 		$data['page']   = "dataformasi";
 		$data['nama']   = $this->session->get('nama');
@@ -116,45 +113,76 @@ class DataUsulan extends BaseController
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
+		$tahun_usulan_now = date("Y");
 		$data['getLihatUsulanDescYear'] = $this->M_usulan_OPD->getLihatUsulanDescYear($idInstansi['0']->instansi_id)->getResult();
 
 		return view('v_datausulan_petugas/kirim_usulan_opd', $data);
 	}
 
-	public function aksi_kirimdatausulanopd($tahun_usulan){
+	public function aksi_kirimdatausulanopd($instansi_id){
+		$data['title']  = "App-SIP | Data Formasi";
+		$data['page']   = "dataformasi";
+		$data['nama']   = $this->session->get('nama');
+		$data['email']   = $this->session->get('email');
+
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
 		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
 
-		$data = array(
-			'instansi_id'       => $idInstansi['0']->instansi_id,
-			'instansi_unor'     => $this->request->getPost('instansi_unor'),
-			'tahun_usulan' 		=> date("Y"),
-			'jabatan_kode' 		=> $this->request->getPost('jabatan_kode'),
-			'jumlah_usulan' 	=> $this->request->getPost('jumlah_usulan_formasi'),
-			'status_usulan_id' 	=> '1',
-		);
-		$inputusulanopd = $this->M_usulan_OPD->inputusulanopd($data);
+		$tahun_usulan_now = date("Y");
+		$getUsulanByYear = $this->M_usulan_OPD->getUsulanByYear($idInstansi['0']->instansi_id, $tahun_usulan_now)->getResult();
+
+		// echo "<pre>";
+		// print_r($getUsulanByYear);
+		// die('stopop');
+		foreach ($getUsulanByYear as $value) {
+
+			$data = array(
+				'instansi_id'       => $value->instansi_id,
+				'instansi_unor'     => $value->instansi_unor,
+				'tahun_usulan' 		=> $value->tahun_usulan,
+			);
+
+			$data2 = array(
+				'instansi_id'       => $value->instansi_id,
+				'instansi_unor'     => $value->instansi_unor,
+				'tahun_usulan' 		=> $value->tahun_usulan,
+			);
+		}
+		// //echo $tahun_usulan_now;
+		// echo "data =";
+		// print_r($data);
+		// echo "<br>";
+		// 	//echo $value->instansi_id;
+		// echo "<br>";
+		// 	//echo $value->instansi_unor;
+		// echo "<br>";
+		// 	// die('stopop');
+		// die('stopop');
+
+		
+
+
+		
+
+
+		//$delete_tmp_data_usulan = $this->M_usulan_OPD->delete_tmp_data_usulan($data);
+
+		
+		//$data['get_tahun_usulan'] = $tahun_usulan;
+
+
+		
+		
+		$inputusulanopd = $this->M_usulan_OPD->aksi_kirim_usulan_move_tmp_to_usulan($data);
 
 		if (isset($inputusulanopd)) {
-			$data['message_success'] = "Usulan anda telah berhasil di tambahkan";
-
-			$data['title']     = 'Data Input Usulan';
-			$data['page']      = "opd/datausulan/inputusulanopd";
-			$data['nama']      = $this->session->get('nama');
-			$data['email']     = $this->session->get('email');
-
-
-			$data['getDetailFormasiUsulan'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
-
 			$session = session();
 
 			$session->setFlashdata('success', 'User Updated successfully');
 
-			return redirect()->to('/opd/datausulan/');
-		} else {
-			$data['message_failed'] = "Data Usulan anda gagal di update. Silahkan cek dan coba kembali !";
+			return redirect()->to('/opd/datausulan/kirimdatausulanopd');
 		}
 	}
 
@@ -173,12 +201,6 @@ class DataUsulan extends BaseController
 
 		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
 		$data['get_tahun_usulan'] = $tahun_usulan;
-		// print_r($data['get_tahun_usulan']);
-		// die('stt');
-
-		// echo "<pre>";
-		// print_r($data['getDetailFormasi']);
-		// die('stttop');
 
 		return view('v_datausulan_petugas/detail_usulan_by_year', $data);
 		
