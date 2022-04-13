@@ -3,21 +3,28 @@
 namespace App\Controllers\Opd;
 
 use App\Controllers\BaseController;
-
+use App\Models\Opd\DataPegawaiOPDModel;
 use App\Models\Opd\UsulanOPDModel;
 use App\Models\Opd\DashboardPetugasModel;
+use CodeItNow\BarcodeBundle\Utils\BarcodeGenerator;
+use CodeItNow\BarcodeBundle\Utils\QrCode;
 use Config\Services;
 
 class DataUsulan extends BaseController
 {
+	protected $M_pegawai;
 	protected $M_usulan_OPD;
 	protected $M_dashboard_opd;
 	protected $request;
 	protected $form_validation;
+	protected $qrCode;
+	protected $barcode;
 	//protected $session;
 
 	public function __construct()
 	{
+		$this->qrCode = new QrCode();
+		$this->barcode = new BarcodeGenerator();
 		$this->request = Services::request();
 		$this->M_usulan_OPD = new UsulanOPDModel($this->request);
 
@@ -25,7 +32,7 @@ class DataUsulan extends BaseController
 		$this->session = \Config\Services::session();
 		$this->session->start();
 		//$session = \Config\Services::session(); 
-
+		$this->M_pegawai = new DataPegawaiOPDModel($this->request);
 
 		$this->M_dashboard_opd = new DashboardPetugasModel($this->request);
 	}
@@ -166,8 +173,40 @@ class DataUsulan extends BaseController
 
 		return view('v_lihat_datausulan_petugas/index', $data);
 	}
-}
 
+
+	// Halaman Data Cetak Data Pegawai
+	public function cetakdatausulan()
+	{
+		$data['title']  = "App-SIP | Data Formasi";
+		$data['page']   = "dataformasi";
+		$data['nama']   = $this->session->get('nama');
+		$data['email']   = $this->session->get('email');
+
+		$username   = $this->session->get('username');
+		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
+
+		$getIDInstansi = $idInstansi['0']->instansi_id;
+		$data['getnamaInstansi'] = $this->M_pegawai->getnamaInstansi($getIDInstansi)->getResult();
+
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+
+		$data['QR'] = $this->qrCode
+			->setText('QR code by codeitnow.in')
+			->setSize(100)
+			->setPadding(10)
+			->setErrorCorrection('high')
+			->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0))
+			->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0))
+			->setLabel('Digitally Signed')
+			->setLabelFontSize(11)
+			->setImageType(QrCode::IMAGE_TYPE_PNG);
+
+		//echo '<img src="data:' . $this->qrCode->getContentType() . ';base64,' . $this->qrCode->generate() . '" />';
+
+		return view('v_dataUsulan_petugas/cetak', $data);
+	}
+}
 
 /* End of file DataFormasi.php */
 /* Location: .//C/xampp/htdocs/app-sip/app/Controllers/DataFormasi.php */
