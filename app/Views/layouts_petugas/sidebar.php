@@ -134,10 +134,17 @@
               <p>Kirim Usulan</p>
             </a>
           </li>
+          
           <li class="nav-item">
             <a href="pages/UI/buttons.html" class="nav-link">
               <i class="far fa fa-print nav-icon"></i>
               <p>Cetak Usulan</p>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a href="pages/UI/icons.html" class="nav-link">
+              <i class="far fa fa-paper-plane-o nav-icon"></i>
+              <p>Rekap Usulan</p>
             </a>
           </li>
         </ul>
