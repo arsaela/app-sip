@@ -136,14 +136,54 @@ class DataUsulan extends BaseController
 		$getUsulanByYear = $this->M_usulan_OPD->getUsulanByYear($idInstansi['0']->instansi_id, $tahun_usulan_now)->getResult();
 
 
+<<<<<<< HEAD
+		// echo "<pre>";
+		// print_r($getUsulanByYear);
+		// die('stopop');
+		$no = 1;
+
+
+		//$data2 = [];
+		foreach ($getUsulanByYear as $value) {
+			$data2 = array(
+=======
 		//$data2 = [];
 		foreach ($getUsulanByYear as $value) {
 
 			$data2[] = array(
+>>>>>>> b6b2f94567ec0863a54f437a5d03a33379aa0f49
 				'instansi_id'       => $value->instansi_id,
 				'instansi_unor'     => $value->instansi_unor,
 				'tahun_usulan' 		=> $value->tahun_usulan,
 			);
+<<<<<<< HEAD
+			$no++;
+			
+		}
+
+
+
+		echo "<pre>";
+		echo "data =";
+		print_r($getUsulanByYear);
+		echo "<br>";
+		echo "aa =";
+		
+		//print_r($getUsulanByYear);
+		echo "<br>";
+		// 	//echo $value->instansi_id;
+		// echo "<br>";
+		// 	//echo $value->instansi_unor;
+		// echo "<br>";
+		// 	// die('stopop');
+		die('stopop');
+			// $data2 = array(
+			// 	'instansi_id'       => $value->instansi_id,
+			// 	'instansi_unor'     => $value->instansi_unor,
+			// 	'tahun_usulan' 		=> $value->tahun_usulan,
+			// );
+		}
+=======
 
 			// $data2 = array(
 			// 	'instansi_id'       => $value->instansi_id,
@@ -151,6 +191,7 @@ class DataUsulan extends BaseController
 			// 	'tahun_usulan' 		=> $value->tahun_usulan,
 			// );
 		}
+>>>>>>> b6b2f94567ec0863a54f437a5d03a33379aa0f49
 		// //echo $tahun_usulan_now;
 		// echo "data =";
 		// print_r($data2);
@@ -160,7 +201,10 @@ class DataUsulan extends BaseController
 		// // 	//echo $value->instansi_unor;
 		// // echo "<br>";
 		// // 	// die('stopop');
+<<<<<<< HEAD
+=======
 		// die('stopop');
+>>>>>>> b6b2f94567ec0863a54f437a5d03a33379aa0f49
 
 
 		echo "<pre>";
