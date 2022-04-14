@@ -133,14 +133,14 @@ class UsulanOPDModel extends Model
 		return $query;
 	}
 
-	public function getUsulanByYear($idInstansi,$tahun_usulan_now)
+	public function getUsulanByYear($idInstansi, $tahun_usulan_now)
 	{
 		$query =  $this->db->table('tmp_usulan')
-			->select('*,concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan')
+			->select('*')
 			->where('tmp_usulan.instansi_id', $idInstansi)
 			->join('tbl_formasi',  'tbl_formasi.instansi_unor = tmp_usulan.instansi_unor and tbl_formasi.jabatan_kode = tmp_usulan.jabatan_kode', 'left')
-			->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
-			->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
+			->join('tbl_jabatan', 'tmp_usulan.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+			->join('tbl_unor', 'tmp_usulan.instansi_unor = tbl_unor.instansi_unor', 'left')
 			->join('status_usulan', 'status_usulan.status_usulan_id = tmp_usulan.status_usulan_id', 'left')
 			->join('tbl_instansi', 'tbl_instansi.instansi_id = tmp_usulan.instansi_id', 'left')
 			->where('tmp_usulan.tahun_usulan', $tahun_usulan_now)
@@ -148,12 +148,11 @@ class UsulanOPDModel extends Model
 		return $query;
 	}
 
-	public function aksi_kirim_usulan_move_tmp_to_usulan($data){
-		$query = $this->db->table('tbl_usulan')->insert($data);
+	public function aksi_kirim_usulan_move_tmp_to_usulan($data2)
+	{
+		$query = $this->db->table('tbl_usulan')->insertBatch($data2);
 		return $query;
 	}
-
-	
 }
 
 /* End of file FormasiModel.php */
