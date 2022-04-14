@@ -101,7 +101,8 @@ class DataUsulan extends BaseController
 		}
 	}
 
-	public function kirimdatausulanopd(){
+	public function kirimdatausulanopd()
+	{
 		$data['title']  = "App-SIP | Data Formasi";
 		$data['page']   = "dataformasi";
 		$data['nama']   = $this->session->get('nama');
@@ -119,7 +120,8 @@ class DataUsulan extends BaseController
 		return view('v_datausulan_petugas/kirim_usulan_opd', $data);
 	}
 
-	public function aksi_kirimdatausulanopd($instansi_id){
+	public function aksi_kirimdatausulanopd($instansi_id)
+	{
 		$data['title']  = "App-SIP | Data Formasi";
 		$data['page']   = "dataformasi";
 		$data['nama']   = $this->session->get('nama');
@@ -133,49 +135,50 @@ class DataUsulan extends BaseController
 		$tahun_usulan_now = date("Y");
 		$getUsulanByYear = $this->M_usulan_OPD->getUsulanByYear($idInstansi['0']->instansi_id, $tahun_usulan_now)->getResult();
 
-		// echo "<pre>";
-		// print_r($getUsulanByYear);
-		// die('stopop');
+
+		//$data2 = [];
 		foreach ($getUsulanByYear as $value) {
 
-			$data = array(
+			$data2[] = array(
 				'instansi_id'       => $value->instansi_id,
 				'instansi_unor'     => $value->instansi_unor,
 				'tahun_usulan' 		=> $value->tahun_usulan,
 			);
 
-			$data2 = array(
-				'instansi_id'       => $value->instansi_id,
-				'instansi_unor'     => $value->instansi_unor,
-				'tahun_usulan' 		=> $value->tahun_usulan,
-			);
+			// $data2 = array(
+			// 	'instansi_id'       => $value->instansi_id,
+			// 	'instansi_unor'     => $value->instansi_unor,
+			// 	'tahun_usulan' 		=> $value->tahun_usulan,
+			// );
 		}
 		// //echo $tahun_usulan_now;
 		// echo "data =";
-		// print_r($data);
+		// print_r($data2);
 		// echo "<br>";
-		// 	//echo $value->instansi_id;
-		// echo "<br>";
-		// 	//echo $value->instansi_unor;
-		// echo "<br>";
-		// 	// die('stopop');
+		// // 	//echo $value->instansi_id;
+		// // echo "<br>";
+		// // 	//echo $value->instansi_unor;
+		// // echo "<br>";
+		// // 	// die('stopop');
 		// die('stopop');
 
-		
+
+		echo "<pre>";
+		print_r($data2);
+		die('stopop');
 
 
-		
 
 
 		//$delete_tmp_data_usulan = $this->M_usulan_OPD->delete_tmp_data_usulan($data);
 
-		
+
 		//$data['get_tahun_usulan'] = $tahun_usulan;
 
 
-		
-		
-		$inputusulanopd = $this->M_usulan_OPD->aksi_kirim_usulan_move_tmp_to_usulan($data);
+
+
+		$inputusulanopd = $this->M_usulan_OPD->aksi_kirim_usulan_move_tmp_to_usulan($data2);
 
 		if (isset($inputusulanopd)) {
 			$session = session();
@@ -186,7 +189,8 @@ class DataUsulan extends BaseController
 		}
 	}
 
-	public function detail_usulan_by_year_and_opd($tahun_usulan){
+	public function detail_usulan_by_year_and_opd($tahun_usulan)
+	{
 
 		$data['title']  = "App-SIP | Data Formasi";
 		$data['page']   = "dataformasi";
@@ -203,7 +207,6 @@ class DataUsulan extends BaseController
 		$data['get_tahun_usulan'] = $tahun_usulan;
 
 		return view('v_datausulan_petugas/detail_usulan_by_year', $data);
-		
 	}
 
 
@@ -259,15 +262,15 @@ class DataUsulan extends BaseController
 		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
 
 		$data['QR'] = $this->qrCode
-		->setText('QR code by codeitnow.in')
-		->setSize(100)
-		->setPadding(10)
-		->setErrorCorrection('high')
-		->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0))
-		->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0))
-		->setLabel('Digitally Signed')
-		->setLabelFontSize(11)
-		->setImageType(QrCode::IMAGE_TYPE_PNG);
+			->setText('QR code by codeitnow.in')
+			->setSize(100)
+			->setPadding(10)
+			->setErrorCorrection('high')
+			->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0))
+			->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0))
+			->setLabel('Digitally Signed')
+			->setLabelFontSize(11)
+			->setImageType(QrCode::IMAGE_TYPE_PNG);
 
 		//echo '<img src="data:' . $this->qrCode->getContentType() . ';base64,' . $this->qrCode->generate() . '" />';
 

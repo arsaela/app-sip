@@ -40,7 +40,7 @@ class Validation
     public $tambah_admin = [
         'username' => [
             'label'  => 'Username',
-            'rules'  => 'required|is_unique[tbl_admin.admin_email]',
+            'rules'  => 'required|is_unique[tbl_admin.username]',
             'errors' => [
                 'required' => 'Username Tidak Boleh Kosong!',
                 'is_unique' => 'Username Sudah Terdaftar!'
