@@ -136,6 +136,7 @@ class DataUsulan extends BaseController
 		// echo "<pre>";
 		// print_r($getUsulanByYear);
 		// die('stopop');
+		$no = 1;
 		foreach ($getUsulanByYear as $value) {
 
 			$data = array(
@@ -149,17 +150,26 @@ class DataUsulan extends BaseController
 				'instansi_unor'     => $value->instansi_unor,
 				'tahun_usulan' 		=> $value->tahun_usulan,
 			);
+			$no++;
+			
 		}
-		// //echo $tahun_usulan_now;
-		// echo "data =";
-		// print_r($data);
-		// echo "<br>";
+
+
+
+		echo "<pre>";
+		echo "data =";
+		print_r($getUsulanByYear);
+		echo "<br>";
+		echo "aa =";
+		
+		//print_r($getUsulanByYear);
+		echo "<br>";
 		// 	//echo $value->instansi_id;
 		// echo "<br>";
 		// 	//echo $value->instansi_unor;
 		// echo "<br>";
 		// 	// die('stopop');
-		// die('stopop');
+		die('stopop');
 
 		
 
