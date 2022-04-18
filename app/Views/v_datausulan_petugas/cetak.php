@@ -98,7 +98,7 @@
 
             </div>
 
-            <div style="float:right">
+            <div style="float:right; margin-right: 30px;">
 
                 <?php echo '<img src="data:' . $QR->getContentType() . ';base64,' . $QR->generate() . '" />'; ?>
             </div>

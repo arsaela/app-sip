@@ -34,6 +34,7 @@ class DashboardPetugasModel extends Model
 		$query =  $this->db->table('tbl_login')
 			->select('*')
 			->join('tbl_petugas', 'tbl_petugas.username = tbl_login.username')
+			->join('tbl_instansi', 'tbl_petugas.instansi_id = tbl_instansi.instansi_id')
 			->where('tbl_login.username', $username)
 			->get();
 		return $query;

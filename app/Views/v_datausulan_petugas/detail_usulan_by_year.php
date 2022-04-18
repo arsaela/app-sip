@@ -24,7 +24,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Detail Data Usulan Tahun <?php echo $get_tahun_usulan;?></h3>
+              <h3 class="card-title">Detail Data Usulan <?php echo $get_petugas_by_login->instansi_nama;?> Tahun <?php echo $get_tahun_usulan;?></h3>
             </div>
 
             <div class="card-body table-responsive">

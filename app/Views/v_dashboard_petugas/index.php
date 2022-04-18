@@ -22,7 +22,7 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h4>Selamat Datang, <span style="text-transform: capitalize;"><?php echo $get_petugas_by_login->petugas_nama;?></span> di aplikasi S.I.P </h4>
+                            <h4>Selamat Datang, <span style="text-transform: capitalize;"><?php echo $get_petugas_by_login->petugas_nama;?> - <?php echo $get_petugas_by_login->instansi_nama;?></span> di aplikasi S.I.P </h4>
                             <p>Aplikasi Formasi Pegawai - Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kabupaten Klaten</p>
                         </div>
                         <div class="icon">
@@ -69,12 +69,13 @@
     
 </div>
 </section>
-<!-- /.content -->
-
-
-
-
-    
+<!-- /.content -->    
 </div>
+
+<style type="text/css">
+    .inner h4 {
+    font-size: 20px;
+    }
+</style>
 <!-- /.content-wrapper -->
 <?= $this->endSection() ?>

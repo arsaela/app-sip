@@ -24,7 +24,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Data Kekurangan Formasi</h3>
+              <h3 class="card-title">Data Kekurangan Formasi "<?php echo $get_petugas_by_login->instansi_nama;?>"</h3>
             </div>
 
             <div class="card-body table-responsive">
@@ -134,22 +134,30 @@
         jabatankode: jabatankode
       },
       success: function(data) {
-        // alert("sukses"+data);
+               // alert("sukses"+data);
         var output = '';
         var no = 0;
         var i = 0;
+
+        if(data.length==0){
+           output += '<tr>' +
+           '<td colspan="4" style="background-color:#fff; color:red; text-align:center;">' +  'Data PNS tidak ditemukan ..' + '</td>' +
+            '</tr>';
+            i++;
+          } else {
         while (i < data.length) {
-          no++;
-          output += '<tr>' +
-          '<td>' + no + '</td>' +
-          '<td>' + data[i].pegawai_nama + '</td>' +
-          '<td>' + data[i].pegawai_nip + '</td>' +
-          '<td>' + data[i].jabatan_nama + '</td>' +
+            no++;
+            output += '<tr>' +
+            '<td>' + no + '</td>' +
+            '<td>' + data[i].pegawai_nama + '</td>' +
+            '<td>' + data[i].pegawai_nip + '</td>' +
+            '<td>' + data[i].jabatan_nama + '</td>' +
             // '<td>'+data[i].formasi_jumlah+'</td>'+
 
             '</tr>';
             i++;
           }
+        }
 
           $('#myModal').modal("show");
           $('#show_data').html(output);

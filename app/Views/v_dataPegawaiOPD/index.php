@@ -24,7 +24,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Data Pegawai</h3>
+              <h3 class="card-title">Data Pegawai "<?php echo $get_petugas_by_login->instansi_nama;?>"</h3>
             </div>
 
             <div class="card-body table-responsive">

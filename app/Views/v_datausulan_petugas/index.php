@@ -1,29 +1,4 @@
 <?= $this->extend('layouts_petugas/template_petugas') ?>
-
-
-<!-- penting untuk menggunakan fungsi session di bawah ini  -->
-<!-- <?php //if(session()->get('message')): 
-      ?>
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <button type="button" class="close" data-dismiss="alert" arial-label="close"> 
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<?php //endif; 
-?>
-
-<div class="row">
-  <div class="col-md-8">
-    <?php
-    /* if(session()->get('err')) {
-      echo "<div class='alert alert-danger p-0 pt-2' role='alert'>".session()->get('err')."</div>";
-      session()->remove('err');
-    }
-    */
-    ?>
-    </div>
-  </div> -->
-
 <?= $this->section('content') ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -38,9 +13,6 @@
       </div>
     </div><!-- /.container-fluid -->
   </section>
-
-
-
 
   <?= $this->section('script') ?>
   <script type="text/javascript">
@@ -61,7 +33,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Input Usulan Formasi</h3>
+              <h3 class="card-title">Input Usulan Formasi "<?php echo $get_petugas_by_login->instansi_nama;?>"</h3>
             </div>
 
             <div class="card-body table-responsive">
@@ -76,7 +48,6 @@
                     <th>Kekurangan Formasi</th>
                     <th>Detail ASN</th>
                     <th>Ajukan Usulan</th>
-                    <th>Status Usulan</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -154,8 +125,8 @@
                                     <div class="form-group">
                                       <label>Jabatan Nama</label>
                                       <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" readonly required>
-                                      <input type="text" class="form-control jabatan_kode" name="jabatan_kode" placeholder="Jabatan Kode" readonly required>
-                                      <input type="text" class="form-control instansi_unor" name="instansi_unor" placeholder="Instansi Unor" readonly required>
+                                      <input type="hidden" class="form-control jabatan_kode" name="jabatan_kode" placeholder="Jabatan Kode" readonly required>
+                                      <input type="hidden" class="form-control instansi_unor" name="instansi_unor" placeholder="Instansi Unor" readonly required>
                                     </div>
 
                                     <div class="form-group">
@@ -171,8 +142,7 @@
                                     <div class="form-group">
                                       <label>Jumlah Usulan</label>
 
-                                      <input type="number" id="jumlah_usulan_formasi" class="form-control jumlah_usulan_formasi" name="jumlah_usulan_formasi" placeholder="Jumlah Usulan" value="<?php //echo $value->jumlah_approve; 
-                                                                                                                                                                                                  ?>" required>
+                                      <input type="number" id="jumlah_usulan_formasi" class="form-control jumlah_usulan_formasi" name="jumlah_usulan_formasi" placeholder="Jumlah Usulan">
                                     </div>
 
                                   </div>
@@ -189,9 +159,6 @@
 
 
                         </td>
-
-                        <td><?php //echo $nama_status; ;
-                            ?></td>
                       </tr>
                   <?php $no++;
                     }
@@ -318,25 +285,32 @@
           jabatankode: jabatankode
         },
         success: function(data) {
-          // alert("sukses"+data);
-          var output = '';
-          var no = 0;
-          var i = 0;
-          while (i < data.length) {
-            no++;
-            output += '<tr>' +
-              '<td>' + no + '</td>' +
-              '<td>' + data[i].pegawai_nama + '</td>' +
-              '<td>' + data[i].pegawai_nip + '</td>' +
-              '<td>' + data[i].jabatan_nama + '</td>' +
-              // '<td>'+data[i].formasi_jumlah+'</td>'+
+        var output = '';
+        var no = 0;
+        var i = 0;
 
-              '</tr>';
+        if(data.length==0){
+         output += '<tr>' +
+         '<td colspan="4" style="background-color:#fff; color:red; text-align:center;">' +  'Data PNS tidak ditemukan ..' + '</td>' +
+         '</tr>';
+         i++;
+       } else {
+        while (i < data.length) {
+          no++;
+          output += '<tr>' +
+          '<td>' + no + '</td>' +
+          '<td>' + data[i].pegawai_nama + '</td>' +
+          '<td>' + data[i].pegawai_nip + '</td>' +
+          '<td>' + data[i].jabatan_nama + '</td>' +
+            // '<td>'+data[i].formasi_jumlah+'</td>'+
+
+            '</tr>';
             i++;
           }
+        }
 
-          $('#myModal').modal("show");
-          $('#show_data').html(output);
+        $('#myModal').modal("show");
+        $('#show_data').html(output);
         }
       })
 

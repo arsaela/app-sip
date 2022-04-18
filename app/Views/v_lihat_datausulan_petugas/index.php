@@ -24,7 +24,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Data Lihat Usulan OPD</h3>
+              <h3 class="card-title">Data Lihat Usulan OPD "<?php echo $get_petugas_by_login->instansi_nama;?>"</h3>
             </div>
 
             <div class="card-body table-responsive">
@@ -36,6 +36,7 @@
                     <th>Lokasi Unit Kerja</th>
                     <th>Instansi Nama</th>
                     <th>Jumlah Usulan</th>
+                    <th>Tahun Usulan</th>
                     <th>Status Usulan</th>
 
 
@@ -51,34 +52,66 @@
                       <td><?php echo $value->instansi_unor_nama; ?></td>
                       <td><?php echo $value->instansi_nama; ?></td>
                       <td><?php echo $value->jumlah_usulan; ?></td>
+                      <td><?php echo $value->tahun_usulan; ?></td>
                       <td>
-                        <div style="background-color: yellow; padding:5px;"><?php echo $value->nama_status; ?></div>
+                        <?php if($value->status_usulan_id=='1'){ ?>
+                          <a href="#" class="btn btn-lg btn-danger disabled"><?php echo $value->nama_status; ?></a>
+                        <?php } else if($value->status_usulan_id=='2'){ ?>
+                          <a href="#" class="btn btn-lg btn-success disabled"><?php echo $value->nama_status; ?></a>
+                        <?php } else { ?>
+                          <a href="#" class="btn btn-lg btn-primary disabled"><?php echo $value->nama_status; ?></a>
+                        <?php } ?>
                       </td>
 
                     </tr>
                     <?php $no++;
-                    
-                  } ?>
+                  } 
 
-                </tbody>
-              </table>
+                  //if($value->status_usulan_id=='1'){ ?>
+                    <div class="status_usulan_belum_kirim" style="color: red; font-size: 16px; padding-bottom: 20px;">Note : Jika masih terdapat data usulan yang belum di kirimkan.
+                    Silahkan segera kirim data usulan anda ke BKPSDM Kabupaten Klaten.</div>
+                    <?php //} ?>
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
             </div>
-            <!-- /.card-body -->
+            <!-- /.card -->
           </div>
-          <!-- /.card -->
         </div>
+        <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
       </div>
-      <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
-    </div>
 
-  </section>
-  <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
-<?= $this->endSection() ?>
+    </section>
+    <!-- /.content -->
+  </div>
 
-<?= $this->section('script') ?>
-<script>
+  <style type="text/css">
+    tbody tr td a {
+      padding: 6px !important;
+      font-size: 14px !important;
+    }
+
+    tbody tr td a.btn.btn-lg.btn-danger.disabled {
+      background-color: #d50a0a;
+      border-color: #d50a0a;
+      border-radius: 0px;
+    }
+
+    tbody tr td a.btn.btn-lg.btn-success.disabled {
+      border-radius: 0px;
+    }  
+
+    tbody tr td a.btn.btn-lg.btn-primary.disabled {
+      border-radius: 0px;
+    }
+  </style>
+  <!-- /.content-wrapper -->
+  <?= $this->endSection() ?>
+
+  <?= $this->section('script') ?>
+  <script>
   //Menampilakan modal edit data petugas
   $('body').on('click', '.edit', function() {
     var instansiunor = $(this).attr("instansi_unor");

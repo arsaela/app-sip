@@ -37,7 +37,6 @@ class DataUsulan extends BaseController
 		$this->M_dashboard_opd = new DashboardPetugasModel($this->request);
 	}
 
-
 	// Halaman Data Usulan Petugas
 	public function index()
 	{
@@ -54,12 +53,6 @@ class DataUsulan extends BaseController
 
 		$data['getDetailFormasiUsulan'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
-		// $data['get_data_usulan_found'] = $this->M_usulan_OPD->getDataUsulanFound($idInstansi['0']->instansi_id)->getResult();
-
-		// echo "<pre>";
-		// print_r($data['getDetailFormasi']);
-		// die('stttop');
-
 		return view('v_datausulan_petugas/index', $data);
 	}
 
@@ -70,17 +63,26 @@ class DataUsulan extends BaseController
 
 		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
 
-		$data = array(
+		$get_inputan_instansi_unor = $this->request->getPost('instansi_unor');
+		$get_inputan_jabatan_kode = $this->request->getPost('jabatan_kode');
+
+		$datenow = date("Y");
+		$explode_tahun_usulan = substr($datenow,2);
+		// print_r($explode_tahun_usulan);
+
+		$data_history_usulan_opd = array(
+			'history_usulan_id ' => 'HU-'.$get_inputan_instansi_unor.'-'.$get_inputan_jabatan_kode.'-'.$explode_tahun_usulan,
 			'instansi_id'       => $idInstansi['0']->instansi_id,
-			'instansi_unor'     => $this->request->getPost('instansi_unor'),
+			'instansi_unor'       => $get_inputan_instansi_unor,
 			'tahun_usulan' 		=> date("Y"),
-			'jabatan_kode' 		=> $this->request->getPost('jabatan_kode'),
+			'jabatan_kode' 		=> $get_inputan_jabatan_kode,
 			'jumlah_usulan' 	=> $this->request->getPost('jumlah_usulan_formasi'),
 			'status_usulan_id' 	=> '1',
-		);
-		$inputusulanopd = $this->M_usulan_OPD->inputusulanopd($data);
 
-		if (isset($inputusulanopd)) {
+		);
+		$input_history_usulan_opd = $this->M_usulan_OPD->input_history_usulan_opd($data_history_usulan_opd);
+
+		if (isset($input_history_usulan_opd)) {
 			$data['message_success'] = "Usulan anda telah berhasil di tambahkan";
 
 			$data['title']     = 'Data Input Usulan';
@@ -99,6 +101,25 @@ class DataUsulan extends BaseController
 		} else {
 			$data['message_failed'] = "Data Usulan anda gagal di update. Silahkan cek dan coba kembali !";
 		}
+	}
+
+	// Halaman Data Lihat Usulan
+	public function lihatusulanopd()
+	{
+		$data['title']  = "App-SIP | Data Formasi";
+		$data['page']   = "dataformasi";
+		$data['nama']   = $this->session->get('nama');
+		$data['email']   = $this->session->get('email');
+
+		$username   = $this->session->get('username');
+		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
+
+		$username   = $this->session->get('username');
+		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
+
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+
+		return view('v_lihat_datausulan_petugas/index', $data);
 	}
 
 	public function kirimdatausulanopd()
@@ -135,59 +156,70 @@ class DataUsulan extends BaseController
 		$tahun_usulan_now = date("Y");
 		$getUsulanByYear = $this->M_usulan_OPD->getUsulanByYear($idInstansi['0']->instansi_id, $tahun_usulan_now)->getResult();
 
-
+		$datenow = date("Y");
+		$explode_tahun_usulan = substr($datenow,2);
+		
 		//$data2 = [];
-		foreach ($getUsulanByYear as $value) {
+		foreach ($getUsulanByYear as $key =>  $value) {
 
-			$data2[] = array(
+			$data_usulan = array(
+				'usulan_id'			=> 'U-'.$value->instansi_id.'-'.$explode_tahun_usulan,     
 				'instansi_id'       => $value->instansi_id,
-				'instansi_unor'     => $value->instansi_unor,
 				'tahun_usulan' 		=> $value->tahun_usulan,
 			);
 
-			// $data2 = array(
-			// 	'instansi_id'       => $value->instansi_id,
-			// 	'instansi_unor'     => $value->instansi_unor,
-			// 	'tahun_usulan' 		=> $value->tahun_usulan,
-			// );
+			$data_detail_usulan[] = array(
+				'usulan_id'			=> 'U-'.$value->instansi_unor.'-'.$value->jabatan_kode.'-'.$explode_tahun_usulan,
+				'instansi_unor'     => $value->instansi_unor,
+				'jabatan_kode'     	=> $value->jabatan_kode,
+				'jumlah_usulan'     => $value->jumlah_usulan,
+				'jumlah_approve'    => '-',
+				'status_usulan_id'	=> '2',
+				'keterangan'		=> '-',
+			);
+			$get_usulan = 'HU-'.$value->instansi_unor.'-'.$value->jabatan_kode.'-'.$explode_tahun_usulan;
+
+			$datausul = array(
+				'status_usulan_id' => '2',
+			);
+			$update_status_history_usulan = $this->M_usulan_OPD->update_status_history_usulan($get_usulan, $datausul);
+
 		}
-		// //echo $tahun_usulan_now;
-		// echo "data =";
-		// print_r($data2);
-		// echo "<br>";
-		// // 	//echo $value->instansi_id;
-		// // echo "<br>";
-		// // 	//echo $value->instansi_unor;
-		// // echo "<br>";
-		// // 	// die('stopop');
-		// die('stopop');
 
-
-		echo "<pre>";
-		print_r($data2);
-		die('stopop');
-
-
-
-
-		//$delete_tmp_data_usulan = $this->M_usulan_OPD->delete_tmp_data_usulan($data);
-
-
-		//$data['get_tahun_usulan'] = $tahun_usulan;
-
-
-
-
-		$inputusulanopd = $this->M_usulan_OPD->aksi_kirim_usulan_move_tmp_to_usulan($data2);
+		$inputusulanopd = $this->M_usulan_OPD->aksi_kirim_usulan_opd($data_usulan);
+		$inputdata_detail_usulan_opd = $this->M_usulan_OPD->aksi_kirim_detail_usulan_opd($data_detail_usulan);
 
 		if (isset($inputusulanopd)) {
 			$session = session();
 
-			$session->setFlashdata('success', 'User Updated successfully');
+			$session->setFlashdata('success', 'Usulan Berhasil di Kirim');
 
 			return redirect()->to('/opd/datausulan/kirimdatausulanopd');
+		} else {
+			$data['message_failed'] = "Data Usulan anda gagal di kirim. Silahkan cek dan coba kembali !";
 		}
+
+
 	}
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	public function detail_usulan_by_year_and_opd($tahun_usulan)
 	{
@@ -220,31 +252,6 @@ class DataUsulan extends BaseController
 		}
 	}
 
-
-	// Halaman Data Lihat Usulan
-	public function lihatusulanopd()
-	{
-		$data['title']  = "App-SIP | Data Formasi";
-		$data['page']   = "dataformasi";
-		$data['nama']   = $this->session->get('nama');
-		$data['email']   = $this->session->get('email');
-
-		$username   = $this->session->get('username');
-		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
-
-		$username   = $this->session->get('username');
-		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
-
-		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
-
-		// echo "<pre>";
-		// print_r($data['getDetailFormasi']);
-		// die('stttop');
-
-		return view('v_lihat_datausulan_petugas/index', $data);
-	}
-
-
 	// Halaman Data Cetak Data Pegawai
 	public function cetakdatausulan()
 	{
@@ -262,20 +269,94 @@ class DataUsulan extends BaseController
 		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
 
 		$data['QR'] = $this->qrCode
-			->setText('QR code by codeitnow.in')
-			->setSize(100)
-			->setPadding(10)
-			->setErrorCorrection('high')
-			->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0))
-			->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0))
-			->setLabel('Digitally Signed')
-			->setLabelFontSize(11)
-			->setImageType(QrCode::IMAGE_TYPE_PNG);
+		->setText('QR code by codeitnow.in')
+		->setSize(100)
+		->setPadding(10)
+		->setErrorCorrection('high')
+		->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0))
+		->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0))
+		->setLabel('Digitally Signed')
+		->setLabelFontSize(11)
+		->setImageType(QrCode::IMAGE_TYPE_PNG);
 
 		//echo '<img src="data:' . $this->qrCode->getContentType() . ';base64,' . $this->qrCode->generate() . '" />';
 
 		return view('v_dataUsulan_petugas/cetak', $data);
 	}
+
+
+
+	public function inputusulanopd_backup()
+	{
+		$username   = $this->session->get('username');
+		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
+
+		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
+
+		$get_inputan_instansi_unor = $this->request->getPost('instansi_unor');
+		$get_inputan_jabatan_kode = $this->request->getPost('jabatan_kode');
+
+
+		$data_usulan_opd = array(
+			'usulan_id'			=> 'U-'.$idInstansi['0']->instansi_id.'-'.$get_inputan_jabatan_kode.'-'.date("Y"),
+			'instansi_id'       => $idInstansi['0']->instansi_id,
+			'tahun_usulan' 		=> date("Y"),
+		);
+		$inputusulanopd = $this->M_usulan_OPD->inputusulanopd($data_usulan_opd);
+
+		print_r($data_usulan_opd);
+		die('sttop');
+
+		// echo "<pre>";
+		// print_r($data_usulan_opd);
+		// echo "<br>";
+		// print_r($data_detail_usulan_opd);
+		// echo "aaa";
+		// die('sttop');
+
+
+
+		$data_detail_usulan_opd = array(
+			'usulan_id'			=> 'U-'.$idInstansi['0']->instansi_id.'-'.$get_inputan_jabatan_kode.'-'.date("Y"),
+			'instansi_unor'     => $get_inputan_instansi_unor,
+			'jabatan_kode' 		=> $get_inputan_jabatan_kode,
+			'jumlah_usulan' 	=> $this->request->getPost('jumlah_usulan_formasi'),
+			'status_usulan_id' 	=> '1',
+		);
+		$inputdetailusulanopd = $this->M_usulan_OPD->inputdetailusulanopd($data_detail_usulan_opd);
+
+		if (isset($inputusulanopd)) {
+			$data['message_success'] = "Usulan anda telah berhasil di tambahkan";
+
+			$data['title']     = 'Data Input Usulan';
+			$data['page']      = "opd/datausulan/inputusulanopd";
+			$data['nama']      = $this->session->get('nama');
+			$data['email']     = $this->session->get('email');
+
+
+			$data['getDetailFormasiUsulan'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
+
+			$session = session();
+
+			$session->setFlashdata('success', 'User Updated successfully');
+
+			return redirect()->to('/opd/datausulan/');
+		} else {
+			$data['message_failed'] = "Data Usulan anda gagal di update. Silahkan cek dan coba kembali !";
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 /* End of file DataFormasi.php */

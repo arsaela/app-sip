@@ -24,7 +24,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Rekap Formasi OPD</h3>
+              <h3 class="card-title">Rekap Formasi OPD "<?php echo $get_petugas_by_login->instansi_nama;?>"</h3>
             </div>
 
             <div class="card-body table-responsive">
@@ -32,9 +32,9 @@
                 <thead>
                   <tr>
                     <th>No.</th>
-                   <!--  <th>Formasi</th> -->
+                    <!--  <th>Formasi</th> -->
                     <th>Formasi</th>
-                   <!--  <th>Lokasi Unit Kerja</th> -->
+                    <!--  <th>Lokasi Unit Kerja</th> -->
                     <th>Lokasi Unit Kerja</th>
                     <th>Jumlah Kebutuhan</th>
                     <th>Jumlah ASN</th>
@@ -48,7 +48,7 @@
                       <td><?php echo $no; ?></td>
                       <!-- <td><?php //echo $value->formasi_id; ?></td> -->
                       <td><?php echo $value->jabatan_nama; ?></td>
-                     <!--  <td><?php //echo $value->instansi_unor; ?></td> -->
+                      <!--  <td><?php //echo $value->instansi_unor; ?></td> -->
                       <td><?php echo $value->instansi_unor_nama; ?></td>
                       <td><?php echo $value->formasi_jumlah; ?></td>
                       <td><?php echo $value->jumlahasn; ?></td>
@@ -90,7 +90,7 @@
                         </div>
                       </td>
                     </tr>
-                  <?php $no++;
+                    <?php $no++;
                   } ?>
 
                 </tbody>
@@ -129,17 +129,25 @@
         var output = '';
         var no = 0;
         var i = 0;
+
+        if(data.length==0){
+         output += '<tr>' +
+         '<td colspan="4" style="background-color:#fff; color:red; text-align:center;">' +  'Data PNS tidak ditemukan ..' + '</td>' +
+         '</tr>';
+         i++;
+       } else {
         while (i < data.length) {
           no++;
           output += '<tr>' +
-            '<td>' + no + '</td>' +
-            '<td>' + data[i].pegawai_nama + '</td>' +
-            '<td>' + data[i].pegawai_nip + '</td>' +
-            '<td>' + data[i].jabatan_nama + '</td>' +
+          '<td>' + no + '</td>' +
+          '<td>' + data[i].pegawai_nama + '</td>' +
+          '<td>' + data[i].pegawai_nip + '</td>' +
+          '<td>' + data[i].jabatan_nama + '</td>' +
             // '<td>'+data[i].formasi_jumlah+'</td>'+
 
             '</tr>';
-          i++;
+            i++;
+          }
         }
 
         $('#myModal').modal("show");
