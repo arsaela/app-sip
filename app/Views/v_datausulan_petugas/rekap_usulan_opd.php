@@ -24,7 +24,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Data Usulan OPD "<?php echo $get_petugas_by_login->instansi_nama;?>" tahun <?php echo date('Y');?></h3>
+              <h3 class="card-title">Rekap Data Usulan OPD "<?php echo $get_petugas_by_login->instansi_nama;?>"</h3>
             </div>
 
             <div class="card-body table-responsive">
@@ -67,10 +67,7 @@
                     <?php $no++;
                   } 
 
-                  //if($value->status_usulan_id=='1'){ ?>
-                    <div class="status_usulan_belum_kirim" style="color: red; font-size: 16px; padding-bottom: 20px;">Note : Jika masih terdapat data usulan yang belum di kirimkan.
-                    Silahkan segera kirim data usulan anda ke BKPSDM Kabupaten Klaten.</div>
-                    <?php //} ?>
+                  ?>
 
                   </tbody>
                 </table>

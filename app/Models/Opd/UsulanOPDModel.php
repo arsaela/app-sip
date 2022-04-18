@@ -146,6 +146,22 @@ class UsulanOPDModel extends Model
 		return $query;
 	}
 
+	
+	public function getLihatUsulanNow($idInstansi, $tahun_usulan_now)
+	{
+		$query =  $this->db->table('tbl_history_usulan')
+			->select('*')
+			->where('tbl_history_usulan.instansi_id', $idInstansi)
+			->join('tbl_formasi',  'tbl_formasi.instansi_unor = tbl_history_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_history_usulan.jabatan_kode', 'left')
+			->join('tbl_jabatan', 'tbl_history_usulan.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+			->join('tbl_unor', 'tbl_history_usulan.instansi_unor = tbl_unor.instansi_unor', 'left')
+			->join('status_usulan', 'status_usulan.status_usulan_id = tbl_history_usulan.status_usulan_id', 'left')
+			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_history_usulan.instansi_id', 'left')
+			->where('tbl_history_usulan.tahun_usulan', $tahun_usulan_now)
+			->get();
+		return $query;
+	}
+
 	public function aksi_kirim_usulan_opd($data_usulan)
 	{
 		$query = $this->db->table('tbl_usulan')->insert($data_usulan);

@@ -135,7 +135,7 @@
             </a>
           </li>
            <li class="nav-item">
-            <a href="pages/UI/icons.html" class="nav-link">
+            <a href="<?php echo base_url('opd/datausulan/rekapusulanopd'); ?>" class="nav-link <?php if ($page == 'opd/datausulan/rekapusulanopd') echo " active";  ?>">
               <i class="far fa fa-paper-plane-o nav-icon"></i>
               <p>Rekap Usulan</p>
             </a>

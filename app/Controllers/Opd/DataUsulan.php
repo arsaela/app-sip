@@ -117,7 +117,8 @@ class DataUsulan extends BaseController
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
-		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+		$tahun_usulan_now = date("Y");
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulanNow($idInstansi['0']->instansi_id, $tahun_usulan_now)->getResult();
 
 		return view('v_lihat_datausulan_petugas/index', $data);
 	}
@@ -346,6 +347,26 @@ class DataUsulan extends BaseController
 		}
 	}
 
+
+
+// Halaman Data Lihat Usulan
+	public function rekapusulanopd()
+	{
+		$data['title']  = "App-SIP | Data Formasi";
+		$data['page']   = "dataformasi";
+		$data['nama']   = $this->session->get('nama');
+		$data['email']   = $this->session->get('email');
+
+		$username   = $this->session->get('username');
+		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
+
+		$username   = $this->session->get('username');
+		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
+
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+
+		return view('v_datausulan_petugas/rekap_usulan_opd', $data);
+	}
 
 
 
