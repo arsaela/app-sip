@@ -51,76 +51,102 @@
                 </thead>
                 <tbody>
                   <?php $no = 1;
+                  $yearnow = date("Y");
                   foreach ($getLihatUsulanDescYear as $value) { 
                     ?>
                     <tr>
                       <td><?php echo $no; ?></td>
                       <td><?php echo $value->instansi_nama; ?></td>
                       <td><?php echo $value->tahun_usulan; ?></td>
+
                       <td>
-                        <div style="background-color: yellow; padding:5px;"><?php echo $value->nama_status; ?></div>
+                        <?php
+                        if ($value->status_usulan_id == 1) {
+                          echo "<p class='bg_status_belumverifikasi'>belum kirim usulan</p>";
+                        } else if ($value->status_usulan_id == 2) {
+                          echo "<p class='bg_status_approve'>sudah kirim usulan</p>";
+                        } else if ($value->status_usulan_id == 3) {
+                          echo "<p class='bg_status_reject'>belum diverifikasi</p>";
+                        } else if ($value->status_usulan_id == 4) {
+                          echo "<p class='bg_status_reject'>proses</p>";
+                        } else if ($value->status_usulan_id == 5) {
+                          echo "<p class='bg_status_approve'>sudah diverifikasi</p>";
+                        } else {
+                          echo "<p class='bg_status_pending'>Pending</p>";
+                        }
+                        ?>
                       </td>
-                      <td>
-                        <a href="<?php echo base_url('Opd/DataUsulan/detail_usulan_by_year_and_opd/' . $value->tahun_usulan); ?>" class="btn btn-warning"><i class="fa fa-folder-open-o ">
-                        Detail</i></a> 
 
 
+                     <!--  <div style="background-color: yellow; padding:5px;">
+                        <?php //echo $value->nama_status; ?>
+
+                      </div> -->
+                    </td>
+                    <td>
+                      <a href="<?php echo base_url('Opd/DataUsulan/detail_usulan_by_year_and_opd/' . $value->tahun_usulan); ?>" class="btn btn-warning"><i class="fa fa-folder-open-o ">
+                      Detail</i></a> 
+
+
+
+
+                      <?php if($value->tahun_usulan==$yearnow AND $value->status_usulan_id=='1'){?>
                         <button type="button" class="btn_detail_usulan btn btn-success" data-toggle="modal" value="<?php echo $value->instansi_id; ?>" data-target="#KirimUsulan-<?php echo $value->instansi_id; ?>"><i class="far fa fa-paper-plane-o nav-icon"> Kirim Usulan</i></button>
+                      <?php } ?>
 
+                      <!-- Modal KIRIM USULAN-->
+                      <form action="aksi_kirimdatausulanopd/<?php echo $value->instansi_id; ?>" method="post">
+                        <div class="modal fade" id="KirimUsulan-<?php echo $value->instansi_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Kirim Usulan Ke BKPSDM Kab. Klaten</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
 
-                        <!-- Modal KIRIM USULAN-->
-                        <form action="aksi_kirimdatausulanopd/<?php echo $value->instansi_id; ?>" method="post">
-                          <div class="modal fade" id="KirimUsulan-<?php echo $value->instansi_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Kirim Usulan Ke BKPSDM Kab. Klaten</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-
-                                <div class="modal-body">
-                                  Apakah anda sudah yakin ingin mengirimkan usulan dan segala data pegawai yang sudah ada adalah data terupdate. Segala Resiko di akan ditanggung Instansi terkait kevalidan data.
-                                </div>
-                                <div class="modal-footer">
-                                  <input type="hidden" name="detail_usulan_id" class="detail_usulan_id" value="<?php echo $value->instansi_id; ?>">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button type="submit" id="btn-UpdateKirimUsulan" class="btn btn-primary">Kirim Usulan</button>
-                                </div>
+                              <div class="modal-body">
+                                Apakah anda sudah yakin ingin mengirimkan usulan dan segala data pegawai yang sudah ada adalah data terupdate. Segala Resiko di akan ditanggung Instansi terkait kevalidan data.
+                              </div>
+                              <div class="modal-footer">
+                                <input type="hidden" name="detail_usulan_id" class="detail_usulan_id" value="<?php echo $value->instansi_id; ?>">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" id="btn-UpdateKirimUsulan" class="btn btn-primary">Kirim Usulan</button>
                               </div>
                             </div>
                           </div>
-                        </form>
+                        </div>
+                      </form>
 
-                      </td>
+                    </td>
 
-                    </tr>
-                    <?php $no++;
-                    
-                  } ?>
+                  </tr>
+                  <?php $no++;
 
-                </tbody>
-              </table>
-            </div>
-            <!-- /.card-body -->
+                } ?>
+
+              </tbody>
+            </table>
           </div>
-          <!-- /.card -->
+          <!-- /.card-body -->
         </div>
+        <!-- /.card -->
       </div>
-      <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
     </div>
+    <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
+  </div>
 
-  </section>
-  <!-- /.content -->
+</section>
+<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 
 
 <style type="text/css">
-  a.btn.btn-warning {
-    margin-bottom: 5px;
-  }
+a.btn.btn-warning {
+  margin-bottom: 5px;
+}
 </style>
 <?= $this->endSection() ?>
 
