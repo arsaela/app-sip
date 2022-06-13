@@ -12,20 +12,33 @@
           <input type="hidden" name="idPetugas">
           <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control" name="username2" placeholder="Username">
+            <input type="text" class="form-control" readonly name="username2" placeholder="Username">
             <small id="username2_error" class="text-danger"> </small>
-
+          </div>
+          <div class="form-group">
             <label for="petugas_nama">Nama Petugas</label>
             <input type="text" class="form-control" name="petugas_nama2" placeholder="Nama Petugas">
             <small id="petugas_nama2_error" class="text-danger"> </small>
-
+          </div>
+          <div class="form-group">
             <label for="petugas_no_hp">No. HP</label>
             <input type="text" class="form-control" name="petugas_no_hp2" placeholder="No. HP">
             <small id="petugas_no_hp2_error" class="text-danger"> </small>
-
+          </div>
+          <div class="form-group">
             <label for="petugas_email">Email</label>
             <input type="text" class="form-control" name="petugas_email2" placeholder="Email">
             <small id="petugas_email2_error" class="text-danger"> </small>
+          </div>
+          <div class="form-group">
+            <label for="admin_password">Password</label>
+            <input type="password" class="form-control" name="admin_password2" placeholder="Password">
+            <small id="admin_password_error" class="text-danger"> </small>
+          </div>
+          <div class="form-group">
+            <label for="admin_password_conf">Password Confirmation</label>
+            <input type="password" class="form-control" name="admin_password_conf" placeholder="Password Confirmation">
+            <small id="admin_password_conf_error" class="text-danger"> </small>
           </div>
         </div>
       </form>

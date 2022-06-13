@@ -24,6 +24,14 @@ class PetugasModel extends Model
 		$this->dt = $this->db->table($this->table);
 	}
 
+	public function get_petugas()
+	{
+		$query =  $this->db->table('tbl_petugas')
+			->select('*')
+			->join('tbl_login', 'tbl_login.username = tbl_petugas.username')
+			->get();
+		return $query;
+	}
 	private function _get_datatables_query()
 	{
 		$i = 0;
@@ -47,6 +55,18 @@ class PetugasModel extends Model
 			$order = $this->order;
 			$this->dt->orderBy(key($order), $order[key($order)]);
 		}
+	}
+
+	public function save_petugas_in_petugas($data)
+	{
+		$builder = $this->db->table('tbl_petugas');
+		return $builder->insert($data);
+	}
+
+	public function save_petugas_in_login($data2)
+	{
+		$builder2 = $this->db->table('tbl_login');
+		return $builder2->insert($data2);
 	}
 
 	function get_datatables()

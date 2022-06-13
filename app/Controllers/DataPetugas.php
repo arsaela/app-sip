@@ -14,6 +14,7 @@ class DataPetugas extends BaseController
 
 	public function __construct()
 	{
+		$this->encrypter = \Config\Services::encrypter();
 		$this->request = Services::request();
 		$this->M_petugas = new PetugasModel($this->request);
 		$this->form_validation =  \Config\Services::validation();
@@ -54,6 +55,7 @@ class DataPetugas extends BaseController
 		$petugas_nama = $this->request->getPost('petugas_nama2');
 		$petugas_no_hp = $this->request->getPost('petugas_no_hp2');
 		$petugas_email = $this->request->getPost('petugas_email2');
+		$petugas_password = $this->request->getPost('petugas_password2');
 
 		//Data Petugas
 		$data = [
@@ -63,27 +65,37 @@ class DataPetugas extends BaseController
 			'petugas_email' => $petugas_email
 		];
 
-		//Cek Validasi Data Petugas, Jika Data Tidak Valid 
-		if ($this->form_validation->run($data, 'user') == FALSE) {
 
-			$validasi = [
-				'error'   => true,
-				'username_error' => $this->form_validation->getErrors('username')
-			];
-			echo json_encode($validasi);
-		}
+		$data2 = [
+			'username' => $username,
+			'password'    =>  base64_encode($this->encrypter->encrypt($petugas_password)),
+			'hak_akses'   => 'petugas'
+		];
+
+
+		// //Cek Validasi Data Petugas, Jika Data Tidak Valid 
+		// if ($this->form_validation->run($data, 'user') == FALSE) {
+
+		// 	$validasi = [
+		// 		'error'   => true,
+		// 		'username_error' => $this->form_validation->getErrors('username')
+		// 	];
+		// 	echo json_encode($validasi);
+		// }
 
 		//Data Valid
-		else {
-			//Simpan Data Petugas
-			$this->M_petugas->save($data);
+		// else {
+		//Simpan Data Petugas
+		$this->M_admin->save_petugas_in_petugas($data);
+		$this->M_admin->save_petugas_in_login($data2);
 
-			$validasi = [
-				'success'   => true
-			];
-			echo json_encode($validasi);
-		}
+
+		$validasi = [
+			'success'   => true
+		];
+		echo json_encode($validasi);
 	}
+
 
 	// Menampilkan Data Petugas Pada Modal Edit Data Petugas
 	public function ajaxUpdate($idPetugas)
@@ -100,36 +112,39 @@ class DataPetugas extends BaseController
 		$petugas_nama = $this->request->getPost('petugas_nama2');
 		$petugas_no_hp = $this->request->getPost('petugas_no_hp2');
 		$petugas_email = $this->request->getPost('petugas_email2');
+		$petugas_password = $this->request->getPost('petugas_password2');
 
 		//Data Petugas
 		$data = [
 			'username' => $username,
 			'petugas_nama' => $petugas_nama,
 			'petugas_no_hp' => $petugas_no_hp,
-			'petugas_email' => $petugas_email
+			'petugas_email' => $petugas_email,
+			'password'    => $petugas_password,
+			'hak_akses'   => 'petugas'
 		];
 
-		//Cek Validasi Data Petugas, Jika Data Tidak Valid 
-		if ($this->form_validation->run($data, 'user') == FALSE) {
+		// //Cek Validasi Data Petugas, Jika Data Tidak Valid 
+		// if ($this->form_validation->run($data, 'user') == FALSE) {
 
-			$validasi = [
-				'error'   => true,
-				'username_error' => $this->form_validation->getErrors('username')
-			];
-			echo json_encode($validasi);
-		}
+		// 	$validasi = [
+		// 		'error'   => true,
+		// 		'username_error' => $this->form_validation->getErrors('username')
+		// 	];
+		// 	echo json_encode($validasi);
+		// }
 
-		//Data Valid
-		else {
-			//Update Data Petugas
-			$this->M_petugas->update($id, $data);
+		// //Data Valid
+		// else {
+		//Update Data Petugas
+		$this->M_petugas->update($id, $data);
 
-			$validasi = [
-				'success'   => true
-			];
-			echo json_encode($validasi);
-		}
+		$validasi = [
+			'success'   => true
+		];
+		echo json_encode($validasi);
 	}
+
 
 	// Delete Data Petugas
 	public function delete($id)
@@ -142,7 +157,7 @@ class DataPetugas extends BaseController
 	{
 
 		if ($this->request->getMethod(true) == 'POST') {
-			$lists = $this->M_petugas->get_datatables();
+			$lists = $this->M_petugas->get_petugas()->getResult();
 			$data = [];
 			$no = $this->request->getPost("start");
 			foreach ($lists as $list) {
@@ -150,6 +165,7 @@ class DataPetugas extends BaseController
 				$row = [];
 				$row[] = $no;
 				$row[] = $list->username;
+				$row[] = $this->encrypter->decrypt(base64_decode($list->password));
 				$row[] = $list->petugas_nama;
 				$row[] = $list->petugas_no_hp;
 				$row[] = $list->petugas_email;

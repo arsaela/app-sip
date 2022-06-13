@@ -12,7 +12,7 @@
           <input type="hidden" name="idAdmin">
           <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control" name="username2" placeholder="Username">
+            <input type="text" class="form-control" readonly name="username2" placeholder="Username">
             <small id="username_error" class="text-danger"> </small>
           </div>
           <div class="form-group">
