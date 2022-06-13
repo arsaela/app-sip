@@ -92,11 +92,11 @@
                      
                        
                       <td><?php
-                          if ($value->status_usulan == 0) {
+                          if ($value->status_usulan_id == 0) {
                             echo "<p class='bg_status_belumverifikasi'>Belum Di Verifikasi</p>";
-                          } else if ($value->status_usulan == 1) {
+                          } else if ($value->status_usulan_id == 1) {
                             echo "<p class='bg_status_approve'>Disetujui</p>";
-                          } else if ($value->status_usulan == 2) {
+                          } else if ($value->status_usulan_id == 2) {
                             echo "<p class='bg_status_reject'>Ditolak</p>";
                           } else {
                             echo "<p class='bg_status_pending'>Pending</p>";
