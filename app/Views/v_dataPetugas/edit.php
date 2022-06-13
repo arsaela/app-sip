@@ -45,9 +45,25 @@
             <select class="form-control" name="instansi_nama" id="instansi_nama" required>
               <option value="">TIdak Ada Yang Dipilih</option>
               <?php foreach ($instansi_nama as $row) : ?>
-                <option value="<?php echo $row->instansi_id; ?>"><?php echo $row->instansi_nama; ?></option>
-              <?php endforeach; ?>
-            </select>
+                <option <?php if($row->instansi_id == "your desired id"){ echo 'selected="selected"'; } ?> value="<?php echo $row->instansi_id ?>"><?php echo  $row->instansi_nama;?> </option>
+
+
+
+              <!--  <option value="<?php //echo $row->instansi_id; ?>"><?php //echo $row->instansi_nama; ?></option> -->
+            <?php endforeach; ?>
+          </select> 
+
+
+
+
+
+           <!--  <select class="form-control" name="instansi_nama" id="instansi_nama" required>
+              <option value="">TIdak Ada Yang Dipilih</option>
+              <?php //foreach ($instansi_nama as $row) : ?>
+                <option value="<?php //echo $row->instansi_id; ?>"><?php //echo $row->instansi_nama; ?></option>
+              <?php //endforeach; ?>
+            </select> -->
+
           </div>
         </div>
       </form>

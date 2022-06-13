@@ -30,6 +30,7 @@ class PetugasModel extends Model
 			->select('*')
 			->join('tbl_login', 'tbl_login.username = tbl_petugas.username')
 			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_petugas.instansi_id')
+			->groupBy('tbl_petugas.id')
 			->get();
 		return $query;
 	}
