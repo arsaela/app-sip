@@ -40,6 +40,15 @@
             <input type="password" class="form-control" name="admin_password_conf" placeholder="Password Confirmation">
             <small id="admin_password_conf_error" class="text-danger"> </small>
           </div>
+          <div class="form-group">
+            <label for="admin_password_conf">Unit Kerja</label>
+            <select class="form-control" name="instansi_nama" id="instansi_nama" required>
+              <option value="">TIdak Ada Yang Dipilih</option>
+              <?php foreach ($instansi_nama as $row) : ?>
+                <option value="<?php echo $row->instansi_id; ?>"><?php echo $row->instansi_nama; ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
         </div>
       </form>
       <div class="modal-footer justify-content-between">

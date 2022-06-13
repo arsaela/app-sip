@@ -29,6 +29,7 @@ class PetugasModel extends Model
 		$query =  $this->db->table('tbl_petugas')
 			->select('*')
 			->join('tbl_login', 'tbl_login.username = tbl_petugas.username')
+			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_petugas.instansi_id')
 			->get();
 		return $query;
 	}
@@ -67,6 +68,12 @@ class PetugasModel extends Model
 	{
 		$builder2 = $this->db->table('tbl_login');
 		return $builder2->insert($data2);
+	}
+
+	function get_instansi()
+	{
+		$query = $this->db->query('select * from tbl_instansi');
+		return $query->getResult();
 	}
 
 	function get_datatables()

@@ -43,6 +43,7 @@ class DataPetugas extends BaseController
 		$data['page']   = "datapetugas";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
+		$data['instansi_nama'] = $this->M_petugas->get_instansi();
 
 		return view('v_datapetugas/index', $data);
 	}
@@ -56,13 +57,15 @@ class DataPetugas extends BaseController
 		$petugas_no_hp = $this->request->getPost('petugas_no_hp2');
 		$petugas_email = $this->request->getPost('petugas_email2');
 		$petugas_password = $this->request->getPost('petugas_password2');
+		$instansi_id = $this->request->getPost('instansi_id');
 
 		//Data Petugas
 		$data = [
 			'username' => $username,
 			'petugas_nama' => $petugas_nama,
 			'petugas_no_hp' => $petugas_no_hp,
-			'petugas_email' => $petugas_email
+			'petugas_email' => $petugas_email,
+			'instansi_id' => $instansi_id
 		];
 
 
@@ -113,6 +116,7 @@ class DataPetugas extends BaseController
 		$petugas_no_hp = $this->request->getPost('petugas_no_hp2');
 		$petugas_email = $this->request->getPost('petugas_email2');
 		$petugas_password = $this->request->getPost('petugas_password2');
+		$instansi_id = $this->request->getPost('instansi_id');
 
 		//Data Petugas
 		$data = [
@@ -121,6 +125,7 @@ class DataPetugas extends BaseController
 			'petugas_no_hp' => $petugas_no_hp,
 			'petugas_email' => $petugas_email,
 			'password'    => $petugas_password,
+			'instansi_id' => $instansi_id,
 			'hak_akses'   => 'petugas'
 		];
 
@@ -169,6 +174,7 @@ class DataPetugas extends BaseController
 				$row[] = $list->petugas_nama;
 				$row[] = $list->petugas_no_hp;
 				$row[] = $list->petugas_email;
+				$row[] = $list->instansi_nama;
 				$row[] = $this->_action($list->id);
 				$data[] = $row;
 			}

@@ -47,6 +47,7 @@
                     <th>Nama Petugas</th>
                     <th>No. HP</th>
                     <th>Email</th>
+                    <th>Unit Kerja</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
