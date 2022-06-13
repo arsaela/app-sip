@@ -170,7 +170,8 @@ class DataUsulan extends BaseController
 			);
 
 			$data_detail_usulan[] = array(
-				'usulan_id'			=> 'U-'.$value->instansi_unor.'-'.$value->jabatan_kode.'-'.$explode_tahun_usulan,
+				'detail_usulan_id'  => 'U-'.$value->instansi_unor.'-'.$value->jabatan_kode.'-'.$explode_tahun_usulan,
+				'usulan_id'			=> 'U-'.$value->instansi_id.'-'.$explode_tahun_usulan,
 				'instansi_unor'     => $value->instansi_unor,
 				'jabatan_kode'     	=> $value->jabatan_kode,
 				'jumlah_usulan'     => $value->jumlah_usulan,

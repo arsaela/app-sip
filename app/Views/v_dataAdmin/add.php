@@ -1,3 +1,4 @@
+<?= $this->section('content') ?>
 <div class="modal fade" id="modalAdd">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -16,7 +17,7 @@
           </div>
           <div class="form-group">
             <label for="admin_nama">Nama Admin</label>
-            <input type="text" class="form-control" name="admin_nama2" placeholder="Nama Admin">
+            <input type="text" class="form-control" name="admin_nama2" placeholder="Nama Admin" required>
             <small id="admin_nama_error" class="text-danger"> </small>
           </div>
           <div class="form-group">
@@ -51,20 +52,28 @@
   <!-- /.modal-dialog -->
 </div>
 
+<?= $this->endSection() ?>
+<?= $this->section('script') ?>
 <script>
-  $('#modalAdd').validate({
-    rules: {
-      username2: {
-        required: true,
-      }
+  $('#modalAdd').modal('show');
+  $('#formInputDataAdmin').validate({
+  rules: {
+    admin_nama2: {
+      required: true
+    }
 
-    },
-    messages: {
-      username2: {
-        required: "Jumlah usulan harus di isi",
+    // pass2: {
+    //   equalTo: "#pass1"
+    // }
+  },
+  messages: {
+    admin_nama2: {
+      required: "Jumlah usulan harus di isi"
+    }
+  }
+  });
 
 
-      },
-    },
-  })
+  });
 </script>
+<?= $this->endSection() ?>

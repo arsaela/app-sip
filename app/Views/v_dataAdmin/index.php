@@ -115,10 +115,10 @@
         dataType: "JSON",
         success: function(data) {
           //Data error 
-          if (data.error) {
-            if (data.username_error['username'] != '') $('#username_error').html(data.username_error['username']);
-            else $('#username_error').html('');
-          }
+          // if (data.error) {
+          //   if (data.username_error['username'] != '') $('#username_error').html(data.username_error['username']);
+          //   else $('#username_error').html('');
+          // }
           //Data admin berhasil disimpan
           if (data.success) {
             formInput.trigger('reset');

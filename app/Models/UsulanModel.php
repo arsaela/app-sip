@@ -41,13 +41,13 @@ class UsulanModel extends Model
 		$query =  $this->db->table('tbl_detail_usulan')
 			->select('*,tbl_instansi.instansi_nama, count(tbl_pegawai.pegawai_nip) as jumlahasn')
 			->join('tbl_usulan', 'tbl_usulan.usulan_id = tbl_detail_usulan.usulan_id', 'left')
-			->join('tbl_formasi', 'tbl_formasi.formasi_id = tbl_detail_usulan.formasi_id', 'left')
+			->join('tbl_formasi', 'tbl_formasi.jabatan_kode = tbl_detail_usulan.jabatan_kode', 'left')
 			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_usulan.instansi_id', 'left')
 			->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
 			->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
 			->join('tbl_pegawai', 'tbl_formasi.instansi_unor = tbl_pegawai.instansi_unor and tbl_formasi.jabatan_kode = tbl_pegawai.jabatan_kode', 'left')
 			->where('tbl_detail_usulan.usulan_id', $idUsulan)
-			->groupBy('tbl_detail_usulan.formasi_id')
+			->groupBy('tbl_detail_usulan.jabatan_kode')
 			->orderBy('tbl_detail_usulan.detail_usulan_id asc')
 			->get();
 		return $query;
