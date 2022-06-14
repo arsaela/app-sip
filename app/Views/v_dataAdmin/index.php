@@ -148,6 +148,7 @@
           $('[name="admin_nama2"]').val(data.admin_nama);
           $('[name="admin_no_hp2"]').val(data.admin_no_hp);
           $('[name="admin_email2"]').val(data.admin_email);
+          $('[name="instansi_id2"]').val(data.instansi_id);
           $('#modalEdit').modal('show');
         }
       })

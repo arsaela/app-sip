@@ -8,7 +8,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-12">
-          <h1>Data Petugas</h1>
+          <h1>Data petugas</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -26,8 +26,18 @@
 
           <!-- Default box -->
           <div class="card">
+
+            <!-- validasi alert register gagal -->
+            <?php if (!empty(session()->getFlashdata('error'))) : ?>
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <h4>Terdapat kesalahan dalam penginputan</h4>
+                </hr />
+                <?php echo session()->getFlashdata('error'); ?>
+              </div>
+            <?php endif; ?>
+
             <div class="card-header">
-              <h3 class="card-title">Tabel Data Petugas</h3>
+              <h3 class="card-title">Tabel Data petugas</h3>
 
               <div class="card-tools">
                 <a data-toggle="tooltip" data-placement="top" title="Add">
@@ -44,7 +54,7 @@
                     <th>No.</th>
                     <th>Username</th>
                     <th>Password</th>
-                    <th>Nama Petugas</th>
+                    <th>Nama petugas</th>
                     <th>No. HP</th>
                     <th>Email</th>
                     <th>Unit Kerja</th>
@@ -84,7 +94,7 @@
       "order": [],
 
       "ajax": {
-        "url": "datapetugas/ajaxDataPetugas",
+        "url": "datapetugas/ajaxDatapetugas",
         "type": "POST"
       },
 
@@ -96,8 +106,8 @@
     //-------------------------------------------------------------------
 
     //Save input data petugas
-    $('#btn-saveDataPetugas').on('click', function() {
-      const formInput = $('#formInputDataPetugas');
+    $('#btn-saveDatapetugas').on('click', function() {
+      const formInput = $('#formInputDatapetugas');
 
       $.ajax({
         url: "datapetugas/add",
@@ -106,10 +116,10 @@
         dataType: "JSON",
         success: function(data) {
           //Data error 
-          if (data.error) {
-            if (data.username_error['username'] != '') $('#username_error').html(data.username_error['username']);
-            else $('#username_error').html('');
-          }
+          // if (data.error) {
+          //   if (data.username_error['username'] != '') $('#username_error').html(data.username_error['username']);
+          //   else $('#username_error').html('');
+          // }
           //Data petugas berhasil disimpan
           if (data.success) {
             formInput.trigger('reset');
@@ -127,18 +137,20 @@
     //-------------------------------------------------------------------
 
     //Menampilakan modal edit data petugas
-    $('body').on('click', '.btn-editPetugas', function() {
+    $('body').on('click', '.btn-editpetugas', function() {
       const idPetugas = $(this).attr('value');
       $.ajax({
         url: "datapetugas/ajaxUpdate/" + idPetugas,
         type: "GET",
         dataType: "JSON",
         success: function(data) {
-          $('[name="idPetugas"]').val(data.id);
+          $('[name="idpetugas"]').val(data.id);
           $('[name="username2"]').val(data.username);
+          $('[name="petugas_password2"]').val(data.petugas_password);
           $('[name="petugas_nama2"]').val(data.petugas_nama);
           $('[name="petugas_no_hp2"]').val(data.petugas_no_hp);
           $('[name="petugas_email2"]').val(data.petugas_email);
+          $('[name="instansi_id2"]').val(data.instansi_id);
           $('#modalEdit').modal('show');
         }
       })
@@ -147,8 +159,8 @@
     //-------------------------------------------------------------------
 
     //Save update data petugas
-    $('#btn-updateDataPetugas').on('click', function() {
-      const formUpdate = $('#formUpdateDataPetugas');
+    $('#btn-updateDatapetugas').on('click', function() {
+      const formUpdate = $('#formUpdateDatapetugas');
 
       $.ajax({
         url: "datapetugas/update",
@@ -178,7 +190,7 @@
     //-------------------------------------------------------------------
 
     //Hapus data formasi jabatan
-    $('body').on('click', '.btn-deletePetugas', function(e) {
+    $('body').on('click', '.btn-deletepetugas', function(e) {
       e.preventDefault();
       const url = $(this).attr('href');
 

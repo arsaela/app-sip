@@ -52,28 +52,5 @@
   <!-- /.modal-dialog -->
 </div>
 
-<?= $this->endSection() ?>
-<?= $this->section('script') ?>
-<script>
-  $('#modalAdd').modal('show');
-  $('#formInputDataAdmin').validate({
-  rules: {
-    admin_nama2: {
-      required: true
-    }
-
-    // pass2: {
-    //   equalTo: "#pass1"
-    // }
-  },
-  messages: {
-    admin_nama2: {
-      required: "Jumlah usulan harus di isi"
-    }
-  }
-  });
-
-
-  });
 </script>
 <?= $this->endSection() ?>
