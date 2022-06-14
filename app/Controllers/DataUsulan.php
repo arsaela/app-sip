@@ -63,9 +63,9 @@ class DataUsulan extends BaseController
 	{
 		$id = $this->request->getPost('detail_usulan_id');
 		$data = array(
-			'jumlah_approve'        => $this->request->getPost('jumlah_approve'),
-			'status_usulan'      	=> '1',
-			'keterangan'      		=> '-',
+			'jumlah_approve'            => $this->request->getPost('jumlah_approve'),
+			'status_usulan_id'      	=> '3',
+			'keterangan'      		    => '-',
 		);
 
 		$this->M_usulan->updateApprovalUsulan($data, $id);
@@ -86,7 +86,7 @@ class DataUsulan extends BaseController
 		$data = array(
 			'jumlah_approve'    => '0',
 			'keterangan'        => $this->request->getPost('keterangan'),
-			'status_usulan'     => '2',
+			'status_usulan_id'     => '4',
 		);
 
 		$this->M_usulan->updateRejectUsulan($data, $id);

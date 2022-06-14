@@ -94,11 +94,16 @@
                       
                       <td><?php
                       if ($value->status_usulan_id == 0) {
-                        echo "<p class='bg_status_belumverifikasi'>Belum Di Verifikasi</p>";
+                        echo "<p class='bg_status_belumverifikasi'>Belum Mengajukan Usulan</p>";
                       } else if ($value->status_usulan_id == 1) {
-                        echo "<p class='bg_status_approve'>Disetujui</p>";
+                        echo "<p class='bg_status_reject'>Belum Kirim Usulan</p>";
                       } else if ($value->status_usulan_id == 2) {
-                        echo "<p class='bg_status_reject'>Ditolak</p>";
+                        echo "<p class='bg_status_belumverifikasi'>Sudah Kirim Usulan, Belum di verifikasi</p>";
+                      } 
+                      else if ($value->status_usulan_id == 3) {
+                        echo "<p class='bg_status_approve'>Approve Usulan</p>";
+                      } else if ($value->status_usulan_id == 4) {
+                        echo "<p class='bg_status_reject'>Reject Usulan</p>";
                       } else {
                         echo "<p class='bg_status_pending'>Pending</p>";
                       }
@@ -285,3 +290,13 @@
   });
 </script>
 <?= $this->endSection() ?>
+
+<style type="text/css">
+  p.bg_status_belumverifikasi {
+    color: #fff;
+    background-color: #bf9705 !important;
+    border-color: #830909;
+    box-shadow: none;
+    padding: 0.375rem 0.75rem;
+}
+</style>
