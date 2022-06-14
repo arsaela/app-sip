@@ -145,6 +145,7 @@
         success: function(data) {
           $('[name="idAdmin"]').val(data.id);
           $('[name="username2"]').val(data.username);
+          $('[name="admin_password2"]').val(data.password);
           $('[name="admin_nama2"]').val(data.admin_nama);
           $('[name="admin_no_hp2"]').val(data.admin_no_hp);
           $('[name="admin_email2"]').val(data.admin_email);

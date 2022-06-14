@@ -21,7 +21,8 @@ class AdminModel extends Model
 		parent::__construct();
 		$this->db = db_connect();
 		$this->request = $request;
-		$this->dt = $this->db->table($this->table);
+		$this->dt = $this->db->table($this->table)
+			->join('tbl_login', 'tbl_login.username = tbl_admin.username');
 	}
 
 	public function get_admin()
@@ -61,16 +62,16 @@ class AdminModel extends Model
 	}
 
 	public function save_admin_in_admin($data)
-    {
-        $builder = $this->db->table('tbl_admin');
-        return $builder->insert($data);
-    }
+	{
+		$builder = $this->db->table('tbl_admin');
+		return $builder->insert($data);
+	}
 
 	public function save_admin_in_login($data2)
-    {
-        $builder2 = $this->db->table('tbl_login');
-        return $builder2->insert($data2);
-    }
+	{
+		$builder2 = $this->db->table('tbl_login');
+		return $builder2->insert($data2);
+	}
 
 	function get_datatables()
 	{

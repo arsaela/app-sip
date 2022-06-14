@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-use App\Models\PetugasModel;
+use App\Models\petugasModel;
 use Config\Services;
 
-class DataPetugas extends BaseController
+class Datapetugas extends BaseController
 {
 	protected $encrypter;
 	protected $M_petugas;
@@ -17,20 +17,20 @@ class DataPetugas extends BaseController
 	{
 		$this->encrypter = \Config\Services::encrypter();
 		$this->request = Services::request();
-		$this->M_petugas = new PetugasModel($this->request);
+		$this->M_petugas = new petugasModel($this->request);
 		$this->form_validation =  \Config\Services::validation();
 		$this->session = \Config\Services::session();
 	}
 
 	// Tombol Aksi Pada Tabel Data petugas
-	private function _action($idPetugas)
+	private function _action($idpetugas)
 	{
 		$link = "
-			<a data-toggle='tooltip' data-placement='top' class='btn-editpetugas' title='Update' value='" . $idPetugas . "'>
+			<a data-toggle='tooltip' data-placement='top' class='btn-editpetugas' title='Update' value='" . $idpetugas . "'>
 	      		<button type='button' class='btn btn-outline-success btn-xs' data-toggle='modal' data-target='#modalEdit'><i class='fa fa-edit'></i></button>
 	      	</a>
 	      
-	      	<a href='" . base_url('datapetugas/delete/' . $idPetugas) . "' class='btn-deletepetugas' data-toggle='tooltip' data-placement='top' title='Delete'>
+	      	<a href='" . base_url('datapetugas/delete/' . $idpetugas) . "' class='btn-deletepetugas' data-toggle='tooltip' data-placement='top' title='Delete'>
 	      		<button type='button' class='btn btn-outline-danger btn-xs'><i class='fa fa-trash'></i></button>
 	      	</a>
 	    ";
@@ -40,7 +40,7 @@ class DataPetugas extends BaseController
 	// Halaman Data petugas
 	public function index()
 	{
-		$data['title']  = "App-SIP | Data Petugas";
+		$data['title']  = "App-SIP | Data petugas";
 		$data['page']   = "datapetugas";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
@@ -63,8 +63,8 @@ class DataPetugas extends BaseController
 			'username' => $username,
 			'petugas_nama' => $petugas_nama,
 			'petugas_no_hp' => $petugas_no_hp,
-			'petugas_email' => $petugas_email,
-			'instansi_id'    => $instansi_id
+			'instansi_id' => $instansi_id,
+			'petugas_email' => $petugas_email
 		];
 
 		$data2 = [
@@ -84,16 +84,16 @@ class DataPetugas extends BaseController
 	}
 
 	// Menampilkan Data petugas Pada Modal Edit Data petugas
-	public function ajaxUpdate($idPetugas)
+	public function ajaxUpdate($idpetugas)
 	{
-		$data = $this->M_petugas->find($idPetugas);
+		$data = $this->M_petugas->find($idpetugas);
 		echo json_encode($data);
 	}
 
 	// Update Data petugas
 	public function update()
 	{
-		$id_petugas = $this->request->getPost('idPetugas');
+		$id = $this->request->getPost('idpetugas');
 		$username = $this->request->getPost('username2');
 		$petugas_nama = $this->request->getPost('petugas_nama2');
 		$petugas_no_hp = $this->request->getPost('petugas_no_hp2');
@@ -107,29 +107,15 @@ class DataPetugas extends BaseController
 			'petugas_nama' => $petugas_nama,
 			'petugas_no_hp' => $petugas_no_hp,
 			'petugas_email' => $petugas_email,
-			'password'    => $petugas_password,
-			'instansi_id'    => $instansi_id,
-			'hak_akses'   => 'petugas'
+			'password'    =>  base64_encode($this->encrypter->encrypt($petugas_password)),
+			'hak_akses'   => 'petugas',
+			'instansi_id' => $instansi_id
 		];
 
-		// //Cek Validasi Data petugas, Jika Data Tidak Valid 
-		// if ($this->form_validation->run($data, 'tambah_petugas') == FALSE) {
 
-		//     $validasi = [
-		//         'error'   => true,
-		//         'username_error' => $this->form_validation->getErrors('username'),
-		//         'petugas_nama' => $this->form_validation->getErrors('petugas_nama'),
-		//         'petugas_no_hp' => $this->form_validation->getErrors('petugas_no_hp'),
-		//         'petugas_email' => $this->form_validation->getErrors('petugas_email'),
-		//         'password' => $this->form_validation->getErrors('password')
-		//     ];
-		//     echo json_encode($validasi);
-		// }
 
-		// //Data Valid
-		// else {
 		//Update Data petugas
-		$this->M_petugas->update($id_petugas, $data);
+		$this->M_petugas->update($id, $data);
 
 		$validasi = [
 			'success'   => true
@@ -138,9 +124,9 @@ class DataPetugas extends BaseController
 	}
 
 	// Delete Data petugas
-	public function delete($id_petugas)
+	public function delete($id)
 	{
-		$this->M_petugas->delete($id_petugas);
+		$this->M_petugas->delete($id);
 	}
 
 	// Datatable server side

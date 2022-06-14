@@ -61,7 +61,7 @@ class DataAdmin extends BaseController
             'username' => $username,
             'admin_nama' => $admin_nama,
             'admin_no_hp' => $admin_no_hp,
-            'admin_email' => $admin_email,
+            'admin_email' => $admin_email
         ];
 
         $data2 = [
@@ -70,22 +70,6 @@ class DataAdmin extends BaseController
             'hak_akses'   => 'admin'
         ];
 
-        // //Cek Validasi Data Admin, Jika Data Tidak Valid 
-        // if ($this->form_validation->run($data, 'tambah_admin') == FALSE) {
-
-        //     $validasi = [
-        //         'error'   => true,
-        //         'username_error' => $this->form_validation->getErrors('username'),
-        //         'admin_nama' => $this->form_validation->getErrors('admin_nama'),
-        //         'admin_no_hp' => $this->form_validation->getErrors('admin_no_hp'),
-        //         'admin_email' => $this->form_validation->getErrors('admin_email'),
-        //         'password' => $this->form_validation->getErrors('password')
-        //     ];
-        //     echo json_encode($validasi);
-        // }
-
-        // //Data Valid
-        // else {
         //Simpan Data Admin
         $this->M_admin->save_admin_in_admin($data);
         $this->M_admin->save_admin_in_login($data2);
@@ -119,26 +103,12 @@ class DataAdmin extends BaseController
             'admin_nama' => $admin_nama,
             'admin_no_hp' => $admin_no_hp,
             'admin_email' => $admin_email,
-            'password'    => $admin_password,
+            'password'    =>  base64_encode($this->encrypter->encrypt($admin_password)),
             'hak_akses'   => 'admin'
         ];
 
-        // //Cek Validasi Data Admin, Jika Data Tidak Valid 
-        // if ($this->form_validation->run($data, 'tambah_admin') == FALSE) {
 
-        //     $validasi = [
-        //         'error'   => true,
-        //         'username_error' => $this->form_validation->getErrors('username'),
-        //         'admin_nama' => $this->form_validation->getErrors('admin_nama'),
-        //         'admin_no_hp' => $this->form_validation->getErrors('admin_no_hp'),
-        //         'admin_email' => $this->form_validation->getErrors('admin_email'),
-        //         'password' => $this->form_validation->getErrors('password')
-        //     ];
-        //     echo json_encode($validasi);
-        // }
 
-        // //Data Valid
-        // else {
         //Update Data Admin
         $this->M_admin->update($id, $data);
 
