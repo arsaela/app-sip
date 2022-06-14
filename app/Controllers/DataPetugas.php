@@ -107,15 +107,18 @@ class Datapetugas extends BaseController
 			'petugas_nama' => $petugas_nama,
 			'petugas_no_hp' => $petugas_no_hp,
 			'petugas_email' => $petugas_email,
-			'password'    =>  base64_encode($this->encrypter->encrypt($petugas_password)),
-			'hak_akses'   => 'petugas',
 			'instansi_id' => $instansi_id
 		];
 
-
+		$data2 = [
+			'username' => $username,
+			'password'    =>  base64_encode($this->encrypter->encrypt($petugas_password)),
+			'hak_akses'   => 'petugas'
+		];
 
 		//Update Data petugas
-		$this->M_petugas->update($id, $data);
+		$this->M_petugas->update_petugas_in_petugas($data);
+		$this->M_petugas->update_petugas_in_login($data2);
 
 		$validasi = [
 			'success'   => true
