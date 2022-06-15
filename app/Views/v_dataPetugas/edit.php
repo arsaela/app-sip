@@ -34,11 +34,11 @@
             <label for="petugas_password">Password</label>
             <input type="password" class="form-control" name="petugas_password2" placeholder="Password">
             <small id="petugas_password_error" class="text-danger"> </small>
-          </div>
+            <!-- </div>
           <div class="form-group">
             <label for="petugas_password_conf">Password Confirmation</label>
             <input type="password" class="form-control" name="petugas_password_conf" placeholder="Password Confirmation">
-            <small id="petugas_password_conf_error" class="text-danger"> </small>
+            <small id="petugas_password_conf_error" class="text-danger"> </small> -->
             <!-- </div>
           <div class="form-group">
             <label for="petugas_instansi">Kode Unit</label>
@@ -48,7 +48,7 @@
           <div class="form-group">
             <label for="instansi_id">Unit Kerja</label>
             <select class="form-control" name="instansi_id2" id="instansi_id2" required>
-              <option value="">TIdak Ada Yang Dipilih</option>
+              <option value="">Tidak Ada Yang Dipilih</option>
               <?php foreach ($instansi_nama as $row) : ?>
                 <option value="<?php echo $row->instansi_id; ?>"><?php echo $row->instansi_nama; ?></option>
               <?php endforeach; ?>

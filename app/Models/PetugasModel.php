@@ -74,6 +74,17 @@ class PetugasModel extends Model
 		return $builder2->insert($data2);
 	}
 
+	public function update_petugas_in_petugas($data)
+	{
+		$builder = $this->db->table('tbl_petugas');
+		return $builder->replace($data);
+	}
+	public function update_petugas_in_login($data2)
+	{
+		$builder2 = $this->db->table('tbl_login');
+		return $builder2->replace($data2);
+	}
+
 	function get_instansi()
 	{
 		$query = $this->db->query('select * from tbl_instansi');

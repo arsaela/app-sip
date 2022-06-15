@@ -35,11 +35,6 @@
             <input type="password" class="form-control" name="admin_password2" placeholder="Password">
             <small id="admin_password_error" class="text-danger"> </small>
           </div>
-          <div class="form-group">
-            <label for="admin_password_conf">Password Confirmation</label>
-            <input type="password" class="form-control" name="admin_password_conf" placeholder="Password Confirmation">
-            <small id="admin_password_conf_error" class="text-danger"> </small>
-          </div>
         </div>
       </form>
       <div class="modal-footer justify-content-between">
