@@ -22,7 +22,7 @@
           </div>
           <div class="form-group">
             <label for="admin_no_hp">No. HP</label>
-            <input type="text" class="form-control" name="admin_no_hp2" placeholder="No. HP">
+            <input type="number" class="form-control" name="admin_no_hp2" placeholder="No. HP">
             <small id="admin_no_hp_error" class="text-danger"> </small>
           </div>
           <div class="form-group">

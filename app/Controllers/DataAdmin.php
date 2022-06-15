@@ -13,6 +13,7 @@ class DataAdmin extends BaseController
     protected $form_validation;
     protected $session;
 
+
     public function __construct()
     {
         $this->encrypter = \Config\Services::encrypter();
@@ -26,14 +27,14 @@ class DataAdmin extends BaseController
     private function _action($idAdmin)
     {
         $link = "
-			<a data-toggle='tooltip' data-placement='top' class='btn-editAdmin' title='Update' value='" . $idAdmin . "'>
-	      		<button type='button' class='btn btn-outline-success btn-xs' data-toggle='modal' data-target='#modalEdit'><i class='fa fa-edit'></i></button>
-	      	</a>
-	      
-	      	<a href='" . base_url('dataadmin/delete/' . $idAdmin) . "' class='btn-deleteAdmin' data-toggle='tooltip' data-placement='top' title='Delete'>
-	      		<button type='button' class='btn btn-outline-danger btn-xs'><i class='fa fa-trash'></i></button>
-	      	</a>
-	    ";
+        <a data-toggle='tooltip' data-placement='top' class='btn-editAdmin' title='Update' value='" . $idAdmin . "'>
+        <button type='button' class='btn btn-outline-success btn-xs' data-toggle='modal' data-target='#modalEdit'><i class='fa fa-edit'></i></button>
+        </a>
+
+        <a href='" . base_url('dataadmin/delete/' . $idAdmin) . "' class='btn-deleteAdmin' data-toggle='tooltip' data-placement='top' title='Delete'>
+        <button type='button' class='btn btn-outline-danger btn-xs'><i class='fa fa-trash'></i></button>
+        </a>
+        ";
         return $link;
     }
 
@@ -44,17 +45,95 @@ class DataAdmin extends BaseController
         $data['page']   = "dataadmin";
         $data['nama']   = $this->session->get('nama');
         $data['email']   = $this->session->get('email');
+
+        $data['validation'] = \Config\Services::validation();
+
         return view('v_dataadmin/index', $data);
     }
 
     // Add Data Admin
     public function add()
     {
+        $validation = \Config\Services::validation();
         $username = $this->request->getPost('username2');
         $admin_nama = $this->request->getPost('admin_nama2');
         $admin_no_hp = $this->request->getPost('admin_no_hp2');
         $admin_email = $this->request->getPost('admin_email2');
         $admin_password = $this->request->getPost('admin_password2');
+
+        if (!$this->validate([
+            'username2' => 'required'
+        ])) {
+            $validation = \Config\Services::validation();
+        }
+
+        // if (!$this->validate([
+        //     'username2' => [
+        //         'rules' => 'required',
+        //         'errors' => [
+        //             'required' => '{field} Harus diisi'
+        //         ]
+        //     ],
+        //     'admin_nama2' => [
+        //         'rules' => 'required',
+        //         'errors' => [
+        //             'required' => '{field} Harus diisi'
+        //         ]
+        //     ],            
+        //     'admin_no_hp2' => [
+        //         'rules' => 'required',
+        //         'errors' => [
+        //             'required' => '{field} Harus diisi'
+        //         ]
+        //     ],            
+        //     'admin_email2' => [
+        //         'rules' => 'required|valid_email',
+        //         'errors' => [
+        //             'required' => '{field} Harus diisi',
+        //             'valid_email' => 'Format Email Harus Valid'
+        //         ]
+        //     ],
+        //     'admin_password2' => [
+        //         'rules' => 'required',
+        //         'errors' => [
+        //             'required' => '{field} Harus diisi'
+        //         ]
+        //     ],
+        //     'admin_password_conf' => [
+        //         'rules' => 'required',
+        //         'errors' => [
+        //             'required' => '{field} Harus diisi'
+        //         ]
+        //     ]
+        // ])) {
+        //     session()->setFlashdata('error', $this->validator->listErrors());
+        //     return redirect()->back()->withInput();
+        // } else {
+        //     echo "<pre>";
+        //     var_dump($this->request->getVar());
+        //     echo "</pre>";
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //Data Admin
         $data = [
@@ -70,30 +149,31 @@ class DataAdmin extends BaseController
             'hak_akses'   => 'admin'
         ];
 
-        // //Cek Validasi Data Admin, Jika Data Tidak Valid 
-        // if ($this->form_validation->run($data, 'tambah_admin') == FALSE) {
+        //Cek Validasi Data Admin, Jika Data Tidak Valid 
+        if ($this->form_validation->run($data, 'tambah_admin') == FALSE) {
 
-        //     $validasi = [
-        //         'error'   => true,
-        //         'username_error' => $this->form_validation->getErrors('username'),
-        //         'admin_nama' => $this->form_validation->getErrors('admin_nama'),
-        //         'admin_no_hp' => $this->form_validation->getErrors('admin_no_hp'),
-        //         'admin_email' => $this->form_validation->getErrors('admin_email'),
-        //         'password' => $this->form_validation->getErrors('password')
-        //     ];
-        //     echo json_encode($validasi);
-        // }
+            $validasi = [
+                'error'   => true,
+                'username_error' => $this->form_validation->getErrors('username'),
+                'admin_nama' => $this->form_validation->getErrors('admin_nama'),
+                'admin_no_hp' => $this->form_validation->getErrors('admin_no_hp'),
+                'admin_email' => $this->form_validation->getErrors('admin_email'),
+                'password' => $this->form_validation->getErrors('password')
+            ];
+            echo json_encode($validasi);
+        }
 
-        // //Data Valid
-        // else {
+        //Data Valid
+        else {
         //Simpan Data Admin
-        $this->M_admin->save_admin_in_admin($data);
-        $this->M_admin->save_admin_in_login($data2);
+            $this->M_admin->save_admin_in_admin($data);
+            $this->M_admin->save_admin_in_login($data2);
 
-        $validasi = [
-            'success'   => true
-        ];
-        echo json_encode($validasi);
+            $validasi = [
+                'success'   => true
+            ];
+            echo json_encode($validasi);
+        }
     }
 
     // Menampilkan Data Admin Pada Modal Edit Data Admin
