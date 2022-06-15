@@ -62,7 +62,6 @@ class DataAdmin extends BaseController
             'admin_nama' => $admin_nama,
             'admin_no_hp' => $admin_no_hp,
             'admin_email' => $admin_email
-
         ];
 
         $data2 = [
@@ -99,35 +98,26 @@ class DataAdmin extends BaseController
         $admin_password = $this->request->getPost('admin_password2');
 
         //Data Admin
-
-        // $builder = $this->M_admin->get();
-        // $builder->select('*');
-        // $builder->join('tbl_login', 'username = username');
-        // $query = $builder->get();
-        // $builder->join('tbl_admin', 'username = username', 'left');
-        // print_r($query);
-        // die('stop');
         $data = [
-            //'username' => $username,
+            'id' => $id,
+            'username' => $username,
             'admin_nama' => $admin_nama,
             'admin_no_hp' => $admin_no_hp,
-            'admin_email' => $admin_email,
-            // 'password'    =>  base64_encode($this->encrypter->encrypt($admin_password)),
-            // 'hak_akses'   => 'admin'
+            'admin_email' => $admin_email
+            //'password'    =>  base64_encode($this->encrypter->encrypt($admin_password)),
+            //'hak_akses'   => 'admin'
         ];
-
         $data2 = [
-            // 'username' => $username,
+            'username'     => $username,
             'password'    =>  base64_encode($this->encrypter->encrypt($admin_password)),
             'hak_akses'   => 'admin'
         ];
 
 
-
-        // echo "<pre>";
-        // print_r($id);
+        // print_r($data);
+        // print_r($data2);
         // die('stop');
-        // $where1 = array('username' => $this->input->post('username'));
+
         //Update Data Admin
         $this->M_admin->update_admin_in_admin($data);
         $this->M_admin->update_admin_in_login($data2);

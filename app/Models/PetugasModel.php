@@ -21,7 +21,7 @@ class PetugasModel extends Model
 		parent::__construct();
 		$this->db = db_connect();
 		$this->request = $request;
-		$this->dt = $this->db->table($this->table)->join('tbl_login', 'tbl_login.username_login = tbl_petugas.username');
+		$this->dt = $this->db->table($this->table);
 	}
 
 	public function get_petugas()
@@ -29,7 +29,7 @@ class PetugasModel extends Model
 		$query =  $this->db->table('tbl_petugas')
 			//->select('*,tbl_petugas.id as id_petugas,tbl_instansi.id as id_instansi,tbl_petugas.instansi_id as petugas_instansi, tbl_instansi.instansi_id as instansi_instansi')
 			->select('*,tbl_petugas.id as id_petugas,tbl_instansi.id as id_instansi')
-			->join('tbl_login', 'tbl_login.username_login = tbl_petugas.username')
+			->join('tbl_login', 'tbl_login.username = tbl_petugas.username')
 			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_petugas.instansi_id')
 			->groupBy('tbl_petugas.id')
 			->get();
@@ -77,12 +77,12 @@ class PetugasModel extends Model
 	public function update_petugas_in_petugas($data)
 	{
 		$builder = $this->db->table('tbl_petugas');
-		return $builder->update($data);
+		return $builder->replace($data);
 	}
 	public function update_petugas_in_login($data2)
 	{
 		$builder2 = $this->db->table('tbl_login');
-		return $builder2->update($data2);
+		return $builder2->replace($data2);
 	}
 
 	function get_instansi()

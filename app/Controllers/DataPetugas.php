@@ -103,6 +103,7 @@ class Datapetugas extends BaseController
 
 		//Data petugas
 		$data = [
+			'id' => $id,
 			'username' => $username,
 			'petugas_nama' => $petugas_nama,
 			'petugas_no_hp' => $petugas_no_hp,

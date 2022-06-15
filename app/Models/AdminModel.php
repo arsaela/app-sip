@@ -76,14 +76,14 @@ class AdminModel extends Model
 	public function update_admin_in_admin($data)
 	{
 		$builder = $this->db->table('tbl_admin');
-		return $builder->update($data);
+		return $builder->replace($data);
 	}
-
 	public function update_admin_in_login($data2)
 	{
 		$builder2 = $this->db->table('tbl_login');
-		return $builder2->update($data2);
+		return $builder2->replace($data2);
 	}
+
 	function get_datatables()
 	{
 		$this->_get_datatables_query();
