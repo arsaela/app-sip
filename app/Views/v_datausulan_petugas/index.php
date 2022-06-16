@@ -116,11 +116,17 @@
                       </td>
 
                       <td>
+
+
                        <?php  
-                       $yearnow = date("Y");
-                       if($value->tahun_usulan==$yearnow AND $value->status_usulan_id=='1'){?>
+                   
+                      // $yearnow = date("Y");
+                       if(($getDetailFormasiUsulan[1]->status_usulan_id<>'2') ){?>
                         <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-kekuranganformasi="<?= $kekurangan_formasi; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a>
-                      <?php } ?>
+                      <?php } 
+                      else {
+
+                      }?>
 
                       <!-- Modal Ajuan Usulan Formasi-->
                       <form action="/opd/DataUsulan/inputusulanopd" method="post" id="frm-inputusulan">

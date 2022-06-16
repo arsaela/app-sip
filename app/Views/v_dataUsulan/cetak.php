@@ -51,7 +51,6 @@
                         <!-- Default box -->
                         <div class="card">
                             <div class="card-header">
-<<<<<<< HEAD
                                <?php $tahun_usulan_now = date("Y");?>
                                <h3 class="card-title">
                                 Data Usulan Seluruh OPD Tahun <?php echo $tahun_usulan_now;?>
@@ -59,15 +58,14 @@
                         </div>
 
 
-                                   <h3> Instansi :</h3>
-                                        <?php $no = 1;
-                                        foreach ($getInstansiUsulan as $value2) {  ?>
+                                   <h3> Instansi : Pemerintah Kabupaten Klaten </h3>
+                                       
                         <div class="card-body table-responsive">
                             <table id="datatable-list" class="table table-bordered table-striped">
                                 <thead>
                                     <div>
 
-                                            <div class="mt-3"><?php echo $value2->instansi_nama; ?></div>
+                                            <div class="mt-3"><?php //echo $value->instansi_nama; ?></div>
                                         </div>
 
                                         <br>
@@ -75,7 +73,9 @@
                                             <th>No.</th>
                                             <th>Formasi</th>
                                             <th>Lokasi Unit Kerja</th>
-                                            <th>Jumlah Usulan</th>
+                                            <th>Unit Kerja</th>
+                                            <th>Usulan</th>
+                                            <th>Usulan Disetujui</th>
 
                                         </tr>
                                     </thead>
@@ -84,54 +84,18 @@
                                         <?php $no = 1;
                                         foreach ($getLihatUsulan as $value) {
                                             ?>
-=======
-                                <?php $tahun_usulan_now = date("Y"); ?>
-                                <h3 class="card-title">
-                                    Data Usulan Pegawai Kabupaten Klaten Tahun <?php echo $tahun_usulan_now; ?>
-                                </h3>
-                            </div>
-
-
-                            <div class="card-body table-responsive">
-                                <table id="datatable-list" class="table table-bordered table-striped">
-                                    <thead>
-                                        <div>
-                                            Instansi : Pemerintah Kabupaten Klaten
-                                        </div>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Formasi</th>
-                                            <th>Lokasi Unit Kerja</th>
-                                            <th>OPD</th>
-                                            <th>Usulan</th>
-                                            <th>Usulan Disetujui</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        <?php $no = 1;
-                                        foreach ($getLihatUsulan as $value) {
-                                        ?>
->>>>>>> 41141a8200614a1a27a31ae6226d310de491067e
                                             <tr>
                                                 <td><?php echo $no; ?></td>
                                                 <td><?php echo $value->jabatan_nama; ?></td>
                                                 <td><?php echo $value->instansi_unor_nama; ?></td>
-<<<<<<< HEAD
-                                                <td><?php echo $value->jumlah_usulan; ?></td>
-                                            </tr>
-                                            <?php $no++;
-
-                                        } 
-                                    } ?>
-=======
                                                 <td><?php echo $value->instansi_nama; ?></td>
                                                 <td><?php echo $value->jumlah_usulan; ?></td>
                                                 <td><?php echo $value->jumlah_approve; ?></td>
                                             </tr>
-                                        <?php $no++;
-                                        } ?>
->>>>>>> 41141a8200614a1a27a31ae6226d310de491067e
+                                            <?php $no++;
+
+                                        } 
+                                     ?>
 
                                     </tbody>
                                 </table>
