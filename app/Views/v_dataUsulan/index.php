@@ -28,7 +28,6 @@
                     <th>No.</th>
                     <th>Nomor Usul</th>
                     <th>Nama Instansi / OPD</th>
-                    <th>Status Usulan</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -39,9 +38,8 @@
                       <td><?php echo $no; ?></td>
                       <td><?php echo $isi->usulan_id; ?></td>
                       <td><?php echo $isi->instansi_nama; ?></td>
-                      <td><?php echo "ket.status"; ?></td>
                       <td>
-                      <a data-toggle='tooltip' data-placement='top' title='Detail'  href="<?php echo base_url('DataUsulan/detail_usulan/' . $isi->usulan_id); ?>" class="btn btn-warning"><i class="fa fa-folder-open-o "></i></a>
+                        <a data-toggle='tooltip' data-placement='top' title='Detail' href="<?php echo base_url('DataUsulan/detail_usulan/' . $isi->usulan_id); ?>" class="btn btn-warning"><i class="fa fa-eye "></i></a>
                       </td>
                     </tr>
                   <?php $no++;
