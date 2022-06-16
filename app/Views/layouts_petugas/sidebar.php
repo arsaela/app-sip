@@ -45,7 +45,7 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-inbox"></i>
             <p>
-              Kebutuhan Formasi
+              Kebutuhan Pegawai
               <i class="fas fa-angle-right right"></i>
             </p>
           </a>
@@ -54,13 +54,13 @@
             <li class="nav-item">
               <a href="<?php echo base_url('opd/datakekuranganformasi'); ?>" class="nav-link <?php if ($page == 'opd/datakekuranganformasi') echo " active";  ?>">
                 <i class="far fa fa-minus nav-icon"></i>
-                <p>Kekurangan Formasi</p>
+                <p>Kekurangan Pegawai</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?php echo base_url('opd/datakelebihanformasi'); ?>" class="nav-link <?php if ($page == 'opd/datakelebihanformasi') echo " active";  ?>">
                 <i class="far fa fa-plus nav-icon"></i>
-                <p>Kelebihan Formasi</p>
+                <p>Kelebihan Pegawai</p>
               </a>
             </li>
           </ul>
@@ -99,49 +99,49 @@
           </ul>
         </li>
 
-      <!-- Data Usulan -->
-      <li class="nav-item has-treeview">
-        <a href="#" class="nav-link">
-          <i class="nav-icon fas fa-inbox"></i>
-          <p>
-            Data Usulan
-            <i class="fas fa-angle-right right"></i>
-          </p>
-        </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="<?php echo base_url('opd/datausulan'); ?>" class="nav-link <?php if ($page == 'opd/datausulan') echo " active";  ?>">
-              <i class="far fa fa-plus nav-icon"></i>
-              <p>Input Usulan</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?php echo base_url('opd/datausulan/lihatusulanopd'); ?>" class="nav-link <?php if ($page == 'opd/lihatusulan') echo " active";  ?>">
-              <i class="far fa-eye nav-icon"></i>
-              <p>Lihat Usulan</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?php echo base_url('opd/datausulan/kirimdatausulanopd'); ?>" class="nav-link" <?php if ($page == 'opd/datausulan/kirimdatausulanopd') echo " active";  ?>">
-              <i class="far fa fa-paper-plane-o nav-icon"></i>
-              <p>Kirim Usulan</p>
-            </a>
-          </li>
-          
-          <li class="nav-item">
-            <a href="<?php echo base_url('opd/datausulan/cetakdatausulan'); ?>" class="nav-link <?php if ($page == 'opd/datausulan/cetakdatausulan') echo " active";  ?>">
-              <i class="far fa fa-print nav-icon"></i>
-              <p>Cetak Usulan</p>
-            </a>
-          </li>
-           <li class="nav-item">
-            <a href="<?php echo base_url('opd/datausulan/rekapusulanopd'); ?>" class="nav-link <?php if ($page == 'opd/datausulan/rekapusulanopd') echo " active";  ?>">
-              <i class="far fa fa-paper-plane-o nav-icon"></i>
-              <p>Rekap Usulan</p>
-            </a>
-          </li>
-        </ul>
-      </li>
+        <!-- Data Usulan -->
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-inbox"></i>
+            <p>
+              Data Usulan
+              <i class="fas fa-angle-right right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?php echo base_url('opd/datausulan'); ?>" class="nav-link <?php if ($page == 'opd/datausulan') echo " active";  ?>">
+                <i class="far fa fa-plus nav-icon"></i>
+                <p>Input Usulan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo base_url('opd/datausulan/lihatusulanopd'); ?>" class="nav-link <?php if ($page == 'opd/lihatusulan') echo " active";  ?>">
+                <i class="far fa-eye nav-icon"></i>
+                <p>Lihat Usulan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo base_url('opd/datausulan/kirimdatausulanopd'); ?>" class="nav-link" <?php if ($page == 'opd/datausulan/kirimdatausulanopd') echo " active";  ?>">
+                <i class="far fa fa-paper-plane-o nav-icon"></i>
+                <p>Kirim Usulan</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="<?php echo base_url('opd/datausulan/cetakdatausulan'); ?>" class="nav-link <?php if ($page == 'opd/datausulan/cetakdatausulan') echo " active";  ?>">
+                <i class="far fa fa-print nav-icon"></i>
+                <p>Cetak Usulan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?php echo base_url('opd/datausulan/rekapusulanopd'); ?>" class="nav-link <?php if ($page == 'opd/datausulan/rekapusulanopd') echo " active";  ?>">
+                <i class="far fa fa-paper-plane-o nav-icon"></i>
+                <p>Rekap Usulan</p>
+              </a>
+            </li>
+          </ul>
+        </li>
 
 
 

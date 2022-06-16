@@ -1,7 +1,7 @@
 <?= $this->section('content') ?>
 
 <?php
-if(session()->getFlashData('error')){
+if (session()->getFlashData('error')) {
 ?>
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
     <?= session()->getFlashData('error') ?>
@@ -59,17 +59,12 @@ if(session()->getFlashData('error')){
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" id="btn-saveDataAdmin" class="btn btn-primary">Save</button>
 
+
       </div>
     </div>
-  </form>
-  <div class="modal-footer justify-content-between">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <button type="button" id="btn-saveDataAdmin" class="btn btn-primary">Save</button>
+    <!-- /.modal-content -->
   </div>
-</div>
-<!-- /.modal-content -->
-</div>
-<!-- /.modal-dialog -->
+  <!-- /.modal-dialog -->
 </div>
 
 </script>

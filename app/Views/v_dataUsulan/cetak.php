@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Cetak Data Pegawai</title>
+    <title>Cetak Data Usulan Pegawai Kabupaten Klaten</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
     <!-- jQuery -->
@@ -51,6 +51,7 @@
                         <!-- Default box -->
                         <div class="card">
                             <div class="card-header">
+<<<<<<< HEAD
                                <?php $tahun_usulan_now = date("Y");?>
                                <h3 class="card-title">
                                 Data Usulan Seluruh OPD Tahun <?php echo $tahun_usulan_now;?>
@@ -83,40 +84,78 @@
                                         <?php $no = 1;
                                         foreach ($getLihatUsulan as $value) {
                                             ?>
+=======
+                                <?php $tahun_usulan_now = date("Y"); ?>
+                                <h3 class="card-title">
+                                    Data Usulan Pegawai Kabupaten Klaten Tahun <?php echo $tahun_usulan_now; ?>
+                                </h3>
+                            </div>
+
+
+                            <div class="card-body table-responsive">
+                                <table id="datatable-list" class="table table-bordered table-striped">
+                                    <thead>
+                                        <div>
+                                            Instansi : Pemerintah Kabupaten Klaten
+                                        </div>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Formasi</th>
+                                            <th>Lokasi Unit Kerja</th>
+                                            <th>OPD</th>
+                                            <th>Usulan</th>
+                                            <th>Usulan Disetujui</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <?php $no = 1;
+                                        foreach ($getLihatUsulan as $value) {
+                                        ?>
+>>>>>>> 41141a8200614a1a27a31ae6226d310de491067e
                                             <tr>
                                                 <td><?php echo $no; ?></td>
                                                 <td><?php echo $value->jabatan_nama; ?></td>
                                                 <td><?php echo $value->instansi_unor_nama; ?></td>
+<<<<<<< HEAD
                                                 <td><?php echo $value->jumlah_usulan; ?></td>
                                             </tr>
                                             <?php $no++;
 
                                         } 
                                     } ?>
+=======
+                                                <td><?php echo $value->instansi_nama; ?></td>
+                                                <td><?php echo $value->jumlah_usulan; ?></td>
+                                                <td><?php echo $value->jumlah_approve; ?></td>
+                                            </tr>
+                                        <?php $no++;
+                                        } ?>
+>>>>>>> 41141a8200614a1a27a31ae6226d310de491067e
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
                         </div>
-                        <!-- /.card-body -->
-                    </div>
 
-                    <div class="back_to_page">
-                        <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Sebelumnya" />
-                    </div>
+                        <div class="back_to_page">
+                            <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Sebelumnya" />
+                        </div>
 
-                    <!-- /.card -->
+                        <!-- /.card -->
+                    </div>
                 </div>
+
+
+
             </div>
+        </section>
+        <!-- /.content -->
+    </div>
 
 
-
-        </div>
-    </section>
-    <!-- /.content -->
-</div>
-
-
-<!-- /.content-wrapper -->
+    <!-- /.content-wrapper -->
 
 
 </body>
@@ -128,41 +167,41 @@
 </script>
 
 <style type="text/css">
-@media print {
-    @page {
-        size: A4;
-        /* DIN A4 standard, Europe */
-        margin: 7mm 6mm 7mm 15mm;
-        font-size: 14px;
-    }
+    @media print {
+        @page {
+            size: A4;
+            /* DIN A4 standard, Europe */
+            margin: 7mm 6mm 7mm 15mm;
+            font-size: 14px;
+        }
 
-    html,
-    body {
-        width: 210mm;
-        /* height: 297mm; */
-        height: 282mm;
-        font-size: 11px;
-        background: #FFF;
-        overflow: visible;
-    }
+        html,
+        body {
+            width: 210mm;
+            /* height: 297mm; */
+            height: 282mm;
+            font-size: 11px;
+            background: #FFF;
+            overflow: visible;
+        }
 
-    body {
-        padding-top: 15mm;
-    }
+        body {
+            padding-top: 15mm;
+        }
 
-    .back_to_page {
-        display: none;
+        .back_to_page {
+            display: none;
+        }
     }
-}
 </style>
 
 <style type="text/css" media="print">
-/* masukan sintak CSS disini */
-h3.card-title {
-    font-size: 25px;
-}
+    /* masukan sintak CSS disini */
+    h3.card-title {
+        font-size: 25px;
+    }
 
-table#datatable-list {
-    font-size: 18px;
-}
+    table#datatable-list {
+        font-size: 18px;
+    }
 </style>
