@@ -59,7 +59,7 @@ class UsulanModel extends Model
 		$query =  $this->db->table('tbl_detail_usulan')
 			->select('*,tbl_instansi.instansi_nama, count(tbl_pegawai.pegawai_nip) as jumlahasn')
 			->join('tbl_usulan', 'tbl_usulan.usulan_id = tbl_detail_usulan.usulan_id', 'left')
-			->join('tbl_formasi', 'tbl_formasi.formasi_id = tbl_detail_usulan.formasi_id', 'left')
+			->join('tbl_formasi', 'tbl_formasi.jabatan_kode = tbl_detail_usulan.jabatan_kode', 'left')
 			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_usulan.instansi_id', 'left')
 			->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
 			->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
@@ -244,6 +244,138 @@ class UsulanModel extends Model
 	// 	$tbl_storage = $this->db->table($this->table);
 	// 	return $tbl_storage->countAllResults();
 	// }
+
+
+
+
+
+
+
+
+
+public function getLihatUsulan($idInstansi)
+	{
+		$query =  $this->db->table('tbl_history_usulan')
+			->select('*,concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan')
+			->where('tbl_history_usulan.instansi_id', $idInstansi)
+			->join('tbl_formasi',  'tbl_formasi.instansi_unor = tbl_history_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_history_usulan.jabatan_kode', 'left')
+			->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+			->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
+			->join('status_usulan', 'status_usulan.status_usulan_id =  tbl_history_usulan.status_usulan_id', 'left')
+			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_history_usulan.instansi_id', 'left')
+			->groupBy('jabatan')
+			->orderBy('tbl_formasi.instansi_unor asc')
+			->get();
+		return $query;
+	}
+
+	public function getLihatUsulanDescYear($idInstansi)
+	{
+		$query =  $this->db->table('tbl_history_usulan')
+			->select('*,concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan')
+			->where('tbl_history_usulan.instansi_id', $idInstansi)
+			->join('tbl_formasi',  'tbl_formasi.instansi_unor = tbl_history_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_history_usulan.jabatan_kode', 'left')
+			->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+			->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
+			->join('status_usulan', 'status_usulan.status_usulan_id = tbl_history_usulan.status_usulan_id', 'left')
+			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_history_usulan.instansi_id', 'left')
+			->groupBy('tbl_history_usulan.tahun_usulan')
+			->orderBy('tbl_history_usulan.tahun_usulan DESC')
+			->get();
+		return $query;
+	}
+
+	public function getUsulanByYear($idInstansi, $tahun_usulan_now)
+	{
+		$query =  $this->db->table('tbl_history_usulan')
+			->select('*')
+			->where('tbl_history_usulan.instansi_id', $idInstansi)
+			->join('tbl_formasi',  'tbl_formasi.instansi_unor = tbl_history_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_history_usulan.jabatan_kode', 'left')
+			->join('tbl_jabatan', 'tbl_history_usulan.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+			->join('tbl_unor', 'tbl_history_usulan.instansi_unor = tbl_unor.instansi_unor', 'left')
+			->join('status_usulan', 'status_usulan.status_usulan_id = tbl_history_usulan.status_usulan_id', 'left')
+			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_history_usulan.instansi_id', 'left')
+			->where('tbl_history_usulan.tahun_usulan', $tahun_usulan_now)
+			->get();
+		return $query;
+	}
+
+	
+	public function getLihatUsulanNow($idInstansi, $tahun_usulan_now)
+	{
+		$query =  $this->db->table('tbl_history_usulan')
+			->select('*')
+			->where('tbl_history_usulan.instansi_id', $idInstansi)
+			->join('tbl_formasi',  'tbl_formasi.instansi_unor = tbl_history_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_history_usulan.jabatan_kode', 'left')
+			->join('tbl_jabatan', 'tbl_history_usulan.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+			->join('tbl_unor', 'tbl_history_usulan.instansi_unor = tbl_unor.instansi_unor', 'left')
+			->join('status_usulan', 'status_usulan.status_usulan_id = tbl_history_usulan.status_usulan_id', 'left')
+			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_history_usulan.instansi_id', 'left')
+			->where('tbl_history_usulan.tahun_usulan', $tahun_usulan_now)
+			->get();
+		return $query;
+	}	
+
+
+
+	public function getLihatUsulanByYear($tahun_usulan_now)
+	{
+		$query =  $this->db->table('tbl_history_usulan')
+			->select('*')
+			->join('tbl_formasi',  'tbl_formasi.instansi_unor = tbl_history_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_history_usulan.jabatan_kode', 'left')
+			->join('tbl_jabatan', 'tbl_history_usulan.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+			->join('tbl_unor', 'tbl_history_usulan.instansi_unor = tbl_unor.instansi_unor', 'left')
+			->join('status_usulan', 'status_usulan.status_usulan_id = tbl_history_usulan.status_usulan_id', 'left')
+			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_history_usulan.instansi_id', 'left')
+			->where('tbl_history_usulan.tahun_usulan', $tahun_usulan_now)
+			->get();
+		return $query;
+	}
+
+
+public function getInstansiUsulan($tahun_usulan_now)
+	{
+		$query =  $this->db->table('tbl_history_usulan')
+			->select('*')
+			->join('tbl_formasi',  'tbl_formasi.instansi_unor = tbl_history_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_history_usulan.jabatan_kode', 'left')
+			->join('tbl_jabatan', 'tbl_history_usulan.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+			->join('tbl_unor', 'tbl_history_usulan.instansi_unor = tbl_unor.instansi_unor', 'left')
+			->join('status_usulan', 'status_usulan.status_usulan_id = tbl_history_usulan.status_usulan_id', 'left')
+			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_history_usulan.instansi_id', 'left')
+			->where('tbl_history_usulan.tahun_usulan', $tahun_usulan_now)
+			->groupBy('tbl_history_usulan.instansi_id')
+			->get();
+		return $query;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 /* End of file PetugasModel.php */
