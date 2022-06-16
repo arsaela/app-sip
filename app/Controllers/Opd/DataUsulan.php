@@ -50,8 +50,14 @@ class DataUsulan extends BaseController
 
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
+		$tahun_usulan_now = date("Y");
 
 		$data['getDetailFormasiUsulan'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
+		$data['status'] = $this->M_usulan_OPD->getStatusUsulan($idInstansi['0']->instansi_id,$tahun_usulan_now)->getResult();
+		// $data['status'] = $this->M_usulan_OPD->getStatusUsulan($idInstansi,$tahun_usulan_now);
+		// echo "<pre>";
+		// print_r($data['status']);
+		// die('stop');
 
 		return view('v_datausulan_petugas/index', $data);
 	}
@@ -306,8 +312,8 @@ class DataUsulan extends BaseController
 		);
 		$inputusulanopd = $this->M_usulan_OPD->inputusulanopd($data_usulan_opd);
 
-		print_r($data_usulan_opd);
-		die('sttop');
+		// print_r($data_usulan_opd);
+		// die('sttop');
 
 		// echo "<pre>";
 		// print_r($data_usulan_opd);

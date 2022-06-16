@@ -318,7 +318,7 @@ public function getLihatUsulan($idInstansi)
 
 
 
-	public function getLihatUsulanByYear($tahun_usulan_now)
+	public function getLihatUsulanByYear()
 	{
 		$query =  $this->db->table('tbl_history_usulan')
 			->select('*')
@@ -327,7 +327,9 @@ public function getLihatUsulan($idInstansi)
 			->join('tbl_unor', 'tbl_history_usulan.instansi_unor = tbl_unor.instansi_unor', 'left')
 			->join('status_usulan', 'status_usulan.status_usulan_id = tbl_history_usulan.status_usulan_id', 'left')
 			->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_history_usulan.instansi_id', 'left')
-			->where('tbl_history_usulan.tahun_usulan', $tahun_usulan_now)
+			->where('tbl_history_usulan.tahun_usulan',"2022")
+			->groupBy('tbl_history_usulan.jabatan_kode')
+			->sortBy('tbl_history_usulan.instansi_id')
 			->get();
 		return $query;
 	}
@@ -347,6 +349,7 @@ public function getInstansiUsulan($tahun_usulan_now)
 			->get();
 		return $query;
 	}
+
 
 
 

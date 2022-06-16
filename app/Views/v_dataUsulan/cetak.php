@@ -51,49 +51,47 @@
                         <!-- Default box -->
                         <div class="card">
                             <div class="card-header">
-                                 <?php $tahun_usulan_now = date("Y");?>
-                            <h3 class="card-title">
-                                Data Usulan Tahun <?php echo $tahun_usulan_now;?>
+                               <?php $tahun_usulan_now = date("Y");?>
+                               <h3 class="card-title">
+                                Data Usulan Seluruh OPD Tahun <?php echo $tahun_usulan_now;?>
                             </h3>
-                            </div>
+                        </div>
 
 
+                                   <h3> Instansi :</h3>
+                                        <?php $no = 1;
+                                        foreach ($getInstansiUsulan as $value2) {  ?>
                         <div class="card-body table-responsive">
                             <table id="datatable-list" class="table table-bordered table-striped">
                                 <thead>
                                     <div>
-                                        Instansi :
 
-                                        <?php $no = 1;
-                                        foreach ($getInstansiUsulan as $value2) {  ?>
-                                            <div><?php echo $value2->instansi_nama; ?></div>
-                                            <?php $no++; 
-                                        }
-                                        ?>
-                                    </div>
+                                            <div class="mt-3"><?php echo $value2->instansi_nama; ?></div>
+                                        </div>
 
-
-                                    <tr>
-                                        <th>No.</th>
-                                        <th>Formasi</th>
-                                        <th>Lokasi Unit Kerja</th>
-                                        <th>Jumlah Usulan</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <?php $no = 1;
-                                    foreach ($getLihatUsulan as $value) {
-                                        ?>
+                                        <br>
                                         <tr>
-                                            <td><?php echo $no; ?></td>
-                                            <td><?php echo $value->jabatan_nama; ?></td>
-                                            <td><?php echo $value->instansi_unor_nama; ?></td>
-                                            <td><?php echo $value->jumlah_usulan; ?></td>
+                                            <th>No.</th>
+                                            <th>Formasi</th>
+                                            <th>Lokasi Unit Kerja</th>
+                                            <th>Jumlah Usulan</th>
 
                                         </tr>
-                                        <?php $no++;
+                                    </thead>
+                                    <tbody>
+
+                                        <?php $no = 1;
+                                        foreach ($getLihatUsulan as $value) {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $no; ?></td>
+                                                <td><?php echo $value->jabatan_nama; ?></td>
+                                                <td><?php echo $value->instansi_unor_nama; ?></td>
+                                                <td><?php echo $value->jumlah_usulan; ?></td>
+                                            </tr>
+                                            <?php $no++;
+
+                                        } 
                                     } ?>
 
                                 </tbody>
