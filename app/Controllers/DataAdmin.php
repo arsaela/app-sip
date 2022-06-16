@@ -118,7 +118,7 @@ class DataAdmin extends BaseController
             'username' => $username,
             'admin_nama' => $admin_nama,
             'admin_no_hp' => $admin_no_hp,
-            'admin_email' => $admin_email
+            'admin_email' => $admin_email,
         ];
 
         $data2 = [

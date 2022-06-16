@@ -67,12 +67,12 @@
     <div class="container">
       <div class="row">
         <div class="title-section-batas-pengusulan col-md-12">
-          <h3>Batas Waktu Pengusulan</h3>
+          <!-- <h3>Batas Waktu Pengusulan</h3> -->
         </div>
       </div>
 
       <!-- count down timer pengusulan -->
-      <div class="wrap_countdowntimer row offset-md-3">
+      <!-- <div class="wrap_countdowntimer row offset-md-3">
 
         <div class="wrap_timer_shape col-md-2">
           <div class="card countdowntimer">
@@ -110,86 +110,86 @@
           </div>
         </div>
       </div>
-  </section>
+  </section> -->
 
 
-  <section class="informasi" id="informasi">
-    <div class="container">
-      <div class="row">
-        <div class="title-section-informasi col-md-12">
-          <h3>Informasi</h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <?php foreach ($getInformasi as $value) { ?>
-          <div class="wrap-informasi col-lg-12 col-md-12 col-sm-6 col-xs-12">
-            <div class="content_informasi">
-              <!-- <a href="<?php //echo $value->link_projek
-                            ?>" target="_blank"> -->
-              <?php echo $value->informasi_content; ?>
-              <!-- </a> -->
+      <section class="informasi" id="informasi">
+        <div class="container">
+          <div class="row">
+            <div class="title-section-informasi col-md-12">
+              <h3>Informasi</h3>
             </div>
           </div>
-        <?php } ?>
-      </div>
-    </div>
-  </section>
 
-
-  <section class="alur_pengusulan" id="alur_pengusulan">
-    <div class="container">
-      <div class="row">
-        <div class="title-section-informasi col-md-12">
-          <h3>Alur Pengusulan</h3>
+          <div class="row">
+            <?php foreach ($getInformasi as $value) { ?>
+              <div class="wrap-informasi col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                <div class="content_informasi">
+                  <!-- <a href="<?php //echo $value->link_projek
+                                ?>" target="_blank"> -->
+                  <?php echo $value->informasi_content; ?>
+                  <!-- </a> -->
+                </div>
+              </div>
+            <?php } ?>
+          </div>
         </div>
-      </div>
+      </section>
 
 
-      <?php //foreach($data_portofolio as $value) { 
-      ?>
-      <div class="wrap-alur-pengusulan left row">
-        <div class="content_alur_pengusulan col-lg-5 col-md-5 col-sm-6 col-xs-12">
-          <?php
-          //if (empty($data_foto_profile)){ 
+      <section class="alur_pengusulan" id="alur_pengusulan">
+        <div class="container">
+          <div class="row">
+            <div class="title-section-informasi col-md-12">
+              <h3>Alur Pengusulan</h3>
+            </div>
+          </div>
+
+
+          <?php //foreach($data_portofolio as $value) { 
           ?>
-          <img class="img_alur_pengusulan left" src="/assets/img/login3.png">
-          <?php //} else { 
-          ?>
-          <!-- <img class="img_alur_pengusulan" src="/assets/img/login3.png"> -->
+          <div class="wrap-alur-pengusulan left row">
+            <div class="content_alur_pengusulan col-lg-5 col-md-5 col-sm-6 col-xs-12">
+              <?php
+              //if (empty($data_foto_profile)){ 
+              ?>
+              <img class="img_alur_pengusulan left" src="/assets/img/login3.png">
+              <?php //} else { 
+              ?>
+              <!-- <img class="img_alur_pengusulan" src="/assets/img/login3.png"> -->
+              <?php //} 
+              ?>
+            </div>
+            <div class="content_alur_pengusulan col-lg-7 col-md-7 col-sm-6 col-xs-12">
+              <h3>1. Alur Pengusulan</h3>
+              Petugas Kepegawaian masing-masing unit kerja memiliki akses tersendiri untuk mengusulkan tambahan pegawai ASN.
+            </div>
+          </div>
+
+          <div class="wrap-alur-pengusulan right row">
+            <div class="content_alur_pengusulan col-lg-7 col-md-7 col-sm-6 col-xs-12">
+              <h3>2. Kirim Usulan</h3>
+              Petugas Kepegawaian di Unit Kerja mengirimkan usulan yang sudah disetujui oleh Kepala Unit Kerjanya melalui aplikasi SIP kepada BKPSDM.
+            </div>
+            <div class="content_alur_pengusulan col-lg-5 col-md-5 col-sm-6 col-xs-12">
+              <?php
+              //if (empty($data_foto_profile)){ 
+              ?>
+              <img class="img_alur_pengusulan right" src="/assets/img/update.png">
+              <?php //} else { 
+              ?>
+              <!-- <img class="img_alur_pengusulan" src="/assets/img/login3.png"> -->
+              <?php //} 
+              ?>
+            </div>
+          </div>
           <?php //} 
           ?>
+
+
+
         </div>
-        <div class="content_alur_pengusulan col-lg-7 col-md-7 col-sm-6 col-xs-12">
-          <h3>1. Alur Pengusulan</h3>
-          Petugas Kepegawaian masing-masing unit kerja memiliki akses tersendiri untuk mengusulkan tambahan pegawai ASN.
-        </div>
-      </div>
-
-      <div class="wrap-alur-pengusulan right row">
-        <div class="content_alur_pengusulan col-lg-7 col-md-7 col-sm-6 col-xs-12">
-          <h3>2. Kirim Usulan</h3>
-          Petugas Kepegawaian di Unit Kerja mengirimkan usulan yang sudah disetujui oleh Kepala Unit Kerjanya melalui aplikasi SIP kepada BKPSDM.
-        </div>
-        <div class="content_alur_pengusulan col-lg-5 col-md-5 col-sm-6 col-xs-12">
-          <?php
-          //if (empty($data_foto_profile)){ 
-          ?>
-          <img class="img_alur_pengusulan right" src="/assets/img/update.png">
-          <?php //} else { 
-          ?>
-          <!-- <img class="img_alur_pengusulan" src="/assets/img/login3.png"> -->
-          <?php //} 
-          ?>
-        </div>
-      </div>
-      <?php //} 
-      ?>
-
-
-
-    </div>
-  </section>
+      </section>
 
 
 
@@ -200,8 +200,8 @@
 
 
 
-  <!-- ======= Info PMB ======= -->
-  <!-- <section id="team" class="faq section-bg">
+      <!-- ======= Info PMB ======= -->
+      <!-- <section id="team" class="faq section-bg">
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">

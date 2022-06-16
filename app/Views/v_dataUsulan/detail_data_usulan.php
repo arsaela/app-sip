@@ -25,8 +25,10 @@
 
           <div class="card">
             <div class="card-header">
-              <p style="float:left; font-size:18px;">OPD : <b style="color:red"><?php echo $getDetailUsulan[0]->instansi_nama; ?></b></br>
-                No. Usul : <?php echo $getDetailUsulan[0]->usulan_id; ?> </p>
+              <!-- <p style="float:left; font-size:18px;">OPD : <b style="color:red"><? php // echo $getDetailUsulan[0]->instansi_nama; 
+                                                                                      ?></b></br> -->
+              No. Usul : <? php // echo $getDetailUsulan[0]->usulan_id; 
+                          ?> </p>
             </div>
             <div class="card-body table-responsive">
               <table class="table table-bordered" id="datatable-list">

@@ -112,6 +112,33 @@ class DataUsulan extends BaseController
 		return view('v_dataUsulan/index', $data);
 	}
 
+	public function cetak_usulan_all_by_year()
+	{
+		// Halaman Data Cetak Usulan
 
-	
+		$data['title']  = "App-SIP | Data Formasi";
+		$data['page']   = "datausulan";
+		$data['nama']   = $this->session->get('nama');
+		$data['email']   = $this->session->get('email');
+
+		$username   = $this->session->get('username');
+		// $idInstansi  = $this->M_usulan->getInstansiByLogin($username)->getResult();
+
+		// $getIDInstansi = $idInstansi['0']->instansi_id;
+		// $data['getnamaInstansi'] = $this->M_pegawai->getnamaInstansi($getIDInstansi)->getResult();
+
+		//$data['getLihatUsulanByYear'] = $this->M_usulan->getLihatUsulanByYear($idInstansi['0']->instansi_id)->getResult();
+		$tahun_usulan_now = date("Y");
+		$data['getLihatUsulan'] = $this->M_usulan->getLihatUsulanByYear($tahun_usulan_now)->getResult();
+
+
+		$tahun_usulan_now = date("Y");
+		$data['getInstansiUsulan'] = $this->M_usulan->getInstansiUsulan($tahun_usulan_now)->getResult();
+
+		// echo "<pre>";
+		// print_r($data['getLihatUsulan']);
+		// die('sstttopopp');
+
+		return view('v_dataUsulan/cetak', $data);
+	}
 }

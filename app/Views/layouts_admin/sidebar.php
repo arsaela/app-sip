@@ -13,9 +13,10 @@
         <img src="/assets/adminlte3/dist/img/user1-128x128.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block"><?php //$nama; ?></a>
+        <a href="#" class="d-block"><?php //$nama; 
+                                    ?></a>
       </div> -->
-    </div> 
+    </div>
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
@@ -74,8 +75,10 @@
           </a>
         </li>
 
-        <li class="nav-item">
-          <a href="<?php echo base_url('dataalurpengusulan'); ?>" class="nav-link <?php if ($page == 'dataalurpengusulan');  ?>">
+        <!-- <li class="nav-item">
+          <a href="<?php //echo base_url('dataalurpengusulan'); 
+                    ?>" class="nav-link <?php //if ($page == 'dataalurpengusulan');  
+                                        ?>">
             <i class="nav-icon fas fa-question-circle"></i>
             <p>
               Data Alur Pengusulan
@@ -83,13 +86,14 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?php echo base_url('setbatasusulan'); ?>" class="nav-link <?php if ($page == 'SetBatasUsulan');  ?>">
+          <a href="<?php //echo base_url('setbatasusulan'); 
+                    ?>" class="nav-link //<?php if ($page == 'SetBatasUsulan');  ?>">
             <i class="nav-icon fas fa-gear"></i>
             <p>
               Setting Batas Pengusulan
             </p>
           </a>
-        </li>
+        </li> -->
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
