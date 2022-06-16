@@ -90,6 +90,22 @@
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="<?php echo base_url('importpegawai'); ?>" class="nav-link <?php if ($page == 'importpegawai');  ?>">
+            <i class="nav-icon fas fa-file-import"></i>
+            <p>
+              Import Data
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo base_url('exportpegawai'); ?>" class="nav-link <?php if ($page == 'exportpegawai');  ?>">
+            <i class="nav-icon fas fa-file-export"></i>
+            <p>
+              Eksport Data
+            </p>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
