@@ -24,7 +24,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Data Kekurangan Formasi "<?php echo $get_petugas_by_login->instansi_nama;?>"</h3>
+              <h3 class="card-title">Data Kekurangan Pegawai "<?php echo $get_petugas_by_login->instansi_nama;?>"</h3>
             </div>
 
             <div class="card-body table-responsive">
@@ -38,7 +38,7 @@
                     <th>Lokasi Unit Kerja</th>
                     <th>Jumlah Kebutuhan</th>
                     <th>Jumlah ASN</th>
-                    <th>Kekurangan Formasi</th>
+                    <th>Kekurangan Pegawai</th>
                     <th>Detail ASN</th>
                   </tr>
                 </thead>

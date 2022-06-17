@@ -22,36 +22,34 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-body table-responsive">
-
-
-             <table class="table table-bordered" id="datatable-list">
-
-
-             <thead>
-              <tr>
-                <th>No.</th>
-                <th>Nomor Usul</th>
-                <th>Nama Instansi / OPD</th>
-                <th>Status Usulan</th>
-                <th>Aksi</th> 
-              </tr>
-            </thead>
-            <tbody>
-              <?php $no = 1;
-              foreach ($getUsulan as $isi) { ?>
-                <tr>
-                  <td><?php echo $no; ?></td>
-                  <td><?php echo $isi->usulan_id; ?></td>
-                  <td><?php echo $isi->instansi_nama; ?></td>
-                  <td><?php echo "ket.status"; ?></td>
-                  <td>
-                    <a data-toggle='tooltip' data-placement='top' title='Detail'  href="<?php echo base_url('DataUsulan/detail_usulan/' . $isi->usulan_id); ?>" class="btn btn-warning"><i class="fa fa-folder-open-o "></i></a>
-                  </td>
-                </tr>
-                <?php $no++;
-              } ?>
-            </tbody>
-          </table>
+              <table class="table table-bordered" id="datatable-list">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Nomor Usul</th>
+                    <th>Nama Instansi / OPD</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php $no = 1;
+                  foreach ($getUsulan as $isi) { ?>
+                    <tr>
+                      <td><?php echo $no; ?></td>
+                      <td><?php echo $isi->usulan_id; ?></td>
+                      <td><?php echo $isi->instansi_nama; ?></td>
+                      <td>
+                        <a data-toggle='tooltip' data-placement='top' title='Detail' href="<?php echo base_url('DataUsulan/detail_usulan/' . $isi->usulan_id); ?>" class="btn btn-warning"><i class="fa fa-eye "></i></a>
+                      </td>
+                    </tr>
+                  <?php $no++;
+                  } ?>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
         </div>
         <!-- /.card-body -->
       </div>
@@ -63,10 +61,9 @@
 
 
 
-              <div>
-               <a data-toggle='tooltip' data-placement='top' title='Cetak Usulan'  href="<?php echo base_url('datausulan/cetak_usulan_all_by_year/'); ?>" class="btn btn-success"><i class="fa fa-print "> Cetak Usulan</i></a>
-             </div>
-
+      <div>
+        <a data-toggle='tooltip' data-placement='top' title='Cetak Usulan' href="<?php echo base_url('datausulan/cetak_usulan_all_by_year/'); ?>" class="btn btn-success"><i class="fa fa-print "> Cetak Semua Usulan Yang Disetujui</i></a>
+      </div>
 
 
 
@@ -75,7 +72,7 @@
 
 
     </div>
-  </div>
+</div>
 </div>
 </section>
 <!-- /.content -->

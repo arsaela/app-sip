@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Cetak Data Pegawai</title>
+    <title>Dokumen Data Usulan Pegawai</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
     <!-- jQuery -->
@@ -51,7 +51,7 @@
                         <!-- Default box -->
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Data Pegawai OPD <?php echo $getnamaInstansi[0]->instansi_nama; ?></h3>
+                                <h3 class="card-title">Data Usulan Pegawai <?php echo $getnamaInstansi[0]->instansi_nama; ?></h3>
 
                             </div>
 

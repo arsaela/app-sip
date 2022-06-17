@@ -33,8 +33,6 @@
                   <tr>
                     <th>No.</th>
                     <th>Formasi</th>
-                    <th>Formasi</th>
-                    <th>Lokasi Unit Kerja</th>
                     <th>Lokasi Unit Kerja</th>
                     <th>Jumlah Kebutuhan</th>
                     <th>Jumlah ASN</th>
@@ -46,9 +44,7 @@
                   foreach ($getDetailFormasi as $value) { ?>
                     <tr>
                       <td><?php echo $no; ?></td>
-                      <td><?php echo $value->formasi_id; ?></td>
                       <td><?php echo $value->jabatan_nama; ?></td>
-                      <td><?php echo $value->instansi_unor; ?></td>
                       <td><?php echo $value->instansi_unor_nama; ?></td>
                       <td><?php echo $value->formasi_jumlah; ?></td>
                       <td><?php echo $value->jumlahasn; ?></td>

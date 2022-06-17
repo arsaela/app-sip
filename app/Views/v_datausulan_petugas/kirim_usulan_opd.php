@@ -66,11 +66,11 @@
                         } else if ($value->status_usulan_id == 2) {
                           echo "<p class='bg_status_approve'>sudah kirim usulan</p>";
                         } else if ($value->status_usulan_id == 3) {
-                          echo "<p class='bg_status_reject'>belum diverifikasi</p>";
+                          echo "<p class='bg_status_reject'>approve usulan</p>";
                         } else if ($value->status_usulan_id == 4) {
-                          echo "<p class='bg_status_reject'>proses</p>";
+                          echo "<p class='bg_status_reject'>reject usulan</p>";
                         } else if ($value->status_usulan_id == 5) {
-                          echo "<p class='bg_status_approve'>sudah diverifikasi</p>";
+                          echo "<p class='bg_status_approve'>pending</p>";
                         } else {
                           echo "<p class='bg_status_pending'>Pending</p>";
                         }

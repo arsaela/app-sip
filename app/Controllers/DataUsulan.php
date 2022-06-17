@@ -112,7 +112,8 @@ class DataUsulan extends BaseController
 		return view('v_dataUsulan/index', $data);
 	}
 
-	public function cetak_usulan_all_by_year(){
+	public function cetak_usulan_all_by_year()
+	{
 		// Halaman Data Cetak Usulan
 
 		$data['title']  = "App-SIP | Data Formasi";
@@ -140,7 +141,4 @@ class DataUsulan extends BaseController
 
 		return view('v_dataUsulan/cetak', $data);
 	}
-
-
-	
 }

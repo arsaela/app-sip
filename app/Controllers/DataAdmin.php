@@ -119,28 +119,17 @@ class DataAdmin extends BaseController
             'admin_nama' => $admin_nama,
             'admin_no_hp' => $admin_no_hp,
             'admin_email' => $admin_email,
-            'password'    => $admin_password,
+        ];
+
+        $data2 = [
+            'username' => $username,
+            'password'    =>  base64_encode($this->encrypter->encrypt($admin_password)),
             'hak_akses'   => 'admin'
         ];
 
-        // //Cek Validasi Data Admin, Jika Data Tidak Valid 
-        // if ($this->form_validation->run($data, 'tambah_admin') == FALSE) {
-
-        //     $validasi = [
-        //         'error'   => true,
-        //         'username_error' => $this->form_validation->getErrors('username'),
-        //         'admin_nama' => $this->form_validation->getErrors('admin_nama'),
-        //         'admin_no_hp' => $this->form_validation->getErrors('admin_no_hp'),
-        //         'admin_email' => $this->form_validation->getErrors('admin_email'),
-        //         'password' => $this->form_validation->getErrors('password')
-        //     ];
-        //     echo json_encode($validasi);
-        // }
-
-        // //Data Valid
-        // else {
-        //Update Data Admin
-        $this->M_admin->update($id, $data);
+        //Update Data petugas
+        $this->M_admin->update_admin_in_admin($data);
+        $this->M_admin->update_admin_in_login($data2);
 
         $validasi = [
             'success'   => true
@@ -149,9 +138,9 @@ class DataAdmin extends BaseController
     }
 
     // Delete Data Admin
-    public function delete($id)
+    public function delete($username)
     {
-        $this->M_admin->delete($id);
+        $this->M_admin->delete($username);
     }
 
     // Datatable server side
