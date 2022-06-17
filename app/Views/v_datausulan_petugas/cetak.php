@@ -51,7 +51,7 @@
                         <!-- Default box -->
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Data Usulan Pegawai <?php echo $getnamaInstansi[0]->instansi_nama; ?></h3>
+                                <h3 class="card-title" style="text-align: center !important;float: unset !important; margin-bottom: 20px;"><strong>Data Usulan Pegawai <?php echo $getnamaInstansi[0]->instansi_nama; ?></strong></h3>
 
                             </div>
 
@@ -68,17 +68,26 @@
                                     </thead>
                                     <tbody>
                                         <?php $no = 1;
-                                        foreach ($getLihatUsulan as $value) {
-                                        ?>
-                                            <tr>
-                                                <td><?php echo $no; ?></td>
-                                                <td><?php echo $value->jabatan_nama; ?></td>
-                                                <td><?php echo $value->instansi_unor_nama; ?></td>
-                                                <td><?php echo $value->jumlah_usulan; ?></td>
+                                        if (!empty($getLihatUsulan)) {
+                                            foreach ($getLihatUsulan as $value) {
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $no; ?></td>
+                                                    <td><?php echo $value->jabatan_nama; ?></td>
+                                                    <td><?php echo $value->instansi_unor_nama; ?></td>
+                                                    <td><?php echo $value->jumlah_usulan; ?></td>
 
+                                                </tr>
+                                                <?php $no++;
+                                            }
+                                        } else { ?>
+                                            <tr>
+                                                <td colspan="4" style="text-align: center;">
+                                                    <span style="color:red; font-style: italic;">"Mohon Maaf, Silahkan lakukan ajuan usulan dan kirim usulan terlebih dahulu."</span>
+                                                </td>
                                             </tr>
-                                        <?php $no++;
-                                        } ?>
+                                            <?php  
+                                        }?>
 
                                     </tbody>
                                 </table>
@@ -99,15 +108,17 @@
             </div>
 
             <div style="float:right; margin-right: 30px;">
-
+               <?php $no = 1;
+               if (!empty($getLihatUsulan)) { ?>
                 <?php echo '<img src="data:' . $QR->getContentType() . ';base64,' . $QR->generate() . '" />'; ?>
-            </div>
-        </section>
-        <!-- /.content -->
-    </div>
+            <?php } ?>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
 
 
-    <!-- /.content-wrapper -->
+<!-- /.content-wrapper -->
 
 
 </body>
@@ -119,41 +130,41 @@
 </script>
 
 <style type="text/css">
-    @media print {
-        @page {
-            size: A4;
-            /* DIN A4 standard, Europe */
-            margin: 7mm 6mm 7mm 15mm;
-            font-size: 14px;
-        }
-
-        html,
-        body {
-            width: 210mm;
-            /* height: 297mm; */
-            height: 282mm;
-            font-size: 11px;
-            background: #FFF;
-            overflow: visible;
-        }
-
-        body {
-            padding-top: 15mm;
-        }
-
-        .back_to_page {
-            display: none;
-        }
+@media print {
+    @page {
+        size: A4;
+        /* DIN A4 standard, Europe */
+        margin: 7mm 6mm 7mm 15mm;
+        font-size: 14px;
     }
+
+    html,
+    body {
+        width: 210mm;
+        /* height: 297mm; */
+        height: 282mm;
+        font-size: 11px;
+        background: #FFF;
+        overflow: visible;
+    }
+
+    body {
+        padding-top: 15mm;
+    }
+
+    .back_to_page {
+        display: none;
+    }
+}
 </style>
 
 <style type="text/css" media="print">
-    /* masukan sintak CSS disini */
-    h3.card-title {
-        font-size: 25px;
-    }
+/* masukan sintak CSS disini */
+h3.card-title {
+    font-size: 25px;
+}
 
-    table#datatable-list {
-        font-size: 18px;
-    }
+table#datatable-list {
+    font-size: 18px;
+}
 </style>

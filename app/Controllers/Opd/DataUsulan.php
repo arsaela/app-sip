@@ -274,7 +274,12 @@ class DataUsulan extends BaseController
 		$getIDInstansi = $idInstansi['0']->instansi_id;
 		$data['getnamaInstansi'] = $this->M_pegawai->getnamaInstansi($getIDInstansi)->getResult();
 
-		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+		$tahun_usulan_now = date("Y");
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id,$tahun_usulan_now)->getResult();
+
+		// echo "<pre>";
+		// print_r($data['getLihatUsulan']);
+		// die('sttop');
 
 		$data['QR'] = $this->qrCode
 		->setText('QR code by codeitnow.in')
