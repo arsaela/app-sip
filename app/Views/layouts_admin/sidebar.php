@@ -84,9 +84,9 @@
           </a>
         </li>
 
-        <!-- <li class="nav-item">
-          <a href="<?php //echo base_url('dataalurpengusulan'); 
-                    ?>" class="nav-link <?php //if ($page == 'dataalurpengusulan');  
+        <li class="nav-item">
+          <a href="<?php echo base_url('dataalurpengusulan'); 
+                    ?>" class="nav-link <?php if ($page == 'dataalurpengusulan');  
                                         ?>">
             <i class="nav-icon fas fa-question-circle"></i>
             <p>
@@ -95,14 +95,33 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?php //echo base_url('setbatasusulan'); 
-                    ?>" class="nav-link //<?php if ($page == 'SetBatasUsulan');  ?>">
+          <a href="<?php echo base_url('setbatasusulan'); 
+                    ?>" class="nav-link <?php if ($page == 'SetBatasUsulan');  ?>">
             <i class="nav-icon fas fa-gear"></i>
             <p>
               Setting Batas Pengusulan
             </p>
           </a>
-        </li> -->
+
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo base_url('importpegawai'); ?>" class="nav-link <?php if ($page == 'importpegawai');  ?>">
+            <i class="nav-icon fas fa-file-import"></i>
+            <p>
+              Import Data
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo base_url('exportpegawai'); ?>" class="nav-link <?php if ($page == 'exportpegawai');  ?>">
+            <i class="nav-icon fas fa-file-export"></i>
+            <p>
+              Eksport Data
+            </p>
+          </a>
+        </li>
+
+        </li> 
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
