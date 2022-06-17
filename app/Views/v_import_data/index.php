@@ -35,10 +35,10 @@
             <div class="card-header">
               <h3 class="card-title">Import Data</h3><br>
               <div class="mt-1">
-             <?php echo form_open_multipart('importpegawai/import') ?>
+             <?php echo form_open_multipart('importpegawai/submitImport') ?>
                 <div class="row form-group">
                     <div class="col-md-3">
-                        <input class="form-control" type="file" id="formFile" required accept=".xls, .xlsx">
+                        <input class="form-control" name="fileExcel" type="file" id="formFile" required accept=".xls, .xlsx">
                     </div>
                     <div class="col-md-3">
                         <button class="btn btn-success" type="submit">import</button>
