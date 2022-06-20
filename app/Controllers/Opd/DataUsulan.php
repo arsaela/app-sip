@@ -243,7 +243,11 @@ class DataUsulan extends BaseController
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
-		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+		// $data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+		$tahun_usulan_now = date("Y");
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id,$tahun_usulan_now)->getResult();
+
+
 		$data['get_tahun_usulan'] = $tahun_usulan;
 
 		return view('v_datausulan_petugas/detail_usulan_by_year', $data);
@@ -375,7 +379,10 @@ class DataUsulan extends BaseController
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
-		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+		// $data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+
+		$tahun_usulan_now = date("Y");
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id,$tahun_usulan_now)->getResult();
 
 		return view('v_datausulan_petugas/rekap_usulan_opd', $data);
 	}
