@@ -10,6 +10,8 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -29,22 +31,31 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-
+        <?php
+		if(session()->getFlashdata('message')){
+		?>
+			<div class="alert alert-info">
+				<?= session()->getFlashdata('message') ?>
+			</div>
+		<?php
+		}
+		?>
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Import Data</h3><br>
               <div class="mt-1">
-             <?php echo form_open_multipart('importpegawai/submitImport') ?>
-                <div class="row form-group">
+             <form method="post" action="Importpegawai/submitImport" enctype="multipart/form-data">
+             <?= csrf_field(); ?>   
+             <div class="row form-group">
                     <div class="col-md-3">
-                        <input class="form-control" name="fileExcel" type="file" id="formFile" required accept=".xls, .xlsx">
+                        <input class="form-control" name="fileexcel" type="file" id="file" required accept=".xls, .xlsx">
                     </div>
                     <div class="col-md-3">
                         <button class="btn btn-success" type="submit">import</button>
                     </div>
                 </div>
-                <?php echo form_close() ?>
+             </form>
               </div>
             </div>
             <div class="card-body table-responsive">

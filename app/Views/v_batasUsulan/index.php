@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -37,7 +41,11 @@
             </div>
             <div class="container card-body">
               <?php foreach ($batasPengusulan as $batas) : ?>
-                
+               <?php $time=$batas['waktu'];
+               $date = $batas['waktu'];
+               echo date('d F Y', strtotime(str_replace('/', '-', $date)));
+               ?>
+
               <?php endforeach; ?>
               <form class="row" action="/SetBatasUsulan/update/<?=$batas['id']?>" method="post">
               <?= csrf_field(); ?>
@@ -45,7 +53,7 @@
                 <label for="date" class="col-2 col-form-label">Batas Waktu</label>
                 <div class="col-3">
                   <div class="input-group date" id="date">
-                    <input type="text" class="form-control" id="datepicker" name="waktu" value="<?=$batas['waktu']?>"/>
+                    <input type="text" class="form-control" id="date" name="waktu" placeholder="dd-mm-yyyy"/>
                     
                   </div>
                 </div>
@@ -70,9 +78,21 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('script') ?>
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+
+    <script>
+        $(document).ready(function() {
+            var date_input = $('input[name="waktu"]'); //our date input has the name "date"
+           
+            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+            date_input.datepicker({
+                format: 'yyyy/mm/dd',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+            })
+        })
+    </script>
 <?= $this->endSection() ?>

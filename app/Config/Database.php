@@ -86,5 +86,7 @@ class Database extends Config
         if (ENVIRONMENT === 'testing') {
             $this->defaultGroup = 'tests';
         }
+        
+        // if (!defined('BASEPATH')) exit('No direct script access allowed');
     }
 }
