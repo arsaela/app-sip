@@ -48,6 +48,15 @@
             </p>
           </a>
         </li>
+        <!-- Data Petugas -->
+        <li class="nav-item">
+          <a href="<?php echo base_url('datapegawai'); ?>" class="nav-link <?php if ($page == 'datapegawai') echo " active";  ?>">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Data Pegawai
+            </p>
+          </a>
+        </li>
         <!-- Data Formasi -->
         <li class="nav-item">
           <a href="<?php echo base_url('datainstansi'); ?>" class="nav-link <?php if ($page == 'datainstansi') echo " active";  ?>">
