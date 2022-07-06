@@ -32,7 +32,7 @@
         </li>
         <!-- Data Admin -->
         <li class="nav-item">
-          <a href="<?php echo base_url('dataadmin1'); ?>" class="nav-link <?php if ($page == 'dataadmin1') echo " active";  ?>">
+          <a href="<?php echo base_url('dataadmin'); ?>" class="nav-link <?php if ($page == 'dataadmin') echo " active";  ?>">
             <i class="nav-icon fas fa-user"></i>
             <p>
               Data Admin
