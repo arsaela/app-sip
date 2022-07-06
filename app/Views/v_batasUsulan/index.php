@@ -53,7 +53,7 @@
                 <label for="date" class="col-2 col-form-label">Batas Waktu</label>
                 <div class="col-3">
                   <div class="input-group date" id="date">
-                    <input type="text" class="form-control" id="date" name="waktu" placeholder="dd-mm-yyyy"/>
+                    <input type="text" class="form-control" id="date" name="waktu" placeholder="<?php echo $batas['waktu'];?>"/>
                     
                   </div>
                 </div>

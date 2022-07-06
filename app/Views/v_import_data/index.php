@@ -45,7 +45,7 @@
             <div class="card-header">
               <h3 class="card-title">Import Data</h3><br>
               <div class="mt-1">
-             <form method="post" action="Importpegawai/submitImport" enctype="multipart/form-data">
+             <form method="post" action="Importpegawai/simpanExcel" enctype="multipart/form-data">
              <?= csrf_field(); ?>   
              <div class="row form-group">
                     <div class="col-md-3">

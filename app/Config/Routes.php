@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/SetBatasUsulan/edit/(:segment)', 'SetBatasUsulan::edit/$1');
+$routes->delete('/dataadmin1/(:segment)', 'DataAdmin1::delete/$1');
 
 /*
  * --------------------------------------------------------------------

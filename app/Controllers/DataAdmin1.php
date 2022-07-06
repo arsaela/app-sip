@@ -6,7 +6,7 @@ use App\Models\AdminModel;
 use App\Models\UserModel;
 use Config\Services;
 
-class DataAdmin extends BaseController
+class DataAdmin1 extends BaseController
 {
     protected $encrypter;
     protected $M_admin;
@@ -14,49 +14,65 @@ class DataAdmin extends BaseController
     protected $request;
     protected $form_validation;
     protected $session;
+    protected $db;
 
     public function __construct()
     {
-        $this->encrypter = \Config\Services::encrypter();
         $this->request = Services::request();
+        $this->db = db_connect();
+        $this->encrypter = \Config\Services::encrypter();
         $this->M_admin = new AdminModel($this->request);
+        // $this->M_user = new UserModel($this->request);
         $this->form_validation =  \Config\Services::validation();
         $this->session = \Config\Services::session();
-    }
-
-    // Tombol Aksi Pada Tabel Data Admin
-    private function _action($idAdmin)
-    {
-        $link = "
-			<a data-toggle='tooltip' data-placement='top' class='btn-editAdmin' title='Update' value='" . $idAdmin . "'>
-	      		<button type='button' class='btn btn-outline-success btn-xs' data-toggle='modal' data-target='#modalEdit'><i class='fa fa-edit'></i></button>
-	      	</a>
-	      
-	      	<a href='" . base_url('dataadmin/delete/' . $idAdmin) . "' class='btn-deleteAdmin' data-toggle='tooltip' data-placement='top' title='Delete'>
-	      		<button type='button' class='btn btn-outline-danger btn-xs'><i class='fa fa-trash'></i></button>
-	      	</a>
-	    ";
-        return $link;
+        helper('form');
     }
 
     // Halaman Data Admin
     public function index()
     {
+        $db=\Config\Database::connect();
         $data['title']  = "App-SIP | Data Admin";
-        $data['page']   = "dataadmin";
+        $data['page']   = "dataadmin1";
         $data['nama']   = $this->session->get('nama');
         $data['email']   = $this->session->get('email');
+        $data['admin']   = $db->query('SELECT *
+        FROM tbl_admin, tbl_login
+        WHERE tbl_admin.username = tbl_login.username;');
+        $data['min'] = $data['admin']->getResultArray();
+        // ->select('*')
+        // ->join('tbl_login', 'tbl_login.username = tbl_admin.username')
+        //->join('tbl_unor', 'tbl_usulan.instansi_unor = tbl_unor.instansi_unor')
+        // ->where('tbl_admin.username', $yearnow)
+        // ->get();
+    //     foreach($data['admin'] as $row){
+    //    dd($row);
+    //     }
+    // dd($data['min']);
         return view('v_dataadmin/index1', $data);
     }
 
     // Add Data Admin
     public function add()
     {
-        $username = $this->request->getPost('username2');
-        $admin_nama = $this->request->getPost('admin_nama2');
-        $admin_no_hp = $this->request->getPost('admin_no_hp2');
-        $admin_email = $this->request->getPost('admin_email2');
-        $admin_password = $this->request->getPost('admin_password2');
+        // if(!$this->validate([
+        //     'username' => 'required|is_unique[tbl_admin.username]',
+        //     'admin_nama' => 'required',
+        //     'admin_no_hp' => 'required',
+        //     'admin_email' => 'required',
+        //     'password' => 'required'
+        // ])){
+        //     $validation=\config\Services::validation();
+        //     dd($validation);
+        //     return redirect()->to('dataadmin1');
+        // }
+
+        $username = $this->request->getPost('username');
+        $admin_nama = $this->request->getPost('admin_nama');
+        $admin_no_hp = $this->request->getPost('admin_no_hp');
+        $admin_email = $this->request->getPost('admin_email');
+        $password = $this->request->getPost('password');
+        $hak_akses = $this->request->getPost('hak_akses');
 
         //Data Admin
         $data = [
@@ -68,8 +84,8 @@ class DataAdmin extends BaseController
 
         $data2 = [
             'username' => $username,
-            'password'    =>  base64_encode($this->encrypter->encrypt($admin_password)),
-            'hak_akses'   => 'admin'
+            'password'    =>  base64_encode($this->encrypter->encrypt($password)),
+            'hak_akses'   => $hak_akses
         ];
 
         // //Cek Validasi Data Admin, Jika Data Tidak Valid 
@@ -96,6 +112,7 @@ class DataAdmin extends BaseController
             'success'   => true
         ];
         echo json_encode($validasi);
+        return redirect()->to('dataadmin1');
     }
 
     // Menampilkan Data Admin Pada Modal Edit Data Admin
@@ -143,14 +160,15 @@ class DataAdmin extends BaseController
     public function delete($username)
     {
         $this->db->query("DELETE tbl_admin , tbl_login  FROM tbl_admin  INNER JOIN tbl_login  
-        WHERE tbl_admin.username = tbl_login.username and tbl_admin.username = $username");
+        WHERE tbl_admin.username = tbl_login.username and tbl_admin.username = '$username'");
         //  $this->M_admin->delete($username);
-        //  $this->M_user->delete($username);
-        
-
-//         DELETE tbl_admin , tbl_login  FROM tbl_admin  INNER JOIN tbl_login  
-// WHERE tbl_admin.username = tbl_login.username and tbl_admin.username = 'tes'
-        // $this->M_admin->delete($username);
+        // $this->db->query("DELETE tbl_admin , tbl_login  FROM tbl_admin  INNER JOIN tbl_login  
+        // WHERE tbl_admin.username = tbl_login.username and tbl_admin.username = 'tes'");
+        $validasi = [
+            'success'   => true
+        ];
+        echo json_encode($validasi);
+        return redirect()->to('dataadmin1');
     }
 
     // Datatable server side

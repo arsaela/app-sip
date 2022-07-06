@@ -15,7 +15,7 @@ class Login extends BaseController
     {
         $this->encrypter = \Config\Services::encrypter();
         $this->form_validation =  \Config\Services::validation();
-        $this->M_user = new UserModel();
+        $this->M_user = new UserModel($this->request);
         $this->session = \Config\Services::session();
     }
 

@@ -102,6 +102,63 @@ class ImportPegawai extends BaseController
 	
 	}
 
+	public function simpanExcel()
+		{
+			ini_set('max_execution_time', -1); 
+            ini_set('memory_limit','500000M');
+            $file_excel = $this->request->getFile('fileexcel');
+			$ext = $file_excel->getClientExtension();
+			if($ext == 'xls') {
+				$render = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
+			} else {
+				$render = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+			}
+			$spreadsheet = $render->load($file_excel);
 	
+			$data = $spreadsheet->getActiveSheet()->toArray();
+			foreach($data as $x => $row) {
+				if ($x == 0) {
+					continue;
+				}
+				
+				// $Nis = $row[0];
+				// $NamaSiswa = $row[1];
+				// $Alamat = $row[2];
+                $pegawai_nama = $row['0'];
+				$pegawai_status = $row['1'];
+				$instansi_id = $row['2'];
+				$instansi_unor = $row['3'];
+				$jabatan_kode = $row['4'];
+				$pegawai_nip = $row['5'];
+				$pegawai_gol = $row['6'];
+	
+				$db = \Config\Database::connect();
+
+				$cekNip = $db->table('tbl_pegawai')->getWhere(['pegawai_nip'=>$pegawai_nip])->getResult();
+
+				if(count($cekNip) > 0) {
+					session()->setFlashdata('message','<b style="color:red">Data Gagal di Import NIS ada yang sama</b>');
+				} else {
+	
+				$simpandata = [
+					// 'Nis' => $Nis, 
+                    // 'NamaSiswa' => $NamaSiswa, 
+                    // 'Alamat'=> $Alamat,
+                    'pegawai_nama'=>$pegawai_nama,
+					'pegawai_status'=>$pegawai_status,
+					'instansi_id'=>$instansi_id,
+					'instansi_unor'=>$instansi_unor,
+					'jabatan_kode'=>$jabatan_kode,
+					'pegawai_nip'=>$pegawai_nip,
+					'pegawai_gol'=>$pegawai_gol
+				];
+	
+				$db->table('tbl_pegawai')->insert($simpandata);
+				session()->setFlashdata('message','Berhasil import excel'); 
+			}
+		}
+			
+			return redirect()->to('Importpegawai');
+		}
 	
 }
