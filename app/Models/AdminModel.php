@@ -104,6 +104,18 @@ class AdminModel extends Model
 		$tbl_storage = $this->db->table($this->table);
 		return $tbl_storage->countAllResults();
 	}
+
+	// public function delete_admin_in_login($username)
+	// {
+	// 	$builder = $this->db->table('tbl_login');
+	// 	return $builder->replace($data);
+	// }
+
+	 public function delete_admin_in_login($username)
+    {
+        $builder = $this->db->table('tbl_login');
+        return $builder->delete('username', $username);
+    }
 }
 
 /* End of file AdminModel.php */

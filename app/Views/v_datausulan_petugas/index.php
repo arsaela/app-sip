@@ -47,26 +47,26 @@
                     <th>Jumlah ASN</th>
                     <th>Kekurangan Formasi</th>
                     <th>Detail ASN</th>
-                    <th>Ajukan Usulan</th>
+<th>Ajukan Usulan</th>
                     <?php $no = 1;
                     foreach ($getDetailFormasiUsulan as $value) {  
                      $yearnow = date("Y");
                      
                      if($value->tahun_usulan==$yearnow AND $value->status_usulan_id=='1'){?>
                       
-                     <?php } 
-                   } ?>
-                 </tr>
-               </thead>
-               <tbody>
-                <?php $no = 1;
-                foreach ($getDetailFormasiUsulan as $value) {
+                    <?php } 
+                  } ?>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php $no = 1;
+                  foreach ($getDetailFormasiUsulan as $value) {
 
-                  $kekurangan_formasi = ($value->formasi_jumlah) - ($value->jumlahasn) - ($value->jumlah_usulan);
-                  if ($kekurangan_formasi >= 0 and !empty($kekurangan_formasi)) {
-                    ?>
-                    <tr>
-                      <td><?php echo $no; ?></td>
+                    $kekurangan_formasi = ($value->formasi_jumlah) - ($value->jumlahasn) - ($value->jumlah_usulan);
+                    if ($kekurangan_formasi >= 0 and !empty($kekurangan_formasi)) {
+                      ?>
+                      <tr>
+                        <td><?php echo $no; ?></td>
                         <!-- <td><?php //echo $value->formasi_id; 
                       ?></td> -->
 
@@ -119,7 +119,7 @@
 
 
                        <?php  
-                       
+                   
                       // $yearnow = date("Y");
                        if(($getDetailFormasiUsulan[1]->status_usulan_id<>'2') ){?>
                         <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-kekuranganformasi="<?= $kekurangan_formasi; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a>

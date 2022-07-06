@@ -25,14 +25,14 @@ class DataAdmin extends BaseController
     }
 
     // Tombol Aksi Pada Tabel Data Admin
-    private function _action($idAdmin)
+    private function _action($username)
     {
         $link = "
-			<a data-toggle='tooltip' data-placement='top' class='btn-editAdmin' title='Update' value='" . $idAdmin . "'>
+			<a data-toggle='tooltip' data-placement='top' class='btn-editAdmin' title='Update' value='" . $username . "'>
 	      		<button type='button' class='btn btn-outline-success btn-xs' data-toggle='modal' data-target='#modalEdit'><i class='fa fa-edit'></i></button>
 	      	</a>
 	      
-	      	<a href='" . base_url('dataadmin/delete/' . $idAdmin) . "' class='btn-deleteAdmin' data-toggle='tooltip' data-placement='top' title='Delete'>
+	      	<a href='" . base_url('dataadmin/delete/' . $username) . "' class='btn-deleteAdmin' data-toggle='tooltip' data-placement='top' title='Delete'>
 	      		<button type='button' class='btn btn-outline-danger btn-xs'><i class='fa fa-trash'></i></button>
 	      	</a>
 	    ";
@@ -140,12 +140,26 @@ class DataAdmin extends BaseController
     }
 // TESR
     // Delete Data Admin
+<<<<<<< HEAD
     // public function delete($username)
     // {
     //     $this->db->query("DELETE tbl_admin , tbl_login  FROM tbl_admin  INNER JOIN tbl_login  
     //     WHERE tbl_admin.username = tbl_login.username and tbl_admin.username = $username");
 
     // }
+=======
+    public function delete($username)
+    {
+        //$this->M_admin->delete($username);
+        $delete_admin = $this->M_admin->delete_admin_in_login($username);
+
+
+        echo "<pre>";
+        print_r($delete_admin);
+        die('stttop');
+         // $getBarang = $model->getBarang($id)->getRow();
+    }
+>>>>>>> 779c2a3ce586419f46901129e38a83515e80cd8d
 
     // Datatable server side
     public function ajaxDataAdmin()

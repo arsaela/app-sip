@@ -26,7 +26,7 @@ if (session()->getFlashData('error')) {
         </button>
       </div>
 
-      <form id="formInputDataAdmin">
+      <form id="formInputDataAdmin" action="dataadmin/add" method="post">
         <div class="modal-body">
           <div class="form-group">
             <label for="username">Username</label>
@@ -41,10 +41,7 @@ if (session()->getFlashData('error')) {
           <div class="form-group">
             <label for="admin_no_hp">No. HP</label>
             <input type="text" class="form-control" name="admin_no_hp2" placeholder="No. HP">
-            <small id="admin_no_hp_error" class="text-d
-
-
-            anger"> </small>
+            <small id="admin_no_hp_error" class="text-danger"> </small>
           </div>
           <div class="form-group">
             <label for="admin_email">Email</label>

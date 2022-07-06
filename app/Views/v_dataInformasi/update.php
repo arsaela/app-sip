@@ -35,7 +35,7 @@
                             <div class="form-group">
                                 <label for="">Content</label>
                                 <div>
-                                <textarea class="form-control" name="informasi_content" required="required"><?php echo $informasi_by_id->informasi_content;?></textarea>
+                                <textarea cols="10" rows="10" class="form-control" name="informasi_content" required="required"><?php echo $informasi_by_id->informasi_content;?></textarea>
                                 </div>
                             </div>
                             <input type="hidden" value="<?= $informasi_by_id->informasi_id;?>" name="informasi_id">

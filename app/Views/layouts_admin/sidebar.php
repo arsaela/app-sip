@@ -85,9 +85,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="<?php echo base_url('dataalurpengusulan'); 
-                    ?>" class="nav-link <?php if ($page == 'dataalurpengusulan');  
-                                        ?>">
+          <a href="<?php echo base_url('dataalurpengusulan'); ?>" class="nav-link <?php if ($page == 'dataalurpengusulan'); ?>">
             <i class="nav-icon fas fa-question-circle"></i>
             <p>
               Data Alur Pengusulan
@@ -120,7 +118,7 @@
             </p>
           </a>
         </li>
-
+<!-- TEST -->
         </li> 
       </ul>
     </nav>
