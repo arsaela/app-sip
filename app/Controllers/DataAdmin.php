@@ -166,7 +166,7 @@ class DataAdmin extends BaseController
             'success'   => true
         ];
         echo json_encode($validasi);
-        return redirect()->to('dataadmin1');
+        return redirect()->to('dataadmin');
     }
 
     // Datatable server side
