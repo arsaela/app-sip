@@ -7,31 +7,9 @@ use CodeIgniter\Model;
 
 class importDataModel extends Model
 {
-	public function alldata(){
-        return $this->db->table('tbl_pegawai')->get()->getResultArray();
-    }
-
-    public function cek_data($pegawai_nip){
-        return $this->db->table('tbl_pegawai')
-        ->where('pegawai_nip', '$pegawai_nip')
-        ->get()->getRowArray();
-    }
-    
-    public function add($data){
-        $this->db->table('tbl_pegawai')->insert($data);
-    }
-
-	public function import_data_pelamar_excel($data){
-		$insert = $this->db->insert_batch('pelamar_list', $data);
-		return $insert;
-		// if($insert){
-		// 	return true;
-		// } else {
-		// 	echo "gagal";
-		// 	die('data gagal stoppp');
-		// }
-	}
-
+	protected $table = 'tbl_pegawai';
+	protected $primaryKey = 'id';
+	protected $allowedFields =['pegawai_nama','pegawai_status','instansi_id','instansi_unor','jabatan_kode','pegawai_nip','pegawai_gol'];
 
 }
 

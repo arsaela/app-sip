@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use App\Models\BatasPengusulanModel;
+use CodeIgniter\I18n\Time;
 
 class SetBatasUsulan extends BaseController
 {
@@ -15,12 +16,15 @@ class SetBatasUsulan extends BaseController
 
     public function index(){
         $batasPengusulan = $this->BatasPengusulanModel->findAll();
+        $time = $this->BatasPengusulanModel->findColumn('waktu');
+
         $data=[
             'title' => 'App-SIP | Set Batas Usulan',
             'page' => 'SetBatasUsulan',
             'nama' => $this->session->get('nama'),
             'email' => $this->session->get('email'),
-            'batasPengusulan' => $batasPengusulan
+            'batasPengusulan' => $batasPengusulan,
+            'time' => $time
         ];
 
         // $BatasPengusulanModel = new BatasPengusulanModel();

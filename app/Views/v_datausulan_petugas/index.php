@@ -127,8 +127,7 @@
                       else {
 
                       }?>
-
-                      <!-- Modal Ajuan Usulan Formasi-->
+                      <!-- Modal Ajuan Usulan Formasi -->
                       <form action="/opd/DataUsulan/inputusulanopd" method="post" id="frm-inputusulan">
                         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
