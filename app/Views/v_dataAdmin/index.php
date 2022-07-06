@@ -192,6 +192,9 @@
     $('body').on('click', '.btn-deleteAdmin', function(e) {
       e.preventDefault();
       const url = $(this).attr('href');
+      var getusername = $( this ).text();
+      // $( "select#foo" ).val();
+      alert("urlnya = "+url);
 
       Swal.fire({
         title: 'Hapus Data?',

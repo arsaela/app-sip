@@ -1,3 +1,4 @@
+
 <?= $this->extend('layouts_admin/template_admin') ?>
 
 <?= $this->section('content') ?>
@@ -57,7 +58,11 @@
                   foreach ($getAlurPengusulan as $isi) { ?>
                     <tr>
                       <td><?php echo $no; ?></td>
-                      <td><?php echo $isi->alur_pengusulan_img; ?></td>
+                      <td>
+                        <?php //echo $isi->alur_pengusulan_img; ?>
+                        <img src=" <?php echo base_url('uploads/'.$isi->alur_pengusulan_img) ?> " width="100">
+
+                      </td>
                       <td><?php echo $isi->alur_pengusulan_detail; ?></td>
                       <td>
                   

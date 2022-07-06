@@ -11,6 +11,7 @@ class AlurPengusulanModel extends Model
 	// protected $column_order = [null, 'tgl_buka', 'tgl_tutup', 'tgl_pengumuman', null];
 	// protected $column_search = ['tgl_buka', 'tgl_tutup', 'tgl_pengumuman'];
 	protected $order = ['alur_pengusulan_id' => 'desc'];
+	protected $allowedFields = ["alur_pengusulan_img","alur_pengusulan_detail"];
 	protected $request;
 	protected $db;
 	protected $dt;
@@ -36,20 +37,26 @@ class AlurPengusulanModel extends Model
         return $builder->insert($data);
     }
 
-	public function get_informasi_by_id($id)
+	public function get_alur_pengusulan_by_id($id)
     {
-        $query =  $this->db->table('tbl_informasi')
+        $query =  $this->db->table('tbl_alur_pengusulan')
 			->select('*')
-			->where('tbl_informasi.informasi_id', $id)
+			->where('tbl_alur_pengusulan.alur_pengusulan_id', $id)
 			->get();
 		return $query;
     }
 
-	public function updateInformasi($data,$id)
+	public function updatealurpengusulan($data,$id)
     {
-        $builder =  $this->db->table('tbl_informasi');
-        $builder->where('informasi_id', $id);
+        $builder =  $this->db->table('tbl_alur_pengusulan');
+        $builder->where('alur_pengusulan_id', $id);
         return $builder->update($data);
+    }
+
+     public function edit_data($id,$data)
+    {
+        $query = $this->db->table($this->table)->update($data, array('alur_pengusulan_id' => $id));
+        return $query;
     }
 
 
