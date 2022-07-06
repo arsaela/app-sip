@@ -138,7 +138,7 @@ class DataAdmin extends BaseController
         ];
         echo json_encode($validasi);
     }
-
+// TESR
     // Delete Data Admin
     // public function delete($username)
     // {
