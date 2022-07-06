@@ -140,12 +140,12 @@ class DataAdmin extends BaseController
     }
 
     // Delete Data Admin
-    public function delete($username)
-    {
-        $this->db->query("DELETE tbl_admin , tbl_login  FROM tbl_admin  INNER JOIN tbl_login  
-        WHERE tbl_admin.username = tbl_login.username and tbl_admin.username = $username");
+    // public function delete($username)
+    // {
+    //     $this->db->query("DELETE tbl_admin , tbl_login  FROM tbl_admin  INNER JOIN tbl_login  
+    //     WHERE tbl_admin.username = tbl_login.username and tbl_admin.username = $username");
 
-    }
+    // }
 
     // Datatable server side
     public function ajaxDataAdmin()
