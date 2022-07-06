@@ -144,13 +144,7 @@ class DataAdmin extends BaseController
     {
         $this->db->query("DELETE tbl_admin , tbl_login  FROM tbl_admin  INNER JOIN tbl_login  
         WHERE tbl_admin.username = tbl_login.username and tbl_admin.username = $username");
-        //  $this->M_admin->delete($username);
-        //  $this->M_user->delete($username);
-        
 
-//         DELETE tbl_admin , tbl_login  FROM tbl_admin  INNER JOIN tbl_login  
-// WHERE tbl_admin.username = tbl_login.username and tbl_admin.username = 'tes'
-        // $this->M_admin->delete($username);
     }
 
     // Datatable server side
