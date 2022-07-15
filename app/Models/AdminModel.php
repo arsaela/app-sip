@@ -78,6 +78,24 @@ class AdminModel extends Model
 		$builder = $this->db->table('tbl_admin');
 		return $builder->replace($data);
 	}
+
+public function update_admin($data,$id)
+    {
+        $builder =  $this->db->table('tbl_admin');
+        $builder->where('id', $id);
+        return $builder->update($data);
+    }
+
+	public function getAdmin()
+	{
+		$query =  $this->db->table('tbl_admin')
+			->select('*')
+			->get();
+		return $query;
+	}
+
+
+
 	public function update_admin_in_login($data2)
 	{
 		$builder2 = $this->db->table('tbl_login');
@@ -115,6 +133,16 @@ class AdminModel extends Model
     {
         $builder = $this->db->table('tbl_login');
         return $builder->delete('username', $username);
+    }
+
+
+    	public function get_admin_by_id($id)
+    {
+        $query =  $this->db->table('tbl_admin')
+			->select('*')
+			->where('tbl_admin.id', $id)
+			->get();
+		return $query;
     }
 }
 

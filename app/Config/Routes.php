@@ -34,7 +34,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/SetBatasUsulan/edit/(:segment)', 'SetBatasUsulan::edit/$1');
 $routes->delete('/dataadmin/(:segment)', 'DataAdmin::delete/$1');
-
+//$routes->get('notification', 'MessageController::showSweetAlertMessages');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -1,48 +1,111 @@
-<div class="modal fade" id="modalEdit">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Update Data Admin</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form id="formUpdateDataAdmin">
-        <div class="modal-body">
-          <input type="hidden" name="idAdmin">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" readonly name="username2" placeholder="Username">
-            <small id="username_error" class="text-danger"> </small>
-          </div>
-          <div class="form-group">
-            <label for="admin_nama">Nama Admin</label>
-            <input type="text" class="form-control" name="admin_nama2" placeholder="Nama Admin">
-            <small id="admin_nama_error" class="text-danger"> </small>
-          </div>
-          <div class="form-group">
-            <label for="admin_no_hp">No. HP</label>
-            <input type="number" class="form-control" name="admin_no_hp2" placeholder="No. HP">
-            <small id="admin_no_hp_error" class="text-danger"> </small>
-          </div>
-          <div class="form-group">
-            <label for="admin_email">Email</label>
-            <input type="email" class="form-control" name="admin_email2" placeholder="Email">
-            <small id="admin_email_error" class="text-danger"> </small>
-          </div>
-          <div class="form-group">
-            <label for="admin_password">Password</label>
-            <input type="password" class="form-control" name="admin_password2" placeholder="Password">
-            <small id="admin_password_error" class="text-danger"> </small>
-          </div>
+<?= $this->extend('layouts_admin/template_admin') ?>
+
+<?= $this->section('content') ?>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-12">
+          <!-- <h1>Data Informasi</h1> -->
         </div>
-      </form>
-      <div class="modal-footer justify-content-between">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" id="btn-updateDataAdmin" class="btn btn-primary">Save</button>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- Main content -->
+  <section class="content">
+
+
+
+    <div class="swal" data-swal="<?php echo session()->get('message');?>"> </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <?php
+        if (session()->get('err')){
+          echo "<div class='alert alert-danger p-0 pt-2' role='alert'>". session()->get('err')."</div>";
+          session()->remove('err');
+        }
+        ?>
       </div>
     </div>
-    <!-- /.modal-content -->
+
+
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+
+
+          <!-- content update data -->
+          <div class="card">
+            <div class="card-header bg-info text-white">
+              <h4 class="card-title">Form Update Admin</h4>
+            </div>
+            <div class="card-body">
+              <form method="post" action="<?= base_url('dataadmin/save_update_admin');?>">
+                <div class="form-group">
+                  <label for="">Username</label>
+                  <input type="text" value="<?= $admin_by_id->username;?>" name="username" required class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="">Nama</label>
+                  <div>
+                    <input type="text" value="<?php echo $admin_by_id->admin_nama;?>" name="admin_nama" required class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="">No HP</label>
+                  <div>
+                   <input type="text" value="<?php echo $admin_by_id->admin_no_hp;?>" name="admin_no_hp" required class="form-control">
+                 </div>
+               </div>
+
+               <div class="form-group">
+                <label for="">Email</label>
+                <div>
+                  <input type="text" value="<?php echo $admin_by_id->admin_email;?>" name="admin_email" required class="form-control">
+                </div>
+              </div>
+              <input type="hidden" value="<?= $admin_by_id->id;?>" name="admin_id">
+              <button class="btn btn-success">Save</button>
+            </form>
+          </div>
+        </div>
+        <!-- end content update data -->
+
+
+      </div>
+    </div>
   </div>
-  <!-- /.modal-dialog -->
+</section>
+<!-- /.content -->
+
 </div>
+
+
+
+
+
+<!-- /.content-wrapper -->
+<?= $this->endSection() ?>
+
+
+  <?= $this->section('script') ?>
+  <script>
+    const swal = $('.swal').data('swal');
+    // alert('tesssku');
+    if (swal) {
+      Swal.fire({
+        title: 'Success',
+        text: swal,
+        icon:'success'
+
+      })
+    }
+
+  </script>
+  <?= $this->endSection() ?>

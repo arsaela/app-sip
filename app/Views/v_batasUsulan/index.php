@@ -37,23 +37,28 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Set Batas Pengusulan</h3>
+              <h3 class="card-title">Setting Batas Pengusulan</h3>
             </div>
             <div class="container card-body">
               <?php foreach ($batasPengusulan as $batas) : ?>
                <?php $time=$batas['waktu'];
                $date = $batas['waktu'];
+               echo "<strong> Batas Waktu Pengusulan saat ini : </strong>";
                echo date('d F Y', strtotime(str_replace('/', '-', $date)));
                ?>
 
+
               <?php endforeach; ?>
+
+              <br>  <br>
+
               <form class="row" action="/SetBatasUsulan/update/<?=$batas['id']?>" method="post">
               <?= csrf_field(); ?>
               <input type="hidden" class="form-control" id="id" name="id" value="1"/>
-                <label for="date" class="col-2 col-form-label">Batas Waktu</label>
+                <label for="date" class="col-2 col-form-label">Ubah Batas Waktu</label>
                 <div class="col-3">
                   <div class="input-group date" id="date">
-                    <input type="text" class="form-control" id="date" name="waktu" placeholder="<?php echo $batas['waktu'];?>"/>
+                    <input type="text" class="form-control" id="date" value="<?php  echo date('Y/m/d', strtotime(str_replace('/', '-', $date)));?>" name="waktu" placeholder="<?php echo $batas['waktu'];?>"/>
                     
                   </div>
                 </div>

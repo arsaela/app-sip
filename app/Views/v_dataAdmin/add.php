@@ -30,7 +30,7 @@ if (session()->getFlashData('error')) {
         <div class="modal-body">
           <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control username2" name="username2" id="username2" placeholder="Username">
+            <input type="text" class="form-control username2" name="username2" id="username2" placeholder="Username" required>
             <small id="username_error" class="text-danger"> </small>
           </div>
           <div class="form-group">
@@ -40,7 +40,7 @@ if (session()->getFlashData('error')) {
           </div>
           <div class="form-group">
             <label for="admin_no_hp">No. HP</label>
-            <input type="text" class="form-control" name="admin_no_hp2" placeholder="No. HP">
+            <input type="text" class="form-control" name="admin_no_hp2" placeholder="No. HP" required>
             <small id="admin_no_hp_error" class="text-danger"> </small>
           </div>
           <div class="form-group">

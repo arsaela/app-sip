@@ -51,75 +51,74 @@
                         <!-- Default box -->
                         <div class="card">
                             <div class="card-header">
-                               <?php $tahun_usulan_now = date("Y");?>
-                               <h3 class="card-title">
-                                Data Usulan Seluruh OPD Tahun <?php echo $tahun_usulan_now;?>
+                             <?php $tahun_usulan_now = date("Y");?>
+                             <h3 class="card-title">
+                                Data Usulan Seluruh OPD Tahun <?php echo $tahun_usulan_now;?><br>
+                                Instansi : Pemerintah Kabupaten Klaten
                             </h3>
+
                         </div>
 
-
-                                   <h3> Instansi : Pemerintah Kabupaten Klaten </h3>
-                                       
                         <div class="card-body table-responsive">
                             <table id="datatable-list" class="table table-bordered table-striped">
                                 <thead>
                                     <div>
 
-                                            <div class="mt-3"><?php //echo $value->instansi_nama; ?></div>
-                                        </div>
+                                        <div class="mt-3"><?php //echo $value->instansi_nama; ?></div>
+                                    </div>
 
-                                        <br>
+                                    <br>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Formasi</th>
+                                        <th>Lokasi Unit Kerja</th>
+                                        <th>Unit Kerja</th>
+                                        <th>Usulan</th>
+                                        <th>Usulan Disetujui</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php $no = 1;
+                                    foreach ($getLihatUsulan as $value) {
+                                        ?>
                                         <tr>
-                                            <th>No.</th>
-                                            <th>Formasi</th>
-                                            <th>Lokasi Unit Kerja</th>
-                                            <th>Unit Kerja</th>
-                                            <th>Usulan</th>
-                                            <th>Usulan Disetujui</th>
-
+                                            <td><?php echo $no; ?></td>
+                                            <td><?php echo $value->jabatan_nama; ?></td>
+                                            <td><?php echo $value->instansi_unor_nama; ?></td>
+                                            <td><?php echo $value->instansi_nama; ?></td>
+                                            <td><?php echo $value->jumlah_usulan; ?></td>
+                                            <td><?php echo $value->jumlah_approve; ?></td>
                                         </tr>
-                                    </thead>
-                                    <tbody>
+                                        <?php $no++;
 
-                                        <?php $no = 1;
-                                        foreach ($getLihatUsulan as $value) {
-                                            ?>
-                                            <tr>
-                                                <td><?php echo $no; ?></td>
-                                                <td><?php echo $value->jabatan_nama; ?></td>
-                                                <td><?php echo $value->instansi_unor_nama; ?></td>
-                                                <td><?php echo $value->instansi_nama; ?></td>
-                                                <td><?php echo $value->jumlah_usulan; ?></td>
-                                                <td><?php echo $value->jumlah_approve; ?></td>
-                                            </tr>
-                                            <?php $no++;
+                                    } 
+                                    ?>
 
-                                        } 
-                                     ?>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.card-body -->
+                                </tbody>
+                            </table>
                         </div>
-
-                        <div class="back_to_page">
-                            <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Sebelumnya" />
-                        </div>
-
-                        <!-- /.card -->
+                        <!-- /.card-body -->
                     </div>
+
+                    <div class="back_to_page">
+                        <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Sebelumnya" />
+                    </div>
+
+                    <!-- /.card -->
                 </div>
-
-
-
             </div>
-        </section>
-        <!-- /.content -->
-    </div>
 
 
-    <!-- /.content-wrapper -->
+
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+
+
+<!-- /.content-wrapper -->
 
 
 </body>
@@ -131,41 +130,41 @@
 </script>
 
 <style type="text/css">
-    @media print {
-        @page {
-            size: A4;
-            /* DIN A4 standard, Europe */
-            margin: 7mm 6mm 7mm 15mm;
-            font-size: 14px;
-        }
-
-        html,
-        body {
-            width: 210mm;
-            /* height: 297mm; */
-            height: 282mm;
-            font-size: 11px;
-            background: #FFF;
-            overflow: visible;
-        }
-
-        body {
-            padding-top: 15mm;
-        }
-
-        .back_to_page {
-            display: none;
-        }
+@media print {
+    @page {
+        size: A4;
+        /* DIN A4 standard, Europe */
+        margin: 7mm 6mm 7mm 15mm;
+        font-size: 14px;
     }
+
+    html,
+    body {
+        width: 210mm;
+        /* height: 297mm; */
+        height: 282mm;
+        font-size: 11px;
+        background: #FFF;
+        overflow: visible;
+    }
+
+    body {
+        padding-top: 15mm;
+    }
+
+    .back_to_page {
+        display: none;
+    }
+}
 </style>
 
 <style type="text/css" media="print">
-    /* masukan sintak CSS disini */
-    h3.card-title {
-        font-size: 25px;
-    }
+/* masukan sintak CSS disini */
+h3.card-title {
+    font-size: 25px;
+}
 
-    table#datatable-list {
-        font-size: 18px;
-    }
+table#datatable-list {
+    font-size: 18px;
+}
 </style>

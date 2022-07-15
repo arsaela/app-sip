@@ -27,10 +27,16 @@
     <link rel="stylesheet" href="/assets/adminlte3/dist/css/adminlte.min.css">
     <!--MENAMBAHKAN ICON -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/assets/style-admin.css">
+    <link rel="stylesheet" href="/assets/style-admin.css"> 
 
     <!--sweet alert arsa-->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
+
+
+
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -52,8 +58,8 @@
                 <b>Version</b> 1.0.0
             </div>
             <strong>Copyright &copy; <script>
-                    document.write(new Date().getFullYear());
-                </script> <a href="#">Badan Kepegawaian dan Pengembangan Sumber Daya Manusia</a>.</strong> All rights reserved.
+                document.write(new Date().getFullYear());
+            </script> <a href="#">Badan Kepegawaian dan Pengembangan Sumber Daya Manusia</a>.</strong> All rights reserved.
         </footer>
 
     </div>
@@ -64,8 +70,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script>
         $(document).ready( function () {
-        $('#datatable-list').DataTable();
-    } );
+            $('#datatable-list').DataTable();
+        } );
     </script>
 
 
@@ -78,8 +84,25 @@
     <script src="/assets/adminlte3/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
     <!-- date-range-picker -->
     <script src="/assets/adminlte3/plugins/daterangepicker/daterangepicker.js"></script>
+
+
+
+
+
     <!-- SweetAlert2 -->
-    <script src="/assets/adminlte3/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!--  <script src="/assets/adminlte3/plugins/sweetalert2/sweetalert2.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.css">
+
+
+
+
+
+
+
+
+
     <!-- Toastr -->
     <script src="/assets/adminlte3/plugins/toastr/toastr.min.js"></script>
     <!-- DataTables -->
