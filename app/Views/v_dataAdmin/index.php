@@ -123,31 +123,67 @@
                         <td><?php echo $value['admin_email'] ?></td>
 
                         <td>
-                          <a data-toggle='tooltip' data-placement='top' title='Update Data' value="3" href="<?php echo base_url('DataAdmin/update_admin/' . $value['id']); ?>" class="btn btn-outline-success btn-xs"><i class="fa fa-pencil "></i>
-                          </a>
+                          <button type="button" data-toggle="modal" data-target="#modalubah" class="btn btn-sm btn-warning" id="btn-edit" data-id="<?php echo $value['id'];?>" data-username="<?php echo $value['username'];?>" data-admin_nama="<?php echo $value['admin_nama'];?>" data-admin_no_hp="<?php echo $value['admin_no_hp'];?>" data-admin_email="<?php echo $value['admin_email'];?>"><i class="fa fa-edit"></i></button>
+
+                          <!-- Modal EDIT -->
+                          <div class="modal fade" id="modalubah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Edit Data Admin</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+
+                                <form action="<?php echo base_url('DataAdmin/save_update_admin/'); ?>" method="post">
+                                  <?= csrf_field(); ?>
+                                  <div class="modal-body">
+                                    <input type="hidden" name="id" id="id_admin" value="<?php echo $value['id'];?>">
+                                    <div class="form-group">
+                                      <label for="username">Username</label>
+                                      <input type="text" id="data-username" class="form-control" id="username" name="username" value="<?php echo $value['username'];?>" placeholder="Username" required readonly>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="username">Nama</label>
+                                      <input type="text" class="form-control" id="data-admin_nama" name="admin_nama" value="<?php echo $value['admin_nama'];?>" placeholder="Nama" required>
+                                    </div> 
+
+                                    <div class="form-group">
+                                      <label for="username">No HP</label>
+                                      <input type="text" class="form-control" id="data-admin_no_hp" name="admin_no_hp" value="<?php echo $value['admin_no_hp'];?>" placeholder="No HP" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="username">Email</label>
+                                      <input type="email" class="form-control" id="data-admin_email" name="admin_email" placeholder="Email" value="<?php echo $value['admin_email'];?>" required>
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+                         <!--  <a data-toggle='tooltip' data-placement='top' title='Update Data' value="3" href="<?php //echo base_url('DataAdmin/update_admin/' . $value['id']); ?>" class="btn btn-outline-success btn-xs"><i class="fa fa-pencil "></i>
+                         </a> -->
 
                           <!-- <a data-toggle="tooltip" data-placement="top" class="btn-editpetugas" title="Update" value="3">
                             <button type="button" class="btn btn-outline-success btn-xs" data-toggle="modal" data-target="#modalEdit"><i class="fa fa-edit"></i></button>
                           </a> -->
 
 
-                          <form action="/dataadmin/<?=$value['username']; ?>" method="POST" class="d-inline">
-                            <?= csrf_field(); ?>
-                            <input type="hidden" name="_method" value="delete">
-                            <button type='submit' class='btn btn-outline-danger btn-xs'><i class='fa fa-trash'></i></button>
-                          </form>
+                          <a href="/dataadmin/delete_admin/<?=$value['username']; ?>" data-toggle="modal" class="btn btn-sm btn-danger btn-hapus"><i class="fa fa-trash"></i></a>
+
+
+                    
                         </td>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -166,6 +202,23 @@
       </div>
 
 
+      <!-- modal delete -->
+
+      <!-- <div class="modal fade" id="modalhapus">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              Apakah Anda yakin ingin menghapus data ini ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <a href="<?php //echo base_url('DataAdmin/delete_admin/'.$value['username']); ?>" type="button" class="btn btn-primary">Yakin</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+ -->
       <!-- Modal ADD -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -177,7 +230,7 @@
               </button>
             </div>
 
-            <form action="dataadmin/add" method="post">
+            <form action="<?php echo base_url('DataAdmin/add/'); ?>" method="post">
               <?= csrf_field(); ?>
               <div class="modal-body">
                 <div class="form-group">
@@ -267,5 +320,11 @@
       })
     }
 
+
+
+
+
   </script>
+
+  <script src="/assets/js/script.js"></script>
   <?= $this->endSection() ?>

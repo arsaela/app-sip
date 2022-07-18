@@ -52,9 +52,7 @@ class DataAdmin extends BaseController
         $admin_no_hp = $this->request->getPost('admin_no_hp');
         $admin_email = $this->request->getPost('admin_email');
         $password = $this->request->getPost('password');
-// $hak_akses = $this->request->getPost('hak_akses');
 
-//Data Admin
         $data = [
             'username' => $username,
             'admin_nama' => $admin_nama,
@@ -67,7 +65,6 @@ class DataAdmin extends BaseController
             'password'    =>  base64_encode($this->encrypter->encrypt($password)),
             'hak_akses'   => 'admin'
         ];
-
 
         $save_input_admin_success = $this->M_admin->save_admin_in_admin($data);
         $save_input_login_success = $this->M_admin->save_admin_in_login($data2);
@@ -87,41 +84,41 @@ class DataAdmin extends BaseController
         return redirect()->to('dataadmin');
     }
 
-    // Menampilkan Data Admin Pada Modal Edit Data Admin
-    public function ajaxUpdate($idAdmin)
-    {
-        $data = $this->M_admin->find($idAdmin);
-        echo json_encode($data);
-    }
+    // // Menampilkan Data Admin Pada Modal Edit Data Admin
+    // public function ajaxUpdate($idAdmin)
+    // {
+    //     $data = $this->M_admin->find($idAdmin);
+    //     echo json_encode($data);
+    // }
 
-    // Update Data Admin
-    public function update_admin($id)
-    {
-        $getAdminByID = $this->M_admin->get_admin_by_id($id)->getRow();
-        if(isset($getAdminByID))
-        {
-            $data['admin_by_id'] = $getAdminByID;
+    // // Update Data Admin
+    // public function update_admin($id)
+    // {
+    //     $getAdminByID = $this->M_admin->get_admin_by_id($id)->getRow();
+    //     if(isset($getAdminByID))
+    //     {
+    //         $data['admin_by_id'] = $getAdminByID;
 
-            $data['title']     = 'Update Data Admin';
-            $data['page']      = "updateDataAdmin";
-            $data['nama']   = $this->session->get('nama');
-            $data['email']   = $this->session->get('email');
+    //         $data['title']     = 'Update Data Admin';
+    //         $data['page']      = "updateDataAdmin";
+    //         $data['nama']   = $this->session->get('nama');
+    //         $data['email']   = $this->session->get('email');
 
-            return view('v_dataadmin/edit', $data);
+    //         return view('v_dataadmin/edit', $data);
 
-        }else{
+    //     }else{
 
-            echo '<script>
-            alert("Data Admin ='.$id.' Tidak ditemukan");
-            window.location="'.base_url('dataadmin').'"
-            </script>';
-        }
-    }
+    //         echo '<script>
+    //         alert("Data Admin ='.$id.' Tidak ditemukan");
+    //         window.location="'.base_url('dataadmin').'"
+    //         </script>';
+    //     }
+    // }
 
     public function save_update_admin()
     {
         $db=\Config\Database::connect();
-        $id = $this->request->getPost('admin_id');
+        $id = $this->request->getPost('id');
         $data = array(
             'admin_nama' => $this->request->getPost('admin_nama'),
             'admin_no_hp' => $this->request->getPost('admin_no_hp'),
@@ -130,32 +127,65 @@ class DataAdmin extends BaseController
 
 
         $updatedatasuccess = $this->M_admin->update_admin($data,$id);
-        if(isset($updatedatasuccess)){
-            $data['message_success'] = "Data Admin berhasil di update";
 
-            $data['title']     = 'Data Admin';
-            $data['page']   = "dataadmin";
-            $data['nama']   = $this->session->get('nama');
-            $data['email']   = $this->session->get('email');
-
-            $data['getAdmin'] = $this->M_admin->getAdmin()->getResult();
-
-            $data['admin']   = $db->query('SELECT *
-                FROM tbl_admin, tbl_login
-                WHERE tbl_admin.username = tbl_login.username;');
-            $data['min'] = $data['admin']->getResultArray();
-
-            return view('v_dataadmin/index', $data);
-        } else{
-            $data['message_failed'] = "Data Admin gagal di update. Silahkan cek dan coba kembali !";
-
-            return view('v_dataadmin/update_admin', $data);
+        if($updatedatasuccess){
+            session()->setFlashdata('message', 'Data berhasil di update');
+            return redirect()->to('/dataadmin');
+        } else {
+            session()->setFlashdata('err',\Config\Services::validation()->listErrors()); 
+            return redirect()->to('dataadmin/'); 
         }
+
+        $validasi = [
+            'success'   => true
+        ];
+        echo json_encode($validasi);
+        return redirect()->to('dataadmin');
+
+
+
+
+
+
+
+
+        // if(isset($updatedatasuccess)){
+        //     $data['message_success'] = "Data Admin berhasil di update";
+
+        //     $data['title']     = 'Data Admin';
+        //     $data['page']   = "dataadmin";
+        //     $data['nama']   = $this->session->get('nama');
+        //     $data['email']   = $this->session->get('email');
+
+        //     $data['getAdmin'] = $this->M_admin->getAdmin()->getResult();
+
+        //     $data['admin']   = $db->query('SELECT *
+        //         FROM tbl_admin, tbl_login
+        //         WHERE tbl_admin.username = tbl_login.username;');
+        //     $data['min'] = $data['admin']->getResultArray();
+
+        //     return view('v_dataadmin/index', $data);
+        // } else{
+        //     $data['message_failed'] = "Data Admin gagal di update. Silahkan cek dan coba kembali !";
+
+        //     return view('v_dataadmin/update_admin', $data);
+        // }
 
 
     }
 
 
+// Delete Data Admin
+    public function delete_admin($username)
+    {
+        $success = $this->db->query("DELETE tbl_admin , tbl_login  FROM tbl_admin  INNER JOIN tbl_login  
+            WHERE tbl_admin.username = tbl_login.username and tbl_admin.username = '$username'");
+
+        if($success) {
+            session()->setFlashdata('message', 'Data berhasil dihapus');
+            return redirect()->to('dataadmin');
+        }
+    }
 
 
 
@@ -217,18 +247,6 @@ class DataAdmin extends BaseController
         echo json_encode($validasi);
     }
 
-// Delete Data Admin
-    public function delete($username)
-    {
-        $this->db->query("DELETE tbl_admin , tbl_login  FROM tbl_admin  INNER JOIN tbl_login  
-            WHERE tbl_admin.username = tbl_login.username and tbl_admin.username = '$username'");
-
-        $validasi = [
-            'success'   => true
-        ];
-        echo json_encode($validasi);
-        return redirect()->to('dataadmin');
-    }
 
 // Datatable server side
     public function ajaxDataAdmin()
