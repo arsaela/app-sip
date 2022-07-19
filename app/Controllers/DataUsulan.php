@@ -62,13 +62,33 @@ class DataUsulan extends BaseController
 	public function approval_usulan_by_id($id)
 	{
 		$id = $this->request->getPost('detail_usulan_id');
+		$usulan_id = $this->request->getPost('usulan_id');
+		// echo "<pre>";
+		// print_r($usulan_id);
+		// print_r("ID=".$id);
+
+		// print_r($_POST);
+		// die('STTTOP');
+
 		$data = array(
 			'jumlah_approve'            => $this->request->getPost('jumlah_approve'),
 			'status_usulan_id'      	=> '3',
 			'keterangan'      		    => '-',
 		);
 
-		$this->M_usulan->updateApprovalUsulan($data, $id);
+		$ApproveUsulan = $this->M_usulan->updateApprovalUsulan($data, $id);
+
+
+		if($ApproveUsulan){
+			session()->setFlashdata('message', 'Data berhasil di simpan');
+			return redirect()->to('DataUsulan/detail_usulan/'. $id);
+		} else {
+			session()->setFlashdata('err',\Config\Services::validation()->listErrors()); 
+			return redirect()->to('/DataUsulan/detail_usulan/'. $id); 
+		}
+
+
+
 
 		$dataredirect['page']   = "Detail_data_usulan";
 		$dataredirect['nama']   = $this->session->get('nama');
@@ -83,13 +103,32 @@ class DataUsulan extends BaseController
 	public function reject_usulan_by_id($id)
 	{
 		$id = $this->request->getPost('detail_usulan_id');
+		$usulan_id = $this->request->getPost('usulan_id');
+
+		// echo "<pre>";
+		// print_r($usulan_id);
+		// //print_r("ID=".$id);
+
+		// print_r($_POST);
+		// die('STTTOP');
+
 		$data = array(
 			'jumlah_approve'    => '0',
 			'keterangan'        => $this->request->getPost('keterangan'),
 			'status_usulan_id'     => '4',
 		);
 
-		$this->M_usulan->updateRejectUsulan($data, $id);
+		$RejectUsulan = $this->M_usulan->updateRejectUsulan($data, $id);
+
+
+		if($RejectUsulan){
+			session()->setFlashdata('message', 'Data berhasil di simpan');
+			return redirect()->to('DataUsulan/detail_usulan/'. $usulan_id);
+		} else {
+			session()->setFlashdata('err',\Config\Services::validation()->listErrors()); 
+			return redirect()->to('/DataUsulan/detail_usulan/'. $usulan_id); 
+		}
+
 
 		$dataredirect['page']   = "Detail_data_usulan";
 		$dataredirect['nama']   = $this->session->get('nama');
@@ -122,12 +161,7 @@ class DataUsulan extends BaseController
 		$data['email']   = $this->session->get('email');
 
 		$username   = $this->session->get('username');
-		// $idInstansi  = $this->M_usulan->getInstansiByLogin($username)->getResult();
-
-		// $getIDInstansi = $idInstansi['0']->instansi_id;
-		// $data['getnamaInstansi'] = $this->M_pegawai->getnamaInstansi($getIDInstansi)->getResult();
-
-		//$data['getLihatUsulanByYear'] = $this->M_usulan->getLihatUsulanByYear($idInstansi['0']->instansi_id)->getResult();
+		
 		$tahun_usulan_now = date("Y");
 		$data['getLihatUsulan'] = $this->M_usulan->getLihatUsulanByYear($tahun_usulan_now)->getResult();
 

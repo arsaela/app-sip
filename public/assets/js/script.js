@@ -7,6 +7,21 @@ $(document).on('click', '#btn-edit', function() {
 
 })
 
+
+
+    const swal = $('.swal').data('swal');
+    // alert('tesssku');
+    if (swal) {
+      Swal.fire({
+        title: 'Success',
+        text: swal,
+        icon:'success'
+
+      })
+    }
+
+
+
 $(document).on('click', '.btn-hapus', function (e){
 	e.preventDefault();
 	const href = $(this).attr('href');
@@ -19,7 +34,7 @@ $(document).on('click', '.btn-hapus', function (e){
         showCancelButton:true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Hapus !'
+        confirmButtonText: 'Hapus'
       }). then((result) => {
       	if(result.value){
       		document.location.href = href;

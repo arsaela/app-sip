@@ -86,7 +86,7 @@
                         </div>
                       </td>
                     </tr>
-                  <?php $no++;
+                    <?php $no++;
                   } ?>
 
                 </tbody>
@@ -108,7 +108,7 @@
 
 <?= $this->section('script') ?>
 <script>
-  //Menampilakan modal edit data petugas
+  //Menampilkan modal detail data pegawai di formasi
   $('body').on('click', '.edit', function() {
     var instansiunor = $(this).attr("instansi_unor");
     var jabatankode = $(this).attr("jabatan_kode");
@@ -125,17 +125,25 @@
         var output = '';
         var no = 0;
         var i = 0;
-        while (i < data.length) {
-          no++;
-          output += '<tr>' +
+        // alert('nilai i adalah ='+data.length);
+        if(data.length>=1){
+          while (i < data.length) {
+            no++;
+            output += '<tr>' +
             '<td>' + no + '</td>' +
             '<td>' + data[i].pegawai_nama + '</td>' +
             '<td>' + data[i].pegawai_nip + '</td>' +
             '<td>' + data[i].jabatan_nama + '</td>' +
             // '<td>'+data[i].formasi_jumlah+'</td>'+
-
             '</tr>';
-          i++;
+            i++;
+          } 
+        } else {
+          // alert('tidak ada pns');
+           output += '<tr>' +
+            '<td colspan="4" style="color:red; font-style:italic; text-align:center;"> Maaf, Belum ada Data PNS di jabatan tersebut <br> atau <br> Data PNS belum di tambahkan ! </td>' +
+            '</tr>';
+            i++;
         }
 
         $('#myModal').modal("show");
