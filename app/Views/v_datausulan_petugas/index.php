@@ -47,151 +47,151 @@
                     <th>Jumlah ASN</th>
                     <th>Kekurangan Formasi</th>
                     <th>Detail ASN</th>
-<th>Ajukan Usulan</th>
+                    <th>Ajukan Usulan</th>
                     <?php $no = 1;
                     foreach ($getDetailFormasiUsulan as $value) {  
                      $yearnow = date("Y");
                      
                      if($value->tahun_usulan==$yearnow AND $value->status_usulan_id=='1'){?>
-                      
-                    <?php } 
-                  } ?>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php $no = 1;
-                  foreach ($getDetailFormasiUsulan as $value) {
 
-                    $kekurangan_formasi = ($value->formasi_jumlah) - ($value->jumlahasn) - ($value->jumlah_usulan);
-                    if ($kekurangan_formasi >= 0 and !empty($kekurangan_formasi)) {
-                      ?>
-                      <tr>
-                        <td><?php echo $no; ?></td>
+                     <?php } 
+                   } ?>
+                 </tr>
+               </thead>
+               <tbody>
+                <?php $no = 1;
+                foreach ($getDetailFormasiUsulan as $value) {
+
+                  $kekurangan_formasi = ($value->formasi_jumlah) - ($value->jumlahasn) - ($value->jumlah_usulan);
+                  if ($kekurangan_formasi >= 0 and !empty($kekurangan_formasi)) {
+                    ?>
+                    <tr>
+                      <td><?php echo $no; ?></td>
                         <!-- <td><?php //echo $value->formasi_id; 
-                      ?></td> -->
+                        ?></td> -->
 
-                      <td><?php echo $value->formasi_id; ?> / <?php echo $value->jabatan_nama; ?></td>
+                        <td><?php echo $value->formasi_id; ?> / <?php echo $value->jabatan_nama; ?></td>
                         <!--  <td><?php //echo $value->instansi_unor; 
-                      ?></td> -->
-                      <td><?php echo $value->instansi_unor_nama; ?></td>
-                      <td><?php echo $value->formasi_jumlah; ?></td>
-                      <td><?php echo $value->jumlahasn; ?></td>
-                      <td><?php echo $kekurangan_formasi; ?></td>
-                      <td>
+                        ?></td> -->
+                        <td><?php echo $value->instansi_unor_nama; ?></td>
+                        <td><?php echo $value->formasi_jumlah; ?></td>
+                        <td><?php echo $value->jumlahasn; ?></td>
+                        <td><?php echo $kekurangan_formasi; ?></td>
+                        <td>
 
-                        <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
+                          <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
 
-                        <!-- The Pegawai -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <!-- Modal Header -->
-                              <div class="modal-header">
-                                <h3 class="card-title">Detail ASN</h3>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              </div>
-                              <!-- Modal body -->
-                              <div class="modal-body">
-                                <table class="table table-bordered">
-                                  <thead>
-                                    <tr>
-                                      <th>No</th>
-                                      <th>Nama</th>
-                                      <th>NIP</th>
-                                      <th>Jabatan</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody id="show_data">
-                                  </tbody>
-                                </table>
-                              </div>
-                              <!-- Modal footer -->
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
-                              </div>
+                          <!-- The Pegawai -->
+                          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                  <h3 class="card-title">Detail ASN</h3>
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                  <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>NIP</th>
+                                        <th>Jabatan</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id="show_data">
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                                </div>
 
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </td>
+                        </td>
 
-                      <td>
+                        <td>
 
 
-                       <?php  
-                   
+                         <?php  
+
                       // $yearnow = date("Y");
-                       if(($getDetailFormasiUsulan[1]->status_usulan_id<>'2') ){?>
-                        <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-kekuranganformasi="<?= $kekurangan_formasi; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a>
-                      <?php } 
-                      else {
+                         if(($getDetailFormasiUsulan[1]->status_usulan_id<>'2') ){?>
+                          <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-kekuranganformasi="<?= $kekurangan_formasi; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a>
+                        <?php } 
+                        else {
 
-                      }?>
-                      <!-- Modal Ajuan Usulan Formasi -->
-                      <form action="/opd/DataUsulan/inputusulanopd" method="post" id="frm-inputusulan">
-                        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Input Ajuan Usulan Formasi</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-
-                                <div class="form-group">
-                                  <label>Jabatan Nama</label>
-                                  <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" readonly required>
-                                  <input type="hidden" class="form-control jabatan_kode" name="jabatan_kode" placeholder="Jabatan Kode" readonly required>
-                                  <input type="hidden" class="form-control instansi_unor" name="instansi_unor" placeholder="Instansi Unor" readonly required>
+                        }?>
+                        <!-- Modal Ajuan Usulan Formasi -->
+                        <form action="/opd/DataUsulan/inputusulanopd" method="post" id="frm-inputusulan">
+                          <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Input Ajuan Usulan Formasi</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
                                 </div>
+                                <div class="modal-body">
 
-                                <div class="form-group">
-                                  <label>Lokasi Unit Kerja</label>
-                                  <input type="text" class="form-control instansi_unor_nama" name="instansi_unor_nama" readonly placeholder="Lokasi Unit Kerja" required>
+                                  <div class="form-group">
+                                    <label>Jabatan Nama</label>
+                                    <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" readonly required>
+                                    <input type="hidden" class="form-control jabatan_kode" name="jabatan_kode" placeholder="Jabatan Kode" readonly required>
+                                    <input type="hidden" class="form-control instansi_unor" name="instansi_unor" placeholder="Instansi Unor" readonly required>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label>Lokasi Unit Kerja</label>
+                                    <input type="text" class="form-control instansi_unor_nama" name="instansi_unor_nama" readonly placeholder="Lokasi Unit Kerja" required>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label>Kekurangan Formasi</label>
+                                    <input type="text" class="form-control kekuranganformasi" name="jumlah_kekurangan_formasi" readonly placeholder="Jumlah Usulan" required>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label>Jumlah Usulan</label>
+
+                                    <input type="number" id="jumlah_usulan_formasi" class="form-control jumlah_usulan_formasi" name="jumlah_usulan_formasi" placeholder="Jumlah Usulan">
+                                  </div>
+
                                 </div>
-
-                                <div class="form-group">
-                                  <label>Kekurangan Formasi</label>
-                                  <input type="text" class="form-control kekuranganformasi" name="jumlah_kekurangan_formasi" readonly placeholder="Jumlah Usulan" required>
+                                <div class="modal-footer">
+                                  <input type="hidden" name="usulan_id" class="usulan_id">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
-
-                                <div class="form-group">
-                                  <label>Jumlah Usulan</label>
-
-                                  <input type="number" id="jumlah_usulan_formasi" class="form-control jumlah_usulan_formasi" name="jumlah_usulan_formasi" placeholder="Jumlah Usulan">
-                                </div>
-
-                              </div>
-                              <div class="modal-footer">
-                                <input type="hidden" name="usulan_id" class="usulan_id">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Update</button>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </form>
-                      <!-- End Modal Edit Product-->
+                        </form>
+                        <!-- End Modal Edit Product-->
 
 
-                    </td>
-                  </tr>
-                  <?php $no++;
-                }
-              } ?>
+                      </td>
+                    </tr>
+                    <?php $no++;
+                  }
+                } ?>
 
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
         </div>
-        <!-- /.card-body -->
+        <!-- /.card -->
       </div>
-      <!-- /.card -->
     </div>
+    <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
   </div>
-  <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
-</div>
 
 </section>
 <!-- /.content -->
@@ -199,8 +199,23 @@
 
 
 
-
-
+<div class="modal hide fade" id="myModalLoadOpen">
+ <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="card-title">Konfirmasi Data Pegawai saat ini </h3>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>Silahkan melakukan kelola data pegawai di lingkup <?php echo $get_petugas_by_login->instansi_nama;?> terlebih dahulu. Harap sesuaikan dengan realita yang ada.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn">Close</a>
+      <a href="<?php echo base_url('opd/datapegawai'); ?>" class="btn btn-primary">Kelola Data Pegawai</a>
+    </div>
+  </div>
+</div>
+</div>
 
 
 
@@ -219,6 +234,20 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('script') ?>
+
+
+<script type="text/javascript">
+  $(window).on('load', function() {
+    $('#myModalLoadOpen').modal('show');
+  });
+</script>
+
+
+
+
+
+
+
 <script>
   $(document).ready(function() {
     // $('#frm-inputusulan').validate();
@@ -340,8 +369,8 @@
 <?= $this->endSection() ?>
 
 <style type="text/css">
-.error {
-  color: #F00;
-  background-color: #FFF;
-}
+  .error {
+    color: #F00;
+    background-color: #FFF;
+  }
 </style>

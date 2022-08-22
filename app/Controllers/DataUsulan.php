@@ -78,6 +78,17 @@ class DataUsulan extends BaseController
 
 		$ApproveUsulan = $this->M_usulan->updateApprovalUsulan($data, $id);
 
+		echo "<pre>";
+		echo "id =";
+		echo $id;
+		echo "<br>";
+		echo "usulan id =";
+		echo $usulan_id;
+		echo "<br>";
+		print_r($data);
+		print_r($ApproveUsulan);
+		die("stttop");
+
 
 		if($ApproveUsulan){
 			session()->setFlashdata('message', 'Data berhasil di simpan');
@@ -90,13 +101,13 @@ class DataUsulan extends BaseController
 
 
 
-		$dataredirect['page']   = "Detail_data_usulan";
-		$dataredirect['nama']   = $this->session->get('nama');
-		$dataredirect['email']   = $this->session->get('email');
+		// $dataredirect['page']   = "Detail_data_usulan";
+		// $dataredirect['nama']   = $this->session->get('nama');
+		// $dataredirect['email']   = $this->session->get('email');
 
 		// print_r($id);
 		// die('STPPPPP');
-		return redirect()->back();
+		//return redirect()->back();
 	}
 
 
