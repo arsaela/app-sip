@@ -59,7 +59,7 @@ class UsulanOPDModel extends Model
 		$query =  $this->db->table('tbl_formasi')
 		->select('*,tbl_pegawai.pegawai_nip,count(tbl_pegawai.pegawai_nip) as jumlahasn,concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan')
 		->where('tbl_formasi.instansi_id', $idInstansi)
-		->join('tbl_history_usulan', 'tbl_formasi.instansi_unor = tbl_history_usulan.instansi_unor', 'left')
+		->join('tbl_history_usulan', 'tbl_formasi.instansi_unor = tbl_history_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_history_usulan.jabatan_kode', 'left')
 		->join('tbl_pegawai', 'tbl_formasi.instansi_unor = tbl_pegawai.instansi_unor and tbl_formasi.jabatan_kode = tbl_pegawai.jabatan_kode', 'left')
 		->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
 		->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
@@ -125,6 +125,23 @@ class UsulanOPDModel extends Model
 		->join('status_usulan', 'status_usulan.status_usulan_id = tbl_detail_usulan.status_usulan_id', 'left')
 		->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_usulan.instansi_id', 'left')
 		->where('tbl_usulan.tahun_usulan', $tahun_usulan_now)
+		->orderBy('tbl_usulan.tahun_usulan DESC')
+		->get();
+		return $query;
+	}	
+
+	public function getLihatDetailUsulan($idInstansi, $tahun_usulan)
+	{
+		$query =  $this->db->table('tbl_detail_usulan')
+		->select('*,concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan')
+		->join('tbl_usulan',  'tbl_usulan.usulan_id = tbl_detail_usulan.usulan_id', 'left')
+		->where('tbl_usulan.instansi_id', $idInstansi)
+		->join('tbl_formasi',  'tbl_formasi.instansi_unor = tbl_detail_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_detail_usulan.jabatan_kode', 'left')
+		->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+		->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
+		->join('status_usulan', 'status_usulan.status_usulan_id = tbl_detail_usulan.status_usulan_id', 'left')
+		->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_usulan.instansi_id', 'left')
+		->where('tbl_usulan.tahun_usulan', $tahun_usulan)
 		->orderBy('tbl_usulan.tahun_usulan DESC')
 		->get();
 		return $query;
@@ -214,12 +231,55 @@ class UsulanOPDModel extends Model
 		return $builder->update($datausul);
 	}
 
-	public function cekSudahKirim($idInstansi){
-		$this->db->select('SUM(nilai) as total');
-		$this->db->from('mahasiswa');
-		return $this->db->get()->row()->total;
-		$ceksudahkirim = $this->db;
+	// public function cekSudahKirim($idInstansi){
+	// 	// $this->db->select('SUM(nilai) as total');
+	// 	// $this->db->from('mahasiswa');
+	// 	// return $this->db->get()->row()->total;
+	// 	// $ceksudahkirim = $this->db;
+
+	// 	$query =  $this->db->table('tbl_history_usulan')
+	// 	->select('*')
+	// 	->where('tbl_history_usulan.instansi_id', $idInstansi)
+	// 	->join('tbl_formasi',  'tbl_formasi.instansi_unor = tbl_history_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_history_usulan.jabatan_kode', 'left')
+	// 	->join('tbl_jabatan', 'tbl_history_usulan.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+	// 	->join('tbl_unor', 'tbl_history_usulan.instansi_unor = tbl_unor.instansi_unor', 'left')
+	// 	->join('status_usulan', 'status_usulan.status_usulan_id = tbl_history_usulan.status_usulan_id', 'left')
+	// 	->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_history_usulan.instansi_id', 'left')
+	// 	->where('tbl_history_usulan.status_usulan_id', '2')
+	// 	->get();
+	// 	// return $query;
+	// 	return $query->countAll();
+	// }
+
+	// public function cekSudahKirim2(){
+	// 	return $this->db->table('tbl_history_usulan')->countAll();
+	// }
+
+	//SELECT*FROM tbl_history_usulan WHERE tbl_history_usulan.status_usulan_id='1'
+
+	public function cekStatusKirimUsulan($idInstansi,$tahun_usulan_now){
+		return 
+		$this->db->table('tbl_history_usulan')
+		// ->where('tbl_history_usulan.instansi_id', $idInstansi)
+		->where('tbl_history_usulan.status_usulan_id', '2')
+		// ->where('tbl_history_usulan.tahun_usulan', $tahun_usulan_now)
+		->countAllResults();
 	}
+
+
+	// public function cekStatusKirimUsulan($idInstansi,$tahun_usulan_now){
+	
+	// 	$query = $this->db->table('tbl_history_usulan')
+	// 	->where('tbl_history_usulan.instansi_id', $idInstansi)
+	// 	->join('tbl_formasi',  'tbl_formasi.instansi_unor = tbl_history_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_history_usulan.jabatan_kode', 'left')
+	// 	->join('tbl_jabatan', 'tbl_history_usulan.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+	// 	->join('tbl_unor', 'tbl_history_usulan.instansi_unor = tbl_unor.instansi_unor', 'left')
+	// 	->join('status_usulan', 'status_usulan.status_usulan_id = tbl_history_usulan.status_usulan_id', 'left')
+	// 	->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_history_usulan.instansi_id', 'left')
+	// 	->get();
+	// 	return $query;
+	// 	// ->countAll();
+	// }
 
 
 

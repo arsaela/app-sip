@@ -62,8 +62,10 @@
                 <?php $no = 1;
                 foreach ($getDetailFormasiUsulan as $value) {
 
-                  $kekurangan_formasi = ($value->formasi_jumlah) - ($value->jumlahasn) - ($value->jumlah_usulan);
-                  if ($kekurangan_formasi >= 0 and !empty($kekurangan_formasi)) {
+                  //$kekurangan_formasi = ($value->formasi_jumlah) - ($value->jumlahasn) - ($value->jumlah_usulan); 
+
+                  $kekurangan_formasi = ($value->formasi_jumlah) - ($value->jumlahasn)- ($value->jumlah_usulan);
+                  if ($kekurangan_formasi > 0) {
                     ?>
                     <tr>
                       <td><?php echo $no; ?></td>
@@ -123,17 +125,18 @@
                       // $yearnow = date("Y");
 
                        //if(($getDetailFormasiUsulan[]->status_usulan_id<>'2') ){
-                        if(isset($getcheckstatususulan)){
-                       ?>
-                       
-                        
-                        <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-kekuranganformasi="<?= $kekurangan_formasi; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a>
-                      <?php } 
-                      else {
 
-                      }?>
-                      <!-- Modal Ajuan Usulan Formasi -->
-                      <form action="/opd/DataUsulan/inputusulanopd" method="post" id="frm-inputusulan">
+                        //tes
+                       if(empty($cekStatusKirimUsulan)){
+                         ?>
+                         <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-kekuranganformasi="<?= $kekurangan_formasi; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a>
+                       <?php } 
+                       else { ?>
+                        <a href="#" class="btn btn-warning btn-sm btn_input_usulanku" disabled>Sudah kirim usulan taun ini</a>
+                       <?php }
+                       ?>
+                       <!-- Modal Ajuan Usulan Formasi -->
+                       <form action="/opd/DataUsulan/inputusulanopd" method="post" id="frm-inputusulan">
                         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">

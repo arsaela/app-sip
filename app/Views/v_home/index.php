@@ -72,7 +72,7 @@
       </div>
 
       <!-- count down timer pengusulan -->
-      <!-- <div class="wrap_countdowntimer row offset-md-3">
+      <div class="wrap_countdowntimer row offset-md-3">
 
         <div class="wrap_timer_shape col-md-2">
           <div class="card countdowntimer">
@@ -110,7 +110,7 @@
           </div>
         </div>
       </div>
-  </section> -->
+  </section>
 
 
       <section class="informasi" id="informasi">

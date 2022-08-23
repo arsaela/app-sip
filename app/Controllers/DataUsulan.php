@@ -63,13 +63,6 @@ class DataUsulan extends BaseController
 	{
 		$id = $this->request->getPost('detail_usulan_id');
 		$usulan_id = $this->request->getPost('usulan_id');
-		// echo "<pre>";
-		// print_r($usulan_id);
-		// print_r("ID=".$id);
-
-		// print_r($_POST);
-		// die('STTTOP');
-
 		$data = array(
 			'jumlah_approve'            => $this->request->getPost('jumlah_approve'),
 			'status_usulan_id'      	=> '3',
@@ -78,24 +71,18 @@ class DataUsulan extends BaseController
 
 		$ApproveUsulan = $this->M_usulan->updateApprovalUsulan($data, $id);
 
-
 		if($ApproveUsulan){
 			session()->setFlashdata('message', 'Data berhasil di simpan');
-			return redirect()->to('DataUsulan/detail_usulan/'. $id);
+			return redirect()->to('DataUsulan/detail_usulan/'. $usulan_id);
 		} else {
 			session()->setFlashdata('err',\Config\Services::validation()->listErrors()); 
-			return redirect()->to('/DataUsulan/detail_usulan/'. $id); 
+			return redirect()->to('/DataUsulan/detail_usulan/'. $usulan_id); 
 		}
-
-
-
 
 		$dataredirect['page']   = "Detail_data_usulan";
 		$dataredirect['nama']   = $this->session->get('nama');
 		$dataredirect['email']   = $this->session->get('email');
 
-		// print_r($id);
-		// die('STPPPPP');
 		return redirect()->back();
 	}
 
@@ -104,13 +91,6 @@ class DataUsulan extends BaseController
 	{
 		$id = $this->request->getPost('detail_usulan_id');
 		$usulan_id = $this->request->getPost('usulan_id');
-
-		// echo "<pre>";
-		// print_r($usulan_id);
-		// //print_r("ID=".$id);
-
-		// print_r($_POST);
-		// die('STTTOP');
 
 		$data = array(
 			'jumlah_approve'    => '0',
@@ -128,7 +108,6 @@ class DataUsulan extends BaseController
 			session()->setFlashdata('err',\Config\Services::validation()->listErrors()); 
 			return redirect()->to('/DataUsulan/detail_usulan/'. $usulan_id); 
 		}
-
 
 		$dataredirect['page']   = "Detail_data_usulan";
 		$dataredirect['nama']   = $this->session->get('nama');

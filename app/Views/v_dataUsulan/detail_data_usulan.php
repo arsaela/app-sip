@@ -16,23 +16,23 @@
     </div>
   </div>
 
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-12">
-            <h4>Detail Usulan</h4>
-          </div>
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-12">
+          <h4>Detail Usulan</h4>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
 
-    <!-- Main content -->
-    <section class="content">
+  <!-- Main content -->
+  <section class="content">
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
 
 
           <!-- Default box -->
@@ -129,7 +129,7 @@
 
 
                     <!-- Modal APPROVE USULAN-->
-                    <form action="/DataUsulan/approval_usulan_by_id/<?php echo $value->usulan_id; ?>" method="post">
+                    <form action="/DataUsulan/approval_usulan_by_id/<?php echo $value->detail_usulan_id; ?>" method="post">
                       <div class="modal fade" id="ApproveUsulan-<?php echo $value->detail_usulan_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
@@ -173,7 +173,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <input type="hidden" name="detail_usulan_id" class="detail_usulan_id" value="<?php echo $value->usulan_id; ?>">
+            <input type="hidden" name="detail_usulan_id" class="detail_usulan_id" value="<?php echo $value->detail_usulan_id; ?>">
+            <input type="hidden" name="usulan_id" class="detail_usulan_id" value="<?php echo $value->usulan_id; ?>">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" id="btn-UpdateApproveUsulan" class="btn btn-primary">Update</button>
           </div>
@@ -190,7 +191,7 @@
                 <button type="button" class="btn_detail_usulan btn btn-danger " data-toggle="modal" value="<?php echo $value->detail_usulan_id; ?>" data-target="#RejectUsulan-<?php echo $value->detail_usulan_id; ?>"><i class="fa fa-times "> Reject</i></button>
 
                 <!-- Modal REJECT USULAN-->
-                <form action="/DataUsulan/reject_usulan_by_id/<?php echo $value->usulan_id; ?>" method="post">
+                <form action="/DataUsulan/reject_usulan_by_id/<?php echo $value->detail_usulan_id; ?>" method="post">
                   <div class="modal fade" id="RejectUsulan-<?php echo $value->detail_usulan_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -222,6 +223,7 @@
 
                         </div>
                         <div class="modal-footer">
+                          <input type="hidden" name="detail_usulan_id" class="detail_usulan_id" value="<?php echo $value->detail_usulan_id; ?>">
                           <input type="hidden" name="usulan_id" class="detail_usulan_id" value="<?php echo $value->usulan_id; ?>">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                           <button type="submit" id="btn-UpdateApproveUsulan" class="btn btn-primary">Update</button>
