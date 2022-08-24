@@ -34,9 +34,9 @@
                     <th>No.</th>
                     <th>Formasi</th>
                     <th>Lokasi Unit Kerja</th>
-                    <th>Jumlah Kebutuhan</th>
+                    <th>Jumlah Kebutuhan (ABK)</th>
                     <th>Jumlah ASN</th>
-                    <th>Detail ASN</th>
+                    <th>Detail ASN</th>  
                   </tr>
                 </thead>
                 <tbody>

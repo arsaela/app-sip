@@ -70,10 +70,8 @@
                       <td>
 
                         <a data-toggle='tooltip' data-placement='top' title='Update Data'  href="<?php echo base_url('dataAlurPengusulan/update_alurpengusulan/' . $isi->alur_pengusulan_id); ?>" class="btn btn-success"><i class="fa fa-pencil "></i></a>
-                      </td>
 
-                      <td>
-                        <button type="submit" class="btn btn-danger remove"> <i class="fa fa-trash "></i></button>
+                        <a href="/dataalurpengusulan/delete_alur_pengusulan/<?=$isi->alur_pengusulan_id; ?>" data-toggle="modal" class="btn btn-danger btn-hapus"><i class="fa fa-trash"></i></a>
                       </td>
 
                     </tr>
@@ -133,3 +131,7 @@
 
 </script>
 <?= $this->endSection() ?>
+
+  <?= $this->section('script') ?>
+  <script src="/assets/js/script.js"></script>
+  <?= $this->endSection() ?>

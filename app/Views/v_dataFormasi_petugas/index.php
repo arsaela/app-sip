@@ -14,6 +14,15 @@
     </div><!-- /.container-fluid -->
   </section>
 
+
+  <?= $this->section('script') ?>
+  <script type="text/javascript">
+    <?php if (session("success")) { ?>
+      toastr.success('Data ajuan perubahan ABK berhasil disimpan.');
+    <?php } ?>
+  </script>
+  <?= $this->endSection() ?>
+
   <!-- Main content -->
   <section class="content">
 
@@ -36,9 +45,10 @@
                     <th>Formasi</th>
                     <!--  <th>Lokasi Unit Kerja</th> -->
                     <th>Lokasi Unit Kerja</th>
-                    <th>Jumlah Kebutuhan</th>
+                    <th>Jumlah Kebutuhan (ABK)</th>
                     <th>Jumlah ASN</th>
                     <th>Detail ASN</th>
+                    <th>Ajukan Perubahan ABK</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -88,6 +98,72 @@
                             </div>
                           </div>
                         </div>
+                      </td>
+
+                      <td>
+                       <?php 
+                       //if(empty($cekFormasiAjuanABK)){
+                        ?>
+                        <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-abk_lama="<?= $value->formasi_jumlah; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a>
+                         <?php //} 
+                       //else { ?>
+                       <!--  <a href="#" class="btn btn-warning btn-sm btn_input_usulanku" disabled>Jumlah ABK = </a> -->
+                       <?php //}
+                       ?>
+
+                        <!-- Modal Ajuan Perubahan ABK -->
+                        <form action="/opd/dataFormasi/ajukan_perubahan_abk_opd" method="post" id="frm-inputusulan">
+                          <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Input Ajuan Perubahan ABK</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+
+                                <div class="modal-body">
+                                  <div class="form-group">
+                                    <label>Jabatan Nama</label>
+                                    <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" readonly required>
+                                    <input type="hidden" class="form-control jabatan_kode" name="jabatan_kode" placeholder="Jabatan Kode" readonly required>
+                                    <input type="hidden" class="form-control instansi_unor" name="instansi_unor" placeholder="Instansi Unor" readonly required>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label>Lokasi Unit Kerja</label>
+                                    <input type="text" class="form-control instansi_unor_nama" name="instansi_unor_nama" readonly placeholder="Lokasi Unit Kerja" required>
+                                  </div>
+
+                                <!--   <div class="form-group">
+                                    <label>Kekurangan Formasi</label>
+                                    <input type="text" class="form-control kekuranganformasi" name="jumlah_kekurangan_formasi" readonly placeholder="Jumlah Usulan" required>
+                                  </div> -->
+
+                                  <div class="form-group">
+                                    <label>Jumlah Kebutuhan (ABK) Lama</label>
+
+                                    <input type="text" class="form-control abk_lama" name="jumlah_abk_lama" readonly placeholder="Jumlah Usulan" required>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label>Jumlah Kebutuhan (ABK) yang diajukan</label>
+
+                                    <input type="number" id="jumlah_abk_yang_diajukan" class="form-control jumlah_abk_yang_diajukan" name="jumlah_abk_yang_diajukan" placeholder="Jumlah Usulan">
+                                  </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                  <input type="hidden" name="usulan_id" class="usulan_id">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                        <!-- End Modal Edit Product-->
                       </td>
                     </tr>
                     <?php $no++;
@@ -154,6 +230,60 @@
         $('#show_data').html(output);
       }
     })
+
+  });
+</script>
+
+
+
+
+<script>
+  $(document).ready(function() {
+    // $('#frm-inputusulan').validate();
+
+    // get Edit Product
+    $('body').on('click', '.btn_input_usulan', function() {
+      // alert('tesss');
+
+      // get data from button edit
+      const id = $(this).data('id');
+      const name = $(this).data('name');
+      const instansiunor_nama = $(this).data('instansiunornama');
+      const instansiunor = $(this).data('instansiunor');
+      const jabatan_kode = $(this).data('jabatan_kode');
+      const abk_lama = $(this).data('abk_lama');
+      var get_found_usulan = $("#txtname").val();
+
+      // alert(id);
+      // Set data to Form Edit
+      $('.usulan_id').val(id);
+      $('.jabatan_kode').val(jabatan_kode);
+      $('.jabatan_nama').val(name);
+      $('.abk_lama').val(abk_lama);
+      $('.instansi_unor_nama').val(instansiunor_nama);
+      $('.instansi_unor').val(instansiunor);
+
+      $('#editModal').modal('show');
+
+      $('#frm-inputusulan').validate({
+        rules: {
+          jumlah_abk_yang_diajukan: {
+            digits: true,
+            min: 1
+          }
+
+        },
+        messages: {
+          jumlah_abk_yang_diajukan: {
+            required: "Jumlah Kebutuhan (ABK) yang diajukan harus di isi",
+            min: "Jumlah Kebutuhan (ABK) yang diajukan minimal 1"
+
+          }
+        }
+      });
+
+
+    });
 
   });
 </script>

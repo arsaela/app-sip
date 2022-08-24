@@ -22,6 +22,9 @@ class DataUsulan extends BaseController
 
 	public function __construct()
 	{
+		$this->request = Services::request();
+        $this->db = db_connect();
+
 		$this->qrCode = new QrCode();
 		$this->barcode = new BarcodeGenerator();
 		$this->request = Services::request();
@@ -33,6 +36,7 @@ class DataUsulan extends BaseController
 		$this->M_pegawai = new DataPegawaiOPDModel($this->request);
 
 		$this->M_dashboard_opd = new DashboardPetugasModel($this->request);
+		helper('form');
 	}
 
 	// Halaman Data Usulan Petugas
@@ -130,8 +134,26 @@ class DataUsulan extends BaseController
 		$tahun_usulan_now = date("Y");
 		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulanNow($idInstansi['0']->instansi_id, $tahun_usulan_now)->getResult();
 
+
+		$data['cekStatusKirimUsulan'] = $this->M_usulan_OPD->cekStatusKirimUsulan($idInstansi['0']->instansi_id, $tahun_usulan_now);
+
 		return view('v_lihat_datausulan_petugas/index', $data);
 	}
+
+
+// Delete Data Ajuan Usulan Belum dikirim
+    public function delete_ajuanusulanbelumdikirim($history_usulan_id)
+    {
+        $success = $this->db->query("DELETE FROM tbl_history_usulan WHERE history_usulan_id = '$history_usulan_id'");
+
+
+        if($success) {
+            session()->setFlashdata('message', 'Data berhasil dihapus');
+            return redirect()->to('Opd/DataUsulan/lihatusulanopd');
+        }
+    }
+
+
 
 	public function kirimdatausulanopd()
 	{

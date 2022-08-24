@@ -39,6 +39,15 @@
               Rekap Formasi OPD
             </p>
           </a>
+        </li>        
+
+        <li class="nav-item">
+          <a href="<?php echo base_url('opd/DataAjuanABK'); ?>" class="nav-link <?php if ($page == 'opd/DataAjuanABK') echo " active";  ?>">
+            <i class="nav-icon fas fa-briefcase"></i>
+            <p>
+              Data Ajuan ABK
+            </p>
+          </a>
         </li>
 
         <li class="nav-item has-treeview">

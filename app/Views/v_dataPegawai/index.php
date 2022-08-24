@@ -51,8 +51,8 @@
                         <td><?php echo $value->pegawai_nip; ?></td>
                         <td><?php echo $value->gol_pangkat .' ('.$value->gol_nama.')'; ?></td>
                         <td><?php echo $value->jabatan_nama; ?></td>
+                        <td><?php echo $value->instansi_unor_nama; ?></td>
                         <td><?php echo $value->instansi_nama; ?></td>
-                          <td><?php echo $value->instansi_unor_nama; ?></td>
                         <td><?php echo $value->status_nama; ?></td>
                       </tr>
                       <?php $no++;

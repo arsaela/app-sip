@@ -15,6 +15,9 @@ class DataAlurPengusulan extends BaseController
 	public function __construct()
 	{
 		$this->request = Services::request();
+        $this->db = db_connect();
+        helper('form');
+
 		$this->M_alur_pengusulan = new AlurPengusulanModel($this->request);
 		$this->form_validation =  \Config\Services::validation();
 		$this->session = \Config\Services::session();
@@ -158,4 +161,21 @@ class DataAlurPengusulan extends BaseController
     	$this->M_alur_pengusulan->edit_data($id,$data);
     	return redirect()->to('./dataalurpengusulan')->with('berhasil', 'Data Berhasil di Ubah');
     }
+
+
+
+// Delete Data Alur Pengusulan
+    public function delete_alur_pengusulan($alur_pengusulan_id)
+    {
+        $success = $this->db->query("DELETE FROM tbl_alur_pengusulan WHERE alur_pengusulan_id  = '$alur_pengusulan_id'");
+
+
+        if($success) {
+            session()->setFlashdata('message', 'Data berhasil dihapus');
+            return redirect()->to('/dataalurpengusulan/');
+        }
+    }
+
+
+
 }

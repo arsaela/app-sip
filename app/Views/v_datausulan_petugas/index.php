@@ -57,14 +57,6 @@
                     <th>Kekurangan Formasi</th>
                     <th>Detail ASN</th>
                     <th>Ajukan Usulan</th>
-                    <?php $no = 1;
-                    foreach ($getDetailFormasiUsulan as $value) {  
-                     $yearnow = date("Y");
-                     
-                     if($value->tahun_usulan==$yearnow AND $value->status_usulan_id=='1'){?>
-
-                     <?php } 
-                   } ?>
                  </tr>
                </thead>
                <tbody>
@@ -126,9 +118,6 @@
                         </td>
 
                         <td>
-
-
-
                        <?php  
 
                       // $yearnow = date("Y");
