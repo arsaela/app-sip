@@ -68,8 +68,8 @@
                                     </thead>
                                     <tbody>
                                         <?php $no = 1;
-                                        if (!empty($getLihatUsulan)) {
-                                            foreach ($getLihatUsulan as $value) {
+                                        if (!empty($getLihatDetailUsulan)) {
+                                            foreach ($getLihatDetailUsulan as $value) {
                                                 ?>
                                                 <tr>
                                                     <td><?php echo $no; ?></td>

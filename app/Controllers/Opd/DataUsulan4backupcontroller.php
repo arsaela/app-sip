@@ -19,6 +19,7 @@ class DataUsulan extends BaseController
 	protected $form_validation;
 	protected $qrCode;
 	protected $barcode;
+	//protected $session;
 
 	public function __construct()
 	{
@@ -30,6 +31,7 @@ class DataUsulan extends BaseController
 		$this->form_validation =  \Config\Services::validation();
 		$this->session = \Config\Services::session();
 		$this->session->start();
+		//$session = \Config\Services::session(); 
 		$this->M_pegawai = new DataPegawaiOPDModel($this->request);
 
 		$this->M_dashboard_opd = new DashboardPetugasModel($this->request);
@@ -52,16 +54,23 @@ class DataUsulan extends BaseController
 
 		$data['getDetailFormasiUsulan'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
 
+		$data['getcheckstatususulan'] = $this->M_usulan_OPD->getCheckStatusUsulan($idInstansi['0']->instansi_id)->getResult();
+		
+
+// echo "<pre>";
+// //print_r($data['getDetailFormasiUsulan']);
+// print_r($data['getcheckstatususulan']);
+// die('STTTOP');
+
 		$data['status'] = $this->M_usulan_OPD->getStatusUsulan($idInstansi['0']->instansi_id,$tahun_usulan_now)->getResult();
-
-		$tahun_usulan_now = date("Y");
-
-		$data['cekStatusKirimUsulan'] = $this->M_usulan_OPD->cekStatusKirimUsulan($idInstansi['0']->instansi_id, $tahun_usulan_now);
-
-		// echo "ayayya =";
+		// $data['status'] = $this->M_usulan_OPD->getStatusUsulan($idInstansi,$tahun_usulan_now);
 		// echo "<pre>";
-		// print_r($data['cekStatusKirimUsulan']);
-		// die('sttopp');
+		// print_r($data['status']);
+		// die('stop');
+
+		// echo "<pre>";
+		// print_r($data['getDetailFormasiUsulan']);
+		// die('stttoppp');
 
 		return view('v_datausulan_petugas/index', $data);
 	}
@@ -78,6 +87,7 @@ class DataUsulan extends BaseController
 
 		$datenow = date("Y");
 		$explode_tahun_usulan = substr($datenow,2);
+		// print_r($explode_tahun_usulan);
 
 		$data_history_usulan_opd = array(
 			'history_usulan_id ' => 'HU-'.$get_inputan_instansi_unor.'-'.$get_inputan_jabatan_kode.'-'.$explode_tahun_usulan,
@@ -101,7 +111,6 @@ class DataUsulan extends BaseController
 
 
 			$data['getDetailFormasiUsulan'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
-			//$data['cekSudahKirim'] = $this->M_usulan_OPD->cekSudahKirim($idInstansi['0']->instansi_id)->getRow();
 
 			$session = session();
 
@@ -170,6 +179,7 @@ class DataUsulan extends BaseController
 		$datenow = date("Y");
 		$explode_tahun_usulan = substr($datenow,2);
 		
+		//$data2 = [];
 		foreach ($getUsulanByYear as $key =>  $value) {
 
 			$data_usulan = array(
@@ -213,6 +223,14 @@ class DataUsulan extends BaseController
 
 	}
 
+
+
+
+
+
+
+
+
 	public function detail_usulan_by_year_and_opd($tahun_usulan)
 	{
 
@@ -227,7 +245,11 @@ class DataUsulan extends BaseController
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
-		$data['getLihatDetailUsulan'] = $this->M_usulan_OPD->getLihatDetailUsulan($idInstansi['0']->instansi_id, $tahun_usulan)->getResult();
+		// $data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+		$tahun_usulan_now = date("Y");
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id,$tahun_usulan_now)->getResult();
+
+
 		$data['get_tahun_usulan'] = $tahun_usulan;
 
 		return view('v_datausulan_petugas/detail_usulan_by_year', $data);
@@ -258,9 +280,12 @@ class DataUsulan extends BaseController
 		$getIDInstansi = $idInstansi['0']->instansi_id;
 		$data['getnamaInstansi'] = $this->M_pegawai->getnamaInstansi($getIDInstansi)->getResult();
 
-
 		$tahun_usulan_now = date("Y");
-		$data['getLihatDetailUsulan'] = $this->M_usulan_OPD->getLihatDetailUsulan($idInstansi['0']->instansi_id, $tahun_usulan_now)->getResult();
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id,$tahun_usulan_now)->getResult();
+
+		// echo "<pre>";
+		// print_r($data['getLihatUsulan']);
+		// die('sttop');
 
 		$data['QR'] = $this->qrCode
 		->setText('QR code by codeitnow.in')
@@ -329,7 +354,6 @@ class DataUsulan extends BaseController
 
 
 			$data['getDetailFormasiUsulan'] = $this->M_usulan_OPD->getKebutuhanFormasi($idInstansi['0']->instansi_id)->getResult();
-			$data['cekSudahKirim'] = $this->M_usulan_OPD->cekSudahKirim($idInstansi['0']->instansi_id)->getRow();
 
 			$session = session();
 
@@ -357,8 +381,10 @@ class DataUsulan extends BaseController
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
+		// $data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id)->getResult();
+
 		$tahun_usulan_now = date("Y");
-		$data['getLihatDetailUsulan'] = $this->M_usulan_OPD->getLihatDetailUsulan($idInstansi['0']->instansi_id, $tahun_usulan_now)->getResult();
+		$data['getLihatUsulan'] = $this->M_usulan_OPD->getLihatUsulan($idInstansi['0']->instansi_id,$tahun_usulan_now)->getResult();
 
 		return view('v_datausulan_petugas/rekap_usulan_opd', $data);
 	}

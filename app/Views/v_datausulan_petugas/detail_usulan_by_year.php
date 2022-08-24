@@ -43,7 +43,7 @@
                 </thead>
                 <tbody>
                   <?php $no = 1;
-                  foreach ($getLihatUsulan as $value) { 
+                  foreach ($getLihatDetailUsulan as $value) { 
                     ?>
                     <tr>
                       <td><?php echo $no; ?></td>
