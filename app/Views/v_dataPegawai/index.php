@@ -36,6 +36,7 @@
                     <th>NIP</th>
                     <th>Pangkat Golongan</th>
                     <th>Jabatan</th> 
+                    <th>Lokasi Unit Kerja</th>
                     <th>Instansi Nama</th>
                     <th>Status</th>
                   </tr>
@@ -51,6 +52,7 @@
                         <td><?php echo $value->gol_pangkat .' ('.$value->gol_nama.')'; ?></td>
                         <td><?php echo $value->jabatan_nama; ?></td>
                         <td><?php echo $value->instansi_nama; ?></td>
+                          <td><?php echo $value->instansi_unor_nama; ?></td>
                         <td><?php echo $value->status_nama; ?></td>
                       </tr>
                       <?php $no++;
