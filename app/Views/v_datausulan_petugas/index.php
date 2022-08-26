@@ -280,17 +280,14 @@
 
   var jumlahusulanasn = jumlahusulanpppk + jumlahusulancpns;
 
-  if(jumlahusulanasn > kekuranganformasi){
- // alert("jumlah usulan kebanyakan");
- // console.log("jumlah usulan kebanyakan");
- 
- $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
+  if(jumlahusulanasn > kekuranganformasi){  
+   $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
 
- $('.btn-ajuan-usulan').prop('disabled', true);
- $('.prioritas_usulan_cpns').hide();
- $('.prioritas_usulan_pppk').hide();
+   $('.btn-ajuan-usulan').prop('disabled', true);
+   $('.prioritas_usulan_cpns').hide();
+   $('.prioritas_usulan_pppk').hide();
 
-} else if(jumlahusulancpns > kekuranganformasi){
+ } else if(jumlahusulancpns > kekuranganformasi){
   $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
 
   $('.btn-ajuan-usulan').prop('disabled', true);
@@ -342,6 +339,21 @@ console.log("jumlah kekurangan formasi= "+kekuranganformasi);
         console.log('Delete key released');
       }
     });
+
+
+
+//set 0 after delete value
+ $('input#jumlah_usulan_pppk').change(function(){
+  if($(this).val() == ""){
+    $(this).val(0);
+  }
+});
+
+ $('input#jumlah_usulan_cpns').change(function(){
+  if($(this).val() == ""){
+    $(this).val(0);
+  }
+});
 
 
 
