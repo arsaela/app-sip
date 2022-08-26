@@ -167,7 +167,7 @@
                                 <div class="form-group">
                                   <label>Jumlah Usulan CPNS</label>
 
-                                  <input type="number" id="jumlah_usulan_cpns" class="form-control jumlah_usulan_formasi" value="0" name="jumlah_usulan_cpns" placeholder="Jumlah Usulan CPNS">
+                                  <input type="number" id="jumlah_usulan_cpns" class="form-control jumlah_usulan_cpns_class" value="0" name="jumlah_usulan_cpns" placeholder="Jumlah Usulan CPNS">
                                 </div>
 
                                 <div class="form-group prioritas_usulan_cpnsdiv" style="display:none;">
@@ -185,7 +185,7 @@
                                 <div class="form-group">
                                   <label>Jumlah Usulan PPPK</label>
 
-                                  <input type="number" id="jumlah_usulan_pppk" class="form-control jumlah_usulan_formasi" value="0" name="jumlah_usulan_pppk" placeholder="Jumlah Usulan PPPK">
+                                  <input type="number" id="jumlah_usulan_pppk" class="form-control jumlah_usulan_pppk_class" value="0" name="jumlah_usulan_pppk" placeholder="Jumlah Usulan PPPK">
                                 </div>
 
                                 <div class="form-group prioritas_usulan_pppkdiv" style="display:none;">
@@ -272,13 +272,16 @@
 <script>
 
  $("input").keyup(function(){
-  var jumlahusulanpppk = parseInt($("input#jumlah_usulan_pppk").val());
-  var jumlahusulancpns = parseInt($("input#jumlah_usulan_cpns").val());
+  var jumlahusulanpppk = parseInt($("input.jumlah_usulan_pppk_class").val());
+  var jumlahusulancpns = parseInt($("input.jumlah_usulan_cpns_class").val());
   var kekuranganformasi = parseInt($("input.kekuranganformasi").val());
-  //var jumlahusulancpns = $("input#jumlah_usulan_cpns").val();
-  //var jumlahusulancpns = $("input#jumlah_usulan_cpns").val();
+  //var jumlahusulancpns = $("input.jumlah_usulan_cpns_class").val();
+  //var jumlahusulancpns = $("input.jumlah_usulan_cpns_class").val();
 
   var jumlahusulanasn = jumlahusulanpppk + jumlahusulancpns;
+
+
+
 
   if(jumlahusulanasn > kekuranganformasi){  
    $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
@@ -324,7 +327,7 @@ console.log("jumlah kekurangan formasi= "+kekuranganformasi);
 // $("input").css("background-color", "pink");
 });
 
- $('input#jumlah_usulan_cpns').keyup(function(e){
+ $('input.jumlah_usulan_cpns_class').keyup(function(e){
   if(e.keyCode == 8) {
         // alert('Delete key released');
         $('.prioritas_usulan_cpnsdiv').hide();
@@ -332,7 +335,7 @@ console.log("jumlah kekurangan formasi= "+kekuranganformasi);
       }
     });
 
- $('input#jumlah_usulan_pppk').keyup(function(e){
+ $('input.jumlah_usulan_pppk_class').keyup(function(e){
   if(e.keyCode == 8) {
         // alert('Delete key released');
         $('.prioritas_usulan_pppkdiv').hide();
@@ -343,13 +346,13 @@ console.log("jumlah kekurangan formasi= "+kekuranganformasi);
 
 
 //set 0 after delete value
- $('input#jumlah_usulan_pppk').change(function(){
+ $('input.jumlah_usulan_pppk_class').change(function(){
   if($(this).val() == ""){
     $(this).val(0);
   }
 });
 
- $('input#jumlah_usulan_cpns').change(function(){
+ $('input.jumlah_usulan_cpns_class').change(function(){
   if($(this).val() == ""){
     $(this).val(0);
   }
@@ -399,7 +402,7 @@ console.log("jumlah kekurangan formasi= "+kekuranganformasi);
 
       $('#frm-inputusulan').validate({
         //var a = jumlah_usulan_cpns + jumlah_usulan_pppk;
-        //var a = $("#jumlah_usulan_cpns").val();
+        //var a = $(".jumlah_usulan_cpns_class").val();
 
 
         rules: {
