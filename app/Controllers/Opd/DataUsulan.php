@@ -23,7 +23,7 @@ class DataUsulan extends BaseController
 	public function __construct()
 	{
 		$this->request = Services::request();
-        $this->db = db_connect();
+		$this->db = db_connect();
 
 		$this->qrCode = new QrCode();
 		$this->barcode = new BarcodeGenerator();
@@ -89,7 +89,10 @@ class DataUsulan extends BaseController
 			'instansi_unor'       => $get_inputan_instansi_unor,
 			'tahun_usulan' 		=> date("Y"),
 			'jabatan_kode' 		=> $get_inputan_jabatan_kode,
-			'jumlah_usulan' 	=> $this->request->getPost('jumlah_usulan_formasi'),
+			'jumlah_usulan_pppk' 	=> $this->request->getPost('jumlah_usulan_pppk'),
+			'prioritas_usulan_pppk' 	=> $this->request->getPost('prioritas_usulan_pppk'),
+			'jumlah_usulan_cpns' 	=> $this->request->getPost('jumlah_usulan_cpns'),
+			'prioritas_usulan_cpns' 	=> $this->request->getPost('prioritas_usulan_cpns'),
 			'status_usulan_id' 	=> '1',
 
 		);
@@ -142,16 +145,16 @@ class DataUsulan extends BaseController
 
 
 // Delete Data Ajuan Usulan Belum dikirim
-    public function delete_ajuanusulanbelumdikirim($history_usulan_id)
-    {
-        $success = $this->db->query("DELETE FROM tbl_history_usulan WHERE history_usulan_id = '$history_usulan_id'");
+	public function delete_ajuanusulanbelumdikirim($history_usulan_id)
+	{
+		$success = $this->db->query("DELETE FROM tbl_history_usulan WHERE history_usulan_id = '$history_usulan_id'");
 
 
-        if($success) {
-            session()->setFlashdata('message', 'Data berhasil dihapus');
-            return redirect()->to('Opd/DataUsulan/lihatusulanopd');
-        }
-    }
+		if($success) {
+			session()->setFlashdata('message', 'Data berhasil dihapus');
+			return redirect()->to('Opd/DataUsulan/lihatusulanopd');
+		}
+	}
 
 
 

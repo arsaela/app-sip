@@ -64,7 +64,7 @@
                     <?php $no = 1;
                     foreach ($getDetailFormasiUsulan as $value) {
 
-                      $kekurangan_formasi = ($value->formasi_jumlah) - ($value->jumlahasn) - ($value->jumlah_usulan_pppk) - ($value->jumlah_usulan_cpns);
+                      $kekurangan_formasi = ($value->formasi_jumlah) - ($value->jumlahasn) - ($value->jumlah_usulan);
                       if ($kekurangan_formasi >= 0 and !empty($kekurangan_formasi)) {
 
                         ?>
@@ -167,47 +167,20 @@
                                 <div class="form-group">
                                   <label>Jumlah Usulan CPNS</label>
 
-                                  <input type="number" id="jumlah_usulan_cpns" class="form-control jumlah_usulan_formasi" value="0" name="jumlah_usulan_cpns" placeholder="Jumlah Usulan CPNS">
-                                </div>
-
-                                <div class="form-group prioritas_usulan_cpnsdiv" style="display:none;">
-                                  <label>Prioritas Usulan CPNS</label>
-
-                                  <!--   <input type="number" id="prioritas_usulan_cpns" class="form-control prioritas_usulan_cpns_input" name="prioritas_usulan_cpns" placeholder="Prioritas Usulan CPNS"> -->
-
-                                  <select class="form-control" name="prioritas_usulan_cpns" id="prioritas_usulan_cpns">
-                                    <option>1</option>
-                                    <option selected>2</option>
-                                    <option>3</option>
-                                  </select>
+                                  <input type="number" id="jumlah_usulan_cpns" class="form-control jumlah_usulan_formasi" name="jumlah_usulan_cpns" placeholder="Jumlah Usulan CPNS">
                                 </div>
 
                                 <div class="form-group">
                                   <label>Jumlah Usulan PPPK</label>
 
-                                  <input type="number" id="jumlah_usulan_pppk" class="form-control jumlah_usulan_formasi" value="0" name="jumlah_usulan_pppk" placeholder="Jumlah Usulan PPPK">
+                                  <input type="number" id="jumlah_usulan_pppk" class="form-control jumlah_usulan_formasi" name="jumlah_usulan_pppk" placeholder="Jumlah Usulan PPPK">
                                 </div>
-
-                                <div class="form-group prioritas_usulan_pppkdiv" style="display:none;">
-                                  <label>Prioritas Usulan PPPK </label>
-
-                                  <select class="form-control" name="prioritas_usulan_pppk" id="prioritas_usulan_pppk">
-                                    <option>1</option>
-                                    <option selected>2</option>
-                                    <option>3</option>
-                                  </select>
-
-                                  <!--  <input type="number" id="prioritas_usulan_pppk" class="form-control prioritas_usulan_pppk_input" name="prioritas_usulan_pppk" placeholder="Prioritas Usulan PPPK"> -->
-                                </div>
-
-
-                                <span class="error_warning_usulan_kebanyakan text-danger"></span>
 
                               </div>
                               <div class="modal-footer">
                                 <input type="hidden" name="usulan_id" class="usulan_id">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary btn-ajuan-usulan">Simpan</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                               </div>
                             </div>
                           </div>
@@ -258,10 +231,23 @@
 </div> -->
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- /.content-wrapper -->
 <?= $this->endSection() ?>
 
 <?= $this->section('script') ?>
+
 
 <script type="text/javascript">
   // $(window).on('load', function() {
@@ -269,83 +255,37 @@
   // });
 </script>
 
-<script>
 
- $("input").keyup(function(){
-  var jumlahusulanpppk = parseInt($("input#jumlah_usulan_pppk").val());
-  var jumlahusulancpns = parseInt($("input#jumlah_usulan_cpns").val());
-  var kekuranganformasi = parseInt($("input.kekuranganformasi").val());
+
+
+
+
+
+<script>
+  $(document).ready(function() {
+
+   $("input").keyup(function(){
+    var jumlahusulanpppk = parseInt($("input#jumlah_usulan_pppk").val());
+    var jumlahusulancpns = parseInt($("input#jumlah_usulan_cpns").val());
+   var kekuranganformasi = parseInt($("input.kekuranganformasi").val());
   //var jumlahusulancpns = $("input#jumlah_usulan_cpns").val();
   //var jumlahusulancpns = $("input#jumlah_usulan_cpns").val();
 
   var jumlahusulanasn = jumlahusulanpppk + jumlahusulancpns;
+  if(jumlahusulanasn < kekuranganformasi){
+    
+  }
 
-  if(jumlahusulanasn > kekuranganformasi){
- // alert("jumlah usulan kebanyakan");
- // console.log("jumlah usulan kebanyakan");
- 
- $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
-
- $('.btn-ajuan-usulan').prop('disabled', true);
- $('.prioritas_usulan_cpns').hide();
- $('.prioritas_usulan_pppk').hide();
-
-} else if(jumlahusulancpns > kekuranganformasi){
-  $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
-
-  $('.btn-ajuan-usulan').prop('disabled', true);
-  $('.prioritas_usulan_cpns').hide();
-  $('.prioritas_usulan_pppk').hide();
-} else if(jumlahusulanpppk > kekuranganformasi){
-  $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
-
-  $('.btn-ajuan-usulan').prop('disabled', true);
-  $('.prioritas_usulan_cpns').hide();
-  $('.prioritas_usulan_pppk').hide();
-} else if(jumlahusulanpppk<= kekuranganformasi)   {
-  $('.prioritas_usulan_pppkdiv').show();
-  $('.btn-ajuan-usulan').prop('disabled', false);
-  $(".error_warning_usulan_kebanyakan").hide();
-}else if(jumlahusulancpns<= kekuranganformasi)   {
-  $('.prioritas_usulan_cpnsdiv').show();
-  $('.btn-ajuan-usulan').prop('disabled', false);
-  $(".error_warning_usulan_kebanyakan").hide();
-}else if((jumlahusulancpns> kekuranganformasi) && (jumlahusulanpppk> kekuranganformasi))   {
-  $('.prioritas_usulan_cpnsdiv').hide();
-  $('.prioritas_usulan_pppkdiv').hide();
-  $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
-}
+  console.log("usulan cpns="+jumlahusulancpns);
+  console.log("usulan pppk="+jumlahusulanpppk);
+  console.log("jumlah usul asn= "+jumlahusulanasn);
+  console.log("jumlah kekurangan formasi= "+kekuranganformasi);
 
 
-console.log("usulan cpns="+jumlahusulancpns);
-console.log("usulan pppk="+jumlahusulanpppk);
-console.log("jumlah usul asn= "+jumlahusulanasn);
-console.log("jumlah kekurangan formasi= "+kekuranganformasi);
-
-
-
-// $("input").css("background-color", "pink");
+  $("input").css("background-color", "pink");
 });
 
- $('input#jumlah_usulan_cpns').keyup(function(e){
-  if(e.keyCode == 8) {
-        // alert('Delete key released');
-        $('.prioritas_usulan_cpnsdiv').hide();
-        console.log('Delete key released');
-      }
-    });
 
- $('input#jumlah_usulan_pppk').keyup(function(e){
-  if(e.keyCode == 8) {
-        // alert('Delete key released');
-        $('.prioritas_usulan_pppkdiv').hide();
-        console.log('Delete key released');
-      }
-    });
-
-
-
- $(document).ready(function() {
     // get Edit Product
     $('body').on('click', '.btn_input_usulan', function() {
       // get data from button edit

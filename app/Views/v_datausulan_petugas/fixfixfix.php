@@ -280,41 +280,14 @@
 
   var jumlahusulanasn = jumlahusulanpppk + jumlahusulancpns;
 
-  if(jumlahusulanasn > kekuranganformasi){
- // alert("jumlah usulan kebanyakan");
- // console.log("jumlah usulan kebanyakan");
- 
- $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
 
- $('.btn-ajuan-usulan').prop('disabled', true);
- $('.prioritas_usulan_cpns').hide();
- $('.prioritas_usulan_pppk').hide();
 
-} else if(jumlahusulancpns > kekuranganformasi){
-  $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
-
-  $('.btn-ajuan-usulan').prop('disabled', true);
-  $('.prioritas_usulan_cpns').hide();
-  $('.prioritas_usulan_pppk').hide();
-} else if(jumlahusulanpppk > kekuranganformasi){
-  $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
-
-  $('.btn-ajuan-usulan').prop('disabled', true);
-  $('.prioritas_usulan_cpns').hide();
-  $('.prioritas_usulan_pppk').hide();
-} else if(jumlahusulanpppk<= kekuranganformasi)   {
-  $('.prioritas_usulan_pppkdiv').show();
-  $('.btn-ajuan-usulan').prop('disabled', false);
-  $(".error_warning_usulan_kebanyakan").hide();
-}else if(jumlahusulancpns<= kekuranganformasi)   {
-  $('.prioritas_usulan_cpnsdiv').show();
-  $('.btn-ajuan-usulan').prop('disabled', false);
-  $(".error_warning_usulan_kebanyakan").hide();
-}else if((jumlahusulancpns> kekuranganformasi) && (jumlahusulanpppk> kekuranganformasi))   {
-  $('.prioritas_usulan_cpnsdiv').hide();
-  $('.prioritas_usulan_pppkdiv').hide();
-  $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
-}
+// else {
+//   $(".error_warning_usulan_kebanyakan").text("");
+//   $('.btn-ajuan-usulan').prop('disabled', false);
+//   $('.prioritas_usulan_cpnsdiv').show();
+//   $('.prioritas_usulan_pppkdiv').show();
+// }
 
 
 console.log("usulan cpns="+jumlahusulancpns);
