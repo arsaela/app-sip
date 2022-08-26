@@ -281,31 +281,30 @@
   var jumlahusulanasn = jumlahusulanpppk + jumlahusulancpns;
 
 
-if(jumlahusulanpppk<= kekuranganformasi)   {
-  $('.prioritas_usulan_pppkdiv').show();
-  $('.btn-ajuan-usulan').prop('disabled', false);
-  $(".error_warning_usulan_kebanyakan").hide();
-}else if(jumlahusulancpns<= kekuranganformasi)   {
-  $('.prioritas_usulan_cpnsdiv').show();
-  $('.btn-ajuan-usulan').prop('disabled', false);
-  $(".error_warning_usulan_kebanyakan").hide();
-}else if((jumlahusulancpns> kekuranganformasi) && (jumlahusulanpppk> kekuranganformasi))   {
-  $('.prioritas_usulan_cpnsdiv').hide();
-  $('.prioritas_usulan_pppkdiv').hide();
-}else if((jumlahusulancpns<= kekuranganformasi) && (jumlahusulanpppk<= kekuranganformasi))   {
-  $('.prioritas_usulan_cpnsdiv').show();
-  $('.prioritas_usulan_pppkdiv').show();
-}else if(jumlahusulanasn > kekuranganformasi){
- // alert("jumlah usulan kebanyakan");
- // console.log("jumlah usulan kebanyakan");
- 
- $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
+  if(jumlahusulanpppk <= kekuranganformasi)   {
+    $('.prioritas_usulan_pppkdiv').show();
+    $('.btn-ajuan-usulan').prop('disabled', false);
+    $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
 
- $('.btn-ajuan-usulan').prop('disabled', true);
- $('.prioritas_usulan_cpns').hide();
- $('.prioritas_usulan_pppk').hide();
+  }else if(jumlahusulancpns <= kekuranganformasi)   {
+    $('.prioritas_usulan_cpnsdiv').show();
+    $('.btn-ajuan-usulan').prop('disabled', false);
+    $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
 
-} else if(jumlahusulancpns > kekuranganformasi){
+  }else if((jumlahusulancpns> kekuranganformasi) && (jumlahusulanpppk> kekuranganformasi))   {
+    $('.prioritas_usulan_cpnsdiv').hide();
+    $('.prioritas_usulan_pppkdiv').hide();
+  }else if((jumlahusulancpns<= kekuranganformasi) && (jumlahusulanpppk<= kekuranganformasi))   {
+    $('.prioritas_usulan_cpnsdiv').show();
+    $('.prioritas_usulan_pppkdiv').show();
+  }else if(jumlahusulanasn > kekuranganformasi){
+   $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
+
+   $('.btn-ajuan-usulan').prop('disabled', true);
+   $('.prioritas_usulan_cpns').hide();
+   $('.prioritas_usulan_pppk').hide();
+
+ } else if(jumlahusulancpns > kekuranganformasi){
   $(".error_warning_usulan_kebanyakan").text("Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !");
 
   $('.btn-ajuan-usulan').prop('disabled', true);
@@ -334,6 +333,7 @@ console.log("jumlah kekurangan formasi= "+kekuranganformasi);
   if(e.keyCode == 8) {
         // alert('Delete key released');
         $('.prioritas_usulan_cpnsdiv').hide();
+        $(".error_warning_usulan_kebanyakan").hide();
         console.log('Delete key released');
       }
     });
@@ -342,6 +342,7 @@ console.log("jumlah kekurangan formasi= "+kekuranganformasi);
   if(e.keyCode == 8) {
         // alert('Delete key released');
         $('.prioritas_usulan_pppkdiv').hide();
+        $(".error_warning_usulan_kebanyakan").hide();
         console.log('Delete key released');
       }
     });
@@ -349,13 +350,13 @@ console.log("jumlah kekurangan formasi= "+kekuranganformasi);
 
 
 //set 0 after delete value
- $('input.jumlah_usulan_pppk_class').change(function(){
+$('input.jumlah_usulan_pppk_class').change(function(){
   if($(this).val() == ""){
     $(this).val(0);
   }
 });
 
- $('input.jumlah_usulan_cpns_class').change(function(){
+$('input.jumlah_usulan_cpns_class').change(function(){
   if($(this).val() == ""){
     $(this).val(0);
   }
@@ -363,7 +364,7 @@ console.log("jumlah kekurangan formasi= "+kekuranganformasi);
 
 
 
- $(document).ready(function() {
+$(document).ready(function() {
     // get Edit Product
     $('body').on('click', '.btn_input_usulan', function() {
       // get data from button edit
