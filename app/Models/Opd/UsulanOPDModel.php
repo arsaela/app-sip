@@ -181,6 +181,8 @@ class UsulanOPDModel extends Model
 		return $query;
 	}
 
+	
+
 	public function getUsulanByYear($idInstansi, $tahun_usulan_now)
 	{
 		$query =  $this->db->table('tbl_history_usulan')

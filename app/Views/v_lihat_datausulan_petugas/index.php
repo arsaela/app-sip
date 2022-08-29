@@ -35,7 +35,8 @@
                     <th>Formasi</th>
                     <th>Lokasi Unit Kerja</th>
                     <th>Instansi Nama</th>
-                    <th>Jumlah Usulan</th>
+                    <th>Jumlah Usulan CPNS</th>
+                    <th>Jumlah Usulan PPPK</th>
                     <th>Tahun Usulan</th>
                     <th>Status Usulan</th>
                     <th>Opsi</th>
@@ -51,7 +52,8 @@
                       <td><?php echo $value->jabatan_nama; ?></td>
                       <td><?php echo $value->instansi_unor_nama; ?></td>
                       <td><?php echo $value->instansi_nama; ?></td>
-                      <td><?php echo $value->jumlah_usulan; ?></td>
+                      <td><?php echo $value->jumlah_usulan_cpns; ?></td>
+                      <td><?php echo $value->jumlah_usulan_pppk; ?></td>
                       <td><?php echo $value->tahun_usulan; ?></td>
                       <td>
                         <?php if($value->status_usulan_id=='1'){ ?>

@@ -170,9 +170,8 @@
               <!--   <input type="number" id="prioritas_usulan_cpns" class="form-control prioritas_usulan_cpns_input" name="prioritas_usulan_cpns" placeholder="Prioritas Usulan CPNS"> -->
 
               <select class="form-control" name="prioritas_usulan_cpns" id="prioritas_usulan_cpns">
-                <option selected>-</option>
                 <option>1</option>
-                <option>2</option>
+                <option selected>2</option>
                 <option>3</option>
               </select>
             </div>
@@ -187,9 +186,8 @@
               <label>Prioritas Usulan PPPK </label>
 
               <select class="form-control" name="prioritas_usulan_pppk" id="prioritas_usulan_pppk">
-                <option selected>-</option>
                 <option>1</option>
-                <option>2</option>
+                <option selected>2</option>
                 <option>3</option>
               </select>
             </div>
@@ -244,31 +242,39 @@
     var jumlahusulanasn = jumlahusulanpppk + jumlahusulancpns;
 
     if(jumlahusulanasn > kekuranganformasi){
-      // alert("tes1");
       $(".error_warning_usulan_kebanyakan").show();
 
       $('.btn-ajuan-usulan').prop('disabled', true);
-      $('.prioritas_usulan_cpnsdiv').hide();
-      $('.prioritas_usulan_pppkdiv').hide();
+      $('.prioritas_usulan_cpns').hide();
+      $('.prioritas_usulan_pppk').hide();
 
-    } else if(jumlahusulanpppk <= kekuranganformasi) {
-      // alert("tes2");
-      $('.prioritas_usulan_cpnsdiv').show();
+    } else if(jumlahusulancpns > kekuranganformasi){
+      $(".error_warning_usulan_kebanyakan").show();
+
+      $('.btn-ajuan-usulan').prop('disabled', true);
+      $('.prioritas_usulan_cpns').hide();
+      $('.prioritas_usulan_pppk').hide();
+    } else if(jumlahusulanpppk > kekuranganformasi){
+      $(".error_warning_usulan_kebanyakan").show();
+
+      $('.btn-ajuan-usulan').prop('disabled', true);
+      $('.prioritas_usulan_cpns').hide();
+      $('.prioritas_usulan_pppk').hide();
+    } else if(jumlahusulanpppk<= kekuranganformasi) {
+      $(".error_warning_usulan_kebanyakan").hide();
+
       $('.prioritas_usulan_pppkdiv').show();
       $('.btn-ajuan-usulan').prop('disabled', false);
       $(".error_warning_usulan_kebanyakan").hide();
-    }else if(jumlahusulancpns <= kekuranganformasi)   {
-      // alert("tes3");
-      $('.prioritas_usulan_cpnsdiv').show();
+    }else if(jumlahusulancpns<= kekuranganformasi)   {
       $(".error_warning_usulan_kebanyakan").hide();
+      $('.prioritas_usulan_cpnsdiv').show();
       $('.btn-ajuan-usulan').prop('disabled', false);
-    }else if((jumlahusulancpns > kekuranganformasi) && (jumlahusulanpppk> kekuranganformasi))   {
-       // alert("tes4");
+    }else if((jumlahusulancpns> kekuranganformasi) && (jumlahusulanpppk> kekuranganformasi))   {
       $('.prioritas_usulan_cpnsdiv').hide();
       $('.prioritas_usulan_pppkdiv').hide();
       $(".error_warning_usulan_kebanyakan").hide();
-    }else if((jumlahusulancpns <= kekuranganformasi) && (jumlahusulanpppk<= kekuranganformasi))   {
-       // alert("tes5");
+    }else if((jumlahusulancpns<= kekuranganformasi) && (jumlahusulanpppk<= kekuranganformasi))   {
       $('.prioritas_usulan_cpnsdiv').show();
       $('.prioritas_usulan_pppkdiv').show();
       $(".error_warning_usulan_kebanyakan").hide();

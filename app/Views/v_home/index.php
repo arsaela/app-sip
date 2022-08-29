@@ -10,7 +10,7 @@
         <h1 class="logo mr-auto">
           <a href="<?php echo base_url('/'); ?>">
             <img src="/assets/img/klaten_logo.png">
-            <div class="sip_text_home"> APLIKASI FORMASI PEGAWAI </div>
+            <div class="sip_text_home"> SISTEM USULAN FORMASI </div>
             <div class="pemkab_text"> BKPSDM KABUPATEN KLATEN </div>
           </a>
         </h1>
@@ -19,22 +19,13 @@
         <nav class="nav-menu d-none d-lg-block">
           <ul>
             <li class="active"><a href="<?php echo base_url('/'); ?>">Home</a></li>
-            <!-- <li><a href="#alur_pengusulan">Alur Pengusulan</a></li> -->
-            <!-- <li><a href="#informasi">Informasi</a></li> -->
             <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
-
           </ul>
         </nav><!-- .nav-menu -->
       </div>
     </div>
   </div>
-
-
-  </div>
 </header><!-- End Header -->
-
-
-
 
 <section class="slider" id="slider">
   <div class="background_contact parallax" style="background-image: url('/assets/img/iconklaten.png')">
@@ -44,8 +35,7 @@
           <div class="isi-slider col-md-6">
             <!-- <h3> Selamat datang ! </h3> -->
             <h4 class="sip_text"> S I P </h4>
-            <h4 class="sip_text_italic"> ( Aplikasi Formasi Pegawai ) </h4>
-            <!-- <a href="" class="btn btn-primary register_petugas">Register >></a> -->
+            <h4 class="sip_text_italic"> ( Sistem Informasi Pengusulan Formasi ) </h4>
           </div>
           <div class="isi-slider col-md-6">
             <img class="img_slider_human" src="/assets/img/ICON_PNS2.png" style="float:right;">
@@ -55,19 +45,15 @@
     </div>
   </div>
 </section>
-
-
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
 <main id="main">
-
-
   <section class="section_batas_pengusulan" id="section_batas_pengusulan">
     <div class="container">
       <div class="row">
         <div class="title-section-batas-pengusulan col-md-12">
-          <!-- <h3>Batas Waktu Pengusulan</h3> -->
+          <h3>Batas Waktu Pengusulan</h3>
         </div>
       </div>
 
@@ -110,169 +96,95 @@
           </div>
         </div>
       </div>
-  </section>
+    </section>
 
-
-      <section class="informasi" id="informasi">
-        <div class="container">
-          <div class="row">
-            <div class="title-section-informasi col-md-12">
-              <h3>Informasi</h3>
-            </div>
+    <section class="informasi" id="informasi">
+      <div class="container">
+        <div class="row">
+          <div class="title-section-informasi col-md-12">
+            <h3>Informasi</h3>
           </div>
+        </div>
 
-          <div class="row">
-            <?php foreach ($getInformasi as $value) { ?>
-              <div class="wrap-informasi col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                <div class="content_informasi">
-                  <!-- <a href="<?php //echo $value->link_projek
-                                ?>" target="_blank"> -->
-                  <?php echo $value->informasi_content; ?>
-                  <!-- </a> -->
-                </div>
+        <div class="row">
+          <?php foreach ($getInformasi as $value) { ?>
+            <div class="wrap-informasi col-lg-12 col-md-12 col-sm-6 col-xs-12">
+              <div class="content_informasi">
+                <?php echo $value->informasi_content; ?>
               </div>
-            <?php } ?>
-          </div>
+            </div>
+          <?php } ?>
         </div>
-      </section>
-
-
-      <section class="alur_pengusulan" id="alur_pengusulan">
-        <div class="container">
-          <div class="row">
-            <div class="title-section-informasi col-md-12">
-              <h3>Alur Pengusulan</h3>
-            </div>
-          </div>
-
-
-          <?php //foreach($data_portofolio as $value) { 
-          ?>
-          <div class="wrap-alur-pengusulan left row">
-            <div class="content_alur_pengusulan col-lg-5 col-md-5 col-sm-6 col-xs-12">
-              <?php
-              //if (empty($data_foto_profile)){ 
-              ?>
-              <img class="img_alur_pengusulan left" src="/assets/img/login3.png">
-              <?php //} else { 
-              ?>
-              <!-- <img class="img_alur_pengusulan" src="/assets/img/login3.png"> -->
-              <?php //} 
-              ?>
-            </div>
-            <div class="content_alur_pengusulan col-lg-7 col-md-7 col-sm-6 col-xs-12">
-              <h3>1. Alur Pengusulan</h3>
-              Petugas Kepegawaian masing-masing unit kerja memiliki akses tersendiri untuk mengusulkan tambahan pegawai ASN.
-            </div>
-          </div>
-
-          <div class="wrap-alur-pengusulan right row">
-            <div class="content_alur_pengusulan col-lg-7 col-md-7 col-sm-6 col-xs-12">
-              <h3>2. Kirim Usulan</h3>
-              Petugas Kepegawaian di Unit Kerja mengirimkan usulan yang sudah disetujui oleh Kepala Unit Kerjanya melalui aplikasi SIP kepada BKPSDM.
-            </div>
-            <div class="content_alur_pengusulan col-lg-5 col-md-5 col-sm-6 col-xs-12">
-              <?php
-              //if (empty($data_foto_profile)){ 
-              ?>
-              <img class="img_alur_pengusulan right" src="/assets/img/update.png">
-              <?php //} else { 
-              ?>
-              <!-- <img class="img_alur_pengusulan" src="/assets/img/login3.png"> -->
-              <?php //} 
-              ?>
-            </div>
-          </div>
-          <?php //} 
-          ?>
-
-
-
-        </div>
-      </section>
-
-
-
-
-
-
-
-
-
-
-      <!-- ======= Info PMB ======= -->
-      <!-- <section id="team" class="faq section-bg">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>Info</h2>
-        <h3>Usulan <span>Formasi</span></h3>
-        <p>Usulan Formasi.</p>
       </div>
+    </section>
 
-      <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
 
-        <li>
-          <a data-toggle="collapse" class="collapsed" href="#faq1">Usulan Formasi CPNS dan PPPK <i class="icofont-simple-up"></i></a>
-          <div id="faq1" class="collapse" data-parent=".faq-list">
-            <p>
-              Usulan Formasi CPNS dan PPPK.
-            </p>
+    <section class="alur_pengusulan" id="alur_pengusulan">
+      <div class="container">
+        <div class="row">
+          <div class="title-section-informasi col-md-12">
+            <h3>Alur Pengusulan</h3>
           </div>
-        </li>
+        </div>
 
-        <li>
-          <a data-toggle="collapse" href="#faq2" class="collapsed">Usulan Formasi dari Mutasi PNS dan PPPK <i class="icofont-simple-up"></i></a>
-          <div id="faq2" class="collapse" data-parent=".faq-list">
-            <p>
-              Usulan Formasi dari Mutasi PNS dan PPPK.
-            </p>
+        <div class="wrap-alur-pengusulan left row">
+          <div class="content_alur_pengusulan col-lg-5 col-md-5 col-sm-6 col-xs-12">
+            <img class="img_alur_pengusulan left" src="/assets/img/login3.png">
           </div>
-        </li>
+          <div class="content_alur_pengusulan col-lg-7 col-md-7 col-sm-6 col-xs-12">
+            <h3>1. Alur Pengusulan</h3>
+            Petugas Kepegawaian masing-masing unit kerja memiliki akses tersendiri untuk mengusulkan tambahan pegawai ASN.
+          </div>
+        </div>
 
-      </ul>
+        <div class="wrap-alur-pengusulan right row">
+          <div class="content_alur_pengusulan col-lg-7 col-md-7 col-sm-6 col-xs-12">
+            <h3>2. Kirim Usulan</h3>
+            Petugas Kepegawaian di Unit Kerja mengirimkan usulan yang sudah disetujui oleh Kepala Unit Kerjanya melalui aplikasi SIP kepada BKPSDM.
+          </div>
+          <div class="content_alur_pengusulan col-lg-5 col-md-5 col-sm-6 col-xs-12">
+            <img class="img_alur_pengusulan right" src="/assets/img/update.png">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <?= $this->endSection() ?>
 
-    </div>
-  </section> -->
 
-</main>
-<?= $this->endSection() ?>
+  <?= $this->section('script') ?>
+  <script>
+    CountDownTimer("<?php echo $timer->waktu; ?>", 'hari', 'jam', 'menit', 'detik');
 
+    function CountDownTimer(dt, id1, id2, id3, id4) {
+      var end = new Date(dt);
 
-<?= $this->section('script') ?>
-<script>
-  CountDownTimer("<?php echo $timer->waktu; ?>", 'hari', 'jam', 'menit', 'detik');
+      var _second = 1000;
+      var _minute = _second * 60;
+      var _hour = _minute * 60;
+      var _day = _hour * 24;
+      var timer;
 
-  function CountDownTimer(dt, id1, id2, id3, id4) {
-    var end = new Date(dt);
+      function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        var distance1 = now - end;
+        if (distance1 > 0) {
+          clearInterval(timer);
+          return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
 
-    var _second = 1000;
-    var _minute = _second * 60;
-    var _hour = _minute * 60;
-    var _day = _hour * 24;
-    var timer;
-
-    function showRemaining() {
-      var now = new Date();
-      var distance = end - now;
-      var distance1 = now - end;
-      if (distance1 > 0) {
-        clearInterval(timer);
-        return;
+        document.getElementById(id1).innerHTML = days;
+        document.getElementById(id2).innerHTML = hours;
+        document.getElementById(id3).innerHTML = minutes;
+        document.getElementById(id4).innerHTML = seconds;
       }
-      var days = Math.floor(distance / _day);
-      var hours = Math.floor((distance % _day) / _hour);
-      var minutes = Math.floor((distance % _hour) / _minute);
-      var seconds = Math.floor((distance % _minute) / _second);
 
-      // document.getElementById(id1).innerHTML = days + ' Hari';
-      document.getElementById(id1).innerHTML = days;
-      document.getElementById(id2).innerHTML = hours;
-      document.getElementById(id3).innerHTML = minutes;
-      document.getElementById(id4).innerHTML = seconds;
+      timer = setInterval(showRemaining, 1000);
     }
-
-    timer = setInterval(showRemaining, 1000);
-  }
-</script>
-<?= $this->endSection() ?>
+  </script>
+  <?= $this->endSection() ?>
