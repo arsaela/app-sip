@@ -93,6 +93,7 @@ class DataAlurPengusulan extends BaseController
 
             $data = [
             	'alur_pengusulan_img' => $img->getName(),
+            	'alur_pengusulan_judul' => $this->request->getPost('alur_pengusulan_judul'),
             	'alur_pengusulan_detail' => $this->request->getPost('alur_pengusulan_detail')
             ];
 
@@ -140,6 +141,7 @@ class DataAlurPengusulan extends BaseController
 
     		$data = [
     			// 'alur_pengusulan_img' => $img->getName(),
+    			'alur_pengusulan_judul' => $this->request->getPost('alur_pengusulan_judul'),
     			'alur_pengusulan_detail' => $this->request->getPost('alur_pengusulan_detail')
     		];
 
@@ -154,6 +156,7 @@ class DataAlurPengusulan extends BaseController
 
     		$data = [
     			'alur_pengusulan_img' => $upload->getName(),
+    			'alur_pengusulan_judul' => $this->request->getPost('alur_pengusulan_judul'),
     			'alur_pengusulan_detail' => $this->request->getPost('alur_pengusulan_detail')
     		];
 

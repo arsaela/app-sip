@@ -1,32 +1,5 @@
-<html>
-
-<head>
-    <title>Dokumen Data Usulan Pegawai</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-
-    <!-- jQuery -->
-    <script type="text/javascript" src="/assets/adminlte3/plugins/jquery/jquery.min.js"></script>
-    <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="/assets/adminlte3/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-    <!-- Toastr -->
-    <link rel="stylesheet" href="/assets/adminlte3/plugins/toastr/toastr.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="/assets/adminlte3/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="/assets/adminlte3/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet" href="/assets/adminlte3/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="/assets/adminlte3/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="/assets/adminlte3/dist/css/adminlte.min.css">
-    <!--MENAMBAHKAN ICON -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/assets/style-admin.css">
-
-
-</head>
-
-<body>
+<?= $this->extend('layouts_petugas/template_petugas') ?>
+<?= $this->section('content') ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrappere">
@@ -95,7 +68,7 @@
                             <!-- /.card-body -->
                         </div>
 
-                        <div class="back_to_page">
+                        <div class="back_to_page to-print">
                             <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Sebelumnya" />
                         </div>
 
@@ -119,16 +92,15 @@
 
 
 <!-- /.content-wrapper -->
+<?= $this->endSection() ?>
 
-
-</body>
-
-</html>
-
+<?= $this->section('script') ?>
 <script>
     window.print();
 </script>
+<?= $this->endSection() ?>
 
+<?= $this->section('head') ?>
 <style type="text/css">
 @media print {
     @page {
@@ -155,6 +127,9 @@
     .back_to_page {
         display: none;
     }
+    .to-print{
+        display: none;
+    }
 }
 </style>
 
@@ -168,3 +143,4 @@ table#datatable-list {
     font-size: 18px;
 }
 </style>
+<?= $this->endSection() ?>

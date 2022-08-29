@@ -412,10 +412,16 @@ img.img_alur_pengusulan.left {
   text-align: justify;
 }
 
-.content_alur_pengusulan h3 {
+/*.content_alur_pengusulan h3 {
   font-weight: 700;
   font-size: 26px;
   color: #012970;
+}
+*/
+.content_alur_pengusulan h3 {
+  font-weight: 700;
+  font-size: 26px;
+  color: #e7860d;
 }
 
 .wrap-alur-pengusulan.left {
@@ -1017,19 +1023,60 @@ div.logo svg{
     display: none;
   }
 
+  img.img_alur_pengusulan.left {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    float: inherit;
+  }
+
+  .content_alur_pengusulan h3 {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+  }
+
+  .content_alur_pengusulan {
+    text-align: center;
+  }
+
   .wrap-logo-left {
     padding-left: 0px;
   }
+
+  .title-section-informasi:before {
+    width: 40px;
+    left: 13%;
+  }  
+
+  .title-section-informasi:after {
+   width: 40px;
+   left: 87%;
+ }
+
+ .title-section-batas-pengusulan:before{
+  display: none;
+}  
+
+.title-section-batas-pengusulan:after{
+  display: none;
+}
+
+.card.countdowntimer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 }
 
 @media (max-width: 320px) {
  .contact-info {
-    font-size: 12px;
-  }
+  font-size: 12px;
+}
 
-  .pemkab_text {
-    font-size: 12px;
-  }
+.pemkab_text {
+  font-size: 12px;
+}
 }
 
 @media (max-width: 768px) {
@@ -1567,13 +1614,42 @@ div.logo svg{
 
 @media (max-width: 768px) {
   .mobile-nav-toggle {
-    top: 70px;
+    top: 55px;
   }
 
   .sip_text_home {
     padding-top: 8px;
   }
+
+  .title-section-batas-pengusulan:before {
+    top: 31px;
+    left: 14%;
+  }
+
+  .title-section-batas-pengusulan:after {
+    top: 31px;
+    left: 86%;
+  }
+
+  .title-section-informasi:before {
+    top: 31px;
+    left: 12%;
+    z-index: 0;
+  }
+
+  .title-section-informasi:after {
+    top: 31px;
+    left: 87%;
+  }
+
+  img.img_alur_pengusulan.left {
+    width: 150px !important;
+  }
+
+
 }
+
+
 
 /*--------------------------------------------------------------
 # Portfolio

@@ -45,7 +45,7 @@ class DataPegawaiOPDModel extends Model
 	public function getPegawaiByInstansiID($getIDInstansi)
 	{
 		$query =  $this->db->table('tbl_pegawai')
-		->select('pegawai_nama, pegawai_nip, instansi_unor_nama, jabatan_nama, pegawai_gol, gol_nama, gol_pangkat, status_nama')
+		->select('pegawai_nama, pegawai_nip, instansi_unor_nama, jabatan_nama, pegawai_gol, gol_nama, gol_pangkat, status_nama, tmt_pensiun')
 		->join('tbl_jabatan', 'tbl_jabatan.jabatan_kode = tbl_pegawai.jabatan_kode', 'left')
 		->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_pegawai.instansi_id', 'left')
 		->join('tbl_unor', 'tbl_pegawai.instansi_unor = tbl_unor.instansi_unor', 'left')

@@ -51,8 +51,9 @@
                 <thead>
                   <tr>
                     <th>No.</th>
-                    <th>Gambar</th>
-                    <th>Detail Pengusulan</th>
+                    <th>Icon Alur Pengusulan</th>
+                    <th>Judul Alur Pengusulan</th>
+                    <th>Detail Alur Pengusulan</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -66,6 +67,7 @@
                         <img src=" <?php echo base_url('uploads/'.$isi->alur_pengusulan_img) ?> " width="100">
 
                       </td>
+                      <td><?php echo $isi->alur_pengusulan_judul; ?></td>
                       <td><?php echo $isi->alur_pengusulan_detail; ?></td>
                       <td>
 

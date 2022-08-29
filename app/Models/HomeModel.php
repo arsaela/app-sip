@@ -29,6 +29,13 @@ class HomeModel extends Model
 		$query =  $this->db->table('tbl_informasi')
 			->get();
 		return $query;
+	}	
+
+	public function get_data_alur_pengusulan()
+	{
+		$query =  $this->db->table('tbl_alur_pengusulan')
+			->get();
+		return $query;
 	}
 
     public function select_time(){

@@ -70,180 +70,178 @@
                         ?>
                         <tr>
                           <td><?php echo $no; ?></td>
-<!-- <td><?php //echo $value->formasi_id; 
-?></td> -->
 
-<td><?php echo $value->formasi_id; ?> / <?php echo $value->jabatan_nama; ?></td>
-<!--  <td><?php //echo $value->instansi_unor; 
-?></td> -->
-<td><?php echo $value->instansi_unor_nama; ?></td>
-<td><?php echo $value->formasi_jumlah; ?></td>
-<td><?php echo $value->jumlahasn; ?></td>
-<td><?php echo $kekurangan_formasi; ?></td>
-<td>
 
-  <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
+                          <td><?php echo $value->formasi_id; ?> / <?php echo $value->jabatan_nama; ?></td>
 
-  <!-- The Pegawai -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h3 class="card-title">Detail ASN</h3>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <td><?php echo $value->instansi_unor_nama; ?></td>
+                          <td><?php echo $value->formasi_jumlah; ?></td>
+                          <td><?php echo $value->jumlahasn; ?></td>
+                          <td><?php echo $kekurangan_formasi; ?></td>
+                          <td>
+
+                            <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
+
+                            <!-- The Pegawai -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <!-- Modal Header -->
+                                  <div class="modal-header">
+                                    <h3 class="card-title">Detail ASN</h3>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  </div>
+                                  <!-- Modal body -->
+                                  <div class="modal-body">
+                                    <table class="table table-bordered">
+                                      <thead>
+                                        <tr>
+                                          <th>No</th>
+                                          <th>Nama</th>
+                                          <th>NIP</th>
+                                          <th>Jabatan</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody id="show_data">
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                  <!-- Modal footer -->
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+
+                          <td>
+                            <?php  
+                            if(empty($cekStatusKirimUsulan)){
+                              ?>
+                              <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-kekuranganformasi="<?= $kekurangan_formasi; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a>
+                            <?php } 
+                            else { ?>
+                              <a href="#" class="btn btn-warning btn-sm btn_input_usulanku" disabled>Sudah kirim usulan taun ini</a>
+                            <?php }
+                            ?>
+                            <!-- Modal Ajuan Usulan Formasi -->
+                            <form action="/opd/DataUsulan/inputusulanopd" method="post" id="frm-inputusulan">
+                              <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Input Ajuan Usulan Formasi</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                      <div class="form-group">
+                                        <label>Jabatan Nama</label>
+                                        <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" readonly required>
+                                        <input type="hidden" class="form-control jabatan_kode" name="jabatan_kode" placeholder="Jabatan Kode" readonly required>
+                                        <input type="hidden" class="form-control instansi_unor" name="instansi_unor" placeholder="Instansi Unor" readonly required>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label>Lokasi Unit Kerja</label>
+                                        <input type="text" class="form-control instansi_unor_nama" name="instansi_unor_nama" readonly placeholder="Lokasi Unit Kerja" required>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label>Kekurangan Formasi</label>
+                                        <input type="text" class="form-control kekuranganformasi" name="jumlah_kekurangan_formasi" readonly placeholder="Jumlah Usulan" required>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label>Jumlah Usulan CPNS</label>
+
+                                        <input type="number" id="jumlah_usulan_cpns" class="form-control jumlah_usulan_cpns_class" name="jumlah_usulan_cpns" value="0" placeholder="Jumlah Usulan CPNS">
+                                      </div>
+
+                                      <div class="form-group prioritas_usulan_cpnsdiv" style="display:none;">
+                                        <label>Prioritas Usulan CPNS</label>
+
+                                        <!--   <input type="number" id="prioritas_usulan_cpns" class="form-control prioritas_usulan_cpns_input" name="prioritas_usulan_cpns" placeholder="Prioritas Usulan CPNS"> -->
+
+                                        <select class="form-control" name="prioritas_usulan_cpns" id="prioritas_usulan_cpns">
+                                          <option selected>-</option>
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                        </select>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label>Jumlah Usulan PPPK</label>
+
+                                        <input type="number" id="jumlah_usulan_pppk" class="form-control jumlah_usulan_pppk_class" name="jumlah_usulan_pppk" value="0" placeholder="Jumlah Usulan PPPK">
+                                      </div>
+
+                                      <div class="form-group prioritas_usulan_pppkdiv" style="display:none;">
+                                        <label>Prioritas Usulan PPPK </label>
+
+                                        <select class="form-control" name="prioritas_usulan_pppk" id="prioritas_usulan_pppk">
+                                          <option selected>-</option>
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                        </select>
+                                      </div>
+
+
+                                      <span class="error_warning_usulan_kebanyakan text-danger">
+                                        Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !
+                                      </span>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                      <input type="hidden" name="usulan_id" class="usulan_id">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="submit" class="btn btn-primary btn-ajuan-usulan">Simpan</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                          </td>
+                        </tr>
+                        <?php $no++;
+                      }
+                    } ?>
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
         </div>
-        <!-- Modal body -->
-        <div class="modal-body">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>NIP</th>
-                <th>Jabatan</th>
-              </tr>
-            </thead>
-            <tbody id="show_data">
-            </tbody>
-          </table>
-        </div>
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
-        </div>
-
+        <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
       </div>
-    </div>
+
+    </section>
+    <!-- /.content -->
   </div>
-</td>
 
-<td>
-  <?php  
-  if(empty($cekStatusKirimUsulan)){
-    ?>
-    <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-kekuranganformasi="<?= $kekurangan_formasi; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a>
-  <?php } 
-  else { ?>
-    <a href="#" class="btn btn-warning btn-sm btn_input_usulanku" disabled>Sudah kirim usulan taun ini</a>
-  <?php }
-  ?>
-  <!-- Modal Ajuan Usulan Formasi -->
-  <form action="/opd/DataUsulan/inputusulanopd" method="post" id="frm-inputusulan">
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Input Ajuan Usulan Formasi</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
+  <!-- /.content-wrapper -->
+  <?= $this->endSection() ?>
 
-          <div class="modal-body">
-            <div class="form-group">
-              <label>Jabatan Nama</label>
-              <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" readonly required>
-              <input type="hidden" class="form-control jabatan_kode" name="jabatan_kode" placeholder="Jabatan Kode" readonly required>
-              <input type="hidden" class="form-control instansi_unor" name="instansi_unor" placeholder="Instansi Unor" readonly required>
-            </div>
+  <?= $this->section('script') ?>
 
-            <div class="form-group">
-              <label>Lokasi Unit Kerja</label>
-              <input type="text" class="form-control instansi_unor_nama" name="instansi_unor_nama" readonly placeholder="Lokasi Unit Kerja" required>
-            </div>
+  <script>
 
-            <div class="form-group">
-              <label>Kekurangan Formasi</label>
-              <input type="text" class="form-control kekuranganformasi" name="jumlah_kekurangan_formasi" readonly placeholder="Jumlah Usulan" required>
-            </div>
+    $("input").keyup(function(){
+      var jumlahusulanpppk = parseInt($("input#jumlah_usulan_pppk").val());
+      var jumlahusulancpns = parseInt($("input#jumlah_usulan_cpns").val());
+      var kekuranganformasi = parseInt($("input.kekuranganformasi").val());
+      var jumlahusulanasn = jumlahusulanpppk + jumlahusulancpns;
 
-            <div class="form-group">
-              <label>Jumlah Usulan CPNS</label>
-
-              <input type="number" id="jumlah_usulan_cpns" class="form-control jumlah_usulan_cpns_class" name="jumlah_usulan_cpns" value="0" placeholder="Jumlah Usulan CPNS">
-            </div>
-
-            <div class="form-group prioritas_usulan_cpnsdiv" style="display:none;">
-              <label>Prioritas Usulan CPNS</label>
-
-              <!--   <input type="number" id="prioritas_usulan_cpns" class="form-control prioritas_usulan_cpns_input" name="prioritas_usulan_cpns" placeholder="Prioritas Usulan CPNS"> -->
-
-              <select class="form-control" name="prioritas_usulan_cpns" id="prioritas_usulan_cpns">
-                <option selected>-</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label>Jumlah Usulan PPPK</label>
-
-              <input type="number" id="jumlah_usulan_pppk" class="form-control jumlah_usulan_pppk_class" name="jumlah_usulan_pppk" value="0" placeholder="Jumlah Usulan PPPK">
-            </div>
-
-            <div class="form-group prioritas_usulan_pppkdiv" style="display:none;">
-              <label>Prioritas Usulan PPPK </label>
-
-              <select class="form-control" name="prioritas_usulan_pppk" id="prioritas_usulan_pppk">
-                <option selected>-</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-            </div>
-
-
-            <span class="error_warning_usulan_kebanyakan text-danger">
-              Maaf, jumlah Usulan ASN (CPNS + PPPK) yang anda inputkan melebihi jumlah kekurangan formasi !
-            </span>
-
-          </div>
-          <div class="modal-footer">
-            <input type="hidden" name="usulan_id" class="usulan_id">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary btn-ajuan-usulan">Simpan</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </form>
-</td>
-</tr>
-<?php $no++;
-}
-} ?>
-
-</tbody>
-</table>
-</div>
-<!-- /.card-body -->
-</div>
-<!-- /.card -->
-</div>
-</div>
-<input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
-</div>
-
-</section>
-<!-- /.content -->
-</div>
-
-<!-- /.content-wrapper -->
-<?= $this->endSection() ?>
-
-<?= $this->section('script') ?>
-
-<script>
-
-  $("input").keyup(function(){
-    var jumlahusulanpppk = parseInt($("input#jumlah_usulan_pppk").val());
-    var jumlahusulancpns = parseInt($("input#jumlah_usulan_cpns").val());
-    var kekuranganformasi = parseInt($("input.kekuranganformasi").val());
-    var jumlahusulanasn = jumlahusulanpppk + jumlahusulancpns;
-
-    if(jumlahusulanasn > kekuranganformasi){
+      if(jumlahusulanasn > kekuranganformasi){
       // alert("tes1");
       $(".error_warning_usulan_kebanyakan").show();
 
@@ -264,34 +262,34 @@
       $('.btn-ajuan-usulan').prop('disabled', false);
     }else if((jumlahusulancpns > kekuranganformasi) && (jumlahusulanpppk> kekuranganformasi))   {
        // alert("tes4");
-      $('.prioritas_usulan_cpnsdiv').hide();
-      $('.prioritas_usulan_pppkdiv').hide();
-      $(".error_warning_usulan_kebanyakan").hide();
-    }else if((jumlahusulancpns <= kekuranganformasi) && (jumlahusulanpppk<= kekuranganformasi))   {
+       $('.prioritas_usulan_cpnsdiv').hide();
+       $('.prioritas_usulan_pppkdiv').hide();
+       $(".error_warning_usulan_kebanyakan").hide();
+     }else if((jumlahusulancpns <= kekuranganformasi) && (jumlahusulanpppk<= kekuranganformasi))   {
        // alert("tes5");
-      $('.prioritas_usulan_cpnsdiv').show();
-      $('.prioritas_usulan_pppkdiv').show();
-      $(".error_warning_usulan_kebanyakan").hide();
-    }
-    console.log("usulan cpns="+jumlahusulancpns);
-    console.log("usulan pppk="+jumlahusulanpppk);
-    console.log("jumlah usul asn= "+jumlahusulanasn);
-    console.log("jumlah kekurangan formasi= "+kekuranganformasi);
-  });
+       $('.prioritas_usulan_cpnsdiv').show();
+       $('.prioritas_usulan_pppkdiv').show();
+       $(".error_warning_usulan_kebanyakan").hide();
+     }
+     console.log("usulan cpns="+jumlahusulancpns);
+     console.log("usulan pppk="+jumlahusulanpppk);
+     console.log("jumlah usul asn= "+jumlahusulanasn);
+     console.log("jumlah kekurangan formasi= "+kekuranganformasi);
+   });
 
-  $('input#jumlah_usulan_cpns').keyup(function(e){
-    if(e.keyCode == 8) {
-      $('.prioritas_usulan_cpnsdiv').hide();
-      console.log('Delete key released');
-    }
-  });
+    $('input#jumlah_usulan_cpns').keyup(function(e){
+      if(e.keyCode == 8) {
+        $('.prioritas_usulan_cpnsdiv').hide();
+        console.log('Delete key released');
+      }
+    });
 
-  $('input#jumlah_usulan_pppk').keyup(function(e){
-    if(e.keyCode == 8) {
-      $('.prioritas_usulan_pppkdiv').hide();
-      console.log('Delete key released');
-    }
-  });
+    $('input#jumlah_usulan_pppk').keyup(function(e){
+      if(e.keyCode == 8) {
+        $('.prioritas_usulan_pppkdiv').hide();
+        console.log('Delete key released');
+      }
+    });
 
 
 //set 0 after delete value
@@ -384,16 +382,17 @@ $('body').on('click', '.edit', function() {
 
 });
 </script>
+
 <?= $this->endSection() ?>
 
 <style type="text/css">
-  .error {
-    color: #F00;
-    background-color: #FFF;
-  }
+.error {
+  color: #F00;
+  background-color: #FFF;
+}
 
-  .card .alertkeloladatapegawai {
-    color: #fff;
-    background: #cd3948 !important;
-  }
+.card .alertkeloladatapegawai {
+  color: #fff;
+  background: #cd3948 !important;
+}
 </style>

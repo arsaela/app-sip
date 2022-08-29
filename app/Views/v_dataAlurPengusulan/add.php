@@ -31,11 +31,17 @@
              <form method="post" action="<?php echo base_url('dataalurpengusulan/upload'); ?>" enctype="multipart/form-data">
               <?= csrf_field(); ?>
               <div class="form-group">
-                <label for="">Gambar</label>
+                <label for="">Icon Alur Pengusulan</label>
                 <input type="file" name="file" class="form-control" required/>
               </div>
+              
               <div class="form-group">
-                <label for="">Content</label>
+                <label for="">Judul Alur Pengusulan</label>
+                  <input type="text" name="alur_pengusulan_judul" required class="form-control">
+              </div>
+
+              <div class="form-group">
+                <label for="">Detail Alur Pengusulan</label>
                 <!--   <input type="text" name="alur_pengusulan_detail" required class="form-control"> -->
 
                 <div>

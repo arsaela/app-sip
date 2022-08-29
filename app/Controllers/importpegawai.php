@@ -131,10 +131,15 @@ class ImportPegawai extends BaseController
 				$jabatan_kode = $row['4'];
 				$pegawai_nip = $row['5'];
 				$pegawai_gol = $row['6'];
+				$pensiun = $row['7'];
 	
 				$db = \Config\Database::connect();
-
+				$tmt_pensiun = substr($pensiun, 0, 4) .'-'. substr($pensiun, 4,2) .'-'. substr($pensiun,6,2) ;
 				$cekNip = $db->table('tbl_pegawai')->getWhere(['pegawai_nip'=>$pegawai_nip])->getResult();
+
+				// echo "<pre>";
+				// dd([$tmt_pensiun,$pensiun]);
+
 
 				if(count($cekNip) > 0) {
 					session()->setFlashdata('message','<b style="color:red">Data Gagal di Import NIS ada yang sama</b>');
@@ -150,7 +155,8 @@ class ImportPegawai extends BaseController
 					'instansi_unor'=>$instansi_unor,
 					'jabatan_kode'=>$jabatan_kode,
 					'pegawai_nip'=>$pegawai_nip,
-					'pegawai_gol'=>$pegawai_gol
+					'pegawai_gol'=>$pegawai_gol,
+					'tmt_pensiun'=>$tmt_pensiun,
 				];
 	
 				$db->table('tbl_pegawai')->insert($simpandata);

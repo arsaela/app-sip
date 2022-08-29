@@ -127,25 +127,26 @@
           </div>
         </div>
 
-        <div class="wrap-alur-pengusulan left row">
-          <div class="content_alur_pengusulan col-lg-5 col-md-5 col-sm-6 col-xs-12">
-            <img class="img_alur_pengusulan left" src="/assets/img/login3.png">
-          </div>
-          <div class="content_alur_pengusulan col-lg-7 col-md-7 col-sm-6 col-xs-12">
-            <h3>1. Alur Pengusulan</h3>
-            Petugas Kepegawaian masing-masing unit kerja memiliki akses tersendiri untuk mengusulkan tambahan pegawai ASN.
-          </div>
-        </div>
+        <?php $no = 1;
+        foreach ($getAlurPengusulan as $value) { 
+         
 
-        <div class="wrap-alur-pengusulan right row">
-          <div class="content_alur_pengusulan col-lg-7 col-md-7 col-sm-6 col-xs-12">
-            <h3>2. Kirim Usulan</h3>
-            Petugas Kepegawaian di Unit Kerja mengirimkan usulan yang sudah disetujui oleh Kepala Unit Kerjanya melalui aplikasi SIP kepada BKPSDM.
+          ?>
+          <div class="wrap-alur-pengusulan left row">
+            <div class="content_alur_pengusulan col-lg-4 col-md-4 col-sm-6 col-xs-12">
+              <img class="img_alur_pengusulan left" style="width: 200px;" src="/uploads/<?php echo $value->alur_pengusulan_img;?>">
+            </div>
+            <div class="content_alur_pengusulan col-lg-8 col-md-8 col-sm-6 col-xs-12">
+              <h3><?php echo $no.".  ";?><?php echo $value->alur_pengusulan_judul;?></h3>
+              <?php echo $value->alur_pengusulan_detail;?>
+            </div>
           </div>
-          <div class="content_alur_pengusulan col-lg-5 col-md-5 col-sm-6 col-xs-12">
-            <img class="img_alur_pengusulan right" src="/assets/img/update.png">
-          </div>
-        </div>
+          <?php 
+
+          $no++;
+        } ?>     
+
+
       </div>
     </section>
   </main>
@@ -188,3 +189,11 @@
     }
   </script>
   <?= $this->endSection() ?>
+
+  <style type="text/css">
+  .content_alur_pengusulan h3 {
+    font-weight: 700;
+    font-size: 26px;
+    color: #e7860d !important;
+  }
+</style>

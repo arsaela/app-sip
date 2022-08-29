@@ -16,9 +16,11 @@
     <link rel="stylesheet" href="/assets/adminlte3/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <!-- Toastr -->
     <link rel="stylesheet" href="/assets/adminlte3/plugins/toastr/toastr.min.css">
-    <!-- DataTables -->
+   <!-- DataTables -->
     <link rel="stylesheet" href="/assets/adminlte3/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="/assets/adminlte3/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+
+    
     <!-- Tempusdominus Bbootstrap 4 -->
     <link rel="stylesheet" href="/assets/adminlte3/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- overlayScrollbars -->
@@ -33,7 +35,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" rel="stylesheet"></link>
    <!--  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
-
+    <?= $this->renderSection('head') ?>
+    <style>
+        @media print {
+            .to-print:display:none;
+        }
+    </style>
 </head>
 
  <!-- penting untuk menggunakan fungsi session di bawah ini  -->
@@ -53,7 +60,7 @@
         <?= $this->renderSection('content') ?>
         <!-- /.content-wrapper -->
 
-        <footer class="main-footer">
+        <footer class="main-footer to-print">
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 1.0.0
             </div>

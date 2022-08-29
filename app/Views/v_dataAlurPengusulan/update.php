@@ -30,7 +30,7 @@
 
               <form method="post" action="<?php echo base_url('dataalurpengusulan/edit_save_alur_pengusulan'); ?>" enctype="multipart/form-data">
                 <div class="form-group">
-                  <label for="">Gambar</label>
+                  <label for="">Icon Alur Pengusulan</label>
                   <div>
                     <?php
                     if (!empty($alur_pengusulan_by_id->alur_pengusulan_img)) {
@@ -44,9 +44,13 @@
                  </div> 
                </div> 
 
-
                <div class="form-group">
-                <label for="">Content</label>
+                <label for="">Judul Alur Pengusulan</label>
+                <input type="text" value="<?= $alur_pengusulan_by_id->alur_pengusulan_judul;?>" name="alur_pengusulan_judul" required class="form-control">
+              </div>
+
+              <div class="form-group">
+                <label for="">Alur pengusulan Detail</label>
                 <div>
                   <textarea cols="10" rows="10" class="form-control" name="alur_pengusulan_detail" required="required"><?php echo $alur_pengusulan_by_id->alur_pengusulan_detail;?></textarea>
                 </div>
