@@ -168,7 +168,44 @@ class UsulanModel extends Model
 		->where('tbl_detail_usulan.status_usulan_id', "3")
 		->get();
 		return $query;
+	}	
+
+
+	public function getDetailUsulanByInstansi($tahun_usulan_now)
+	{
+		// $query =  $this->db->table('tbl_detail_usulan')
+		// // ->select('*,concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan,tbl_instansi.instansi_nama, count(tbl_pegawai.pegawai_nip) as jumlahasn')
+		// ->select('*')
+		// ->join('tbl_usulan',  'tbl_usulan.usulan_id = tbl_detail_usulan.usulan_id', 'left')
+		// ->where('tbl_usulan.tahun_usulan', $tahun_usulan_now)
+		// ->join('tbl_formasi',  'tbl_formasi.instansi_unor = tbl_detail_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_detail_usulan.jabatan_kode', 'left')		
+		// ->join('tbl_jabatan', 'tbl_detail_usulan.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+		// ->join('tbl_unor', 'tbl_detail_usulan.instansi_unor = tbl_unor.instansi_unor', 'left')
+		// ->join('status_usulan', 'status_usulan.status_usulan_id = tbl_detail_usulan.status_usulan_id', 'left')
+		// ->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_formasi.instansi_id', 'left')
+		// ->where('tbl_detail_usulan.status_usulan_id', "3")
+		// ->get();
+
+
+		$query =  $this->db->table('tbl_detail_usulan')
+		->select('*')
+		->join('tbl_usulan',  'tbl_usulan.usulan_id = tbl_detail_usulan.usulan_id', 'left')
+		->where('tbl_usulan.tahun_usulan', $tahun_usulan_now)
+		->join('tbl_formasi',  'tbl_formasi.instansi_unor = tbl_detail_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_detail_usulan.jabatan_kode', 'left')
+		->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+		->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
+		->join('status_usulan', 'status_usulan.status_usulan_id =  tbl_detail_usulan.status_usulan_id', 'left')
+		->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_formasi.instansi_id', 'left')
+		->join('tbl_pegawai', 'tbl_formasi.instansi_unor = tbl_pegawai.instansi_unor and tbl_formasi.jabatan_kode = tbl_pegawai.jabatan_kode', 'left')
+		->where('tbl_detail_usulan.status_usulan_id', "3")
+		->orderBy('tbl_formasi.instansi_unor asc')
+		->get();
+		return $query;
 	}
+
+
+
+
 
 	public function getInstansiUsulan($tahun_usulan_now){
 		$query =  $this->db->table('tbl_history_usulan')
@@ -182,6 +219,12 @@ class UsulanModel extends Model
 		->groupBy('tbl_history_usulan.instansi_id')
 		->get();
 		return $query;
+	}
+
+	public function update_status_history_usulan($get_usulan, $datausul){
+		$builder =  $this->db->table('tbl_history_usulan');
+		$builder->where('history_usulan_id ', $get_usulan);
+		return $builder->update($datausul);
 	}
 }
 

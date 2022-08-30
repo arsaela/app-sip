@@ -77,6 +77,17 @@ class DataUsulan extends BaseController
 		$ApproveUsulan = $this->M_usulan->updateApprovalUsulan($data, $id);
 
 
+		$get_usulan = 'H'.$id;
+		$datausul = array(
+				'status_usulan_id' => '3',
+			);
+		$update_status_history_usulan = $this->M_usulan->update_status_history_usulan($get_usulan, $datausul);
+
+		// print_r($data);
+		// print_r($get_usulan);
+		// die('stttop');
+
+
 		if($ApproveUsulan){
 			session()->setFlashdata('message', 'Data berhasil di simpan');
 			return redirect()->to('DataUsulan/detail_usulan/'. $usulan_id);
@@ -160,5 +171,34 @@ class DataUsulan extends BaseController
 		// die('sstttopopp');
 
 		return view('v_dataUsulan/cetak', $data);
+	}
+
+	// Halaman Data Pegawai
+	public function cetakdatausulan()
+	{
+		$data['title']  = "App-SIP | Data Formasi";
+		$data['page']   = "dataformasi";
+		$data['nama']   = $this->session->get('nama');
+		$data['email']   = $this->session->get('email');
+		
+		$username   = $this->session->get('username');
+		//$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
+
+		$username   = $this->session->get('username');
+		//$idInstansi  = $this->M_pegawai->getInstansiByLogin($username)->getResult();
+		//$getIDInstansi = $idInstansi['0']->instansi_id;
+		
+		$tahun_usulan_now = date("Y");
+		$data['getDetailUsulanByInstansi'] = $this->M_usulan->getDetailUsulanByInstansi($tahun_usulan_now)->getResult();
+
+		// echo "<pre>";
+		// print_r($data['getDetailUsulanByInstansi']);
+		// die('stttp');
+
+		// echo "<pre>";
+		// print_r($data['getPegawaiByInstansi']);
+		// die('sttop');
+
+		return view('v_dataUsulan/cetak_usulan_admin', $data);
 	}
 }

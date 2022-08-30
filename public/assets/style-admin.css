@@ -8,10 +8,17 @@ p.bg_status_pending {
 
 p.bg_status_approve {
     color: #fff;
-    background-color: #28a745;
+    background-color: #0f91c3;
     border-color: #28a745;
     box-shadow: none;
     padding:0.375rem 0.75rem;
+}
+
+a.btn.btn-lg.btn-primary.disabled.status_primaryku {
+    background-color: #0f91c3 !important;
+    color: #fff;
+    box-shadow: none;
+    padding: 0.375rem 0.75rem;
 }
 
 p.bg_status_reject {

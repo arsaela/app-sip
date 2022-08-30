@@ -60,14 +60,11 @@
 
 
 
-
+<!-- 
       <div>
-        <a data-toggle='tooltip' data-placement='top' title='Cetak Usulan' href="<?php echo base_url('datausulan/cetak_usulan_all_by_year/'); ?>" class="btn btn-success"><i class="fa fa-print "> Cetak Semua Usulan Yang Disetujui</i></a>
+        <a data-toggle='tooltip' data-placement='top' title='Cetak Usulan' href="<?php //echo base_url('datausulan/cetak_usulan_all_by_year/'); ?>" class="btn btn-success"><i class="fa fa-print "> Cetak Semua Usulan Yang Disetujui</i></a>
       </div>
-
-
-
-
+ -->
 
 
 

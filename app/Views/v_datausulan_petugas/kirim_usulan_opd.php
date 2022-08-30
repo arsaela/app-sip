@@ -66,7 +66,7 @@
                         } else if ($value->status_usulan_id == 2) {
                           echo "<p class='bg_status_approve'>sudah kirim usulan</p>";
                         } else if ($value->status_usulan_id == 3) {
-                          echo "<p class='bg_status_reject'>approve usulan</p>";
+                          echo "<p class='bg_status_reject'>sudah diverifikasi dan siap diusulkan ke menpan</p>";
                         } else if ($value->status_usulan_id == 4) {
                           echo "<p class='bg_status_reject'>reject usulan</p>";
                         } else if ($value->status_usulan_id == 5) {

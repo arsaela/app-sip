@@ -88,9 +88,18 @@
 <script>
   $(document).ready(function() {
     $('#datatable-export').DataTable( {
-      dom: 'Bfrtip',buttons: [
-      'excel',  'print'
-      ]
+
+      dom: 'Bfrtip',
+      buttons: [
+                 {
+        extend: 'excelHtml5',
+        title: 'Data Pegawai OPD'
+      },
+      {
+        extend: 'print',
+        title: 'Data Pegawai OPD'
+      }
+        ]
     } );
   } );
 </script>

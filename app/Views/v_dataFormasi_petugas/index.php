@@ -48,7 +48,7 @@
                     <th>Jumlah Kebutuhan (ABK)</th>
                     <th>Jumlah ASN</th>
                     <th>Detail ASN</th>
-                    <th>Ajukan Perubahan ABK</th>
+                  <!--   <th>Ajukan Perubahan ABK</th> -->
                   </tr>
                 </thead>
                 <tbody>
@@ -100,11 +100,11 @@
                         </div>
                       </td>
 
-                      <td>
+                     <!--  <td> -->
                        <?php 
                        //if(empty($cekFormasiAjuanABK)){
                        ?>
-                       <a href="#" class="btn btn-warning btn-sm btn_ubah_abk" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-abk_lama="<?= $value->formasi_jumlah; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a>
+                      <!--  <a href="#" class="btn btn-warning btn-sm btn_ubah_abk" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-abk_lama="<?= $value->formasi_jumlah; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a> -->
                          <?php //} 
                        //else { ?>
                          <!--  <a href="#" class="btn btn-warning btn-sm btn_ubah_abkku" disabled>Jumlah ABK = </a> -->
@@ -112,7 +112,7 @@
                        ?>
 
                        <!-- Modal Ajuan Perubahan ABK -->
-                       <form action="/opd/dataFormasi/ajukan_perubahan_abk_opd" method="post" id="frm-inputusulan">
+<!--                        <form action="/opd/dataFormasi/ajukan_perubahan_abk_opd" method="post" id="frm-inputusulan">
                         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -162,9 +162,9 @@
                             </div>
                           </div>
                         </div>
-                      </form>
+                      </form> -->
                       <!-- End Modal Edit Product-->
-                    </td>
+                   <!--  </td> -->
                   </tr>
                   <?php $no++;
                 } ?>

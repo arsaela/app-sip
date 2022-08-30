@@ -73,8 +73,11 @@
                                         <th>Formasi</th>
                                         <th>Lokasi Unit Kerja</th>
                                         <th>Unit Kerja</th>
-                                        <th>Usulan</th>
-                                        <th>Usulan Disetujui</th>
+                                        <th>Usulan PPPK</th>
+                                        <th>Usulan CPNS</th>
+                                        <th>Jumlah Approve CPNS</th>
+                                        <th>Jumlah Approve PPPK</th>
+                                       
 
                                     </tr>
                                 </thead>
@@ -88,8 +91,10 @@
                                             <td><?php echo $value->jabatan_nama; ?></td>
                                             <td><?php echo $value->instansi_unor_nama; ?></td>
                                             <td><?php echo $value->instansi_nama; ?></td>
-                                            <td><?php echo $value->jumlah_usulan; ?></td>
-                                            <td><?php echo $value->jumlah_approve; ?></td>
+                                            <td><?php echo $value->jumlah_usulan_pppk; ?></td>
+                                            <td><?php echo $value->jumlah_usulan_cpns; ?></td>
+                                            <td><?php echo $value->jumlah_approve_pppk; ?></td>
+                                            <td><?php echo $value->jumlah_approve_cpns; ?></td>
                                         </tr>
                                         <?php $no++;
 

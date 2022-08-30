@@ -85,7 +85,14 @@
   $(document).ready(function() {
     $('#datatable-export').DataTable( {
         dom: 'Bfrtip',buttons: [
-            'excel',  'print'
+                 {
+        extend: 'excelHtml5',
+        title: 'Data Pegawai Se-Kabupaten Klaten'
+      },
+      {
+        extend: 'print',
+        title: 'Data Pegawai Se-Kabupaten Klaten'
+      }
         ]
     } );
 } );

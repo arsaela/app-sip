@@ -65,7 +65,7 @@
                         <?php } else if($value->status_usulan_id=='2'){ ?>
                           <a href="#" class="btn btn-lg btn-success disabled"><?php echo $value->nama_status; ?></a>
                         <?php } else { ?>
-                          <a href="#" class="btn btn-lg btn-primary disabled"><?php echo $value->nama_status; ?></a>
+                          <a href="#" class="btn btn-lg btn-primary disabled status_primaryku"><?php echo $value->nama_status; ?></a>
                         <?php } ?>
                       </td>
                       <td> 
