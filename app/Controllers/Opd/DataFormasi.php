@@ -22,7 +22,7 @@ class DataFormasi extends BaseController
 		$this->form_validation =  \Config\Services::validation();
 		$this->session = \Config\Services::session();
 
-	
+
 		$this->M_dashboard_opd = new DashboardPetugasModel($this->request);
 		
 	}
@@ -35,6 +35,12 @@ class DataFormasi extends BaseController
 		$data['page']   = "dataformasi";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
+
+
+		// date_default_timezone_set('Asia/Jakarta');
+		// echo 'Indonesian Timezone: ' . date('d-m-Y H:i:s');
+		// echo date('Y-m-d H:i:s');
+		// die("stttop");
 		
 		$username   = $this->session->get('username');
 		$data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();
@@ -61,6 +67,12 @@ class DataFormasi extends BaseController
 
 		$datenow = date("Y");
 		$explode_tahun_ajuan_perubahan_abk = substr($datenow,2);
+
+		date_default_timezone_set('Asia/Jakarta');
+		// echo 'Indonesian Timezone: ' . date('d-m-Y H:i:s');
+
+		// echo date('Y-m-d H:i:s');
+		// die("stttop");
 
 		$data_temp_formasi = array(
 			'temp_formasi_id' => 'TF-'.$get_inputan_instansi_unor.'-'.$get_inputan_jabatan_kode.'-'.$explode_tahun_ajuan_perubahan_abk,

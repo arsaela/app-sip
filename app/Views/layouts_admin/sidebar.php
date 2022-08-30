@@ -110,14 +110,14 @@
             </p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="<?php echo base_url('exportpegawai'); ?>" class="nav-link <?php if ($page == 'exportpegawai');  ?>">
+      <!--   <li class="nav-item">
+          <a href="<?php //echo base_url('exportpegawai'); ?>" class="nav-link <?php //if ($page == 'exportpegawai');  ?>">
             <i class="nav-icon fas fa-file-export"></i>
             <p>
               Eksport Data
             </p>
           </a>
-        </li>
+        </li> -->
 <!-- TEST -->
         </li> 
       </ul>

@@ -35,7 +35,10 @@
                     <th>Formasi</th>
                     <th>Lokasi Unit Kerja</th>
                     <th>Instansi Nama</th>
-                    <th>Jumlah Usulan</th>
+                    <th>Jumlah Usulan CPNS</th>
+                    <th>Prioritas Usulan CPNS</th>
+                    <th>Jumlah Usulan PPPK</th>
+                    <th>Prioritas Usulan PPPK</th>
                     <th>Tahun Usulan</th>
                     <th>Status Usulan</th>
 
@@ -51,7 +54,10 @@
                       <td><?php echo $value->jabatan_nama; ?></td>
                       <td><?php echo $value->instansi_unor_nama; ?></td>
                       <td><?php echo $value->instansi_nama; ?></td>
-                      <td><?php echo $value->jumlah_usulan; ?></td>
+                      <td><?php echo $value->jumlah_usulan_cpns; ?></td>
+                      <td><?php echo $value->prioritas_usulan_cpns; ?></td>
+                      <td><?php echo $value->jumlah_usulan_pppk; ?></td>
+                      <td><?php echo $value->prioritas_usulan_pppk; ?></td>
                       <td><?php echo $value->tahun_usulan; ?></td>
                       <td>
                         <?php if($value->status_usulan_id=='1'){ ?>
@@ -69,46 +75,46 @@
 
                   ?>
 
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
+                </tbody>
+              </table>
             </div>
-            <!-- /.card -->
+            <!-- /.card-body -->
           </div>
+          <!-- /.card -->
         </div>
-        <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
       </div>
+      <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
+    </div>
 
-    </section>
-    <!-- /.content -->
-  </div>
+  </section>
+  <!-- /.content -->
+</div>
 
-  <style type="text/css">
-    tbody tr td a {
-      padding: 6px !important;
-      font-size: 14px !important;
-    }
+<style type="text/css">
+tbody tr td a {
+  padding: 6px !important;
+  font-size: 14px !important;
+}
 
-    tbody tr td a.btn.btn-lg.btn-danger.disabled {
-      background-color: #d50a0a;
-      border-color: #d50a0a;
-      border-radius: 0px;
-    }
+tbody tr td a.btn.btn-lg.btn-danger.disabled {
+  background-color: #d50a0a;
+  border-color: #d50a0a;
+  border-radius: 0px;
+}
 
-    tbody tr td a.btn.btn-lg.btn-success.disabled {
-      border-radius: 0px;
-    }  
+tbody tr td a.btn.btn-lg.btn-success.disabled {
+  border-radius: 0px;
+}  
 
-    tbody tr td a.btn.btn-lg.btn-primary.disabled {
-      border-radius: 0px;
-    }
-  </style>
-  <!-- /.content-wrapper -->
-  <?= $this->endSection() ?>
+tbody tr td a.btn.btn-lg.btn-primary.disabled {
+  border-radius: 0px;
+}
+</style>
+<!-- /.content-wrapper -->
+<?= $this->endSection() ?>
 
-  <?= $this->section('script') ?>
-  <script>
+<?= $this->section('script') ?>
+<script>
   //Menampilakan modal edit data petugas
   $('body').on('click', '.edit', function() {
     var instansiunor = $(this).attr("instansi_unor");

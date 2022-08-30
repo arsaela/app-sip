@@ -35,7 +35,10 @@
                     <th>Formasi</th>
                     <th>Lokasi Unit Kerja</th>
                     <th>Instansi Nama</th>
-                    <th>Jumlah Usulan</th>
+                    <th>Jumlah Usulan CPNS</th>
+                    <th>Prioritas Usulan CPNS</th>
+                    <th>Jumlah Usulan PPPK</th>
+                    <th>Prioritas Usulan PPPK</th>
                     <th>Status Usulan</th>
 
 
@@ -50,7 +53,10 @@
                       <td><?php echo $value->jabatan_nama; ?></td>
                       <td><?php echo $value->instansi_unor_nama; ?></td>
                       <td><?php echo $value->instansi_nama; ?></td>
-                      <td><?php echo $value->jumlah_usulan; ?></td>
+                      <td><?php echo $value->jumlah_usulan_cpns; ?></td>
+                      <td><?php echo $value->prioritas_usulan_cpns; ?></td>
+                      <td><?php echo $value->jumlah_usulan_pppk; ?></td>
+                      <td><?php echo $value->prioritas_usulan_pppk; ?></td>
                       <td>
                         <div style="background-color: yellow; padding:5px;"><?php echo $value->nama_status; ?></div>
                       </td>

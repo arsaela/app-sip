@@ -103,92 +103,92 @@
                       <td>
                        <?php 
                        //if(empty($cekFormasiAjuanABK)){
-                        ?>
-                        <a href="#" class="btn btn-warning btn-sm btn_input_usulan" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-abk_lama="<?= $value->formasi_jumlah; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a>
+                       ?>
+                       <a href="#" class="btn btn-warning btn-sm btn_ubah_abk" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-abk_lama="<?= $value->formasi_jumlah; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a>
                          <?php //} 
                        //else { ?>
-                       <!--  <a href="#" class="btn btn-warning btn-sm btn_input_usulanku" disabled>Jumlah ABK = </a> -->
+                         <!--  <a href="#" class="btn btn-warning btn-sm btn_ubah_abkku" disabled>Jumlah ABK = </a> -->
                        <?php //}
                        ?>
 
-                        <!-- Modal Ajuan Perubahan ABK -->
-                        <form action="/opd/dataFormasi/ajukan_perubahan_abk_opd" method="post" id="frm-inputusulan">
-                          <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Input Ajuan Perubahan ABK</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
+                       <!-- Modal Ajuan Perubahan ABK -->
+                       <form action="/opd/dataFormasi/ajukan_perubahan_abk_opd" method="post" id="frm-inputusulan">
+                        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Input Ajuan Perubahan ABK</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+
+                              <div class="modal-body">
+                                <div class="form-group">
+                                  <label>Jabatan Nama</label>
+                                  <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" readonly required>
+                                  <input type="hidden" class="form-control jabatan_kode" name="jabatan_kode" placeholder="Jabatan Kode" readonly required>
+                                  <input type="hidden" class="form-control instansi_unor" name="instansi_unor" placeholder="Instansi Unor" readonly required>
                                 </div>
 
-                                <div class="modal-body">
-                                  <div class="form-group">
-                                    <label>Jabatan Nama</label>
-                                    <input type="text" class="form-control jabatan_nama" name="jabatan_nama" placeholder="Jabatan Nama" readonly required>
-                                    <input type="hidden" class="form-control jabatan_kode" name="jabatan_kode" placeholder="Jabatan Kode" readonly required>
-                                    <input type="hidden" class="form-control instansi_unor" name="instansi_unor" placeholder="Instansi Unor" readonly required>
-                                  </div>
-
-                                  <div class="form-group">
-                                    <label>Lokasi Unit Kerja</label>
-                                    <input type="text" class="form-control instansi_unor_nama" name="instansi_unor_nama" readonly placeholder="Lokasi Unit Kerja" required>
-                                  </div>
-
-                                <!--   <div class="form-group">
-                                    <label>Kekurangan Formasi</label>
-                                    <input type="text" class="form-control kekuranganformasi" name="jumlah_kekurangan_formasi" readonly placeholder="Jumlah Usulan" required>
-                                  </div> -->
-
-                                  <div class="form-group">
-                                    <label>Jumlah Kebutuhan (ABK) Lama</label>
-
-                                    <input type="text" class="form-control abk_lama" name="jumlah_abk_lama" readonly placeholder="Jumlah Usulan" required>
-                                  </div>
-
-                                  <div class="form-group">
-                                    <label>Jumlah Kebutuhan (ABK) yang diajukan</label>
-
-                                    <input type="number" id="jumlah_abk_yang_diajukan" class="form-control jumlah_abk_yang_diajukan" name="jumlah_abk_yang_diajukan" placeholder="Jumlah Usulan">
-                                  </div>
-
+                                <div class="form-group">
+                                  <label>Lokasi Unit Kerja</label>
+                                  <input type="text" class="form-control instansi_unor_nama" name="instansi_unor_nama" readonly placeholder="Lokasi Unit Kerja" required>
                                 </div>
-                                <div class="modal-footer">
-                                  <input type="hidden" name="usulan_id" class="usulan_id">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button type="submit" class="btn btn-primary">Update</button>
+
+                                <div class="form-group">
+                                  <label>Jumlah Kebutuhan (ABK) Lama</label>
+
+                                  <input type="text" class="form-control abk_lama" name="jumlah_abk_lama" readonly placeholder="Jumlah Usulan" required>
                                 </div>
+
+                                <div class="form-group">
+                                  <label>Jumlah Kebutuhan (ABK) yang diajukan</label>
+
+                                  <input type="number" id="jumlah_abk_yang_diajukan" class="form-control jumlah_abk_yang_diajukan" required name="jumlah_abk_yang_diajukan" placeholder="Jumlah Usulan">
+                                </div>
+
+
+                                <span class="error_warning_abk_kurang text-danger">
+                                  Maaf, ABK yang anda ajukan kurang dari ABK Lama.
+                                </span>
+
+                              </div>
+                              <div class="modal-footer">
+                                <input type="hidden" name="usulan_id" class="usulan_id">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary btn_ajukan_update_abk">Simpan</button>
                               </div>
                             </div>
                           </div>
-                        </form>
-                        <!-- End Modal Edit Product-->
-                      </td>
-                    </tr>
-                    <?php $no++;
-                  } ?>
+                        </div>
+                      </form>
+                      <!-- End Modal Edit Product-->
+                    </td>
+                  </tr>
+                  <?php $no++;
+                } ?>
 
-                </tbody>
-              </table>
-            </div>
-            <!-- /.card-body -->
+              </tbody>
+            </table>
           </div>
-          <!-- /.card -->
+          <!-- /.card-body -->
         </div>
+        <!-- /.card -->
       </div>
-      <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
     </div>
+    <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
+  </div>
 
-  </section>
-  <!-- /.content -->
+</section>
+<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 <?= $this->endSection() ?>
 
 <?= $this->section('script') ?>
 <script>
-  //Menampilakan modal edit data petugas
+  //Menampilakan modal detail pegawai
   $('body').on('click', '.edit', function() {
     var instansiunor = $(this).attr("instansi_unor");
     var jabatankode = $(this).attr("jabatan_kode");
@@ -238,11 +238,54 @@
 
 
 <script>
+  $("input.jumlah_abk_yang_diajukan").keyup(function(){
+    var jumlahabklama = parseInt($("input.abk_lama").val());
+    var jumlah_abk_yang_diajukan = parseInt($("input.jumlah_abk_yang_diajukan").val());;
+
+    if(jumlah_abk_yang_diajukan < jumlahabklama){
+      // alert("tes1");
+      $(".error_warning_abk_kurang").show();
+      $('.btn_ajukan_update_abk').prop('disabled', true);
+      // alert("errror abk kurang");
+    }
+  });
+
+  $('input.jumlah_abk_yang_diajukan').keyup(function(e){
+    if(e.keyCode == 8) {
+      $('.error_warning_abk_kurang').hide();
+      console.log('Delete key released');
+    }
+  });
+
+
+  $(document).ready(function() {
+    $('body').on('click', '.btn_ubah_abk', function() {
+      $(".error_warning_abk_kurang").hide();
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   $(document).ready(function() {
     // $('#frm-inputusulan').validate();
 
     // get Edit Product
-    $('body').on('click', '.btn_input_usulan', function() {
+    $('body').on('click', '.btn_ubah_abk', function() {
       // alert('tesss');
 
       // get data from button edit
@@ -264,23 +307,6 @@
       $('.instansi_unor').val(instansiunor);
 
       $('#editModal').modal('show');
-
-      $('#frm-inputusulan').validate({
-        rules: {
-          jumlah_abk_yang_diajukan: {
-            digits: true,
-            min: 1
-          }
-
-        },
-        messages: {
-          jumlah_abk_yang_diajukan: {
-            required: "Jumlah Kebutuhan (ABK) yang diajukan harus di isi",
-            min: "Jumlah Kebutuhan (ABK) yang diajukan minimal 1"
-
-          }
-        }
-      });
 
 
     });

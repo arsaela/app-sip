@@ -36,9 +36,7 @@
                     <th>Lokasi Unit Kerja</th>
                     <th>Instansi Nama</th>
                     <th>Jumlah Ajuan ABK</th>
-                    <th>Tanggal Ajuan</th>
-                    <th>Status Usulan</th>
-                    
+                    <th>Tanggal Ajuan</th>                 
                   </tr>
                 </thead>
                 <tbody>
@@ -52,66 +50,50 @@
                       <td><?php echo $value->instansi_nama; ?></td>
                       <td><?php echo $value->jumlah_abk_baru; ?></td>
                       <td><?php echo $value->tanggal_ajuan; ?></td>
-                      <td> -
-                       <!--  <?php //if($value->status_usulan_id=='1'){ ?>
-                          <a href="#" class="btn btn-lg btn-danger disabled"><?php //echo $value->nama_status; ?></a>
-                        <?php } //else if($value->status_usulan_id=='2'){ ?>
-                          <a href="#" class="btn btn-lg btn-success disabled"><?php //echo $value->nama_status; ?></a>
-                        <?php //} else { ?>
-                          <a href="#" class="btn btn-lg btn-primary disabled"><?php //echo $value->nama_status; ?></a>
-                        <?php //} ?> -->
-                      </td>
-
-
                     </tr>
                     <?php $no++;
-                  //} 
+                  } ?>
 
-                  //if($value->status_usulan_id=='1'){ ?>
-                   <!--  <div class="status_usulan_belum_kirim" style="color: red; font-size: 16px; padding-bottom: 20px;">Note : Jika masih terdapat data usulan yang belum di kirimkan.
-                    Silahkan segera kirim data usulan anda ke BKPSDM Kabupaten Klaten.</div>
-                    <?php //} ?>
- -->
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
+                </tbody>
+              </table>
             </div>
-            <!-- /.card -->
+            <!-- /.card-body -->
           </div>
+          <!-- /.card -->
         </div>
-        <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
       </div>
+      <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
+    </div>
 
-    </section>
-    <!-- /.content -->
-  </div>
+  </section>
+  <!-- /.content -->
+</div>
 
-  <style type="text/css">
-    tbody tr td a {
-      padding: 6px !important;
-      font-size: 14px !important;
-    }
+<style type="text/css">
+tbody tr td a {
+  padding: 6px !important;
+  font-size: 14px !important;
+}
 
-    tbody tr td a.btn.btn-lg.btn-danger.disabled {
-      background-color: #d50a0a;
-      border-color: #d50a0a;
-      border-radius: 0px;
-    }
+tbody tr td a.btn.btn-lg.btn-danger.disabled {
+  background-color: #d50a0a;
+  border-color: #d50a0a;
+  border-radius: 0px;
+}
 
-    tbody tr td a.btn.btn-lg.btn-success.disabled {
-      border-radius: 0px;
-    }  
+tbody tr td a.btn.btn-lg.btn-success.disabled {
+  border-radius: 0px;
+}  
 
-    tbody tr td a.btn.btn-lg.btn-primary.disabled {
-      border-radius: 0px;
-    }
-  </style>
-  <!-- /.content-wrapper -->
-  <?= $this->endSection() ?>
+tbody tr td a.btn.btn-lg.btn-primary.disabled {
+  border-radius: 0px;
+}
+</style>
+<!-- /.content-wrapper -->
+<?= $this->endSection() ?>
 
-  <?= $this->section('script') ?>
-  <script>
+<?= $this->section('script') ?>
+<script>
   //Menampilakan modal edit data petugas
   $('body').on('click', '.edit', function() {
     var instansiunor = $(this).attr("instansi_unor");
@@ -151,6 +133,6 @@
 </script>
 <?= $this->endSection() ?>
 
-  <?= $this->section('script') ?>
-  <script src="/assets/js/script.js"></script>
-  <?= $this->endSection() ?>
+<?= $this->section('script') ?>
+<script src="/assets/js/script.js"></script>
+<?= $this->endSection() ?>

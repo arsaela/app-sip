@@ -208,8 +208,12 @@ class DataUsulan extends BaseController
 				'usulan_id'			=> 'U-'.$value->instansi_id.'-'.$explode_tahun_usulan,
 				'instansi_unor'     => $value->instansi_unor,
 				'jabatan_kode'     	=> $value->jabatan_kode,
-				'jumlah_usulan'     => $value->jumlah_usulan,
-				'jumlah_approve'    => '-',
+				'jumlah_usulan_pppk'=> $value->jumlah_usulan_pppk,
+				'prioritas_usulan_pppk'=> $value->prioritas_usulan_pppk,
+				'jumlah_usulan_cpns'     => $value->jumlah_usulan_cpns,
+				'prioritas_usulan_cpns'     => $value->prioritas_usulan_cpns,
+				'jumlah_approve_pppk'    => '-',
+				'jumlah_approve_cpns'    => '-',
 				'status_usulan_id'	=> '2',
 				'keterangan'		=> '-',
 			);
@@ -252,7 +256,7 @@ class DataUsulan extends BaseController
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
-		$data['getLihatDetailUsulan'] = $this->M_usulan_OPD->getLihatDetailUsulan($idInstansi['0']->instansi_id, $tahun_usulan)->getResult();
+		$data['getLihatDetailUsulan'] = $this->M_usulan_OPD->getLihatUsulanNow($idInstansi['0']->instansi_id, $tahun_usulan)->getResult();
 		$data['get_tahun_usulan'] = $tahun_usulan;
 
 		return view('v_datausulan_petugas/detail_usulan_by_year', $data);
@@ -389,7 +393,7 @@ class DataUsulan extends BaseController
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
 		$tahun_usulan_now = date("Y");
-		$data['getLihatDetailUsulan'] = $this->M_usulan_OPD->getLihatDetailUsulan($idInstansi['0']->instansi_id, $tahun_usulan_now)->getResult();
+		$data['getLihatDetailUsulan'] = $this->M_usulan_OPD->getLihatRekapUsulan($idInstansi['0']->instansi_id)->getResult();
 
 		return view('v_datausulan_petugas/rekap_usulan_opd', $data);
 	}

@@ -64,10 +64,15 @@ class DataUsulan extends BaseController
 		$id = $this->request->getPost('detail_usulan_id');
 		$usulan_id = $this->request->getPost('usulan_id');
 		$data = array(
-			'jumlah_approve'            => $this->request->getPost('jumlah_approve'),
+			'jumlah_approve_pppk'            => $this->request->getPost('jumlah_approve_pppk'),
+			'jumlah_approve_cpns'            => $this->request->getPost('jumlah_approve_cpns'),
 			'status_usulan_id'      	=> '3',
 			'keterangan'      		    => '-',
 		);
+
+		// echo "<pre>";
+		// print_r($data);
+		// die('stop');
 
 		$ApproveUsulan = $this->M_usulan->updateApprovalUsulan($data, $id);
 
@@ -79,13 +84,6 @@ class DataUsulan extends BaseController
 			session()->setFlashdata('err',\Config\Services::validation()->listErrors()); 
 			return redirect()->to('/DataUsulan/detail_usulan/'. $usulan_id); 
 		}
-
-
-
-
-		// $dataredirect['page']   = "Detail_data_usulan";
-		// $dataredirect['nama']   = $this->session->get('nama');
-		// $dataredirect['email']   = $this->session->get('email');
 
 		$dataredirect['page']   = "Detail_data_usulan";
 		$dataredirect['nama']   = $this->session->get('nama');
@@ -101,7 +99,8 @@ class DataUsulan extends BaseController
 		$usulan_id = $this->request->getPost('usulan_id');
 
 		$data = array(
-			'jumlah_approve'    => '0',
+			'jumlah_approve_pppk'    => '0',
+			'jumlah_approve_cpns'    => '0',
 			'keterangan'        => $this->request->getPost('keterangan'),
 			'status_usulan_id'     => '4',
 		);

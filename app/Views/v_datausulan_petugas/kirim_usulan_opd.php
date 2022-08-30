@@ -107,7 +107,13 @@
                               </div>
 
                               <div class="modal-body">
-                                Apakah anda sudah yakin ingin mengirimkan usulan dan segala data pegawai yang sudah ada adalah data terupdate. Segala Resiko di akan ditanggung Instansi terkait kevalidan data.
+                                Mohon cek kembali ajuan formasi yang sudah anda inputkan. Pastikan ajuan yang anda input sudah disetujui oleh Kepala Instansi. Selanjutnya, Apakah anda sudah yakin untuk finalisasi data ajuan dan di kirim ke BKPSDM ?
+                                <br>
+                                <p style="color: red;">
+                                  <i>
+                                    Warning : Segala bentuk kevalidan data, menjadi tanggung jawab instansi.
+                                  </i>
+                                </p>
                               </div>
                               <div class="modal-footer">
                                 <input type="hidden" name="detail_usulan_id" class="detail_usulan_id" value="<?php echo $value->instansi_id; ?>">

@@ -36,7 +36,9 @@
                     <th>Lokasi Unit Kerja</th>
                     <th>Instansi Nama</th>
                     <th>Jumlah Usulan CPNS</th>
+                    <th>Prioritas Usulan CPNS</th>
                     <th>Jumlah Usulan PPPK</th>
+                    <th>Prioritas Usulan PPPK</th>
                     <th>Tahun Usulan</th>
                     <th>Status Usulan</th>
                     <th>Opsi</th>
@@ -53,7 +55,9 @@
                       <td><?php echo $value->instansi_unor_nama; ?></td>
                       <td><?php echo $value->instansi_nama; ?></td>
                       <td><?php echo $value->jumlah_usulan_cpns; ?></td>
+                      <td><?php echo $value->prioritas_usulan_cpns; ?></td>
                       <td><?php echo $value->jumlah_usulan_pppk; ?></td>
+                      <td><?php echo $value->prioritas_usulan_pppk; ?></td>
                       <td><?php echo $value->tahun_usulan; ?></td>
                       <td>
                         <?php if($value->status_usulan_id=='1'){ ?>
@@ -69,15 +73,15 @@
                        <?php if(empty($cekStatusKirimUsulan)){ ?>
                         <a href="/opd/datausulan/delete_ajuanusulanbelumdikirim/<?=$value->history_usulan_id; ?>" data-toggle="modal" class="btn btn-sm btn-danger btn-hapus"><i class="fa fa-trash"></i></a>
                       <?php } 
-                       else { ?>
+                      else { ?>
                         <p style="text-align: center;"><?php echo "-";?></p>
-                       <?php }
-                       ?>
-                      </td>
+                      <?php }
+                      ?>
+                    </td>
 
-                    </tr>
-                    <?php $no++;
-                  } 
+                  </tr>
+                  <?php $no++;
+                } 
 
                   //if($value->status_usulan_id=='1'){ ?>
                     <div class="status_usulan_belum_kirim" style="color: red; font-size: 16px; padding-bottom: 20px;">Note : Jika masih terdapat data usulan yang belum di kirimkan.
@@ -100,30 +104,30 @@
   </div>
 
   <style type="text/css">
-    tbody tr td a {
-      padding: 6px !important;
-      font-size: 14px !important;
-    }
+  tbody tr td a {
+    padding: 6px !important;
+    font-size: 14px !important;
+  }
 
-    tbody tr td a.btn.btn-lg.btn-danger.disabled {
-      background-color: #d50a0a;
-      border-color: #d50a0a;
-      border-radius: 0px;
-    }
+  tbody tr td a.btn.btn-lg.btn-danger.disabled {
+    background-color: #d50a0a;
+    border-color: #d50a0a;
+    border-radius: 0px;
+  }
 
-    tbody tr td a.btn.btn-lg.btn-success.disabled {
-      border-radius: 0px;
-    }  
+  tbody tr td a.btn.btn-lg.btn-success.disabled {
+    border-radius: 0px;
+  }  
 
-    tbody tr td a.btn.btn-lg.btn-primary.disabled {
-      border-radius: 0px;
-    }
-  </style>
-  <!-- /.content-wrapper -->
-  <?= $this->endSection() ?>
+  tbody tr td a.btn.btn-lg.btn-primary.disabled {
+    border-radius: 0px;
+  }
+</style>
+<!-- /.content-wrapper -->
+<?= $this->endSection() ?>
 
-  <?= $this->section('script') ?>
-  <script>
+<?= $this->section('script') ?>
+<script>
   //Menampilakan modal edit data petugas
   $('body').on('click', '.edit', function() {
     var instansiunor = $(this).attr("instansi_unor");
@@ -163,6 +167,6 @@
 </script>
 <?= $this->endSection() ?>
 
-  <?= $this->section('script') ?>
-  <script src="/assets/js/script.js"></script>
-  <?= $this->endSection() ?>
+<?= $this->section('script') ?>
+<script src="/assets/js/script.js"></script>
+<?= $this->endSection() ?>
