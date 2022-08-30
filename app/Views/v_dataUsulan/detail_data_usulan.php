@@ -126,7 +126,7 @@
                     } else if ($value->status_usulan_id == 2) {
                       echo "<p class='bg_status_belumverifikasi'>Sudah Kirim Usulan, Belum di verifikasi</p>";
                     } else if ($value->status_usulan_id == 3) {
-                      echo "<p class='bg_status_approve'>Approve Usulan</p>";
+                      echo "<p class='bg_status_approve'>Sudah diverifikasi</p>";
                     } else if ($value->status_usulan_id == 4) {
                       echo "<p class='bg_status_reject'>Reject Usulan</p>";
                     } else {
