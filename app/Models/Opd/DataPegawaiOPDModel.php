@@ -42,12 +42,27 @@ class DataPegawaiOPDModel extends Model
 		return $query;
 	}
 
+// 	public function getPegawaiByInstansiID($getIDInstansi)
+//  {
+// $query =$this->db->table('tbl_pegawai')
+// ->select('pegawai_nama, pegawai_nip, jabatan_nama, tmt_pensiun, pegawai_gol, gol_nama, gol_pangkat, status_nama')
+// ->where('tbl_pegawai.instansi_id', $getIDInstansi)
+// ->join('tbl_jabatan', 'tbl_jabatan.jabatan_kode = tbl_pegawai.jabatan_kode','left')
+//  //->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_pegawai.instansi_id','left')
+//  ->join('tbl_golongan', 'tbl_golongan.gol_id = tbl_pegawai.pegawai_gol','left')
+// ->join('tbl_status', 'tbl_status.status_id = tbl_pegawai.pegawai_status' ,'left')
+//  //
+//  ->orderBy('tbl_pegawai.pegawai_nama ASC')
+//  ->get();
+//  return $query;
+// } 
+
 	public function getPegawaiByInstansiID($getIDInstansi)
 	{
 		$query =  $this->db->table('tbl_pegawai')
-		->select('pegawai_nama, pegawai_nip, instansi_unor_nama, jabatan_nama, pegawai_gol, gol_nama, gol_pangkat, status_nama, tmt_pensiun')
+		->select('pegawai_nama, pegawai_nip, tbl_jabatan.jabatan_kode, tbl_unor.instansi_unor, instansi_unor_nama, jabatan_nama, pegawai_gol, gol_nama, gol_pangkat, status_nama, tmt_pensiun')
 		->join('tbl_jabatan', 'tbl_jabatan.jabatan_kode = tbl_pegawai.jabatan_kode', 'left')
-		->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_pegawai.instansi_id', 'left')
+		// ->join('tbl_instansi', 'tbl_instansi.instansi_id = tbl_pegawai.instansi_id', 'left')
 		->join('tbl_unor', 'tbl_pegawai.instansi_unor = tbl_unor.instansi_unor', 'left')
 		->join('tbl_golongan', 'tbl_golongan.gol_id = tbl_pegawai.pegawai_gol', 'left')
 		->join('tbl_status', 'tbl_status.status_id = tbl_pegawai.pegawai_status', 'left')

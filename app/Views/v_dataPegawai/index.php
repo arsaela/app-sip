@@ -37,7 +37,7 @@
                     <th>Pangkat Golongan</th>
                     <th>Jabatan</th> 
                     <th>Lokasi Unit Kerja</th>
-                    <th>Instansi Nama</th>
+                   <!--   <th>Instansi Nama</th> -->
                     <th>Status</th>
                     <th>TMT Pensiun</th>
                   </tr>
@@ -45,23 +45,23 @@
                 <tbody>
                   <?php $no = 1;
                   foreach ($getPegawaiByInstansi as $value) { 
-                      ?>
-                      <tr>
-                        <td><?php echo $no; ?></td>
-                        <td><?php echo $value->pegawai_nama; ?></td>
-                        <td><?php echo $value->pegawai_nip; ?></td>
-                        <td><?php echo $value->gol_pangkat .' ('.$value->gol_nama.')'; ?></td>
-                        <td><?php echo $value->jabatan_nama; ?></td>
-                        <td><?php echo $value->instansi_unor_nama; ?></td>
-                        <td><?php echo $value->instansi_nama; ?></td>
-                        <td><?php echo $value->status_nama; ?></td>
-                        <td>
-                          <?php $date=$value->tmt_pensiun;
-                          echo date('d F Y', strtotime(str_replace('/', '-', $date)));
-                          ?>
-                        </td>
-                      </tr>
-                      <?php $no++;
+                    ?>
+                    <tr>
+                      <td><?php echo $no; ?></td>
+                      <td><?php echo $value->pegawai_nama; ?></td>
+                      <td><?php echo $value->pegawai_nip; ?></td>
+                      <td><?php echo $value->gol_pangkat .' ('.$value->gol_nama.')'; ?></td>
+                      <td><?php echo $value->jabatan_nama; ?></td>
+                      <td><?php echo $value->instansi_unor_nama; ?></td>
+                     <!--  <td><?php //echo $value->instansi_nama; ?></td>  -->
+                      <td><?php echo $value->status_nama; ?></td>
+                      <td>
+                        <?php $date=$value->tmt_pensiun;
+                        echo date('d F Y', strtotime(str_replace('/', '-', $date)));
+                        ?>
+                      </td>
+                    </tr>
+                    <?php $no++;
                   } ?>
 
                 </tbody>
@@ -84,8 +84,8 @@
 <script>
   $(document).ready(function() {
     $('#datatable-export').DataTable( {
-        dom: 'Bfrtip',buttons: [
-                 {
+      dom: 'Bfrtip',buttons: [
+      {
         extend: 'excelHtml5',
         title: 'Data Pegawai Se-Kabupaten Klaten'
       },
@@ -93,9 +93,9 @@
         extend: 'print',
         title: 'Data Pegawai Se-Kabupaten Klaten'
       }
-        ]
+      ]
     } );
-} );
+  } );
 </script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
