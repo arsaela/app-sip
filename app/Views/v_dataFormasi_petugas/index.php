@@ -70,8 +70,23 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $no = 1;
-                  foreach ($getDetailFormasi as $value) { ?>
+                  <?php 
+                  $no = 1;
+                  foreach ($getDetailFormasi as $value) { 
+
+                    $jabatankode = $value->jabatan_kode;
+                    $instansiunor = $value->instansi_unor;
+                    $getpegawai = "SELECT * FROM tbl_pegawai WHERE jabatan_kode=$jabatankode AND instansi_unor=$instansiunor";
+
+                    $db      = \Config\Database::connect();
+                    $builder = $db->table('tbl_pegawai');
+                    $queryku   = $builder->select('*,tbl_pegawai.tmt_pensiun,count(tbl_pegawai.tmt_pensiun) as jumlah_asn_bup')
+                    ->where('tbl_pegawai.jabatan_kode', $jabatankode)
+                    ->where('tbl_pegawai.instansi_unor', $instansiunor)
+                    ->orderBy('tbl_pegawai.id asc')
+                    ->get();
+
+                    ?>
                     <tr>
                       <td><?php echo $no; ?></td>
                       <!-- <td><?php //echo $value->formasi_id; ?></td> -->
@@ -80,11 +95,60 @@
                       <td><?php echo $value->instansi_unor_nama; ?></td>
                       <td><?php echo $value->formasi_jumlah; ?></td>
                       <td><?php echo $value->jumlahasn; ?></td>
-                      <td><?php echo "a"; ?></td>
-                      <td><?php echo "a"; ?></td>
-                      <td><?php echo "a"; ?></td>
-                      <td><?php echo "a"; ?></td>
-                      <td><?php echo "a"; ?></td>
+
+
+                      <?php
+                      $i = 0;
+                      foreach ($queryku->getResult() as $row) { 
+                        $explode_taun_tmt_pensiun = substr($row->tmt_pensiun, 0, 4);
+
+
+                        if($bup_pertama==$explode_taun_tmt_pensiun){ ?>
+                          <td> <?php echo $explode_taun_tmt_pensiun; ?></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        <?php } else if ($bup_kedua==$explode_taun_tmt_pensiun) { ?>
+                          <td></td>
+                          <td> <?php echo $explode_taun_tmt_pensiun; ?></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        <?php } else if ($bup_ketiga==$explode_taun_tmt_pensiun) { ?>
+                          <td></td>
+                          <td></td>
+                          <td> <?php echo $explode_taun_tmt_pensiun; ?></td>
+                          <td></td>
+                          <td></td>
+                        <?php } else if ($bup_keempat==$explode_taun_tmt_pensiun) { ?>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td> <?php echo $explode_taun_tmt_pensiun; ?></td>
+                          <td></td>
+                        <?php } else if ($bup_kelima==$explode_taun_tmt_pensiun) { ?>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td> <?php echo $explode_taun_tmt_pensiun; ?></td>
+                        <?php } else { ?>
+                          <td><?php echo "-"; ?></td>
+                          <td><?php echo "-"; ?></td>
+                          <td><?php echo "-"; ?></td>
+                          <td><?php echo "-"; ?></td>
+                        <?php } ?>
+                        <td>
+                          <?php echo "taun bup keempat:".$bup_keempat; ?> <br>
+                          <?php echo "pegawai nama:".$row->pegawai_nama; ?> <br>
+                          <?php echo "explode_taun_tmt_pensiun:".$explode_taun_tmt_pensiun; ?><br>
+                          <?php echo "tmt_pensiun:".$row->tmt_pensiun; ?>
+                        </td>
+
+                        <?php $i++; 
+                      } ?>
+
                       <td>
 
                         <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>

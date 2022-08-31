@@ -61,6 +61,21 @@ class FormasiPetugasModel extends Model
 		->orderBy('tbl_jabatan.jabatan_nama asc')
 		->get();
 		return $query;
+	}	
+
+	public function getBUPFormasi($idInstansi)
+	{
+		$query =  $this->db->table('tbl_formasi')
+		->select('*,tbl_pegawai.pegawai_nip,count(tbl_pegawai.pegawai_nip) as jumlahasn,concat(tbl_formasi.jabatan_kode,tbl_formasi.instansi_unor) as jabatan')
+		->where('tbl_formasi.instansi_id', $idInstansi)
+		->join('tbl_history_usulan', 'tbl_formasi.instansi_unor = tbl_history_usulan.instansi_unor and tbl_formasi.jabatan_kode = tbl_history_usulan.jabatan_kode', 'left')
+		->join('tbl_pegawai', 'tbl_formasi.instansi_unor = tbl_pegawai.instansi_unor and tbl_formasi.jabatan_kode = tbl_pegawai.jabatan_kode', 'left')
+		->join('tbl_jabatan', 'tbl_formasi.jabatan_kode = tbl_jabatan.jabatan_kode', 'left')
+		->join('tbl_unor', 'tbl_formasi.instansi_unor = tbl_unor.instansi_unor', 'left')
+		->groupBy('jabatan')
+		->orderBy('tbl_jabatan.jabatan_nama asc')
+		->get();
+		return $query;
 	}
 
 
