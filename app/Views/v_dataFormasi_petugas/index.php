@@ -40,15 +40,33 @@
               <table id="datatable-list" class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th>No.</th>
+                    <th rowspan="2" class="align-middle text-center">No.</th>
                     <!--  <th>Formasi</th> -->
-                    <th>Formasi</th>
+                    <th rowspan="2" class="align-middle text-center">Formasi</th>
                     <!--  <th>Lokasi Unit Kerja</th> -->
-                    <th>Lokasi Unit Kerja</th>
-                    <th>Jumlah Kebutuhan (ABK)</th>
-                    <th>Jumlah ASN</th>
-                    <th>Detail ASN</th>
-                  <!--   <th>Ajukan Perubahan ABK</th> -->
+                    <th rowspan="2" class="align-middle text-center">Lokasi Unit Kerja</th>
+                    <th rowspan="2" class="align-middle text-center">Jumlah Kebutuhan (ABK)</th>
+                    <th rowspan="2" class="align-middle text-center">Jumlah ASN</th>
+                    <th colspan="5" class="text-center">Pensiun</th>
+                    <th rowspan="2" class="align-middle text-center">Detail ASN</th>
+                    <!--   <th>Ajukan Perubahan ABK</th> -->
+                  </tr>
+
+                  <?php 
+                  $tahun_usulan_now = date("Y");
+                  $bup_pertama = $tahun_usulan_now + 1;
+                  $bup_kedua = $tahun_usulan_now + 2;
+                  $bup_ketiga = $tahun_usulan_now + 3;
+                  $bup_keempat = $tahun_usulan_now + 4;
+                  $bup_kelima = $tahun_usulan_now + 5;
+
+                  ?>
+                  <tr>
+                    <td><?php echo $bup_pertama;  ?></td>
+                    <td><?php echo $bup_kedua;  ?></td>
+                    <td><?php echo $bup_ketiga;  ?></td>
+                    <td><?php echo $bup_keempat;  ?></td>
+                    <td><?php echo $bup_kelima;  ?></td>
                   </tr>
                 </thead>
                 <tbody>
@@ -62,6 +80,11 @@
                       <td><?php echo $value->instansi_unor_nama; ?></td>
                       <td><?php echo $value->formasi_jumlah; ?></td>
                       <td><?php echo $value->jumlahasn; ?></td>
+                      <td><?php echo "a"; ?></td>
+                      <td><?php echo "a"; ?></td>
+                      <td><?php echo "a"; ?></td>
+                      <td><?php echo "a"; ?></td>
+                      <td><?php echo "a"; ?></td>
                       <td>
 
                         <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
@@ -100,11 +123,11 @@
                         </div>
                       </td>
 
-                     <!--  <td> -->
+                      <!--  <td> -->
                        <?php 
                        //if(empty($cekFormasiAjuanABK)){
                        ?>
-                      <!--  <a href="#" class="btn btn-warning btn-sm btn_ubah_abk" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-abk_lama="<?= $value->formasi_jumlah; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a> -->
+                       <!--  <a href="#" class="btn btn-warning btn-sm btn_ubah_abk" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-abk_lama="<?= $value->formasi_jumlah; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a> -->
                          <?php //} 
                        //else { ?>
                          <!--  <a href="#" class="btn btn-warning btn-sm btn_ubah_abkku" disabled>Jumlah ABK = </a> -->
@@ -164,24 +187,24 @@
                         </div>
                       </form> -->
                       <!-- End Modal Edit Product-->
-                   <!--  </td> -->
-                  </tr>
-                  <?php $no++;
-                } ?>
+                      <!--  </td> -->
+                    </tr>
+                    <?php $no++;
+                  } ?>
 
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
           </div>
-          <!-- /.card-body -->
+          <!-- /.card -->
         </div>
-        <!-- /.card -->
       </div>
+      <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
     </div>
-    <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
-  </div>
 
-</section>
-<!-- /.content -->
+  </section>
+  <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 <?= $this->endSection() ?>

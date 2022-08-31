@@ -37,7 +37,7 @@
                     <th>Pangkat Golongan</th>
                     <th>Jabatan</th> 
                     <th>Lokasi Unit Kerja</th>
-                   <!--   <th>Instansi Nama</th> -->
+                    <!--  <th>Instansi Nama</th> -->
                     <th>Status</th>
                     <th>TMT Pensiun</th>
                   </tr>
