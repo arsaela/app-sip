@@ -47,7 +47,7 @@
                     <th rowspan="2" class="align-middle text-center">Lokasi Unit Kerja</th>
                     <th rowspan="2" class="align-middle text-center">Jumlah Kebutuhan (ABK)</th>
                     <th rowspan="2" class="align-middle text-center">Jumlah ASN</th>
-                    <th colspan="5" class="text-center">Pensiun</th>
+                    <th colspan="5" class="text-center">Pensiun / BUP</th>
                     <th rowspan="2" class="align-middle text-center">Detail ASN</th>
                     <!--   <th>Ajukan Perubahan ABK</th> -->
                   </tr>
@@ -97,7 +97,6 @@
                       $i = 0;
                       foreach ($queryku->getResult() as $row) { 
                         $explode_taun_tmt_pensiun = substr($row->tmt_pensiun, 0, 4);
-
 
                         if($bup_pertama==$explode_taun_tmt_pensiun){ ?>
                           <td> <?php  

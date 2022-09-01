@@ -50,14 +50,32 @@
                 <table id="datatable-list" class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                      <th>No.</th>
-                      <th>Formasi</th>
-                      <th>Lokasi Unit Kerja</th>
-                      <th>Jumlah Kebutuhan</th>
-                      <th>Jumlah ASN</th>
-                      <th>Kekurangan Formasi</th>
-                      <th>Detail ASN</th>
-                      <th>Ajukan Usulan</th>
+                      <th rowspan="2" class="align-middle text-center">No.</th>
+                      <th rowspan="2" class="align-middle text-center">Formasi</th>
+                      <th rowspan="2" class="align-middle text-center">Lokasi Unit Kerja</th>
+                      <th rowspan="2" class="align-middle text-center">Jumlah Kebutuhan</th>
+                      <th rowspan="2" class="align-middle text-center">Jumlah ASN</th>
+                      <th rowspan="2" class="align-middle text-center">Kekurangan Formasi</th>
+                      <th colspan="5" class="align-middle text-center">Pensiun / BUP</th>
+                      <th rowspan="2" class="align-middle text-center">Detail ASN</th>
+                      <th rowspan="2" class="align-middle text-center">Ajukan Usulan</th>
+                    </tr>
+
+                    <?php 
+                    $tahun_usulan_now = date("Y");
+                    $bup_pertama = $tahun_usulan_now + 1;
+                    $bup_kedua = $tahun_usulan_now + 2;
+                    $bup_ketiga = $tahun_usulan_now + 3;
+                    $bup_keempat = $tahun_usulan_now + 4;
+                    $bup_kelima = $tahun_usulan_now + 5;
+
+                    ?>
+                    <tr>
+                      <td><strong><?php echo $bup_pertama;  ?></strong></td>
+                      <td><strong><?php echo $bup_kedua;  ?></strong></td>
+                      <td><strong><?php echo $bup_ketiga;  ?></strong></td>
+                      <td><strong><?php echo $bup_keempat;  ?></strong></td>
+                      <td><strong><?php echo $bup_kelima;  ?></strong></td>
                     </tr>
                   </thead>
                   <tbody>
@@ -66,6 +84,18 @@
 
                       $kekurangan_formasi = ($value->formasi_jumlah) - ($value->jumlahasn) - ($value->jumlah_usulan_pppk) - ($value->jumlah_usulan_cpns);
                       if ($kekurangan_formasi >= 0 and !empty($kekurangan_formasi)) {
+
+                        /*HITUNG BUP*/
+                        $jabatankode = $value->jabatan_kode;
+                        $instansiunor = $value->instansi_unor;
+
+                        $db      = \Config\Database::connect();
+                        $builder = $db->table('tbl_pegawai');
+                        $queryku   = $builder->select('*,tbl_pegawai.tmt_pensiun,count(tbl_pegawai.tmt_pensiun) as jumlah_asn_bup')
+                        ->where('tbl_pegawai.jabatan_kode', $jabatankode)
+                        ->where('tbl_pegawai.instansi_unor', $instansiunor)
+                        ->orderBy('tbl_pegawai.id asc')
+                        ->get();
 
                         ?>
                         <tr>
@@ -78,6 +108,78 @@
                           <td><?php echo $value->formasi_jumlah; ?></td>
                           <td><?php echo $value->jumlahasn; ?></td>
                           <td><?php echo $kekurangan_formasi; ?></td>
+
+
+                      <?php
+                      $i = 0;
+                      foreach ($queryku->getResult() as $row) { 
+                        $explode_taun_tmt_pensiun = substr($row->tmt_pensiun, 0, 4);
+
+                        if($bup_pertama==$explode_taun_tmt_pensiun){ ?>
+                          <td> <?php  
+                          $jml_pensiun   = $db->query("SELECT count(tbl_pegawai.tmt_pensiun) as jumlahpensiun FROM tbl_pegawai WHERE jabatan_kode='$jabatankode' AND instansi_unor='$instansiunor' AND tmt_pensiun LIKE '$explode_taun_tmt_pensiun%'")->getRow();
+
+                          echo $jml_pensiun->jumlahpensiun;                          
+                          ?>
+                          </td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                        <?php } else if ($bup_kedua==$explode_taun_tmt_pensiun) { ?>
+                          <td>-</td>
+                          <td> 
+                          <?php  
+                          $jml_pensiun   = $db->query("SELECT count(tbl_pegawai.id) as jumlahpensiun FROM tbl_pegawai WHERE jabatan_kode='$jabatankode' AND instansi_unor='$instansiunor' AND tmt_pensiun LIKE '$explode_taun_tmt_pensiun%'")->getRow();
+                          echo $jml_pensiun->jumlahpensiun;                          
+                          ?></td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                        <?php } else if ($bup_ketiga==$explode_taun_tmt_pensiun) { ?>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>  
+                          <?php  
+                          $jml_pensiun   = $db->query("SELECT count(tbl_pegawai.tmt_pensiun) as jumlahpensiun FROM tbl_pegawai WHERE jabatan_kode='$jabatankode' AND instansi_unor='$instansiunor' AND tmt_pensiun LIKE '$explode_taun_tmt_pensiun%'")->getRow();
+
+                          echo $jml_pensiun->jumlahpensiun;                          
+                         
+                          ?></td>
+                          <td>-</td>
+                          <td>-</td>
+                        <?php } else if ($bup_keempat==$explode_taun_tmt_pensiun) { ?>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>  
+                          <?php  
+                          $jml_pensiun   = $db->query("SELECT count(tbl_pegawai.id) as jumlahpensiun FROM tbl_pegawai WHERE jabatan_kode='$jabatankode' AND instansi_unor='$instansiunor' AND tmt_pensiun LIKE '$explode_taun_tmt_pensiun%'")->getRow();
+                          echo $jml_pensiun->jumlahpensiun;                          
+                          ?></td>
+                          <td>-</td>
+                        <?php } else if ($bup_kelima==$explode_taun_tmt_pensiun) { ?>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td> <?php  
+                          $jml_pensiun   = $db->query("SELECT count(tbl_pegawai.id) as jumlahpensiun FROM tbl_pegawai WHERE jabatan_kode='$jabatankode' AND instansi_unor='$instansiunor' AND tmt_pensiun LIKE '$explode_taun_tmt_pensiun%'")->getRow();
+                          echo $jml_pensiun->jumlahpensiun;                          
+                          ?></td>
+                        <?php } else { ?>
+                          <td><?php echo "-"; ?></td>
+                          <td><?php echo "-"; ?></td>
+                          <td><?php echo "-"; ?></td>
+                          <td><?php echo "-"; ?></td>
+                          <td><?php echo "-"; ?></td>
+                        <?php } ?>
+                      
+
+                        <?php $i++; 
+                      } ?>
+
+
                           <td>
 
                             <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
