@@ -22,8 +22,8 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h4>Aplikasi SIP</h4>
-                            <p>Aplikasi Formasi Pegawai - Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kabupaten Klaten</p>
+                            <h4>Sistem S.I.P.</h4>
+                            <p>Sistem Informasi Pengusulan Pegawai - Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Kabupaten Klaten</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
