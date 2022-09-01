@@ -105,33 +105,33 @@
 
                         if($bup_pertama==$explode_taun_tmt_pensiun){ ?>
                           <td> <?php echo $explode_taun_tmt_pensiun; ?></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
                         <?php } else if ($bup_kedua==$explode_taun_tmt_pensiun) { ?>
-                          <td></td>
+                          <td>-</td>
                           <td> <?php echo $explode_taun_tmt_pensiun; ?></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
                         <?php } else if ($bup_ketiga==$explode_taun_tmt_pensiun) { ?>
-                          <td></td>
-                          <td></td>
+                          <td>-</td>
+                          <td>-</td>
                           <td> <?php echo $explode_taun_tmt_pensiun; ?></td>
-                          <td></td>
-                          <td></td>
+                          <td>-</td>
+                          <td>-</td>
                         <?php } else if ($bup_keempat==$explode_taun_tmt_pensiun) { ?>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
                           <td> <?php echo $explode_taun_tmt_pensiun; ?></td>
-                          <td></td>
+                          <td>-</td>
                         <?php } else if ($bup_kelima==$explode_taun_tmt_pensiun) { ?>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
+                          <td>-</td>
                           <td> <?php echo $explode_taun_tmt_pensiun; ?></td>
                         <?php } else { ?>
                           <td><?php echo "-"; ?></td>
