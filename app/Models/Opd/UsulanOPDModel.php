@@ -281,7 +281,7 @@ class UsulanOPDModel extends Model
 	public function cekStatusKirimUsulan($idInstansi,$tahun_usulan_now){
 		return 
 		$this->db->table('tbl_history_usulan')
-		// ->where('tbl_history_usulan.instansi_id', $idInstansi)
+		->where('tbl_history_usulan.instansi_id', $idInstansi)
 		->where('tbl_history_usulan.status_usulan_id', '2')
 		// ->where('tbl_history_usulan.tahun_usulan', $tahun_usulan_now)
 		->countAllResults();
