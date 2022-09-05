@@ -33,7 +33,7 @@ class DataKelebihanFormasi extends BaseController
 	public function index()
 	{
 		$data['title']  = "App-SIP | Data Formasi";
-		$data['page']   = "dataformasi";
+		$data['page']   = "datakelebihanformasi";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
 		

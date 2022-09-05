@@ -51,7 +51,7 @@
         </li> -->
 
         <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
+          <a href="#" class="nav-link <?php if ($page == 'datakekuranganformasi' OR $page == 'datakelebihanformasi' )  echo " active";  ?>">
             <i class="nav-icon fas fa-inbox"></i>
             <p>
               Kebutuhan Pegawai
@@ -61,13 +61,13 @@
 
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="<?php echo base_url('opd/datakekuranganformasi'); ?>" class="nav-link <?php if ($page == 'opd/datakekuranganformasi') echo " active";  ?>">
+              <a href="<?php echo base_url('opd/datakekuranganformasi'); ?>" class="nav-link">
                 <i class="far fa fa-minus nav-icon"></i>
                 <p>Kekurangan Pegawai</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?php echo base_url('opd/datakelebihanformasi'); ?>" class="nav-link <?php if ($page == 'opd/datakelebihanformasi') echo " active";  ?>">
+              <a href="<?php echo base_url('opd/datakelebihanformasi'); ?>" class="nav-link">
                 <i class="far fa fa-plus nav-icon"></i>
                 <p>Kelebihan Pegawai</p>
               </a>
@@ -77,7 +77,7 @@
 
         <!-- Data Pegawai -->
         <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
+          <a href="#" class="nav-link <?php if ($page == 'datapegawai' OR $page == 'cetakdatapegawaiopd' )  echo " active";  ?>">
             <i class="nav-icon fas fa-users"></i>
             <p>
               Data Pegawai
@@ -94,7 +94,7 @@
             </a>
           </li> -->
             <li class="nav-item">
-              <a href="<?php echo base_url('opd/datapegawai'); ?>" class="nav-link <?php if ($page == 'opd/lihatpegawaiopd') echo " active";  ?>">
+              <a href="<?php echo base_url('opd/datapegawai'); ?>" class="nav-link">
                 <i class="far fa-eye nav-icon"></i>
                 <p>Lihat Pegawai</p>
               </a>
@@ -110,7 +110,7 @@
 
         <!-- Data Usulan -->
         <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
+          <a href="#" class="nav-link <?php if ($page == 'datausulan' OR $page == 'lihatusulanopd' OR $page == 'kirimdatausulanopd' OR $page == 'cetakdatausulan' OR $page == 'rekapusulanopd' )  echo " active";  ?>">
             <i class="nav-icon fas fa-inbox"></i>
             <p>
               Data Usulan

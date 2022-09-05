@@ -43,7 +43,7 @@ class DataUsulan extends BaseController
 	public function index()
 	{
 		$data['title']  = "App-SIP | Data Formasi";
-		$data['page']   = "dataformasi";
+		$data['page']   = "datausulan";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
 
@@ -72,6 +72,7 @@ class DataUsulan extends BaseController
 
 	public function inputusulanopd()
 	{
+
 		$username   = $this->session->get('username');
 		$idInstansi  = $this->M_usulan_OPD->getInstansiByLogin($username)->getResult();
 
@@ -124,7 +125,7 @@ class DataUsulan extends BaseController
 	public function lihatusulanopd()
 	{
 		$data['title']  = "App-SIP | Data Formasi";
-		$data['page']   = "dataformasi";
+		$data['page']   = "lihatusulanopd";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
 
@@ -161,7 +162,7 @@ class DataUsulan extends BaseController
 	public function kirimdatausulanopd()
 	{
 		$data['title']  = "App-SIP | Data Formasi";
-		$data['page']   = "dataformasi";
+		$data['page']   = "kirimdatausulanopd";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
 
@@ -277,7 +278,7 @@ class DataUsulan extends BaseController
 	public function cetakdatausulan()
 	{
 		$data['title']  = "App-SIP | Data Formasi";
-		$data['page']   = "dataformasi";
+		$data['page']   = "cetakdatausulan";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
 		$username   = $this->session->get('username');
@@ -382,7 +383,7 @@ class DataUsulan extends BaseController
 	public function rekapusulanopd()
 	{
 		$data['title']  = "App-SIP | Data Formasi";
-		$data['page']   = "dataformasi";
+		$data['page']   = "rekapusulanopd";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
 

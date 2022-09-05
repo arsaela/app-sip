@@ -33,7 +33,7 @@ class DataPegawai extends BaseController
 	public function index()
 	{
 		$data['title']  = "App-SIP | Data Formasi";
-		$data['page']   = "dataformasi";
+		$data['page']   = "datapegawai";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
 		
@@ -57,7 +57,7 @@ class DataPegawai extends BaseController
 	public function cetakdatapegawaiopd()
 	{
 		$data['title']  = "App-SIP | Data Formasi";
-		$data['page']   = "dataformasi";
+		$data['page']   = "cetakdatapegawaiopd";
 		$data['nama']   = $this->session->get('nama');
 		$data['email']   = $this->session->get('email');
 		
