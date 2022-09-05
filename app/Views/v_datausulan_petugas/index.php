@@ -37,7 +37,7 @@
               <br>
 
               <div class="alert alert-danger alert-dismissible alertkeloladatapegawai fade show">
-                <p>Sebelum melakukan input ajuan usulan, silahkan melakukan kelola data pegawai di lingkup <?php echo $get_petugas_by_login->instansi_nama;?> terlebih dahulu. Harap sesuaikan dengan realita yang ada. <br><a href="<?php echo base_url('opd/datapegawai'); ?>">Kelola data pegawai </a>
+                <p>Sebelum melakukan input ajuan usulan, silahkan klik menu data pegawai. Harap sesuaikan dengan realita yang ada. Jika terdapat perubahan data pegawai silahkan menghubungi pihak BKPSDM Klaten. <br><a href="<?php echo base_url('opd/datapegawai'); ?>">Kelola data pegawai </a>
                 </p>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
