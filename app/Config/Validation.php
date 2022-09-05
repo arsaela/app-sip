@@ -144,18 +144,18 @@ class Validation
         ],
         'password' => [
             'label'  => 'Password',
-            'rules'  => 'required|min_length[8]',
+            'rules'  => 'required|min_length[4]',
             'errors' => [
                 'required' => 'Password Tidak Boleh Kosong!',
-                'min_length' => 'Password Minimal 8 Karakter!'
+                'min_length' => 'Password Minimal 4 Karakter!'
             ]
         ],
         'comfirm_password' => [
             'label'  => 'Comfirm Password',
-            'rules'  => 'required|min_length[8]|matches[password]',
+            'rules'  => 'required|min_length[4]|matches[password]',
             'errors' => [
                 'required' => 'Comfirm Password Tidak Boleh Kosong!',
-                'min_length' => 'Comfirm Password Minimal 8 Karakter!',
+                'min_length' => 'Comfirm Password Minimal 4 Karakter!',
                 'matches' => 'Comfirm Password Tidak Sama Dengan Password!',
             ]
         ]
@@ -173,10 +173,10 @@ class Validation
         ],
         'password' => [
             'label'  => 'Password',
-            'rules'  => 'required|min_length[8]',
+            'rules'  => 'required|min_length[4]',
             'errors' => [
                 'required' => 'Password Tidak Boleh Kosong!',
-                'min_length' => 'Password Minimal 8 Karakter!'
+                'min_length' => 'Password Minimal 4 Karakter!'
             ]
         ]
     ];

@@ -68,7 +68,7 @@
         </li>
         <!-- Data Usulan -->
         <li class="nav-item">
-          <a href="<?php echo base_url('datausulan'); ?>" class="nav-link <?php if ($page == 'datausulan') echo " active";  ?>">
+          <a href="<?php echo base_url('datausulan/cetakdatausulan'); ?>" class="nav-link <?php if ($page == 'datausulan/cetakdatausulan') echo " active";  ?>">
             <i class="nav-icon fas fa-inbox"></i>
             <p>
               Data Usulan

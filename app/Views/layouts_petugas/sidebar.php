@@ -23,7 +23,7 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Dashboard -->
         <li class="nav-item">
-          <a href="<?php echo base_url('opd/dashboard'); ?>" class="nav-link <?php if ($page == 'opd/dashboard') echo " active";  ?>">
+          <a href="<?php echo base_url('opd/dashboard'); ?>" class="nav-link <?php if ($page == 'dashboard') echo " active";  ?>">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -33,7 +33,7 @@
 
         <!-- Data Formasi -->
         <li class="nav-item">
-          <a href="<?php echo base_url('opd/dataformasi'); ?>" class="nav-link <?php if ($page == 'opd/dataformasi') echo " active";  ?>">
+          <a href="<?php echo base_url('opd/dataformasi'); ?>" class="nav-link <?php if ($page == 'dataformasi') echo " active";  ?>">
             <i class="nav-icon fas fa-briefcase"></i>
             <p>
               Rekap Formasi OPD
@@ -41,14 +41,14 @@
           </a>
         </li>        
 
-        <li class="nav-item">
-          <a href="<?php echo base_url('opd/DataAjuanABK'); ?>" class="nav-link <?php if ($page == 'opd/DataAjuanABK') echo " active";  ?>">
+      <!--   <li class="nav-item">
+          <a href="<?php //echo base_url('opd/DataAjuanABK'); ?>" class="nav-link <?php //if ($page == 'DataAjuanABK') echo " active";  ?>">
             <i class="nav-icon fas fa-briefcase"></i>
             <p>
               Data Ajuan ABK
             </p>
           </a>
-        </li>
+        </li> -->
 
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">

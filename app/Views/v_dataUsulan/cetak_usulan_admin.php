@@ -24,7 +24,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Data Usulan Yang Sudah Diverifikasi</h3>
+              <h3 class="card-title">Data Usulan OPD yang sudah disubmit</h3>
             </div>
 
             <div class="card-body table-responsive">
