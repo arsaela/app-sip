@@ -41,7 +41,7 @@
                 <thead>
                   <tr>
                     <th rowspan="2" class="align-middle text-center">No.</th>
-                    <!--  <th>Formasi</th> -->
+                    <th rowspan="2" class="align-middle text-center">Formasi ID</th>
                     <th rowspan="2" class="align-middle text-center">Formasi</th>
                     <!--  <th>Lokasi Unit Kerja</th> -->
                     <th rowspan="2" class="align-middle text-center">Lokasi Unit Kerja</th>
@@ -73,20 +73,22 @@
                   <?php 
                   $no = 1;
                   foreach ($getDetailFormasi as $value) { 
-                    $jabatankode = $value->jabatan_kode;
-                    $instansiunor = $value->instansi_unor;
+                    if(!empty($value->formasi_id)) {
+                     // echo "formasi id =".$value->formasi_id; 
+                     $jabatankode = $value->jabatan_kode;
+                     $instansiunor = $value->instansi_unor;
 
-                    $db      = \Config\Database::connect();
-                    $builder = $db->table('tbl_pegawai');
-                    $queryku   = $builder->select('*,tbl_pegawai.tmt_pensiun,count(tbl_pegawai.tmt_pensiun) as jumlah_asn_bup')
-                    ->where('tbl_pegawai.jabatan_kode', $jabatankode)
-                    ->where('tbl_pegawai.instansi_unor', $instansiunor)
-                    ->orderBy('tbl_pegawai.id asc')
-                    ->get();
-                    ?>
-                    <tr>
+                     $db      = \Config\Database::connect();
+                     $builder = $db->table('tbl_pegawai');
+                     $queryku   = $builder->select('*,tbl_pegawai.tmt_pensiun,count(tbl_pegawai.tmt_pensiun) as jumlah_asn_bup')
+                     ->where('tbl_pegawai.jabatan_kode', $jabatankode)
+                     ->where('tbl_pegawai.instansi_unor', $instansiunor)
+                     ->orderBy('tbl_pegawai.id asc')
+                     ->get();
+                     ?>
+                     <tr>
                       <td><?php echo $no; ?></td>
-                      <!-- <td><?php //echo $value->formasi_id; ?></td> -->
+                      <td><?php echo $value->formasi_id; ?></td>
                       <td><?php echo $value->jabatan_nama; ?></td>
                       <!--  <td><?php //echo $value->instansi_unor; ?></td> -->
                       <td><?php echo $value->instansi_unor_nama; ?></td>
@@ -104,107 +106,107 @@
 
                           echo $jml_pensiun->jumlahpensiun;                          
                           ?>
-                          </td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                        <?php } else if ($bup_kedua==$explode_taun_tmt_pensiun) { ?>
-                          <td>-</td>
-                          <td> 
+                        </td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      <?php } else if ($bup_kedua==$explode_taun_tmt_pensiun) { ?>
+                        <td>-</td>
+                        <td> 
                           <?php  
                           $jml_pensiun   = $db->query("SELECT count(tbl_pegawai.id) as jumlahpensiun FROM tbl_pegawai WHERE jabatan_kode='$jabatankode' AND instansi_unor='$instansiunor' AND tmt_pensiun LIKE '$explode_taun_tmt_pensiun%'")->getRow();
                           echo $jml_pensiun->jumlahpensiun;                          
-                          ?></td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                        <?php } else if ($bup_ketiga==$explode_taun_tmt_pensiun) { ?>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>  
+                        ?></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                      <?php } else if ($bup_ketiga==$explode_taun_tmt_pensiun) { ?>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>  
                           <?php  
                           $jml_pensiun   = $db->query("SELECT count(tbl_pegawai.tmt_pensiun) as jumlahpensiun FROM tbl_pegawai WHERE jabatan_kode='$jabatankode' AND instansi_unor='$instansiunor' AND tmt_pensiun LIKE '$explode_taun_tmt_pensiun%'")->getRow();
 
                           echo $jml_pensiun->jumlahpensiun;                          
-                         
-                          ?></td>
-                          <td>-</td>
-                          <td>-</td>
-                        <?php } else if ($bup_keempat==$explode_taun_tmt_pensiun) { ?>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>  
+
+                        ?></td>
+                        <td>-</td>
+                        <td>-</td>
+                      <?php } else if ($bup_keempat==$explode_taun_tmt_pensiun) { ?>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>  
                           <?php  
                           $jml_pensiun   = $db->query("SELECT count(tbl_pegawai.id) as jumlahpensiun FROM tbl_pegawai WHERE jabatan_kode='$jabatankode' AND instansi_unor='$instansiunor' AND tmt_pensiun LIKE '$explode_taun_tmt_pensiun%'")->getRow();
                           echo $jml_pensiun->jumlahpensiun;                          
-                          ?></td>
-                          <td>-</td>
-                        <?php } else if ($bup_kelima==$explode_taun_tmt_pensiun) { ?>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td> <?php  
-                          $jml_pensiun   = $db->query("SELECT count(tbl_pegawai.id) as jumlahpensiun FROM tbl_pegawai WHERE jabatan_kode='$jabatankode' AND instansi_unor='$instansiunor' AND tmt_pensiun LIKE '$explode_taun_tmt_pensiun%'")->getRow();
-                          echo $jml_pensiun->jumlahpensiun;                          
-                          ?></td>
-                        <?php } else { ?>
-                          <td><?php echo "-"; ?></td>
-                          <td><?php echo "-"; ?></td>
-                          <td><?php echo "-"; ?></td>
-                          <td><?php echo "-"; ?></td>
-                          <td><?php echo "-"; ?></td>
-                        <?php } ?>
-                      
+                        ?></td>
+                        <td>-</td>
+                      <?php } else if ($bup_kelima==$explode_taun_tmt_pensiun) { ?>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td> <?php  
+                        $jml_pensiun   = $db->query("SELECT count(tbl_pegawai.id) as jumlahpensiun FROM tbl_pegawai WHERE jabatan_kode='$jabatankode' AND instansi_unor='$instansiunor' AND tmt_pensiun LIKE '$explode_taun_tmt_pensiun%'")->getRow();
+                        echo $jml_pensiun->jumlahpensiun;                          
+                      ?></td>
+                    <?php } else { ?>
+                      <td><?php echo "-"; ?></td>
+                      <td><?php echo "-"; ?></td>
+                      <td><?php echo "-"; ?></td>
+                      <td><?php echo "-"; ?></td>
+                      <td><?php echo "-"; ?></td>
+                    <?php } ?>
 
-                        <?php $i++; 
-                      } ?>
 
-                      <td>
+                    <?php $i++; 
+                  } ?>
 
-                        <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
+                  <td>
 
-                        <!-- The Pegawai -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <!-- Modal Header -->
-                              <div class="modal-header">
-                                <h3 class="card-title">Detail ASN</h3>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              </div>
-                              <!-- Modal body -->
-                              <div class="modal-body">
-                                <table class="table table-bordered">
-                                  <thead>
-                                    <tr>
-                                      <th>No</th>
-                                      <th>Nama</th>
-                                      <th>NIP</th>
-                                      <th>Jabatan</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody id="show_data">
-                                  </tbody>
-                                </table>
-                              </div>
-                              <!-- Modal footer -->
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
-                              </div>
+                    <button type="button" instansi_unor="<?php echo $value->instansi_unor; ?>" jabatan_kode="<?php echo $value->jabatan_kode; ?>" class="edit btn btn-success"><i class="fa fa-search"></i></button>
 
-                            </div>
+                    <!-- The Pegawai -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h3 class="card-title">Detail ASN</h3>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
                           </div>
-                        </div>
-                      </td>
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>No</th>
+                                  <th>Nama</th>
+                                  <th>NIP</th>
+                                  <th>Jabatan</th>
+                                </tr>
+                              </thead>
+                              <tbody id="show_data">
+                              </tbody>
+                            </table>
+                          </div>
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                          </div>
 
-                      <!--  <td> -->
-                       <?php 
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!--  <td> -->
+                   <?php 
                        //if(empty($cekFormasiAjuanABK)){
-                       ?>
-                       <!--  <a href="#" class="btn btn-warning btn-sm btn_ubah_abk" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-abk_lama="<?= $value->formasi_jumlah; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a> -->
+                   ?>
+                   <!--  <a href="#" class="btn btn-warning btn-sm btn_ubah_abk" data-jabatan_kode="<?= $value->jabatan_kode; ?>" data-id="<?= $no; ?>" data-name="<?= $value->jabatan_nama; ?>" data-abk_lama="<?= $value->formasi_jumlah; ?>" data-instansiunornama="<?= $value->instansi_unor_nama; ?>" data-instansiunor="<?= $value->instansi_unor; ?>"><i class="fa fa-check"></i></a> -->
                          <?php //} 
                        //else { ?>
                          <!--  <a href="#" class="btn btn-warning btn-sm btn_ubah_abkku" disabled>Jumlah ABK = </a> -->
@@ -267,24 +269,24 @@
                       <!--  </td> -->
                     </tr>
                     <?php $no++;
+                  }
+                } 
 
-                  } 
+                ?>
 
-                  ?>
-
-                </tbody>
-              </table>
-            </div>
-            <!-- /.card-body -->
+              </tbody>
+            </table>
           </div>
-          <!-- /.card -->
+          <!-- /.card-body -->
         </div>
+        <!-- /.card -->
       </div>
-      <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
     </div>
+    <input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Kembali Halaman Unit Kerja" />
+  </div>
 
-  </section>
-  <!-- /.content -->
+</section>
+<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 <?= $this->endSection() ?>
