@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrappere">
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
@@ -24,7 +24,7 @@
                     <!-- Default box -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title" style="text-align: center !important;float: unset !important; margin-bottom: 20px;"><strong>Data Usulan Pegawai <?php echo $getnamaInstansi[0]->instansi_nama; ?></strong></h3>
+                            <h3 class="card-title" style="text-align: center !important;float: unset !important; margin-bottom: 20px;"><strong>Data Pengajuan Usulan Formasi "<?php echo $getnamaInstansi[0]->instansi_nama; ?>"</strong></h3>
 
                         </div>
 
@@ -32,14 +32,19 @@
                             <table id="datatable-list" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>No.</th>
-                                        <th>Formasi</th>
-                                        <th>Lokasi Unit Kerja</th>
-                                        <th>Jumlah Usulan CPNS</th>
-                                        <th>Prioritas Usulan CPNS</th>
-                                        <th>Jumlah Usulan PPPK</th>
-                                        <th>Prioritas Usulan PPPK</th>
+                                        <th rowspan="2" class="align-middle text-center">No.</th>
+                                        <th rowspan="2" class="align-middle text-center">Formasi</th>
+                                        <th rowspan="2" class="align-middle text-center">Lokasi Unit Kerja</th>
+                                        <th colspan="2" class="align-middle text-center">Jumlah Usulan</th>
+                                        <th colspan="2" class="align-middle text-center">Prioritas Usulan</th>
+                                    </tr>
 
+                                    <tr>
+                                        <td><strong>CPNS</strong></td>
+                                        <td><strong>PPPK</strong></td>
+
+                                        <td><strong>CPNS</strong></td>
+                                        <td><strong>PPPK</strong></td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,8 +57,8 @@
                                                 <td><?php echo $value->jabatan_nama; ?></td>
                                                 <td><?php echo $value->instansi_unor_nama; ?></td>
                                                 <td><?php echo $value->jumlah_usulan_cpns; ?></td>
-                                                <td><?php echo $value->prioritas_usulan_cpns; ?></td>
                                                 <td><?php echo $value->jumlah_usulan_pppk; ?></td>
+                                                <td><?php echo $value->prioritas_usulan_cpns; ?></td>
                                                 <td><?php echo $value->prioritas_usulan_pppk; ?></td>
 
                                             </tr>
@@ -87,8 +92,9 @@
         </div>
 
         <div style="float:right; margin-right: 30px;">
-           <?php $no = 1;
-           if (!empty($getLihatUsulan)) { ?>
+            <h4 style="padding-left: 10px;">Mengetahui,</h4>
+         <?php $no = 1;
+         if (!empty($getLihatDetailUsulan)) { ?>
             <?php echo '<img src="data:' . $QR->getContentType() . ';base64,' . $QR->generate() . '" />'; ?>
         <?php } ?>
     </div>

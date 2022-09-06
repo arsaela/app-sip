@@ -1,5 +1,10 @@
 <?= $this->extend('layouts_petugas/template_petugas') ?>
 
+<?= $this->section('head') ?>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+<?= $this->endSection(); ?>
+
 <?= $this->section('content') ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -28,60 +33,60 @@
             </div>
 
             <div class="card-body table-responsive">
-              <table id="datatable-list" class="table table-bordered table-striped">
-                <thead>
+             <table id="datatable-export" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Formasi</th>
+                  <th>Lokasi Unit Kerja</th>
+                  <th>Instansi Nama</th>
+                  <th>Jumlah Usulan CPNS</th>
+                  <th>Prioritas Usulan CPNS</th>
+                  <th>Jumlah Usulan PPPK</th>
+                  <th>Prioritas Usulan PPPK</th>
+                  <th>Tahun Usulan</th>
+                  <th>Status Usulan</th>
+                  <th>Opsi</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <?php $no = 1;
+                foreach ($getLihatUsulan as $value) { 
+                  ?>
                   <tr>
-                    <th>No.</th>
-                    <th>Formasi</th>
-                    <th>Lokasi Unit Kerja</th>
-                    <th>Instansi Nama</th>
-                    <th>Jumlah Usulan CPNS</th>
-                    <th>Prioritas Usulan CPNS</th>
-                    <th>Jumlah Usulan PPPK</th>
-                    <th>Prioritas Usulan PPPK</th>
-                    <th>Tahun Usulan</th>
-                    <th>Status Usulan</th>
-                    <th>Opsi</th>
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php $no = 1;
-                  foreach ($getLihatUsulan as $value) { 
-                    ?>
-                    <tr>
-                      <td><?php echo $no; ?></td>
-                      <td><?php echo $value->jabatan_nama; ?></td>
-                      <td><?php echo $value->instansi_unor_nama; ?></td>
-                      <td><?php echo $value->instansi_nama; ?></td>
-                      <td><?php echo $value->jumlah_usulan_cpns; ?></td>
-                      <td><?php echo $value->prioritas_usulan_cpns; ?></td>
-                      <td><?php echo $value->jumlah_usulan_pppk; ?></td>
-                      <td><?php echo $value->prioritas_usulan_pppk; ?></td>
-                      <td><?php echo $value->tahun_usulan; ?></td>
-                      <td>
-                        <?php if($value->status_usulan_id=='1'){ ?>
-                          <a href="#" class="btn btn-lg btn-danger disabled"><?php echo $value->nama_status; ?></a>
-                        <?php } else if($value->status_usulan_id=='2'){ ?>
-                          <a href="#" class="btn btn-lg btn-success disabled"><?php echo $value->nama_status; ?></a>
-                        <?php } else { ?>
-                          <a href="#" class="btn btn-lg btn-primary disabled status_primaryku"><?php echo $value->nama_status; ?></a>
-                        <?php } ?>
-                      </td>
-                      <td> 
-
-                       <?php if(empty($cekStatusKirimUsulan)){ ?>
-                        <a href="/opd/datausulan/delete_ajuanusulanbelumdikirim/<?=$value->history_usulan_id; ?>" data-toggle="modal" class="btn btn-sm btn-danger btn-hapus"><i class="fa fa-trash"></i></a>
-                      <?php } 
-                      else { ?>
-                        <p style="text-align: center;"><?php echo "-";?></p>
-                      <?php }
-                      ?>
+                    <td><?php echo $no; ?></td>
+                    <td><?php echo $value->jabatan_nama; ?></td>
+                    <td><?php echo $value->instansi_unor_nama; ?></td>
+                    <td><?php echo $value->instansi_nama; ?></td>
+                    <td><?php echo $value->jumlah_usulan_cpns; ?></td>
+                    <td><?php echo $value->prioritas_usulan_cpns; ?></td>
+                    <td><?php echo $value->jumlah_usulan_pppk; ?></td>
+                    <td><?php echo $value->prioritas_usulan_pppk; ?></td>
+                    <td><?php echo $value->tahun_usulan; ?></td>
+                    <td>
+                      <?php if($value->status_usulan_id=='1'){ ?>
+                        <a href="#" class="btn btn-lg btn-danger disabled"><?php echo $value->nama_status; ?></a>
+                      <?php } else if($value->status_usulan_id=='2'){ ?>
+                        <a href="#" class="btn btn-lg btn-success disabled"><?php echo $value->nama_status; ?></a>
+                      <?php } else { ?>
+                        <a href="#" class="btn btn-lg btn-primary disabled status_primaryku"><?php echo $value->nama_status; ?></a>
+                      <?php } ?>
                     </td>
+                    <td> 
 
-                  </tr>
-                  <?php $no++;
-                } 
+                     <?php if(empty($cekStatusKirimUsulan)){ ?>
+                      <a href="/opd/datausulan/delete_ajuanusulanbelumdikirim/<?=$value->history_usulan_id; ?>" data-toggle="modal" class="btn btn-sm btn-danger btn-hapus"><i class="fa fa-trash"></i></a>
+                    <?php } 
+                    else { ?>
+                      <p style="text-align: center;"><?php echo "-";?></p>
+                    <?php }
+                    ?>
+                  </td>
+
+                </tr>
+                <?php $no++;
+              } 
 
                   //if($value->status_usulan_id=='1'){ ?>
                     <div class="status_usulan_belum_kirim" style="color: red; font-size: 16px; padding-bottom: 20px;">Note : Jika masih terdapat data usulan yang belum di kirimkan.
@@ -170,3 +175,32 @@
 <?= $this->section('script') ?>
 <script src="/assets/js/script.js"></script>
 <?= $this->endSection() ?>
+
+<?= $this->section('script') ?>
+<script>
+  $(document).ready(function() {
+    $('#datatable-export').DataTable( {
+
+      dom: 'Bfrtip',
+      buttons: [
+                 {
+        extend: 'excelHtml5',
+        title: 'Data Pegawai OPD'
+      },
+      {
+        extend: 'print',
+        title: 'Data Pegawai OPD'
+      }
+        ]
+    } );
+  } );
+</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+<?= $this->endSection(); ?>

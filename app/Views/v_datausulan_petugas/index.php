@@ -498,3 +498,4 @@ $('body').on('click', '.edit', function() {
   background: #cd3948 !important;
 }
 </style>
+
