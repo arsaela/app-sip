@@ -134,7 +134,7 @@ class Datapetugas extends BaseController
 	}
 
 	// Datatable server side
-	public function ajaxDatapetugas()
+	public function ajaxdatapetugas()
 	{
 
 		if ($this->request->getMethod(true) == 'POST') {

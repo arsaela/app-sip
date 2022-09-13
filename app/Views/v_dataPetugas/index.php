@@ -94,7 +94,7 @@
       "order": [],
 
       "ajax": {
-        "url": "datapetugas/ajaxDatapetugas",
+        "url": "datapetugas/ajaxdatapetugas",
         "type": "POST"
       },
 

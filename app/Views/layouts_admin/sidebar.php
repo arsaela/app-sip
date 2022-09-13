@@ -32,7 +32,7 @@
         </li>
         <!-- Data Admin -->
         <li class="nav-item">
-          <a href="<?php echo base_url('dataadmin'); ?>" class="nav-link <?php if ($page == 'dataadmin') echo " active";  ?>">
+          <a href="<?php echo base_url('DataAdmin'); ?>" class="nav-link <?php if ($page == 'DataAdmin') echo " active";  ?>">
             <i class="nav-icon fas fa-user"></i>
             <p>
               Data Admin
@@ -41,7 +41,7 @@
         </li>
         <!-- Data Petugas -->
         <li class="nav-item">
-          <a href="<?php echo base_url('datapetugas'); ?>" class="nav-link <?php if ($page == 'datapetugas') echo " active";  ?>">
+          <a href="<?php echo base_url('DataPetugas'); ?>" class="nav-link <?php if ($page == 'DataPetugas') echo " active";  ?>">
             <i class="nav-icon fas fa-users"></i>
             <p>
               Data Petugas
@@ -50,7 +50,7 @@
         </li>
         <!-- Data Petugas -->
         <li class="nav-item">
-          <a href="<?php echo base_url('datapegawai'); ?>" class="nav-link <?php if ($page == 'datapegawai') echo " active";  ?>">
+          <a href="<?php echo base_url('DataPegawai'); ?>" class="nav-link <?php if ($page == 'DataPegawai') echo " active";  ?>">
             <i class="nav-icon fas fa-users"></i>
             <p>
               Data Pegawai
@@ -59,7 +59,7 @@
         </li>
         <!-- Data Formasi -->
         <li class="nav-item">
-          <a href="<?php echo base_url('datainstansi'); ?>" class="nav-link <?php if ($page == 'datainstansi') echo " active";  ?>">
+          <a href="<?php echo base_url('DataInstansi'); ?>" class="nav-link <?php if ($page == 'DataInstansi') echo " active";  ?>">
             <i class="nav-icon fas fa-briefcase"></i>
             <p>
               Data Formasi
@@ -68,7 +68,7 @@
         </li>
         <!-- Data Usulan -->
         <li class="nav-item">
-          <a href="<?php echo base_url('datausulan/cetakdatausulan'); ?>" class="nav-link <?php if ($page == 'datausulan/cetakdatausulan') echo " active";  ?>">
+          <a href="<?php echo base_url('DataUsulan/cetakdataUsulan'); ?>" class="nav-link <?php if ($page == 'DataUsulan/cetakdataUsulan') echo " active";  ?>">
             <i class="nav-icon fas fa-inbox"></i>
             <p>
               Data Usulan
@@ -77,7 +77,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="<?php echo base_url('datausulan/cetakdatausulan'); ?>" class="nav-link <?php if ($page == 'datausulan/cetakdatausulan') echo " active";  ?>">
+          <a href="<?php echo base_url('Datausulan/cetakdatausulan'); ?>" class="nav-link <?php if ($page == 'Datausulan/cetakdatausulan') echo " active";  ?>">
             <i class="nav-icon fas fa-inbox"></i>
             <p>
               Cetak Usulan
@@ -113,7 +113,7 @@
 
         </li>
         <li class="nav-item">
-          <a href="<?php echo base_url('importpegawai'); ?>" class="nav-link <?php if ($page == 'importpegawai');  ?>">
+          <a href="<?php echo base_url('importPegawai'); ?>" class="nav-link <?php if ($page == 'importPegawai');  ?>">
             <i class="nav-icon fas fa-file-import"></i>
             <p>
               Import Data

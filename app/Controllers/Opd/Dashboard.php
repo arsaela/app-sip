@@ -30,7 +30,9 @@ class Dashboard extends BaseController
         $data['title']  = "App-SIP | Dashboard";
         $data['page']   = "dashboard";
         $data['username']   = $this->session->get('username');
-        $data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow();    
+        $data['get_petugas_by_login']  = $this->M_dashboard_opd->getPetugasNamaOpd($username)->getRow(); 
+        // print_r($data['get_petugas_by_login']);
+        // die('sttoppp');   
 
         $data['getInformasi'] = $this->M_home->get_data_informasi()->getResult();
 
